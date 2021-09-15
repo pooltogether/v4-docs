@@ -1,0 +1,53 @@
+{
+  "name": "pooltogether",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "gen-solidity-docs": "rm -rf docs/reference/core/** && echo '{ \"label\": \"Core\", \"position\": 3 }' >> docs/reference/core/_category_.json && solidity-docgen --solc-module solc-0.8 -i node_modules/@pooltogether/v4/contracts -o docs/reference/core -t templates",
+    "gen-deployments": "rm -rf docs/reference/deployments/** && echo '{ \"label\": \"Deployments\", \"position\": 2 }' >> docs/reference/deployments/_category_.json && ./scripts/generateDeployments.js"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-preset-algolia": "^1.1.0",
+    "@algolia/client-search": "^4.9.1",
+    "@babel/core": "^7.14.6",
+    "@docusaurus/core": "^2.0.0-beta.1",
+    "@docusaurus/plugin-content-docs": "^2.0.0-beta.1",
+    "@docusaurus/preset-classic": "^2.0.0-beta.1",
+    "@docusaurus/theme-search-algolia": "^2.0.0-beta.1",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@heroicons/react": "^1.0.1",
+    "@mdx-js/react": "^1.6.21",
+    "@pooltogether/v4": "github://pooltogether/pooltogether-contract-tsunami#master",
+    "@pooltogether/v4-rinkeby": "github://pooltogether/v4-rinkeby",
+    "@types/react": "^17.0.11",
+    "algoliasearch": "^4.9.1",
+    "clsx": "^1.1.1",
+    "intl-locales-supported": "^1.8.12",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "solc-0.8": "npm:solc@0.8.6",
+    "solidity-docgen": "^0.5.13",
+    "find": "^0.3.0",
+    "lodash": "^4.17.20"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
