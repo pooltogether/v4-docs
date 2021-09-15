@@ -32,7 +32,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "@pooltogether/v4": "github://pooltogether/pooltogether-contract-tsunami#master",
     "@pooltogether/v4-rinkeby": "github://pooltogether/v4-rinkeby",
     "solc-0.8": "npm:solc@0.8.6",
