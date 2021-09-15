@@ -48,9 +48,9 @@ The Draw is created in two steps:
 ## Claimable Draw
 
 Users claim their prizes from the Claimable Draw, which holds the liquidity for all draws for a prize pool.   When a user claims the prizes for a draw:
-The Claimable Draw pulls the Draw information from the Draw History
-Passes the Draw to the corresponding Draw Calculator to compute the total payout
-Transfers the payout to the user
+- The Claimable Draw pulls the Draw information from the Draw History
+- Passes the Draw to the corresponding Draw Calculator to compute the total payout
+- Transfers the payout to the user
 
 ![Overview](/img/guides/ClaimableDraw.png)
 
@@ -60,4 +60,4 @@ The Tsunami Draw Calculator
 
 ## Draw Settings
 
-Each Draw has a setting object that determines determines the prize size and distribution.  The calculator has a "manager" that updates the settings for new Draws.  When the manager updates the settings, the calculator sets itself as the calculator for the draw in the Claimable Draw.  This may seem redundant, but it allows us to swap which calculator the Claimable Draw uses.
+Each Draw has a setting object that determines the prize size and distribution.  The calculator has a "manager" that updates the settings for new Draws.  When the manager updates the settings, the calculator sets itself as the calculator for the draw in the Claimable Draw.  This may seem redundant, but it allows us to swap which calculator the Claimable Draw uses.
