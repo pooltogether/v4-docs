@@ -1,7 +1,22 @@
-Accounting is managed using Controlled Tokens, whose mint and burn functions can only be called by this contract.
 
-Must be inherited to provide specific yield-bearing asset control, such as Compound cTokens
+
 ## Functions
+### initializeYieldSourcePrizePool
+```solidity
+  function initializeYieldSourcePrizePool(
+    contract IControlledToken[] _controlledTokens,
+    contract IYieldSource _yieldSource
+  ) public
+```
+Initializes the Prize Pool and Yield Service with the required contract connections
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_controlledTokens` | contract IControlledToken[] | Array of addresses for the Ticket and Sponsorship Tokens controlled by the Prize Pool
+|`_yieldSource` | contract IYieldSource | Address of the yield source
+
 ### initialize
 ```solidity
   function initialize(
@@ -324,3 +339,147 @@ Checks if a specific token is controlled by the Prize Pool
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`True`| contract IControlledToken | if the token is a controlled token, false otherwise
+### owner
+```solidity
+  function owner(
+  ) public returns (address)
+```
+
+Returns the address of the current owner.
+
+
+### renounceOwnership
+```solidity
+  function renounceOwnership(
+  ) public
+```
+
+Leaves the contract without owner. It will not be possible to call
+`onlyOwner` functions anymore. Can only be called by the current owner.
+NOTE: Renouncing ownership will leave the contract without an owner,
+thereby removing any functionality that is only available to the owner.
+
+
+### transferOwnership
+```solidity
+  function transferOwnership(
+  ) public
+```
+
+Transfers ownership of the contract to a new account (`newOwner`).
+Can only be called by the current owner.
+
+
+## Events
+### YieldSourcePrizePoolInitialized
+```solidity
+  event YieldSourcePrizePoolInitialized(
+  )
+```
+
+
+
+### OwnershipTransferred
+```solidity
+  event OwnershipTransferred(
+  )
+```
+
+
+
+### Initialized
+```solidity
+  event Initialized(
+  )
+```
+
+Emitted when an instance is initialized
+
+### ControlledTokenAdded
+```solidity
+  event ControlledTokenAdded(
+  )
+```
+
+Event emitted when controlled token is added
+
+### AwardCaptured
+```solidity
+  event AwardCaptured(
+  )
+```
+
+
+
+### Deposited
+```solidity
+  event Deposited(
+  )
+```
+
+Event emitted when assets are deposited
+
+### Awarded
+```solidity
+  event Awarded(
+  )
+```
+
+Event emitted when interest is awarded to a winner
+
+### AwardedExternalERC20
+```solidity
+  event AwardedExternalERC20(
+  )
+```
+
+Event emitted when external ERC20s are awarded to a winner
+
+### TransferredExternalERC20
+```solidity
+  event TransferredExternalERC20(
+  )
+```
+
+Event emitted when external ERC20s are transferred out
+
+### AwardedExternalERC721
+```solidity
+  event AwardedExternalERC721(
+  )
+```
+
+Event emitted when external ERC721s are awarded to a winner
+
+### Withdrawal
+```solidity
+  event Withdrawal(
+  )
+```
+
+Event emitted when assets are withdrawn instantly
+
+### LiquidityCapSet
+```solidity
+  event LiquidityCapSet(
+  )
+```
+
+Event emitted when the Liquidity Cap is set
+
+### PrizeStrategySet
+```solidity
+  event PrizeStrategySet(
+  )
+```
+
+Event emitted when the Prize Strategy is set
+
+### ErrorAwardingExternalERC721
+```solidity
+  event ErrorAwardingExternalERC721(
+  )
+```
+
+Emitted when there was an error thrown awarding an External ERC721
+

@@ -257,3 +257,180 @@ Sets the RNG service that the Prize Strategy is connected to
 | :--- | :--- | :------------------------------------------------------------------- |
 |`rngService` | contract RNGInterface | The address of the new RNG service interface
 
+### owner
+```solidity
+  function owner(
+  ) public returns (address)
+```
+
+Returns the address of the current owner.
+
+
+### renounceOwnership
+```solidity
+  function renounceOwnership(
+  ) public
+```
+
+Leaves the contract without owner. It will not be possible to call
+`onlyOwner` functions anymore. Can only be called by the current owner.
+NOTE: Renouncing ownership will leave the contract without an owner,
+thereby removing any functionality that is only available to the owner.
+
+
+### transferOwnership
+```solidity
+  function transferOwnership(
+  ) public
+```
+
+Transfers ownership of the contract to a new account (`newOwner`).
+Can only be called by the current owner.
+
+
+## Events
+### OwnershipTransferred
+```solidity
+  event OwnershipTransferred(
+  )
+```
+
+
+
+### Initialized
+```solidity
+  event Initialized(
+    contract IDrawHistory drawHistory,
+    contract RNGInterface rng,
+    uint256 rngRequestPeriodStart,
+    uint256 drawPeriodSeconds
+  )
+```
+Emit when the DrawBeacon is initialized.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`drawHistory`| contract IDrawHistory | Address of the draw history to push draws to
+|`rng`| contract RNGInterface | Address of RNG service
+|`rngRequestPeriodStart`| uint256 | Timestamp when draw period starts
+|`drawPeriodSeconds`| uint256 | Minimum seconds between draw period
+### DrawHistoryTransferred
+```solidity
+  event DrawHistoryTransferred(
+    contract IDrawHistory previousDrawHistory,
+    contract IDrawHistory newDrawHistory
+  )
+```
+Emit when a new DrawHistory has been set.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`previousDrawHistory`| contract IDrawHistory |  The previous DrawHistory address
+|`newDrawHistory`| contract IDrawHistory |       The new DrawHistory address
+### BeaconPeriodStarted
+```solidity
+  event BeaconPeriodStarted(
+    address operator,
+    uint256 drawPeriodStartedAt
+  )
+```
+Emit when a draw has opened.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`operator`| address |             User address responsible for opening draw  
+|`drawPeriodStartedAt`| uint256 |  Epoch timestamp
+### DrawStarted
+```solidity
+  event DrawStarted(
+    address operator,
+    uint32 rngRequestId,
+    uint32 rngLockBlock
+  )
+```
+Emit when a draw has started.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`operator`| address |      User address responsible for starting draw  
+|`rngRequestId`| uint32 |  draw id
+|`rngLockBlock`| uint32 |  Block when draw becomes invalid
+### DrawCancelled
+```solidity
+  event DrawCancelled(
+    address operator,
+    uint32 rngRequestId,
+    uint32 rngLockBlock
+  )
+```
+Emit when a draw has been cancelled.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`operator`| address |      User address responsible for cancelling draw  
+|`rngRequestId`| uint32 |  draw id
+|`rngLockBlock`| uint32 |  Block when draw becomes invalid
+### DrawCompleted
+```solidity
+  event DrawCompleted(
+    address operator,
+    uint256 randomNumber
+  )
+```
+Emit when a draw has been completed.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`operator`| address |      User address responsible for completing draw  
+|`randomNumber`| uint256 |  Random number generated from draw
+### RngServiceUpdated
+```solidity
+  event RngServiceUpdated(
+    contract RNGInterface rngService
+  )
+```
+Emit when a RNG service address is set.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`rngService`| contract RNGInterface |  RNG service address
+### RngTimeoutSet
+```solidity
+  event RngTimeoutSet(
+    uint32 rngTimeout
+  )
+```
+Emit when a draw timeout param is set.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`rngTimeout`| uint32 |  draw timeout param in seconds
+### BeaconPeriodSecondsUpdated
+```solidity
+  event BeaconPeriodSecondsUpdated(
+    uint256 drawPeriodSeconds
+  )
+```
+Emit when the drawPeriodSeconds is set.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`drawPeriodSeconds`| uint256 | Time between draw

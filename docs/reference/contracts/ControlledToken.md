@@ -88,3 +88,182 @@ This value should be equal to the decimals of the token used to deposit into the
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`uint8`|  | decimals.
+### controller
+```solidity
+  function controller(
+  ) external returns (address)
+```
+Interface to the contract responsible for controlling mint/burn
+
+
+
+### permit
+```solidity
+  function permit(
+  ) public
+```
+
+See {IERC20Permit-permit}.
+
+
+### nonces
+```solidity
+  function nonces(
+  ) public returns (uint256)
+```
+
+See {IERC20Permit-nonces}.
+
+
+### DOMAIN_SEPARATOR
+```solidity
+  function DOMAIN_SEPARATOR(
+  ) external returns (bytes32)
+```
+
+See {IERC20Permit-DOMAIN_SEPARATOR}.
+
+
+### name
+```solidity
+  function name(
+  ) public returns (string)
+```
+
+Returns the name of the token.
+
+
+### symbol
+```solidity
+  function symbol(
+  ) public returns (string)
+```
+
+Returns the symbol of the token, usually a shorter version of the
+name.
+
+
+### totalSupply
+```solidity
+  function totalSupply(
+  ) public returns (uint256)
+```
+
+See {IERC20-totalSupply}.
+
+
+### balanceOf
+```solidity
+  function balanceOf(
+  ) public returns (uint256)
+```
+
+See {IERC20-balanceOf}.
+
+
+### transfer
+```solidity
+  function transfer(
+  ) public returns (bool)
+```
+
+See {IERC20-transfer}.
+Requirements:
+- `recipient` cannot be the zero address.
+- the caller must have a balance of at least `amount`.
+
+
+### allowance
+```solidity
+  function allowance(
+  ) public returns (uint256)
+```
+
+See {IERC20-allowance}.
+
+
+### approve
+```solidity
+  function approve(
+  ) public returns (bool)
+```
+
+See {IERC20-approve}.
+Requirements:
+- `spender` cannot be the zero address.
+
+
+### transferFrom
+```solidity
+  function transferFrom(
+  ) public returns (bool)
+```
+
+See {IERC20-transferFrom}.
+Emits an {Approval} event indicating the updated allowance. This is not
+required by the EIP. See the note at the beginning of {ERC20}.
+Requirements:
+- `sender` and `recipient` cannot be the zero address.
+- `sender` must have a balance of at least `amount`.
+- the caller must have allowance for ``sender``'s tokens of at least
+`amount`.
+
+
+### increaseAllowance
+```solidity
+  function increaseAllowance(
+  ) public returns (bool)
+```
+
+Atomically increases the allowance granted to `spender` by the caller.
+This is an alternative to {approve} that can be used as a mitigation for
+problems described in {IERC20-approve}.
+Emits an {Approval} event indicating the updated allowance.
+Requirements:
+- `spender` cannot be the zero address.
+
+
+### decreaseAllowance
+```solidity
+  function decreaseAllowance(
+  ) public returns (bool)
+```
+
+Atomically decreases the allowance granted to `spender` by the caller.
+This is an alternative to {approve} that can be used as a mitigation for
+problems described in {IERC20-approve}.
+Emits an {Approval} event indicating the updated allowance.
+Requirements:
+- `spender` cannot be the zero address.
+- `spender` must have allowance for the caller of at least
+`subtractedValue`.
+
+
+## Events
+### Initialized
+```solidity
+  event Initialized(
+  )
+```
+
+Emitted when an instance is initialized
+
+### Transfer
+```solidity
+  event Transfer(
+  )
+```
+
+Emitted when `value` tokens are moved from one account (`from`) to
+another (`to`).
+Note that `value` may be zero.
+
+### Approval
+```solidity
+  event Approval(
+  )
+```
+
+Emitted when the allowance of a `spender` for an `owner` is set by
+a call to {approve}. `value` is the new allowance.
+

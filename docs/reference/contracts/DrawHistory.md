@@ -155,3 +155,108 @@ External function to set an existing draw.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`Draw`| uint256 | id
+### manager
+```solidity
+  function manager(
+  ) public returns (address)
+```
+Gets current _manager.
+
+Returns current _manager address.1
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Current`|  | _manager address.
+### setManager
+```solidity
+  function setManager(
+    address _newManager
+  ) public returns (bool)
+```
+Set or change of manager.
+
+Throws if called by any account other than the owner.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_newManager` | address | New _manager address.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Boolean`| address | to indicate if the operation was successful or not.
+### owner
+```solidity
+  function owner(
+  ) public returns (address)
+```
+
+Returns the address of the current owner.
+
+
+### renounceOwnership
+```solidity
+  function renounceOwnership(
+  ) public
+```
+
+Leaves the contract without owner. It will not be possible to call
+`onlyOwner` functions anymore. Can only be called by the current owner.
+NOTE: Renouncing ownership will leave the contract without an owner,
+thereby removing any functionality that is only available to the owner.
+
+
+### transferOwnership
+```solidity
+  function transferOwnership(
+  ) public
+```
+
+Transfers ownership of the contract to a new account (`newOwner`).
+Can only be called by the current owner.
+
+
+## Events
+### ManagerTransferred
+```solidity
+  event ManagerTransferred(
+    address newManager
+  )
+```
+
+Emitted when _manager has been changed.
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`newManager`| address | new _manager address.
+### OwnershipTransferred
+```solidity
+  event OwnershipTransferred(
+  )
+```
+
+
+
+### DrawSet
+```solidity
+  event DrawSet(
+    uint256 drawIndex,
+    uint32 drawId,
+    uint32 timestamp,
+    uint256 winningRandomNumber
+  )
+```
+Emit when a new draw has been created.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`drawIndex`| uint256 |    Draw index in the draws array
+|`drawId`| uint32 |       Draw id
+|`timestamp`| uint32 |    Epoch timestamp when the draw is created.
+|`winningRandomNumber`| uint256 | Randomly generated number used to calculate draw winning numbers

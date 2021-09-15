@@ -129,6 +129,70 @@ This function is only callable by the owner asset manager.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`true`| contract IERC20Upgradeable | if operation is successful.
+### manager
+```solidity
+  function manager(
+  ) public returns (address)
+```
+Gets current _manager.
+
+Returns current _manager address.1
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Current`|  | _manager address.
+### setManager
+```solidity
+  function setManager(
+    address _newManager
+  ) public returns (bool)
+```
+Set or change of manager.
+
+Throws if called by any account other than the owner.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_newManager` | address | New _manager address.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Boolean`| address | to indicate if the operation was successful or not.
+### owner
+```solidity
+  function owner(
+  ) public returns (address)
+```
+
+Returns the address of the current owner.
+
+
+### renounceOwnership
+```solidity
+  function renounceOwnership(
+  ) public
+```
+
+Leaves the contract without owner. It will not be possible to call
+`onlyOwner` functions anymore. Can only be called by the current owner.
+NOTE: Renouncing ownership will leave the contract without an owner,
+thereby removing any functionality that is only available to the owner.
+
+
+### transferOwnership
+```solidity
+  function transferOwnership(
+  ) public
+```
+
+Transfers ownership of the contract to a new account (`newOwner`).
+Can only be called by the current owner.
+
+
 ## Events
 ### ClaimedDraw
 ```solidity
@@ -188,3 +252,24 @@ Emitted when ERC20 tokens are withdrawn from the claimable draw.
 |`token`| contract IERC20Upgradeable | ERC20 token transferred.
 |`to`| address | Address that received funds.
 |`amount`| uint256 | Amount of tokens transferred.
+### ManagerTransferred
+```solidity
+  event ManagerTransferred(
+    address newManager
+  )
+```
+
+Emitted when _manager has been changed.
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`newManager`| address | new _manager address.
+### OwnershipTransferred
+```solidity
+  event OwnershipTransferred(
+  )
+```
+
+
+
