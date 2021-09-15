@@ -1,0 +1,10 @@
+{
+  "peerDependencies": {
+    "@pooltogether/v4": "github://pooltogether/pooltogether-contract-tsunami#master",
+    "@pooltogether/v4-rinkeby": "github://pooltogether/v4-rinkeby",
+    "solc-0.8": "npm:solc@0.8.6",
+    "solidity-docgen": "^0.5.13",
+    "find": "^0.3.0",
+    "lodash": "^4.17.20"
+  }
+}
