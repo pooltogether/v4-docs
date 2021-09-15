@@ -249,9 +249,11 @@ export default function Home() {
             }}
           >
             <h1 style={{ fontWeight: "600" }}> Welcome to the PoolTogether Docs</h1>
+            {/*
             <HideMedium>
               <SearchBar />{" "}
             </HideMedium>
+            */}
           </div>
           <Row>
             {actions.map((action) => (

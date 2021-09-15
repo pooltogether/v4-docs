@@ -222,6 +222,10 @@ html[data-theme="dark"] .navbar__logo {
   color: var(--ifm-color-base);
 }
 
+.DocSearch {
+  display: none;
+}
+
 html[data-theme="light"] .DocSearch {
   /* --docsearch-primary-color: var(--ifm-color-primary); */
   /* --docsearch-text-color: var(--ifm-font-color-base); */
