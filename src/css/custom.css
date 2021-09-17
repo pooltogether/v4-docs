@@ -216,6 +216,17 @@ html[data-theme="dark"] .navbar__logo {
   margin-bottom: 16px;
 }
 
+.img-max {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .badge--secondary {
   --ifm-badge-background-color: var(--ifm-color-emphasis-0);
   --ifm-badge-border-color: var(--ifm-badge-background-color);

@@ -26,7 +26,7 @@ export const actions = [
     href: "#",
     icon: InformationCircleIcon,
     to: "./protocol/introduction",
-    text: `Learn about the core concepts of the PoolTogether protocol. A prize savings liquidity network.`,
+    text: `Learn about the core concepts of the PoolTogether protocol. A prize savings network.`,
   },
   {
     title: "Smart contract overview",

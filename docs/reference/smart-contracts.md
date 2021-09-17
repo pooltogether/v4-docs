@@ -5,9 +5,13 @@ skug: /reference
 sidebar_position: 1
 ---
 
-PoolTogether 4.0 is a prize savings liquidity network.  Users deposit into the network to win prize money.  The deposits generate yield, which is then distributed as prizes.   These are the two fundamental PoolTogether processes: yield capture and prize distribution.
+PoolTogether 4.0 is a prize savings network.  Users deposit into the network to win prize money.  The deposits generate yield, which is then distributed as prizes.   These are the two fundamental PoolTogether processes: yield capture and prize distribution.
 
-![Overview](/img/guides/Overview.png)
+<img
+  src={require('/img/guides/Overview.png').default}
+  alt='Overview'
+  class='img-max'
+/>
 
 
 # Yield Capture
@@ -18,13 +22,21 @@ Yield is captured by Prize Pools.  Users deposit into prize pools and receive "T
 
 There are no fees in PoolTogether 4.0!
 
-![Overview](/img/guides/PrizePool.png)
+<img
+  src={require('/img/guides/PrizePool.png').default}
+  alt='Prize Pool'
+  class='img-max'
+/>
 
 ## Prize Split Strategy & Protocol Reserve
 
 Each prize pool has a Prize Split Strategy that determines how interest is disbursed.  At any time anyone can tell the Prize Split Strategy to disburse the currently accrued interest.  The strategy will mint Tickets to the Protocol Reserve, which allows the protocol to measure the prize pool's reserve contribution and sweep the funds.
 
-![Overview](/img/guides/ProtocolReserve.png)
+<img
+  src={require('/img/guides/ProtocolReserve.png').default}
+  alt='Protocol Reserve'
+  class='img-max'
+/>
 
 # Prize Distribution
 
@@ -43,7 +55,11 @@ The Draw is created in two steps:
 1. The Draw is "started": the random number request is made to the RNG service.
 2. The Draw is "completed": the random number is consumed and a new Draw is pushed to the Draw History.
 
-![Overview](/img/guides/DrawBeacon.png)
+<img
+  src={require('/img/guides/DrawBeacon.png').default}
+  alt='Draw Beacon'
+  class='img-max'
+/>
 
 ## Claimable Draw
 
@@ -52,7 +68,11 @@ Users claim their prizes from the Claimable Draw, which holds the liquidity for 
 - Passes the Draw to the corresponding Draw Calculator to compute the total payout
 - Transfers the payout to the user
 
-![Overview](/img/guides/ClaimableDraw.png)
+<img
+  src={require('/img/guides/ClaimableDraw.png').default}
+  alt='Claimable Draw'
+  class='img-max'
+/>
 
 ## Tsunami Draw Calculator
 

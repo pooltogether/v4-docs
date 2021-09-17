@@ -1,6 +1,0 @@
-# Celo
-
-
-# Alfajores
-
-

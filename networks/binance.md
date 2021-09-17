@@ -1,6 +1,0 @@
-# BSC
-
-
-# BSC Testnet
-
-
