@@ -18,7 +18,7 @@
   --ifm-color-primary-lighter: #5a91ea;
   --ifm-color-primary-lightest: #80aaef;
 
-  --collapse-button-bg-color-dark: #2e333a;
+  --collapse-button-bg-color-dark: #3a332e;
 
   --ifm-code-font-size: 95%;
 
@@ -47,40 +47,25 @@
 }
 
 html[data-theme="dark"] {
-  --ifm-color-primary: white;
+  --ifm-color-primary: #1ef7d6;
   --ifm-color-primary-dark: #5a91ea;
+  --ifm-markdown-a-color: #f155ea;
+  --ifm-font-color-base: #e6daf1;
 
-  /* --ifm-color-secondary: black; */
-
-  /* --ifm-background-color: #191b1f; */
-  --ifm-navbar-background-color: #191b1f;
+  --ifm-navbar-background-color: #13021f;
   --ifm-global-shadow-md: 0 5px 40px rgba(255, 255, 255, 0.448);
+  --ifm-footer-background-color: #0f0027;
+  --ifm-toc-border-color: #072d33;
+  --ifm-table-stripe-background: rgba(90, 145, 234, 0.1);
+  --ifm-table-border-color: #ffffff1a;
 
-  background-position: 0px -30vh;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(33, 114, 229, 0.1) 0%,
-    rgba(33, 36, 41, 0) 100%
-  );
-
-  /* any other colors you wish to overwrite */
+  background-color: #0f0027;
+  background-image:  linear-gradient(180deg,#180333 -20%,#13032e 50%,#180333 120%);
 }
 
 html[data-theme="light"] {
-  --ifm-color-primary: black;
-  /* --ifm-color-secondary: white; */
-  /* --ifm-background-color: #F1F1F2; */
-
-  background-position: 0px -30vh;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(179, 0, 255, 0.1) 0%,
-    rgba(20, 0, 70, 0) 100%
-  );
-
-  /* any other colors you wish to overwrite */
+  --ifm-color-primary: rgb(157, 33, 230);
+  --ifm-markdown-a-color: rgb(10, 112, 245);
 }
 
 .html {
@@ -97,7 +82,8 @@ html[data-theme="light"] {
 }
 
 .markdown a {
-  color: #3578e5;
+  /* color: #3578e5; */
+  color: var(--ifm-markdown-a-color);
 }
 
 p {
@@ -200,8 +186,8 @@ html[data-theme="light"] .navbar {
 }
 
 html[data-theme="dark"] .navbar__logo {
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(337deg)
-    brightness(112%) contrast(104%);
+  /* filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(337deg)
+    brightness(112%) contrast(104%); */
 }
 
 .docusaurus-highlight-code-line {

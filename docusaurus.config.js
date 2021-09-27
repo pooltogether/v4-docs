@@ -12,6 +12,7 @@ module.exports = {
     image: 'img/twitter_card_bg.jpg',
     prism: {
       additionalLanguages: ['solidity'],
+      theme: require('prism-react-renderer/themes/dracula'),
     },
     /*
     algolia: {
