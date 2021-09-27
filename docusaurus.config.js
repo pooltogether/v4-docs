@@ -1,13 +1,13 @@
 module.exports = {
   title: 'PoolTogether',
   tagline: 'Documentation and Guides',
-  url: 'https://docs.pooltogether.com/',
+  url: 'https://v4-docs.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.png',
   organizationName: 'PoolTogether', // Usually your GitHub org/user name.
-  projectName: 'PoolTogether-docs', // Usually your repo name.
+  projectName: 'v4-docs', // Usually your repo name.
   themeConfig: {
     image: 'img/twitter_card_bg.jpg',
     prism: {

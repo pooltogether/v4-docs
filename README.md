@@ -3,7 +3,7 @@
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 # Contributing to PoolTogether Docs
-Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](https://github.com/PoolTogether/pooltogether-docs/blob/main/CONTRIBUTING.md).
+Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](https://github.com/PoolTogether/v4-docs/blob/main/CONTRIBUTING.md).
 
 # How to generate markdown files from solidity Natspec comments
 

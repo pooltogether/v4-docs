@@ -17,7 +17,7 @@ Set up your fork with the following terminal commands, or an alteration of them 
 
 ```
 cd pooltogether-docs
-git remote add upstream https://github.com/PoolTogether/pooltogether-docs.git
+git remote add upstream https://github.com/PoolTogether/v4-docs.git
 git fetch upstream
 git pull --rebase upstream main
 git checkout -b "my-contribution"
