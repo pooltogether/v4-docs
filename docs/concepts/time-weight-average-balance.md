@@ -11,7 +11,7 @@ The Time-Weighted Average Balance can determine a users balance at any time in t
 
 
 
-If a user held 100 tokens between Dec 20 and Dec 27, then their average balance was 100.  If instead they bought another 100 tokens halfway through, then their average should be 150.
+If a user held 100 tokens between Dec 20 and Dec 27, then their average balance was 100.  If instead they bought another 100 tokens halfway through, then their average should be 50.
 
 # Borrowing Ideas from Uniwap
 
