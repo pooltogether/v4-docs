@@ -17,6 +17,10 @@ The following is a brief overview of the _PoolTogether protocol_
 
 ## The PoolTogether Protocol
 
-PoolTogether promotes financial security by making it fun to save.  The protocol distributes yield on deposits as prizes: which turns your weekly interest into an exciting, no-loss game.
+PoolTogether promotes financial security by making it fun to save.
 
-PoolTogether V4 is a prize savings network: users deposit into the network, yield accrues on their deposits, and the yield is randomly distributed as prizes to users.
+1. 🏦 **Users deposit into the network**
+2. 📈 **Yield accrues on deposits**
+3. 🏆 **The yield is randomly awarded as prizes to the users.**
+
+The protocol turns your interest into fun prizes!  You never lose your principal, and have a chance to win big.

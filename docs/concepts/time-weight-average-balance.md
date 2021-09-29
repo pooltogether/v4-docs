@@ -1,6 +1,6 @@
 ---
 title: "Time-Weighted Average Balance"
-position: 3
+sidebar_position: 3
 ---
 
 The Time-Weighted Average Balance can determine a users balance at any time in the past, or their average balance held between two times.

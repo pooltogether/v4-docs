@@ -13,7 +13,6 @@ PoolTogether 4.0 is a prize savings network.  Users deposit into the network to 
   class='img-max'
 />
 
-
 # Yield Capture
 
 ## Prize Pools
@@ -48,7 +47,7 @@ Let's dive into more detail.
 
 ## Draw Beacon & Draw History
 
-The Draw Beacon acts as the heartbeat of a prize network by periodically creating Draws. It has a start time and a period, which together determine when Draws can be created.  When the period has elapsed, anyone can create a new Draw. The resulting Draw will be pushed onto the Draw History, which stores the last 256 Draws.
+The Draw Beacon acts as the heartbeat of a prize network by periodically creating Draws. It has a start time and a period, which together determine when Draws can be created. When the period has elapsed, anyone can create a new Draw. The resulting Draw will be pushed onto the Draw History, which stores the last 256 Draws.
 
 The Draw is created in two steps:
 
@@ -61,22 +60,22 @@ The Draw is created in two steps:
   class='img-max'
 />
 
-## Claimable Draw
+## Draw Prize
 
-Users claim their prizes from the Claimable Draw, which holds the liquidity for all draws for a prize pool.   When a user claims the prizes for a draw:
-- The Claimable Draw pulls the Draw information from the Draw History
-- Passes the Draw to the corresponding Draw Calculator to compute the total payout
-- Transfers the payout to the user
+Users claim their prizes from the DrawPrize contract, which holds the liquidity for all draw prizes for a prize pool.   When a user claims the prizes for a draw:
+
+- The DrawPrize determines the payout size using the Draw Calculator
+- The DrawPrize transfers the payout as tickets to the user
 
 <img
-  src={require('/img/guides/ClaimableDraw.png').default}
-  alt='Claimable Draw'
+  src={require('/img/guides/DrawPrize.png').default}
+  alt='Draw Prize'
   class='img-max'
 />
 
-## Tsunami Draw Calculator
+## Draw Calculator
 
-The Tsunami Draw Calculator
+The Draw Calculator
 
 ## Draw Settings
 
