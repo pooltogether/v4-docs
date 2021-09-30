@@ -34,6 +34,8 @@ The multisig will be tasked with:
 
 The launch architecture for PoolTogether emphasizes the mantra **"don't trust, verify!"**.  The integrity of the Draw and Prize Distributions can be verified using on-chain data, so anyone can check that the prizes are correct.
 
-The core responsibility of the multisig will be to monitor the Defender autotask to ensure it propagates the correct Draw and Prize Distribution configurations.  The DrawCalculatorTimelocks require 24 hours to pass after being triggered before allowing the Draw or Prize Distribution data to be used. This give the executive team ample time to fix any discrepencies by overriding the state.
+The core responsibility of the multisig will be to monitor the Defender autotask to ensure it propagates the correct Draw and Prize Distribution configurations. The DrawCalculatorTimelocks require 24 hours to pass after being triggered before allowing the Draw or Prize Distribution data to be used. This give the executive team ample time to fix any discrepencies by overriding the state.
 
 **It's important to note that deposited are never custodied.** Neither the multisig or Defender have access to user deposits.
+
+As the protocol decentralizes the privileged roles will be reduced in order to minimize trust and maximize automation.
