@@ -4,11 +4,11 @@ sidebar_label: "Prize Pool Network"
 sidebar_position: 1
 ---
 
-PoolTogether V4 is unique as it enables Prize Pool Networks.  A Prize Pool Network allows users across chains, with different assets, or different yield sources to combine their interest and share a single pool of prize liquidity.  There are three main processes:
+PoolTogether V4 is unique as it enables a Prize Pool Network.  A Prize Pool Network allows users across chains, with different assets, or different yield sources to combine their interest and share a single pool of prize liquidity.  There are three main processes:
 
-1. Interest is captured by the network
+1. Interest is captured by prize pools on the network.
 2. Prize distributions are pushed out to the network.  This is not prize liquidity, but rather the structure of the distributions.
-3. Prize liquidity is pushed out to the network
+3. Prize liquidity is ensured on all networks (enabling users to claim prizes on the networks they deposited).
 
 ## Capturing Interest
 
@@ -32,7 +32,7 @@ The prize pool yield contributions are compared and weighted odds are pushed out
 
 ## Prize Liquidity
 
-Prize Pools will largely feed off of their own interest, but liquidity will need to be rebalanced by the protocol to satisfy prize distributions.
+Prize Pools will largely feed off of their own interest, but at times liquidity may need to be rebalanced by the protocol to satisfy prize distributions. Initially the "prize draw" contract on each chain will be bootstrapped to ensure there is always enough liqudity for users to claim prizes on that chain. 
 
 <img
   src={require('/img/guides/PrizeDistribution.png').default}

@@ -92,3 +92,23 @@ average balance = (2500 - 0) / (20 - 0) = 125
 ```
 
 Does this intuitively feel correct?  The user held 100 for 10 seconds, then held 150 for ten seconds. Yup.  That's right.
+
+# Measuring Liquidity Contribution
+
+We can use a TWAB for the user's balance and a TWAB for the total supply to determine a user's share of the liquidity supplied in the past.
+
+The formula is quite simple:
+
+```
+users fraction of liquidity = average balance between (t1, t2) / average total supply between (t1, t2)
+```
+
+# Gas Overhead
+
+Gas cost is a significant improvement over PoolTogether V3, but there is still significant overhead.  Assuming a "cold" account is an address that has not held any tokens, and a "hot" address is one that has held tokens in the past, we have some approximate gas usage:
+
+| Operation | Gas Used |
+| --------- | -------- |
+| mint (cold) | 140k |
+| transfer (hot -> cold) | 120k |
+| transfer (hot -> hot) | 90k |
