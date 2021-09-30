@@ -1,0 +1,39 @@
+---
+title: Launch Architecture
+sidebar_position: 2
+---
+
+At launch, the prize pool network will include a USDC prize pool on Ethereum and a USDC prize pool on Polygon.  The diagram below outlines the main components in the system.
+
+(Click image to open in new tab)
+
+<a href={require('/img/guides/V4_Launch_Architecture.png').default} target="_blank">
+  <img
+    src={require('/img/guides/V4_Launch_Architecture.png').default}
+    alt='Prize Pool'
+    class='img-full'
+  />
+</a>
+
+## Progressive Decentralization
+
+PoolTogether will be taking a progressive approach to decentralization.  These prize pools will be linked using a multisig and an [OpenZeppelin Defender](https://openzeppelin.com/defender/) Autotask.  Later, as we streamline the process we will transition control to an IBC protocol.
+
+The OpenZeppelin Defender Autotask is mainly for transaction automation.  It will be responsible for:
+
+- Triggering the Draw Beacon on Ethereum to create new Draws (public call)
+- Flushing interest from the prize pool directly into the DrawPrize contract. (public call)
+- Pushing new Prize Distributions to the Ethereum prize pool. (privileged call)
+- Copying Draws and Prize Distributions from the Ethereum prize pool to the Polygon prize pool. (privileged call)
+
+The multisig will be tasked with:
+
+- Moving funds into the Draw Prize contract to provide prize liquidity for claiming (public call)
+- Verifying Prize Distributions on Ethereum and overriding them if there is a mismatch (privileged call)
+- Verifying Draws and Prize Distributions on Polygon and overriding them if there is a mismatch (privileged call)
+
+The launch architecture for PoolTogether emphasizes the mantra **"don't trust, verify!"**.  The integrity of the Draw and Prize Distributions can be verified using on-chain data, so anyone can check that the prizes are correct.
+
+The core responsibility of the multisig will be to monitor the Defender autotask to ensure it propagates the correct Draw and Prize Distribution configurations.  The DrawCalculatorTimelocks require 24 hours to pass after being triggered before allowing the Draw or Prize Distribution data to be used. This give the executive team ample time to fix any discrepencies by overriding the state.
+
+**It's important to note that deposited are never custodied.** Neither the multisig or Defender have access to user deposits.
