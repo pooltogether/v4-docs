@@ -22,7 +22,7 @@ Users deposit into Prize Pool contracts, which generate yield that goes to the n
 
 ## Distributing Prizes
 
-The prize pool yield contributions are compared, and weighted odds are pushed out to each prize pool.  Note, that these are the *odds* that are pushed out, not the actual prize liquidity.  The possible prizes for all users is the same, but their odds are weighted according to how much liquidity they contributed to the prize network liquidity.
+The prize pool yield contributions are compared and weighted odds are pushed out to each prize pool.  Note, that these are the *odds* that are pushed out, not the actual prize liquidity.  The possible prizes for all users is the same, but their odds are weighted according to how much liquidity they contributed to the prize network liquidity.
 
 <img
   src={require('/img/guides/TsunamiBroadcast.png').default}
