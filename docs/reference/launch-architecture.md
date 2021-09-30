@@ -39,3 +39,24 @@ The core responsibility of the multisig will be to monitor the Defender autotask
 **It's important to note that deposited are never custodied.** Neither the multisig or Defender have access to user deposits.
 
 As the protocol decentralizes the privileged roles will be reduced in order to minimize trust and maximize automation.
+
+## Attacks and Mitigations
+
+There are two specific types of attack that we've mitigated using timelocks:
+
+- Defender bug or attack
+- Cross-chain front-running
+
+### Defender Bug or Attack
+
+If the Defender script has a bug or been compromised then the Draw, Prize Distribution, or both will be corrupted.  The Draw Calculator Timelock will be 24 hours long to mitigate this problem.
+
+This means that the Draw and Prize Distributions cannot be used until 24 hours have elapsed after submission.  This affords the multisig an ample window of time to fix the problem.
+
+### Front-running
+
+The Draw Beacon on Ethereum will be using the Chainlink VRF to request a random number and create a new Draw.  The Defender autotask will propagate the Draw to Polygon.  Front-running on Ethereum isn't possible because the Draw timestamp is set when the RNG is requested, before the reveal.
+
+However, on Polygon, if a user sees the VRF reveal and the Polygon chain is a few seconds behind then the user can quickly deposit using a wallet of their choice into the Polygon pool.  This means they could calculate a wallet that wins the grand prize and deposit using that wallet.
+
+To mitigate this problem, we look at user balances one hour prior to the draw timestamp.  This allows for clock drift between Ethereum and Polygon for as much as an hour.  Totally overkill, but we can decrease it over time.
