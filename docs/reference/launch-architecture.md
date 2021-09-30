@@ -1,6 +1,6 @@
 ---
 title: Launch Architecture
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 At launch, the prize pool network will include a USDC prize pool on Ethereum and a USDC prize pool on Polygon.  The diagram below outlines the main components in the system.
