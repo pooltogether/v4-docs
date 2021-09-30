@@ -415,6 +415,7 @@ export default function Home() {
               dark: useBaseUrl("/img/use2.png"),
             }}
           />
+          {/*
           <div>
             <h2>Quick Links</h2>
             <p></p>
@@ -441,6 +442,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          */}
         </TwoRow>
 
         <hr />
