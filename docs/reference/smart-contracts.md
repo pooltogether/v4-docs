@@ -75,8 +75,6 @@ Users claim their prizes from the DrawPrize contract, which holds the liquidity 
 
 ## Draw Calculator
 
-The Draw Calculator
+The Draw Calculator determines the prize payout amount for each pick.  For an in-depth explanation see [Prize Distribution](/protocol/concepts/prize-distribution).
 
-## Draw Settings
-
-Each Draw has a setting object that determines the prize size and distribution.  The calculator has a "manager" that updates the settings for new Draws.  When the manager updates the settings, the calculator sets itself as the calculator for the draw in the Claimable Draw.  This may seem redundant, but it allows us to swap which calculator the Claimable Draw uses.
+To calculate the payout for a draw, the Draw Calculator will retrieve the Draw and Prize Distribution for the given draw id.  The Draw includes the winning random number and timestamp, and the Prize Distribution includes the data required to calculate winners.

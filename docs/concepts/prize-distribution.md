@@ -18,8 +18,8 @@ The algorithm is called Tsunami as it brings a massive wave of prizes.
 Prizes are distributed through weekly draws:
 
 - Each draw has a set of prize distribution parameters, including a randomly generated winning number
-- Users submit their winning "picks" for a draw to claim prizes.  Picks are pseudo-random numbers that are allocated to each user for each draw.  Users can only claim up to a certain number of picks per draw.
-- The degree to which a pick matches the draw's winning number determines the tier of prize that the user can claim.  The matching algorithm can be configured per-draw.
+- Users submit their winning "picks" to claim prizes.  Picks are pseudo-random numbers that are allocated to each user for each draw.  Users can only claim up to a certain number of picks per draw.
+- The degree to which a pick matches the draw's winning number determines the prize size for the pick.  The matching algorithm is configured per-draw.
 
 ## Matching Algorithm
 
@@ -29,7 +29,7 @@ Each pick is 256 bits long.  Let's interpret the first 32 bits as 8 numbers.  Th
 
 If the pick is `0x12345678....`, then the first 8 numbers are 1, 2, 3, 4, 5, 6, 7, 8.
 
-We call the number of bits for each number the **bit range**, and the number of numbers is the **cardinality**.  In the above example the bit range is 4 and the cardinality is 8.
+We call the number of bits for each number the **bit range**, and the number of numbers the **cardinality**.  In the above example the bit range is 4 and the cardinality is 8.
 
 Continuing the above example, let's assume the winning number is `0x123fe678...`.  With bit range of 4 and cardinality 8 the first 8 numbers will be 1, 2, 3, f, e, 6, 7, 8.
 

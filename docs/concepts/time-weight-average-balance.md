@@ -105,7 +105,7 @@ users fraction of liquidity = average balance between (t1, t2) / average total s
 
 # Gas Overhead
 
-Gas cost is a significant improvement over PoolTogether V3, but there is still significant overhead.  Assuming a "cold" account is an address that has not held any tokens, and a "hot" address is one that has held tokens in the past, we have some approximate gas usage:
+The TWAB incurs overhead to Ticket mint, transfer and burn costs.  Assuming a "cold" account is an address that has not held any tokens, and a "hot" address is one that has held tokens in the past, we have some approximate gas usage:
 
 | Operation | Gas Used |
 | --------- | -------- |
