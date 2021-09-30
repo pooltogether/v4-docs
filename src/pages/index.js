@@ -39,12 +39,12 @@ export const actions = [
 
 export const github = [
   {
-    title: "pooltogether-v4",
+    title: "Code on Github",
     href: "https://github.com/PoolTogether/pooltogether-contract-tsunami",
     icon: CodeIcon,
   },
   {
-    title: "Deployment addresses",
+    title: "Deployments",
     href: "/protocol/reference/deployments/testnet"
   },
 ];
@@ -286,6 +286,7 @@ export default function Home() {
           </Row>
         </DocsHeader>
 
+        {/*
         <TwoRow
           style={{
             gap: "56px",
@@ -325,6 +326,8 @@ export default function Home() {
               ))}
             </div>
           </div>
+        */}
+        <Row>
           <div>
             <h2>Developer Links</h2>
             <p>
@@ -399,9 +402,14 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          </Row>
+              {/*
         </TwoRow>
+      */}
 
+          {/*
         <hr />
+
         <TwoRow
           style={{
             gap: "48px",
@@ -415,7 +423,6 @@ export default function Home() {
               dark: useBaseUrl("/img/use2.png"),
             }}
           />
-          {/*
           <div>
             <h2>Quick Links</h2>
             <p></p>
@@ -442,8 +449,8 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          */}
         </TwoRow>
+          */}
 
         <hr />
 
