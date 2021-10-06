@@ -10,8 +10,8 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "add-contracts-category": "echo '{ \"label\": \"Contracts\", \"position\": 3 }' > docs/reference/Contracts/_category_.json",
-    "add-deployments-category": "echo '{ \"label\": \"Deployments\", \"position\": 2 }' > docs/reference/deployments/_category_.json",
+    "add-contracts-category": "echo '{ \"label\": \"Contracts\", \"position\": 5 }' > docs/reference/Contracts/_category_.json",
+    "add-deployments-category": "echo '{ \"label\": \"Deployments\", \"position\": 6 }' > docs/reference/deployments/_category_.json",
     "gen-solidity-docs": "rm -rf docs/reference/core/** && yarn add-contracts-category && solidity-docgen --solc-module solc-0.8 -i node_modules/@pooltogether/v4/contracts -o docs/reference/core -t templates",
     "gen-deployments": "rm -rf docs/reference/deployments/** && yarn add-deployments-category && ./scripts/generateDeployments.js"
   },
