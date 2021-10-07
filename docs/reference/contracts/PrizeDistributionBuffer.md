@@ -1,10 +1,8 @@
-The DrawBuffer keeps a historical record of Draws created/pushed by DrawBeacon(s).
-            Once a DrawBeacon (on mainnet) completes a RNG request, a new Draw will be added
-            to the DrawBuffer draws ring buffer. A DrawBuffer will store a limited number
-            of Draws before beginning to overwrite (managed via the cardinality) previous Draws.
-            All mainnet DrawBuffer(s) are updated directly from a DrawBeacon, but non-mainnet
-            DrawBuffer(s) (Matic, Optimism, Arbitrum, etc...) will receive a cross-chain message,
-            duplicating the mainnet Draw configuration - enabling a prize savings liquidity network.
+The PrizeDistributionBuffer contract provides historical lookups of PrizeDistribution struct parameters (linked with a Draw ID) via a
+            circular ring buffer. Historical PrizeDistribution parameters can be accessed on-chain using a drawId to calculate
+            ring buffer storage slot. The PrizeDistribution parameters can be created by manager/owner and existing PrizeDistribution
+            parameters can only be updated the owner. When adding a new PrizeDistribution basic sanity checks will be used to
+            validate the incoming parameters.
 
 ## Functions
 ### constructor
@@ -14,115 +12,124 @@ The DrawBuffer keeps a historical record of Draws created/pushed by DrawBeacon(s
     uint8 _cardinality
   ) public
 ```
-Deploy DrawBuffer smart contract.
+Constructor for PrizeDistributionBuffer
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address | Address of the owner of the DrawBuffer.
-|`_cardinality` | uint8 | Draw ring buffer cardinality.
+|`_owner` | address | Address of the PrizeDistributionBuffer owner
+|`_cardinality` | uint8 | Cardinality of the `bufferMetadata`
 
-### getDraw
+### getBufferCardinality
 ```solidity
-  function getDraw(
-    uint32 drawId
-  ) external returns (struct DrawLib.Draw)
-```
-Read a Draw from the draws ring buffer.
-
-   Read a Draw using the Draw.drawId to calculate position in the draws ring buffer.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`drawId` | uint32 | Draw.drawId
-
-
-### getDraws
-```solidity
-  function getDraws(
-    uint32[] drawIds
-  ) external returns (struct DrawLib.Draw[])
-```
-Read multiple Draws from the draws ring buffer.
-
-   Read multiple Draws using each Draw.drawId to calculate position in the draws ring buffer.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`drawIds` | uint32[] | Array of Draw.drawIds
-
-
-### getDrawCount
-```solidity
-  function getDrawCount(
+  function getBufferCardinality(
   ) external returns (uint32)
 ```
-Gets the number of Draws held in the draw ring buffer.
+Read a ring buffer cardinality
 
-If no Draws have been pushed, it will return 0.
-If the ring buffer is full, it will return the cardinality.
-Otherwise, it will return the NewestDraw index + 1.
 
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`|  | of Draws held in the draw ring buffer.
-### getNewestDraw
+|`Ring`|  | buffer cardinality
+### getPrizeDistribution
 ```solidity
-  function getNewestDraw(
-  ) external returns (struct DrawLib.Draw)
+  function getPrizeDistribution(
+    uint32 drawId
+  ) external returns (struct IPrizeDistributionBuffer.PrizeDistribution)
 ```
-Read newest Draw from the draws ring buffer.
+Gets the PrizeDistributionBuffer for a drawId
 
-   Uses the nextDrawIndex to calculate the most recently added Draw.
-
-
-
-### getOldestDraw
-```solidity
-  function getOldestDraw(
-  ) external returns (struct DrawLib.Draw)
-```
-Read oldest Draw from the draws ring buffer.
-
-   Finds the oldest Draw by comparing and/or diffing totalDraws with the cardinality.
-
-
-
-### pushDraw
-```solidity
-  function pushDraw(
-    struct DrawLib.Draw draw
-  ) external returns (uint32)
-```
-Push Draw onto draws ring buffer history.
-
-   Push new draw onto draws history via authorized manager or owner.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`draw` | struct DrawLib.Draw | DrawLib.Draw
+|`drawId` | uint32 | drawId
 
 
-### setDraw
+### getPrizeDistributions
 ```solidity
-  function setDraw(
-    struct DrawLib.Draw newDraw
-  ) external returns (uint32)
+  function getPrizeDistributions(
+    uint32[] drawIds
+  ) external returns (struct IPrizeDistributionBuffer.PrizeDistribution[])
 ```
-Set existing Draw in draws ring buffer with new parameters.
+Gets PrizeDistribution list from array of drawIds
 
-   Updating a Draw should be used sparingly and only in the event an incorrect Draw parameter has been stored.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newDraw` | struct DrawLib.Draw | DrawLib.Draw
+|`drawIds` | uint32[] | drawIds to get PrizeDistribution for
+
+
+### getPrizeDistributionCount
+```solidity
+  function getPrizeDistributionCount(
+  ) external returns (uint32)
+```
+Gets the number of PrizeDistributions stored in the prize distributions ring buffer.
+
+If no Draws have been pushed, it will return 0.
+If the ring buffer is full, it will return the cardinality.
+Otherwise, it will return the NewestPrizeDistribution index + 1.
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Number`|  | of PrizeDistributions stored in the prize distributions ring buffer.
+### getNewestPrizeDistribution
+```solidity
+  function getNewestPrizeDistribution(
+  ) external returns (struct IPrizeDistributionBuffer.PrizeDistribution prizeDistribution, uint32 drawId)
+```
+Read newest PrizeDistribution from prize distributions ring buffer.
+
+   Uses nextDrawIndex to calculate the most recently added PrizeDistribution.
+
+
+
+### getOldestPrizeDistribution
+```solidity
+  function getOldestPrizeDistribution(
+  ) external returns (struct IPrizeDistributionBuffer.PrizeDistribution prizeDistribution, uint32 drawId)
+```
+Read oldest PrizeDistribution from prize distributions ring buffer.
+
+   Finds the oldest Draw by buffer.nextIndex and buffer.lastDrawId
+
+
+
+### pushPrizeDistribution
+```solidity
+  function pushPrizeDistribution(
+    uint32 drawId,
+    struct IPrizeDistributionBuffer.PrizeDistribution prizeDistribution
+  ) external returns (bool)
+```
+Adds new PrizeDistribution record to ring buffer storage.
+
+   Only callable by the owner or manager
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`drawId` | uint32 |            Draw ID linked to PrizeDistribution parameters
+|`prizeDistribution` | struct IPrizeDistributionBuffer.PrizeDistribution | PrizeDistribution parameters struct
+
+### setPrizeDistribution
+```solidity
+  function setPrizeDistribution(
+  ) external returns (uint32)
+```
+Sets existing PrizeDistribution with new PrizeDistribution parameters in ring buffer storage.
+
+   Retroactively updates an existing PrizeDistribution and should be thought of as a "safety"
+               fallback. If the manager is setting invalid PrizeDistribution parameters the Owner can update
+               the invalid parameters with correct parameters.
+
 
 
 ### manager
@@ -217,6 +224,19 @@ This function is only callable by the `_pendingOwner`.
 
 
 ## Events
+### Deployed
+```solidity
+  event Deployed(
+    uint8 cardinality
+  )
+```
+Emitted when the contract is deployed.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`cardinality`| uint8 | The maximum number of records in the buffer before they begin to expire.
 ### ManagerTransferred
 ```solidity
   event ManagerTransferred(
@@ -260,18 +280,18 @@ Emitted when `_owner` has been changed.
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |`previousOwner`| address | previous `_owner` address.
 |`newOwner`| address | new `_owner` address.
-### DrawSet
+### PrizeDistributionSet
 ```solidity
-  event DrawSet(
+  event PrizeDistributionSet(
     uint32 drawId,
-    struct DrawLib.Draw draw
+    struct IPrizeDistributionBuffer.PrizeDistribution prizeDistribution
   )
 ```
-Emit when a new draw has been created.
+Emit when PrizeDistribution is set.
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`drawId`| uint32 | Draw id
-|`draw`| struct DrawLib.Draw | The Draw struct
+|`drawId`| uint32 |       Draw id
+|`prizeDistribution`| struct IPrizeDistributionBuffer.PrizeDistribution | IPrizeDistributionBuffer.PrizeDistribution

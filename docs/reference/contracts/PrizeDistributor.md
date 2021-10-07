@@ -1,8 +1,8 @@
-The DrawPrize distributes claimable draw prizes to users via a pull model.
-            Managing the regularly captured PrizePool interest, a DrawPrize is the
-            entrypoint for users to submit Draw.drawId(s) and winning pick indices.
-            Communicating with a DrawCalculator, the DrawPrize will determine the maximum
-            prize payout and transfer those tokens directly to a user address.
+The PrizeDistributor contract holds Tickets (captured interest) and distributes tickets to users with winning draw claims.
+              PrizeDistributor uses an external IDrawCalculator to validate a users draw claim, before awarding payouts. To prevent users 
+              from reclaiming prizes, a payout history for each draw claim is mapped to user accounts. Reclaiming a draw can occur
+              if an "optimal" prize was not included in previous claim pick indices and the new claims updated payout is greater then
+              the previous prize distributor claim payout.
 
 ## Functions
 ### constructor
@@ -13,14 +13,14 @@ The DrawPrize distributes claimable draw prizes to users via a pull model.
     contract IDrawCalculator _drawCalculator
   ) public
 ```
-Initialize DrawPrize smart contract.
+Initialize PrizeDistributor smart contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address |           Address of the DrawPrize owner
-|`_token` | contract IERC20 |           Token address
+|`_owner` | address |          Owner address
+|`_token` | contract IERC20 |          Token address
 |`_drawCalculator` | contract IDrawCalculator | DrawCalculator address
 
 ### claim
@@ -31,8 +31,14 @@ Initialize DrawPrize smart contract.
     bytes data
   ) external returns (uint256)
 ```
-Claim a user token payouts via a collection of draw ids and pick indices.
+Claim prize payout(s) by submitting valud drawId(s) and winning pick indice(s). The user address
+               is used as the "seed" phrase to generate random numbers.
 
+   The claim function is public and any wallet may execute claim on behalf of another user.
+               Prizes are always paid out to the designated user account and not the caller (msg.sender).
+               Claiming prizes is not limited to a single transaction. Reclaiming can be executed
+               subsequentially if an "optimal" prize was not included in previous claim pick indices. The
+               payout difference for the new claim is calculated during the award process and transfered to user.
 
 #### Parameters:
 | Name | Type | Description                                                          |
@@ -44,13 +50,36 @@ Claim a user token payouts via a collection of draw ids and pick indices.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Actual`| address | claim payout.  If the user has previously claimed a draw, this may be less.
+|`Total`| address | claim payout. May include calcuations from multiple draws.
+### withdrawERC20
+```solidity
+  function withdrawERC20(
+    contract IERC20 token,
+    address to,
+    uint256 amount
+  ) external returns (bool)
+```
+Transfer ERC20 tokens out of contract to recipient address.
+
+   Only callable by contract owner.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`token` | contract IERC20 |  ERC20 token to transfer.
+|`to` | address |     Recipient of the tokens.
+|`amount` | uint256 | Amount of tokens to transfer.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`true`| contract IERC20 | if operation is successful.
 ### getDrawCalculator
 ```solidity
   function getDrawCalculator(
   ) external returns (contract IDrawCalculator)
 ```
-Read DrawCalculator
+Read global DrawCalculator address.
 
 
 
@@ -76,7 +105,7 @@ Get the amount that a user has already been paid out for a draw
   function getToken(
   ) external returns (contract IERC20)
 ```
-Read global Ticket variable.
+Read global Ticket address.
 
 
 
@@ -84,44 +113,21 @@ Read global Ticket variable.
 ### setDrawCalculator
 ```solidity
   function setDrawCalculator(
-    contract IDrawCalculator _newCalculator
+    contract IDrawCalculator newCalculator
   ) external returns (contract IDrawCalculator)
 ```
-Sets DrawCalculator reference for individual draw id.
+Sets DrawCalculator reference contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_newCalculator` | contract IDrawCalculator |  DrawCalculator address
+|`newCalculator` | contract IDrawCalculator | DrawCalculator address
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`New`| contract IDrawCalculator | DrawCalculator address
-### withdrawERC20
-```solidity
-  function withdrawERC20(
-    contract IERC20 _erc20Token,
-    address _to,
-    uint256 _amount
-  ) external returns (bool)
-```
-Transfer ERC20 tokens out of this contract.
-
-   This function is only callable by the owner.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_erc20Token` | contract IERC20 | ERC20 token to transfer.
-|`_to` | address | Recipient of the tokens.
-|`_amount` | uint256 | Amount of tokens to transfer.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`true`| contract IERC20 | if operation is successful.
 ### owner
 ```solidity
   function owner(
@@ -218,14 +224,14 @@ Emitted when `_owner` has been changed.
     uint256 payout
   )
 ```
-Emitted when a user has claimed N draw payouts.
+Emit when user has claimed token from the PrizeDistributor.
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`user`| address |        User address receiving draw claim payouts
-|`drawId`| uint32 |      Draw id that was paid out
+|`user`| address |   User address receiving draw claim payouts
+|`drawId`| uint32 | Draw id that was paid out
 |`payout`| uint256 | Payout for draw
 ### DrawCalculatorSet
 ```solidity
@@ -233,7 +239,7 @@ Emitted when a user has claimed N draw payouts.
     contract IDrawCalculator calculator
   )
 ```
-Emitted when a DrawCalculator is set
+Emit when DrawCalculator is set.
 
 
 #### Parameters:
@@ -246,7 +252,7 @@ Emitted when a DrawCalculator is set
     contract IERC20 token
   )
 ```
-Emitted when a global Ticket variable is set.
+Emit when Token is set.
 
 
 #### Parameters:
@@ -261,12 +267,12 @@ Emitted when a global Ticket variable is set.
     uint256 amount
   )
 ```
-Emitted when ERC20 tokens are withdrawn
+Emit when ERC20 tokens are withdrawn.
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`token`| contract IERC20 | ERC20 token transferred.
-|`to`| address | Address that received funds.
+|`token`| contract IERC20 |  ERC20 token transferred.
+|`to`| address |     Address that received funds.
 |`amount`| uint256 | Amount of tokens transferred.

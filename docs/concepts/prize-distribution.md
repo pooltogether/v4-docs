@@ -111,7 +111,7 @@ The prize for each degree must be split among these, so we have:
 
 ## Claiming Picks
 
-A user can claim the winnings for picks by submitting the winning pick indices to the Draw Prize contract.  The draw prize contract will calculate their payout.  However- there is a limit to the number of picks they can claim.  This is both due to computational limitations as well as helping mitigate whales from scooping all the prizes.  The whales have a higher chance of winning good picks, but cannot claim all of them.
+A user can claim the winnings for picks by submitting the winning pick indices to the Prize Distributor contract.  The Prize Distributor contract will calculate their payout.  However- there is a limit to the number of picks they can claim.  This is both due to computational limitations as well as helping mitigate whales from scooping all the prizes.  The whales have a higher chance of winning good picks, but cannot claim all of them.
 
 ## Summary
 

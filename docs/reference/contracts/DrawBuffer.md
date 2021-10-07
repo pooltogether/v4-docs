@@ -1,10 +1,10 @@
-The DrawBuffer keeps a historical record of Draws created/pushed by DrawBeacon(s).
-            Once a DrawBeacon (on mainnet) completes a RNG request, a new Draw will be added
-            to the DrawBuffer draws ring buffer. A DrawBuffer will store a limited number
-            of Draws before beginning to overwrite (managed via the cardinality) previous Draws.
-            All mainnet DrawBuffer(s) are updated directly from a DrawBeacon, but non-mainnet
-            DrawBuffer(s) (Matic, Optimism, Arbitrum, etc...) will receive a cross-chain message,
-            duplicating the mainnet Draw configuration - enabling a prize savings liquidity network.
+The DrawBuffer provides historical lookups of Draws via a circular ring buffer.
+            Historical Draws can be accessed on-chain using a drawId to calculate ring buffer storage slot.
+            The Draw settings can be created by manager/owner and existing Draws can only be updated the owner.
+            Once a starting Draw has been added to the ring buffer, all following draws must have a sequential Draw ID.
+    @dev    A DrawBuffer store a limited number of Draws before beginning to overwrite (managed via the cardinality) previous Draws.
+    @dev    All mainnet DrawBuffer(s) are updated directly from a DrawBeacon, but non-mainnet DrawBuffer(s) (Matic, Optimism, Arbitrum, etc...)
+            will receive a cross-chain message, duplicating the mainnet Draw configuration - enabling a prize savings liquidity network.
 
 ## Functions
 ### constructor
@@ -23,11 +23,24 @@ Deploy DrawBuffer smart contract.
 |`_owner` | address | Address of the owner of the DrawBuffer.
 |`_cardinality` | uint8 | Draw ring buffer cardinality.
 
+### getBufferCardinality
+```solidity
+  function getBufferCardinality(
+  ) external returns (uint32)
+```
+Read a ring buffer cardinality
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Ring`|  | buffer cardinality
 ### getDraw
 ```solidity
   function getDraw(
     uint32 drawId
-  ) external returns (struct DrawLib.Draw)
+  ) external returns (struct IDrawBeacon.Draw)
 ```
 Read a Draw from the draws ring buffer.
 
@@ -43,16 +56,16 @@ Read a Draw from the draws ring buffer.
 ```solidity
   function getDraws(
     uint32[] drawIds
-  ) external returns (struct DrawLib.Draw[])
+  ) external returns (struct IDrawBeacon.Draw[])
 ```
 Read multiple Draws from the draws ring buffer.
 
-   Read multiple Draws using each Draw.drawId to calculate position in the draws ring buffer.
+   Read multiple Draws using each drawId to calculate position in the draws ring buffer.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`drawIds` | uint32[] | Array of Draw.drawIds
+|`drawIds` | uint32[] | Array of drawIds
 
 
 ### getDrawCount
@@ -74,9 +87,9 @@ Otherwise, it will return the NewestDraw index + 1.
 ### getNewestDraw
 ```solidity
   function getNewestDraw(
-  ) external returns (struct DrawLib.Draw)
+  ) external returns (struct IDrawBeacon.Draw)
 ```
-Read newest Draw from the draws ring buffer.
+Read newest Draw from draws ring buffer.
 
    Uses the nextDrawIndex to calculate the most recently added Draw.
 
@@ -85,9 +98,9 @@ Read newest Draw from the draws ring buffer.
 ### getOldestDraw
 ```solidity
   function getOldestDraw(
-  ) external returns (struct DrawLib.Draw)
+  ) external returns (struct IDrawBeacon.Draw)
 ```
-Read oldest Draw from the draws ring buffer.
+Read oldest Draw from draws ring buffer.
 
    Finds the oldest Draw by comparing and/or diffing totalDraws with the cardinality.
 
@@ -96,7 +109,7 @@ Read oldest Draw from the draws ring buffer.
 ### pushDraw
 ```solidity
   function pushDraw(
-    struct DrawLib.Draw draw
+    struct IDrawBeacon.Draw draw
   ) external returns (uint32)
 ```
 Push Draw onto draws ring buffer history.
@@ -106,13 +119,13 @@ Push Draw onto draws ring buffer history.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`draw` | struct DrawLib.Draw | DrawLib.Draw
+|`draw` | struct IDrawBeacon.Draw | IDrawBeacon.Draw
 
 
 ### setDraw
 ```solidity
   function setDraw(
-    struct DrawLib.Draw newDraw
+    struct IDrawBeacon.Draw newDraw
   ) external returns (uint32)
 ```
 Set existing Draw in draws ring buffer with new parameters.
@@ -122,7 +135,7 @@ Set existing Draw in draws ring buffer with new parameters.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newDraw` | struct DrawLib.Draw | DrawLib.Draw
+|`newDraw` | struct IDrawBeacon.Draw | IDrawBeacon.Draw
 
 
 ### manager
@@ -264,7 +277,7 @@ Emitted when `_owner` has been changed.
 ```solidity
   event DrawSet(
     uint32 drawId,
-    struct DrawLib.Draw draw
+    struct IDrawBeacon.Draw draw
   )
 ```
 Emit when a new draw has been created.
@@ -274,4 +287,4 @@ Emit when a new draw has been created.
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |`drawId`| uint32 | Draw id
-|`draw`| struct DrawLib.Draw | The Draw struct
+|`draw`| struct IDrawBeacon.Draw | The Draw struct

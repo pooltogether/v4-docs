@@ -1,9 +1,8 @@
-The Ticket extends the standard ERC20 and ControlledToken interfaces with time-weighed average balance functionality.
-            The TWAB (time-weighed average balance) enables contract-to-contract lookups of a user's average balance
-            between timestamps. The timestamp/balance checkpoints are stored in a ring buffer for each user Account.
-            Historical searches of a TWAB(s) are limited to the storage of these checkpoints. A user's average balance can
-            be delegated to an alternative address. When delegating the average weighted balance is added to the delegatee
-            TWAB lookup and removed from the delegaters TWAB lookup.
+The Ticket extends the standard ERC20 and ControlledToken interfaces with time-weighted average balance functionality.
+            The average balance held by a user between two timestamps can be calculated, as well as the historic balance.  The 
+            historic total supply is available as well as the average total supply between two timestamps.
+
+            A user may "delegate" their balance; increasing another user's historic balance while retaining their tokens.
 
 ## Functions
 ### constructor
@@ -38,7 +37,7 @@ Gets a users twab context.  This is a struct with their balance, next twab index
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | The user for whom to fetch the TWAB context
+|`user` | address | The user for whom to fetch the TWAB context.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -57,8 +56,8 @@ Gets the TWAB at a specific index for a user.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | The user for whom to fetch the TWAB
-|`index` | uint16 | The index of the TWAB to fetch
+|`user` | address | The user for whom to fetch the TWAB.
+|`index` | uint16 | The index of the TWAB to fetch.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -68,35 +67,39 @@ Gets the TWAB at a specific index for a user.
 ```solidity
   function getBalanceAt(
     address user,
-    uint256 timestamp
+    uint64 timestamp
   ) external returns (uint256)
 ```
-Retrieves `_user` TWAB balance.
+Retrieves `user` TWAB balance.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`user` | address | Address of the user whose TWAB is being fetched.
-|`timestamp` | uint256 | Timestamp at which the reserved TWAB should be for.
+|`timestamp` | uint64 | Timestamp at which we want to retrieve the TWAB balance.
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| address | TWAB balance at the given timestamp.
 ### getAverageBalancesBetween
 ```solidity
   function getAverageBalancesBetween(
     address user,
-    uint32[] startTimes,
-    uint32[] endTimes
+    uint64[] startTimes,
+    uint64[] endTimes
   ) external returns (uint256[])
 ```
-Calculates the average balance held by a user for a given time frame.
+Retrieves the average balances held by a user for a given time frame.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | The user whose balance is checked
-|`startTimes` | uint32[] | The start time of the time frame.
-|`endTimes` | uint32[] | The end time of the time frame.
+|`user` | address | The user whose balance is checked.
+|`startTimes` | uint64[] | The start time of the time frame.
+|`endTimes` | uint64[] | The end time of the time frame.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -105,40 +108,40 @@ Calculates the average balance held by a user for a given time frame.
 ### getAverageTotalSuppliesBetween
 ```solidity
   function getAverageTotalSuppliesBetween(
-    uint32[] startTimes,
-    uint32[] endTimes
+    uint64[] startTimes,
+    uint64[] endTimes
   ) external returns (uint256[])
 ```
-Calculates the average total supply balance for a set of given time frames.
+Retrieves the average total supply balance for a set of given time frames.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`startTimes` | uint32[] | Array of start times
-|`endTimes` | uint32[] | Array of end times
+|`startTimes` | uint64[] | Array of start times.
+|`endTimes` | uint64[] | Array of end times.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint32[] | average total supplies held during the time frame.
+|`The`| uint64[] | average total supplies held during the time frame.
 ### getAverageBalanceBetween
 ```solidity
   function getAverageBalanceBetween(
     address user,
-    uint256 startTime,
-    uint256 endTime
+    uint64 startTime,
+    uint64 endTime
   ) external returns (uint256)
 ```
-Calculates the average balance held by a user for a given time frame.
+Retrieves the average balance held by a user for a given time frame.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | The user whose balance is checked
-|`startTime` | uint256 | The start time of the time frame.
-|`endTime` | uint256 | The end time of the time frame.
+|`user` | address | The user whose balance is checked.
+|`startTime` | uint64 | The start time of the time frame.
+|`endTime` | uint64 | The end time of the time frame.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -148,17 +151,17 @@ Calculates the average balance held by a user for a given time frame.
 ```solidity
   function getBalancesAt(
     address user,
-    uint32[] timestamps
+    uint64[] timestamps
   ) external returns (uint256[])
 ```
-Retrieves `_user` TWAB balances.
+Retrieves `user` TWAB balances.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`user` | address | Address of the user whose TWABs are being fetched.
-|`timestamps` | uint32[] | Timestamps at which the reserved TWABs should be for.
+|`timestamps` | uint64[] | Timestamps range at which we want to retrieve the TWAB balances.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -167,64 +170,97 @@ Retrieves `_user` TWAB balances.
 ### getTotalSupplyAt
 ```solidity
   function getTotalSupplyAt(
-    uint32 timestamp
+    uint64 timestamp
   ) external returns (uint256)
 ```
-Calculates the average total supply balance for a set of a given time frame.
+Retrieves the total supply TWAB balance at the given timestamp.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`timestamp` | uint32 | Timestamp
+|`timestamp` | uint64 | Timestamp at which we want to retrieve the total supply TWAB balance.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| uint64 | total supply TWAB balance at the given timestamp.
 ### getTotalSuppliesAt
 ```solidity
   function getTotalSuppliesAt(
-    uint32[] timestamps
+    uint64[] timestamps
   ) external returns (uint256[])
 ```
-Calculates the average total supply balance for a set of a given time frame.
+Retrieves the total supply TWAB balance between the given timestamps range.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`timestamps` | uint32[] | Timestamp
+|`timestamps` | uint64[] | Timestamps range at which we want to retrieve the total supply TWAB balance.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Total`| uint64[] | supply TWAB balances.
 ### delegateOf
 ```solidity
   function delegateOf(
     address user
   ) external returns (address)
 ```
-ADD DOCS
+Retrieves the address of the delegate to whom `user` has delegated their tickets.
+
+Address of the delegate will be the zero address if `user` has not delegated their tickets.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | Address of the delegator.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`Address`| address | of the delegate.
+### controllerDelegateFor
+```solidity
+  function controllerDelegateFor(
+    address user,
+    address delegate
+  ) external
+```
+Allows the controller to delegate on a users behalf.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | Address
+|`user` | address | The user for whom to delegate
+|`delegate` | address | The new delegate
 
-### balanceOf
+### delegateWithSignature
 ```solidity
-  function balanceOf(
-  ) public returns (uint256)
+  function delegateWithSignature(
+    address user,
+    address delegate,
+    uint256 deadline,
+    uint8 v,
+    bytes32 r,
+    bytes32 s
+  ) external
 ```
+Allows a user to delegate via signature
 
-Returns the amount of tokens owned by `account`.
 
-
-### totalSupply
-```solidity
-  function totalSupply(
-  ) public returns (uint256)
-```
-
-Returns the amount of tokens in existence.
-
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | The user who is delegating
+|`delegate` | address | The new delegate
+|`deadline` | uint256 | The timestamp by which this must be submitted
+|`v` | uint8 | The v portion of the ECDSA sig
+|`r` | bytes32 | The r portion of the ECDSA sig
+|`s` | bytes32 | The s portion of the ECDSA sig
 
 ### delegate
 ```solidity
@@ -234,15 +270,15 @@ Returns the amount of tokens in existence.
 ```
 Delegate time-weighted average balances to an alternative address.
 
-   Transfers (including mints) trigger the storage of a TWAB in delegatee(s) account, instead of the
+   Transfers (including mints) trigger the storage of a TWAB in delegate(s) account, instead of the
               targetted sender and/or recipient address(s).
-   "to" reset the delegatee use zero address (0x000.000)
+   To reset the delegate, pass the zero address (0x000.000) as `to` parameter.
 Current delegate address should be different from the new delegate address `to`.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | Receipient of delegated TWAB.
+|`to` | address | Recipient of delegated TWAB.
 
 ### controllerMint
 ```solidity
@@ -366,6 +402,24 @@ Returns the symbol of the token, usually a shorter version of the
 name.
 
 
+### totalSupply
+```solidity
+  function totalSupply(
+  ) public returns (uint256)
+```
+
+See {IERC20-totalSupply}.
+
+
+### balanceOf
+```solidity
+  function balanceOf(
+  ) public returns (uint256)
+```
+
+See {IERC20-balanceOf}.
+
+
 ### transfer
 ```solidity
   function transfer(
@@ -448,11 +502,18 @@ Requirements:
 ### Delegated
 ```solidity
   event Delegated(
+    address delegator,
+    address delegate
   )
 ```
+Emitted when TWAB balance has been delegated to another user.
 
 
-
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`delegator`| address | Address of the delegator.
+|`delegate`| address | Address of the delegate.
 ### TicketInitialized
 ```solidity
   event TicketInitialized(
@@ -475,8 +536,7 @@ Emitted when ticket is initialized.
 ### NewUserTwab
 ```solidity
   event NewUserTwab(
-    address ticketHolder,
-    address user,
+    address delegate,
     struct ObservationLib.Observation newTwab
   )
 ```
@@ -486,8 +546,7 @@ Emitted when a new TWAB has been recorded.
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`ticketHolder`| address | The Ticket holder address.
-|`user`| address | The recipient of the ticket power (may be the same as the ticketHolder)
+|`delegate`| address | The recipient of the ticket power (may be the same as the user).
 |`newTwab`| struct ObservationLib.Observation | Updated TWAB of a ticket holder after a successful TWAB recording.
 ### NewTotalSupplyTwab
 ```solidity

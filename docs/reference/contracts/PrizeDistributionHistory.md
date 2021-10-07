@@ -1,4 +1,4 @@
-The PrizeDistributionHistory stores individual PrizeDistributions for each Draw.drawId.
+The PrizeDistributionBuffer stores individual PrizeDistributions for each Draw.drawId.
             PrizeDistributions parameters like cardinality, bitRange, distributions, number of picks
             and prize. The settings determine the specific distribution model for each individual
             draw. Storage of the PrizeDistribution(s) is handled by ring buffer with a max cardinality
@@ -12,13 +12,13 @@ The PrizeDistributionHistory stores individual PrizeDistributions for each Draw.
     uint8 _cardinality
   ) public
 ```
-Constructor for PrizeDistributionHistory
+Constructor for PrizeDistributionBuffer
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address | Address of the PrizeDistributionHistory owner
+|`_owner` | address | Address of the PrizeDistributionBuffer owner
 |`_cardinality` | uint8 | Cardinality of the `prizeDistributionsRingBufferData`
 
 ### getPrizeDistribution
@@ -27,7 +27,7 @@ Constructor for PrizeDistributionHistory
     uint32 drawId
   ) external returns (struct DrawLib.PrizeDistribution)
 ```
-Gets the PrizeDistributionHistory for a Draw.drawID
+Gets the PrizeDistributionBuffer for a Draw.drawID
 
 
 #### Parameters:
@@ -41,7 +41,7 @@ Gets the PrizeDistributionHistory for a Draw.drawID
     uint32[] drawIds
   ) external returns (struct DrawLib.PrizeDistribution[])
 ```
-Gets array of PrizeDistributionHistory for Draw.drawID(s)
+Gets array of PrizeDistributionBuffer for Draw.drawID(s)
 
 
 #### Parameters:
@@ -102,7 +102,7 @@ Read oldest PrizeDistributions from the prize distributions ring buffer.
     struct DrawLib.PrizeDistribution draw
   ) external returns (bool)
 ```
-Sets PrizeDistributionHistory for a Draw.drawID.
+Sets PrizeDistributionBuffer for a Draw.drawID.
 
    Only callable by the owner or manager
 
@@ -110,7 +110,7 @@ Sets PrizeDistributionHistory for a Draw.drawID.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`drawId` | uint32 | Draw.drawId
-|`draw` | struct DrawLib.PrizeDistribution |   PrizeDistributionHistory struct
+|`draw` | struct DrawLib.PrizeDistribution |   PrizeDistributionBuffer struct
 
 ### setPrizeDistribution
 ```solidity

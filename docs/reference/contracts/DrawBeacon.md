@@ -1,15 +1,16 @@
-Manages RNG (random number generator) requests and pushing Draws onto DrawHistory.
-            The DrawBeacon has 3 major phases for requesting a random number: start, cancel and complete.
-            Once the complete phase is executed a new Draw (using nextDrawId) is pushed to the currently
-            set DrawHistory smart contracts. If the RNG service requires payment (i.e. ChainLink) the DrawBeacon
-            should have an available balance to cover the fees associated with random number generation.
+Manages RNG (random number generator) requests and pushing Draws onto DrawBuffer.
+            The DrawBeacon has 3 major actions for requesting a random number: start, cancel and complete.
+            To create a new Draw, the user requests a new random number from the RNG service.
+            When the random number is available, the user can create the draw using the create() method
+            which will push the draw onto the DrawBuffer.
+            If the RNG service fails to deliver a rng, when the request timeout elapses, the user can cancel the request.
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
     address _owner,
-    contract IDrawHistory _drawHistory,
+    contract IDrawBuffer _drawBuffer,
     contract RNGInterface _rng,
     uint32 _nextDrawId,
     uint64 _beaconPeriodStart,
@@ -23,7 +24,7 @@ Deploy the DrawBeacon smart contract.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_owner` | address | Address of the DrawBeacon owner
-|`_drawHistory` | contract IDrawHistory | The address of the draw history to push draws to
+|`_drawBuffer` | contract IDrawBuffer | The address of the draw buffer to push draws to
 |`_rng` | contract RNGInterface | The RNG service to use
 |`_nextDrawId` | uint32 | Draw ID at which the DrawBeacon should start. Can't be inferior to 1.
 |`_beaconPeriodStart` | uint64 | The starting timestamp of the beacon period.
@@ -73,7 +74,7 @@ Returns whether the random number request has timed out.
   function canStartDraw(
   ) external returns (bool)
 ```
-Returns whether an Draw request can be started.
+Returns whether a Draw can be started.
 
 
 
@@ -86,7 +87,7 @@ Returns whether an Draw request can be started.
   function canCompleteDraw(
   ) external returns (bool)
 ```
-Returns whether an Draw request can be completed.
+Returns whether a Draw can be completed.
 
 
 
@@ -110,7 +111,7 @@ Calculates the next beacon start time, assuming all beacon periods have occurred
 ### calculateNextBeaconPeriodStartTime
 ```solidity
   function calculateNextBeaconPeriodStartTime(
-    uint256 currentTime
+    uint256 time
   ) external returns (uint64)
 ```
 Calculates when the next beacon period will start.
@@ -119,7 +120,7 @@ Calculates when the next beacon period will start.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`currentTime` | uint256 | The timestamp to use as the current time
+|`time` | uint256 | The timestamp to use as the current time
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -139,14 +140,14 @@ Can be called by anyone to cancel the draw request if the RNG has timed out.
   function completeDraw(
   ) external
 ```
-Completes the Draw (RNG) request and pushes a Draw onto DrawHistory.
+Completes the Draw (RNG) request and pushes a Draw onto DrawBuffer.
 
 
 
 ### beaconPeriodRemainingSeconds
 ```solidity
   function beaconPeriodRemainingSeconds(
-  ) external returns (uint32)
+  ) external returns (uint64)
 ```
 Returns the number of seconds remaining until the beacon period can be complete.
 
@@ -187,10 +188,10 @@ Returns the timestamp at which the beacon period ends
 
 
 
-### getDrawHistory
+### getDrawBuffer
 ```solidity
-  function getDrawHistory(
-  ) external returns (contract IDrawHistory)
+  function getDrawBuffer(
+  ) external returns (contract IDrawBuffer)
 ```
 
 
@@ -258,20 +259,20 @@ Returns whether the beacon period is over
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`True`|  | if the beacon period is over, false otherwise
-### setDrawHistory
+### setDrawBuffer
 ```solidity
-  function setDrawHistory(
-    contract IDrawHistory newDrawHistory
-  ) external returns (contract IDrawHistory)
+  function setDrawBuffer(
+    contract IDrawBuffer newDrawBuffer
+  ) external returns (contract IDrawBuffer)
 ```
-Set global DrawHistory variable.
+Set global DrawBuffer variable.
 
-   All subsequent Draw requests/completions will be pushed to the new DrawHistory.
+   All subsequent Draw requests/completions will be pushed to the new DrawBuffer.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newDrawHistory` | contract IDrawHistory | DrawHistory address
+|`newDrawBuffer` | contract IDrawBuffer | DrawBuffer address
 
 
 ### startDraw
@@ -301,7 +302,7 @@ Allows the owner to set the beacon period in seconds.
 ### setRngTimeout
 ```solidity
   function setRngTimeout(
-    uint32 _rngTimeout
+    uint32 rngTimeout
   ) external
 ```
 Allows the owner to set the RNG request timeout in seconds. This is the time that must elapsed before the RNG request can be cancelled and the pool unlocked.
@@ -310,7 +311,7 @@ Allows the owner to set the RNG request timeout in seconds. This is the time tha
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_rngTimeout` | uint32 | The RNG request timeout in seconds.
+|`rngTimeout` | uint32 | The RNG request timeout in seconds.
 
 ### setRngService
 ```solidity
@@ -389,24 +390,18 @@ This function is only callable by the `_pendingOwner`.
 ### Deployed
 ```solidity
   event Deployed(
-    contract IDrawHistory drawHistory,
-    contract RNGInterface rng,
     uint32 nextDrawId,
-    uint64 beaconPeriodStartedAt,
-    uint32 beaconPeriodSeconds
+    uint64 beaconPeriodStartedAt
   )
 ```
-Emit when the DrawBeacon is initialized.
+Emit when the DrawBeacon is deployed.
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`drawHistory`| contract IDrawHistory | Address of the draw history to push draws to.
-|`rng`| contract RNGInterface | Address of RNG service.
 |`nextDrawId`| uint32 | Draw ID at which the DrawBeacon should start. Can't be inferior to 1.
 |`beaconPeriodStartedAt`| uint64 | Timestamp when beacon period starts.
-|`beaconPeriodSeconds`| uint32 | Minimum seconds between draw period.
 ### OwnershipOffered
 ```solidity
   event OwnershipOffered(
@@ -435,23 +430,22 @@ Emitted when `_owner` has been changed.
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |`previousOwner`| address | previous `_owner` address.
 |`newOwner`| address | new `_owner` address.
-### DrawHistoryTransferred
+### DrawBufferUpdated
 ```solidity
-  event DrawHistoryTransferred(
-    contract IDrawHistory newDrawHistory
+  event DrawBufferUpdated(
+    contract IDrawBuffer newDrawBuffer
   )
 ```
-Emit when a new DrawHistory has been set.
+Emit when a new DrawBuffer has been set.
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`newDrawHistory`| contract IDrawHistory |       The new DrawHistory address
+|`newDrawBuffer`| contract IDrawBuffer |       The new DrawBuffer address
 ### BeaconPeriodStarted
 ```solidity
   event BeaconPeriodStarted(
-    address operator,
     uint64 startedAt
   )
 ```
@@ -461,12 +455,10 @@ Emit when a draw has opened.
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`operator`| address |             User address responsible for opening draw
 |`startedAt`| uint64 | Start timestamp
 ### DrawStarted
 ```solidity
   event DrawStarted(
-    address operator,
     uint32 rngRequestId,
     uint32 rngLockBlock
   )
@@ -477,13 +469,11 @@ Emit when a draw has started.
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`operator`| address |      User address responsible for starting draw
 |`rngRequestId`| uint32 |  draw id
 |`rngLockBlock`| uint32 |  Block when draw becomes invalid
 ### DrawCancelled
 ```solidity
   event DrawCancelled(
-    address operator,
     uint32 rngRequestId,
     uint32 rngLockBlock
   )
@@ -494,13 +484,11 @@ Emit when a draw has been cancelled.
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`operator`| address |      User address responsible for cancelling draw
 |`rngRequestId`| uint32 |  draw id
 |`rngLockBlock`| uint32 |  Block when draw becomes invalid
 ### DrawCompleted
 ```solidity
   event DrawCompleted(
-    address operator,
     uint256 randomNumber
   )
 ```
@@ -510,7 +498,6 @@ Emit when a draw has been completed.
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`operator`| address |      User address responsible for completing draw
 |`randomNumber`| uint256 |  Random number generated from draw
 ### RngServiceUpdated
 ```solidity

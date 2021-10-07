@@ -45,14 +45,14 @@ The Claimable Draw contract holds the prize liquidity for all Draws, and allows 
 The default calculator is the Tsunami Draw Calculator, which calculates payouts using the Tsunami algorithm.
 Let's dive into more detail.
 
-## Draw Beacon & Draw History
+## Draw Beacon & Draw Buffer
 
-The Draw Beacon acts as the heartbeat of a prize network by periodically creating Draws. It has a start time and a period, which together determine when Draws can be created. When the period has elapsed, anyone can create a new Draw. The resulting Draw will be pushed onto the Draw History, which stores the last 256 Draws.
+The Draw Beacon acts as the heartbeat of a prize network by periodically creating Draws. It has a start time and a period, which together determine when Draws can be created. When the period has elapsed, anyone can create a new Draw. The resulting Draw will be pushed onto the Draw Buffer, which stores the last 256 Draws.
 
 The Draw is created in two steps:
 
 1. The Draw is "started": the random number request is made to the RNG service.
-2. The Draw is "completed": the random number is consumed and a new Draw is pushed to the Draw History.
+2. The Draw is "completed": the random number is consumed and a new Draw is pushed to the Draw Buffer.
 
 <img
   src={require('/img/guides/DrawBeacon.png').default}
@@ -60,16 +60,16 @@ The Draw is created in two steps:
   class='img-max'
 />
 
-## Draw Prize
+## Prize Distributor
 
-Users claim their prizes from the DrawPrize contract, which holds the liquidity for all draw prizes for a prize pool.   When a user claims the prizes for a draw:
+Users claim their prizes from the PrizeDistributor contract, which holds the liquidity for all Prize Distributors for a prize pool.   When a user claims the prizes for a draw:
 
-- The DrawPrize determines the payout size using the Draw Calculator
-- The DrawPrize transfers the payout as tickets to the user
+- The PrizeDistributor determines the payout size using the Draw Calculator
+- The PrizeDistributor transfers the payout as tickets to the user
 
 <img
-  src={require('/img/guides/DrawPrize.png').default}
-  alt='Draw Prize'
+  src={require('/img/guides/PrizeDistributor.png').default}
+  alt='Prize Distributor'
   class='img-max'
 />
 

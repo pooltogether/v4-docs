@@ -4,15 +4,15 @@
 ### permitAndDepositTo
 ```solidity
   function permitAndDepositTo(
-    address token,
-    address owner,
-    uint256 amount,
-    uint256 deadline,
-    uint8 v,
-    bytes32 r,
-    bytes32 s,
-    address prizePool,
-    address to
+    address _token,
+    address _owner,
+    uint256 _amount,
+    uint256 _deadline,
+    uint8 _v,
+    bytes32 _r,
+    bytes32 _s,
+    address _prizePool,
+    address _to
   ) external
 ```
 Permits this contract to spend on a user's behalf, and deposits into the prize pool.
@@ -22,13 +22,13 @@ The `spender` address required by the permit function is the address of this con
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`token` | address | Address of the EIP-2612 token to approve and deposit.
-|`owner` | address | Token owner's address (Authorizer).
-|`amount` | uint256 | Amount of tokens to deposit.
-|`deadline` | uint256 | Timestamp at which the signature expires.
-|`v` | uint8 | `v` portion of the signature.
-|`r` | bytes32 | `r` portion of the signature.
-|`s` | bytes32 | `s` portion of the signature.
-|`prizePool` | address | Address of the prize pool to deposit into.
-|`to` | address | Address that will receive the tickets.
+|`_token` | address | Address of the EIP-2612 token to approve and deposit.
+|`_owner` | address | Token owner's address (Authorizer).
+|`_amount` | uint256 | Amount of tokens to deposit.
+|`_deadline` | uint256 | Timestamp at which the signature expires.
+|`_v` | uint8 | `v` portion of the signature.
+|`_r` | bytes32 | `r` portion of the signature.
+|`_s` | bytes32 | `s` portion of the signature.
+|`_prizePool` | address | Address of the prize pool to deposit into.
+|`_to` | address | Address that will receive the tickets.
 

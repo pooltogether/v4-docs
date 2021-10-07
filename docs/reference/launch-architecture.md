@@ -22,13 +22,13 @@ PoolTogether will be taking a progressive approach to decentralization.  These p
 The OpenZeppelin Defender Autotask is mainly for transaction automation.  It will be responsible for:
 
 - Triggering the Draw Beacon on Ethereum to create new Draws (public call)
-- Flushing interest from the prize pool directly into the DrawPrize contract. (public call)
+- Flushing interest from the prize pool directly into the PrizeDistributor contract. (public call)
 - Pushing new Prize Distributions to the Ethereum prize pool. (privileged call)
 - Copying Draws and Prize Distributions from the Ethereum prize pool to the Polygon prize pool. (privileged call)
 
 The multisig will be tasked with:
 
-- Moving funds into the Draw Prize contract to provide prize liquidity for claiming (public call)
+- Moving funds into the Prize Distributor contract to provide prize liquidity for claiming (public call)
 - Verifying Prize Distributions on Ethereum and overriding them if there is a mismatch (privileged call)
 - Verifying Draws and Prize Distributions on Polygon and overriding them if there is a mismatch (privileged call)
 

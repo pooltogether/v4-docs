@@ -47,7 +47,7 @@ captureAwardBalance() should be called first
 ### canAwardExternal
 ```solidity
   function canAwardExternal(
-    address _externalToken
+    address externalToken
   ) external returns (bool)
 ```
 
@@ -56,7 +56,7 @@ Checks with the Prize Pool if a specific token type may be awarded as an externa
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_externalToken` | address | The address of the token to check
+|`externalToken` | address | The address of the token to check
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -65,7 +65,7 @@ Checks with the Prize Pool if a specific token type may be awarded as an externa
 ### isControlled
 ```solidity
   function isControlled(
-    contract IControlledToken _controlledToken
+    contract ITicket controlledToken
   ) external returns (bool)
 ```
 
@@ -74,12 +74,12 @@ Checks if a specific token is controlled by the Prize Pool
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_controlledToken` | contract IControlledToken | The address of the token to check
+|`controlledToken` | contract ITicket | The address of the token to check
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| contract IControlledToken | if the token is a controlled token, false otherwise
+|`True`| contract ITicket | if the token is a controlled token, false otherwise
 ### getAccountedBalance
 ```solidity
   function getAccountedBalance(
@@ -114,7 +114,7 @@ Read internal liquidityCap variable
 ### getTicket
 ```solidity
   function getTicket(
-  ) external returns (contract IControlledToken)
+  ) external returns (contract ITicket)
 ```
 Read ticket variable
 
@@ -167,6 +167,25 @@ Deposit assets into the Prize Pool in exchange for tokens
 | :--- | :--- | :------------------------------------------------------------------- |
 |`to` | address | The address receiving the newly minted tokens
 |`amount` | uint256 | The amount of assets to deposit
+
+### depositToAndDelegate
+```solidity
+  function depositToAndDelegate(
+    address to,
+    uint256 amount,
+    address delegate
+  ) external
+```
+Deposit assets into the Prize Pool in exchange for tokens,
+then sets the delegate on behalf of the caller.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`to` | address | The address receiving the newly minted tokens
+|`amount` | uint256 | The amount of assets to deposit
+|`delegate` | address | The address to delegate to for the caller
 
 ### withdrawFrom
 ```solidity
@@ -265,7 +284,7 @@ Used to award any arbitrary NFTs held by the Prize Pool
 ### setBalanceCap
 ```solidity
   function setBalanceCap(
-    uint256 _balanceCap
+    uint256 balanceCap
   ) external returns (bool)
 ```
 Allows the owner to set a balance cap per `token` for the pool.
@@ -276,7 +295,7 @@ Needs to be called after deploying a prize pool to be able to deposit into it.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_balanceCap` | uint256 | New balance cap.
+|`balanceCap` | uint256 | New balance cap.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -285,7 +304,7 @@ Needs to be called after deploying a prize pool to be able to deposit into it.
 ### setLiquidityCap
 ```solidity
   function setLiquidityCap(
-    uint256 _liquidityCap
+    uint256 liquidityCap
   ) external
 ```
 Allows the Governor to set a cap on the amount of liquidity that he pool can hold
@@ -294,12 +313,12 @@ Allows the Governor to set a cap on the amount of liquidity that he pool can hol
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_liquidityCap` | uint256 | The new liquidity cap for the prize pool
+|`liquidityCap` | uint256 | The new liquidity cap for the prize pool
 
 ### setTicket
 ```solidity
   function setTicket(
-    contract IControlledToken _ticket
+    contract ITicket ticket
   ) external returns (bool)
 ```
 Set prize pool ticket.
@@ -308,12 +327,12 @@ Set prize pool ticket.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_ticket` | contract IControlledToken | Address of the ticket to set.
+|`ticket` | contract ITicket | Address of the ticket to set.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| contract IControlledToken | if ticket has been successfully set.
+|`True`| contract ITicket | if ticket has been successfully set.
 ### setPrizeStrategy
 ```solidity
   function setPrizeStrategy(
@@ -326,13 +345,13 @@ Sets the prize strategy of the prize pool.  Only callable by the owner.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_prizeStrategy` | address | The new prize strategy.  Must implement DrawPrizePrizeStrategy
+|`_prizeStrategy` | address | The new prize strategy.
 
 ### compLikeDelegate
 ```solidity
   function compLikeDelegate(
-    contract ICompLike _compLike,
-    address _to
+    contract ICompLike compLike,
+    address to
   ) external
 ```
 Delegate the votes for a Compound COMP-like token held by the prize pool
@@ -341,8 +360,8 @@ Delegate the votes for a Compound COMP-like token held by the prize pool
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_compLike` | contract ICompLike | The COMP-like token held by the prize pool that should be delegated
-|`_to` | address | The address to delegate to
+|`compLike` | contract ICompLike | The COMP-like token held by the prize pool that should be delegated
+|`to` | address | The address to delegate to
 
 ### onERC721Received
 ```solidity

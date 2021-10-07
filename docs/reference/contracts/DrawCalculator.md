@@ -1,10 +1,8 @@
 The DrawCalculator calculates a user's prize by matching a winning random number against
             their picks. A users picks are generated deterministically based on their address and balance
             of tickets held. Prize payouts are divided into multiple tiers: grand prize, second place, etc...
-            A user with a higher average weighted balance (during each draw perid) will be given a large number of
-            pickIndices to choose from, and thus a higher chance to match the randomly generated winning numbers.
-            The DrawCalculator will retrieve data, like average weighted balance and cost of picks per draw
-            from the linked Ticket and PrizeDistributionHistory contracts when payouts are being calculated.
+            A user with a higher average weighted balance (during each draw period) will be given a large number of
+            picks to choose from, and thus a higher chance to match the winning numbers.
 
 ## Functions
 ### constructor
@@ -12,8 +10,8 @@ The DrawCalculator calculates a user's prize by matching a winning random number
   function constructor(
     address _owner,
     contract ITicket _ticket,
-    contract IDrawHistory _drawHistory,
-    contract PrizeDistributionHistory _prizeDistributionHistory
+    contract IDrawBuffer _drawBuffer,
+    contract IPrizeDistributionBuffer _prizeDistributionBuffer
   ) public
 ```
 Constructor for DrawCalculator
@@ -24,8 +22,8 @@ Constructor for DrawCalculator
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_owner` | address | Address of the DrawCalculator owner
 |`_ticket` | contract ITicket | Ticket associated with this DrawCalculator
-|`_drawHistory` | contract IDrawHistory | The address of the draw history to push draws to
-|`_prizeDistributionHistory` | contract PrizeDistributionHistory | PrizeDistributionHistory address
+|`_drawBuffer` | contract IDrawBuffer | The address of the draw buffer to push draws to
+|`_prizeDistributionBuffer` | contract IPrizeDistributionBuffer | PrizeDistributionBuffer address
 
 ### calculate
 ```solidity
@@ -33,65 +31,47 @@ Constructor for DrawCalculator
     address user,
     uint32[] drawIds,
     bytes data
-  ) external returns (uint256[])
+  ) external returns (uint256[], bytes)
 ```
-Calulates the prize amount for a user for Multiple Draws. Typically called by a DrawPrize.
+Calculates the prize amount for a user for Multiple Draws. Typically called by a PrizeDistributor.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | User for which to calcualte prize amount
-|`drawIds` | uint32[] | draw array for which to calculate prize amounts for
-|`data` | bytes | The encoded pick indices for all Draws. Expected to be just indices of winning claims. Populated values must be less than totalUserPicks.
+|`user` | address | User for which to calculate prize amount.
+|`drawIds` | uint32[] | drawId array for which to calculate prize amounts for.
+|`data` | bytes | The ABI encoded pick indices for all Draws. Expected to be winning picks. Pick indices must be less than the totalUserPicks.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`List`| address | of awardable prizes ordered by linked drawId
-### getDrawHistory
+|`List`| address | of awardable prize amounts ordered by drawId.
+### getDrawBuffer
 ```solidity
-  function getDrawHistory(
-  ) external returns (contract IDrawHistory)
+  function getDrawBuffer(
+  ) external returns (contract IDrawBuffer)
 ```
-Read global DrawHistory variable.
+Read global DrawBuffer variable.
 
 
 
 
-### getPrizeDistributionHistory
+### getPrizeDistributionBuffer
 ```solidity
-  function getPrizeDistributionHistory(
-  ) external returns (contract PrizeDistributionHistory)
+  function getPrizeDistributionBuffer(
+  ) external returns (contract IPrizeDistributionBuffer)
 ```
-Read global DrawHistory variable.
+Read global DrawBuffer variable.
 
 
 
 
-### setDrawHistory
-```solidity
-  function setDrawHistory(
-    contract IDrawHistory _drawHistory
-  ) external returns (contract IDrawHistory)
-```
-Set global DrawHistory reference.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_drawHistory` | contract IDrawHistory | DrawHistory address
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`New`| contract IDrawHistory | DrawHistory address
 ### getNormalizedBalancesForDrawIds
 ```solidity
   function getNormalizedBalancesForDrawIds(
-    address _user,
-    uint32[] _drawIds
+    address user,
+    uint32[] drawIds
   ) external returns (uint256[])
 ```
 Returns a users balances expressed as a fraction of the total supply over time.
@@ -100,35 +80,13 @@ Returns a users balances expressed as a fraction of the total supply over time.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The users address
-|`_drawIds` | uint32[] | The drawsId to consider
+|`user` | address | The users address
+|`drawIds` | uint32[] | The drawsId to consider
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`Array`| address | of balances
-### checkPrizeDistributionIndicesForDrawId
-```solidity
-  function checkPrizeDistributionIndicesForDrawId(
-    address _user,
-    uint64[] _pickIndices,
-    uint32 _drawId
-  ) external returns (struct IDrawCalculator.PickPrize[])
-```
-Returns a users balances expressed as a fraction of the total supply over time.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user for which to calculate the distribution indices
-|`_pickIndices` | uint64[] | The users pick indices for a draw
-|`_drawId` | uint32 | The draw for which to calculate the distribution indices
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`List`| address | of distributions for Draw.drawId
 ### owner
 ```solidity
   function owner(
@@ -189,19 +147,6 @@ This function is only callable by the `_pendingOwner`.
 
 
 ## Events
-### DrawHistorySet
-```solidity
-  event DrawHistorySet(
-    contract IDrawHistory drawHistory
-  )
-```
-Emitted when a global DrawHistory variable is set.
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`drawHistory`| contract IDrawHistory | DrawHistory address
 ### OwnershipOffered
 ```solidity
   event OwnershipOffered(
@@ -238,11 +183,11 @@ Emitted when `_owner` has been changed.
 Emitted when the contract is initialized
 
 
-### DrawPrizeSet
+### PrizeDistributorSet
 ```solidity
-  event DrawPrizeSet(
+  event PrizeDistributorSet(
   )
 ```
-Emitted when the drawPrize is set/updated
+Emitted when the prizeDistributor is set/updated
 
 

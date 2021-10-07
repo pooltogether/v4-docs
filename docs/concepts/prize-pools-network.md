@@ -32,7 +32,7 @@ The prize pool yield contributions are compared and weighted odds are pushed out
 
 ## Prize Liquidity
 
-Prize Pools will largely feed off of their own interest, but at times liquidity may need to be rebalanced by the protocol to satisfy prize distributions. Initially the Draw Prize contract on each chain will be bootstrapped to ensure there is always enough liqudity for users to claim prizes on that chain. 
+Prize Pools will largely feed off of their own interest, but at times liquidity may need to be rebalanced by the protocol to satisfy prize distributions. Initially the Prize Distributor contract on each chain will be bootstrapped to ensure there is always enough liqudity for users to claim prizes on that chain. 
 
 <img
   src={require('/img/guides/PrizeDistribution.png').default}
