@@ -40,7 +40,7 @@ Let's stack them up side-by-side.
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 | 1 | 2 | 3 | f | e | 6 | 7 | 8 |
 
-The "degree" of the match is *the cardinality less the first N numbers match*.
+The "degree" of the match is *the cardinality less the first N matching numbers*.
 
 In the above example the first three numbers match:
 
