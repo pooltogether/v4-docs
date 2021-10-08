@@ -39,9 +39,9 @@ Each prize pool has a Prize Split Strategy that determines how interest is disbu
 
 # Prize Distribution
 
-Prizes are distributed through regular prize drawings.  Draws are emitted by a Draw Beacon and consist of a random number and a timestamp.  When a new Draw is available users can claim their prizes from the Claimable Draw contract.
+Prizes are distributed through regular prize drawings.  Draws are emitted by a Draw Beacon and consist of a random number and a timestamp.  When a new Draw is available users can claim their prizes from the Prize Distributor contract.
 
-The Claimable Draw contract holds the prize liquidity for all Draws, and allows users to claim prizes as determined by each draw's Draw Calculator. The Claimable Draw holds a mapping of Draws to Draw Calculators.
+The Prize Distributor contract holds the prize liquidity for all Draws, and allows users to claim prizes as determined by each draw's Draw Calculator. The Prize Distributor holds a mapping of Draws to Draw Calculators.
 The default calculator is the Tsunami Draw Calculator, which calculates payouts using the Tsunami algorithm.
 Let's dive into more detail.
 
