@@ -103,7 +103,7 @@ For degree 1, it's a little more complicated.  If the bit range is 4, then each 
 
 This gives us the general formula:
 
-`Number of prizes for a degree = (2^bit range)^degree - (2^bit range)^(degree-1) - (2^bit range)^(degree-2) - ...`
+`Number of prizes for a degree = (2^bit range)^degree - (2^bit range)^(degree-1)`
 
 The prize for each degree must be split among these, so we have:
 
