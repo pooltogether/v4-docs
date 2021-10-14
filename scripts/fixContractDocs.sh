@@ -1,9 +1,9 @@
-rm -rf docs/reference/contracts/test
-rm -rf docs/reference/contracts/external
-mv docs/reference/contracts/prize-pool/YieldSourcePrizePool.md docs/reference/contracts/YieldSourcePrizePool.md
-rm -rf docs/reference/contracts/prize-pool
-rm -rf docs/reference/contracts/external
-rm -rf docs/reference/contracts/interfaces
-rm -rf docs/reference/contracts/libraries
-rm -rf docs/reference/contracts/prize-strategy
-yarn add-contracts-category
+rm -rf docs/reference/v4-core/test
+rm -rf docs/reference/v4-core/external
+mv docs/reference/v4-core/prize-pool/YieldSourcePrizePool.md docs/reference/v4-core/YieldSourcePrizePool.md
+rm -rf docs/reference/v4-core/prize-pool
+rm -rf docs/reference/v4-core/external
+rm -rf docs/reference/v4-core/interfaces
+rm -rf docs/reference/v4-core/libraries
+rm -rf docs/reference/v4-core/prize-strategy
+echo '{ \"label\": \"V4 Core\", \"position\": 5 }' > docs/reference/v4-core/_category_.json
