@@ -1,5 +1,6 @@
 ---
 title: V4 Testnet
+sidebar_position: 3
 ---
 
 # V4 Testnet
