@@ -34,19 +34,27 @@ export const actions = [
     icon: BookOpenIcon,
     to: "./protocol/reference/smart-contracts",
     text: `Learn about the architecture of the PoolTogether protocol smart contracts.`,
-  }
+  },
+  {
+    title: "Deployments",
+    href: "#",
+    icon: BookOpenIcon,
+    to: "./protocol/reference/deployments/mainnet",
+    text: `Comprehensive list of deployed contracts for both production and testnet.`
+  },
 ];
 
 export const github = [
   {
-    title: "Code on Github",
-    href: "https://github.com/PoolTogether/pooltogether-contract-tsunami",
+    title: "PoolTogether on Github",
+    href: "https://github.com/PoolTogether",
     icon: CodeIcon,
   },
   {
-    title: "Deployments",
-    href: "/protocol/reference/deployments/mainnet"
-  },
+    title: "V4 Core code",
+    href: "https://github.com/PoolTogether/pooltogether-contract-tsunami",
+    icon: CodeIcon,
+  }
 ];
 
 export const Guides = [
