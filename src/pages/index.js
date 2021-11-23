@@ -45,7 +45,7 @@ export const github = [
   },
   {
     title: "Deployments",
-    href: "/protocol/reference/deployments/testnet"
+    href: "/protocol/reference/deployments/mainnet"
   },
 ];
 
