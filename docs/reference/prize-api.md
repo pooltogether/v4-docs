@@ -16,7 +16,7 @@ This data contains:
 # Data Lifecycle
 
 <img
-src={require('/img/prizesApiArchitecture.jpeg').default}
+src={require('/img/prizesApiArchitecture.jpg').default}
 alt='Flow of Funds'
 class='img-max'
 />
