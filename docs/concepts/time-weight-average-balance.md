@@ -16,7 +16,7 @@ The TWAB is wholly inspired by Uniswap's Time-Weighted Average Price, which [is 
 
 # Computing the TWAB
 
-Each TWAB record is tuple of an amount at timestamp.  The amount stores the cumulative time-weighted balance, and the timestamp is the time at which the twab was recorded.  Immediately before a user's balance changes, we record a new TWAB.
+Each TWAB record is tuple of an amount and timestamp.  The amount stores the cumulative time-weighted balance, and the timestamp is the time at which the twab was recorded.  Immediately before a user's balance changes, we record a new TWAB.
 
 The formula is:
 
