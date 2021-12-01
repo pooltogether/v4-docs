@@ -3,20 +3,20 @@ title: "Time-Weighted Average Balance"
 sidebar_position: 3
 ---
 
-Tracking a Time-Weighted Average Balance allows us to determine a users balance at any time in the past, or their average balance held between two times.  Using their average balance and the average total supply, we can determine their share of the liquidity for that period of time.
+Tracking a Time-Weighted Average Balance allows us to determine a user's balance at any time in the past, or their average balance held between two times.  Using their average balance and the average total supply, we can determine their share of the liquidity for that period of time.
 
 This is critically important for PoolTogether, so that users can deposit and withdraw freely into a prize pool while having their liquidity contribution measured perfectly.
 
 For example:
 
 - if a user held 100 tokens between Dec 20 and Dec 27, then their average balance was 100.
-- If instead they bought another 100 tokens halfway through, then their average between Dec 20 and Dec 27 would be 150.
+- if instead they bought another 100 tokens halfway through, then their average between Dec 20 and Dec 27 would be 150.
 
 The TWAB is wholly inspired by Uniswap's Time-Weighted Average Price, which [is described here](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/oracles).
 
 # Computing the TWAB
 
-Each TWAB record is tuple of an amount a timestamp.  The amount stores the cumulative time-weighted balance, and the timestamp is the time at which the twab was recorded.  Immediately before a users balance changes, we record a new TWAB.
+Each TWAB record is tuple of an amount at timestamp.  The amount stores the cumulative time-weighted balance, and the timestamp is the time at which the twab was recorded.  Immediately before a user's balance changes, we record a new TWAB.
 
 The formula is:
 
@@ -27,7 +27,7 @@ new TWAB timestamp = current time
 
 ## Example
 
-Let's assume a users transfer history looks like so:
+Let's assume a user's transfer history looks like so:
 
 | time | action | amount |
 | ---- | ------ | ------ |
@@ -38,10 +38,10 @@ Let's assume a users transfer history looks like so:
 
 Let's go through it step-by-step.
 
-The first twab would be: 
+The first twab would be:
 
 ```
-amount = 0 + 0 * (current time - 0) = 0
+amount = 0 + 0 * (0 - 0) = 0
 timestamp = current time = 0
 ```
 
@@ -77,7 +77,7 @@ And so on.  Our twab table would look like this:
 
 Now, let's ask the question:
 
-> What was the users average balance between t = 0 and t = 20?
+> What was the user's average balance between t = 0 and t = 20?
 
 We can calculate the average by calculating the difference in the cumulative amount and dividing by the elapsed time:
 
@@ -100,7 +100,7 @@ We can use a TWAB for the user's balance and a TWAB for the total supply to dete
 The formula is quite simple:
 
 ```
-users fraction of liquidity = average balance between (t1, t2) / average total supply between (t1, t2)
+user's fraction of liquidity = average balance between (t1, t2) / average total supply between (t1, t2)
 ```
 
 # Gas Overhead
