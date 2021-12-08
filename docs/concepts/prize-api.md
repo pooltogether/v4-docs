@@ -11,9 +11,9 @@ This data contains:
 
 1. Which addresses won prizes for each draw across networks
 1. How much each address won for each draw
-1. Which lucky pick indice won for each prize
+1. Which lucky pick won for each prize
 
-# Data Lifecycle
+## Data Lifecycle
 
 <div class="myDiv" display="flex">
 
@@ -26,19 +26,15 @@ margin-right="auto"
 
 </div>
 
-The prize data begins its lifecycle when the `PrizeDistributionSet` event is fired from the `PrizeDistributionBuffer` for a particular network.
-When this event fires all of the parameters required to calculate the winners is available.
+The prize data begins its lifecycle when the `PrizeDistributionSet` event is fired from the `PrizeDistributionBuffer` contract for a particular network.
+When this event fires all of the parameters required to calculate the winners are available.
 
-The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for the new draw. We use Google Cloud Run, but this may be done locally and is fully reproducible.
-The CLI ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw.
-The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the `PrizeDistribution` parameters necessary to replicate the Draw Calculator contract off-chain.
+The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for this new draw. This NodeJs program is run in the v4-draw-results repo [action workflow](https://github.com/pooltogether/v4-draw-results/actions).
 
-**NOTE**: the output of the Draw Calculator JS library does not reduce the prizes awardable according to the `maxPicksPerUser` protocol limit.
+The CLI ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw. The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the `PrizeDistribution` parameters necessary to replicate the Draw Calculator contract off-chain. These results are commited to the repo.
 
-This produces JSON files for each winner. These files are stored in a [Github repo](https://github.com/pooltogether/v4-draw-results).
+Finally Netlify automatically deploys a new API build with the new JSON files for that drawId and network, creating the hosted Prizes API.
 
-Finally Netlify automatically deploys a new API build with the new JSON files for that drawId and network.
+## Usage
 
-# Usage
-
-The usage of the Prize API is described [here](../reference/prize-api).
+Detailed usage of the Prize API is described [here](../reference/prize-api).
