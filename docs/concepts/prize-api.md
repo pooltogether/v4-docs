@@ -31,7 +31,7 @@ When this event fires all of the parameters required to calculate the winners ar
 
 The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for this new draw. This NodeJs program is run in the v4-draw-results repo [action workflow](https://github.com/pooltogether/v4-draw-results/actions).
 
-The CLI ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw. The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the `PrizeDistribution` parameters necessary to replicate the Draw Calculator contract off-chain. These results are commited to the repo.
+The CLI ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw. The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the [Prize Distribution](./prize-distribution#summary) parameters necessary to replicate the Draw Calculator contract off-chain. These results are commited to the repo.
 
 Finally Netlify automatically deploys a new API build with the new JSON files for that drawId and network, creating the hosted Prizes API.
 
