@@ -5,85 +5,95 @@ const fs = require("fs");
 const fsPromises = require("fs").promises;
 const chalk = require("chalk");
 const packageJson = require("../package.json");
-const path = require('path')
-const find = require('find')
-const glob = require('glob')
+const path = require("path");
+const find = require("find");
+const glob = require("glob");
 
 function formatAddressUrl(network, address) {
-  const { chainId, name } = network
+  const { chainId, name } = network;
 
-  let url
+  let url;
   if (chainId == 1) {
-    url = `https://etherscan.io/address/${address}`
+    url = `https://etherscan.io/address/${address}`;
   } else if (chainId == 56) {
-    url = `https://bscscan.com/address/${address}`
+    url = `https://bscscan.com/address/${address}`;
   } else if (chainId == 77) {
-    url = `https://blockscout.com/poa/sokol/address/${address}`
+    url = `https://blockscout.com/poa/sokol/address/${address}`;
   } else if (chainId == 97) {
-    url = `https://testnet.bscscan.com/address/${address}`
+    url = `https://testnet.bscscan.com/address/${address}`;
   } else if (chainId == 100) {
-    url = `https://blockscout.com/xdai/mainnet/address/${address}`
+    url = `https://blockscout.com/xdai/mainnet/address/${address}`;
   } else if (chainId == 137) {
-    url = `https://explorer-mainnet.maticvigil.com/address/${address}`
+    url = `https://polygonscan.com/address/${address}`;
   } else if (chainId == 80001) {
-    url = `https://explorer-mumbai.maticvigil.com/address/${address}`
+    url = `https://explorer-mumbai.maticvigil.com/address/${address}`;
   } else if (chainId == 42220) {
-    url = `https://explorer.celo.org/address/${address}`
+    url = `https://explorer.celo.org/address/${address}`;
   } else if (chainId == 44787) {
-    url = `https://alfajores-blockscout.celo-testnet.org/address/${address}`
+    url = `https://alfajores-blockscout.celo-testnet.org/address/${address}`;
   } else {
-    url = `https://${name}.etherscan.io/address/${address}`
+    url = `https://${name}.etherscan.io/address/${address}`;
   }
-  return url
+  return url;
 }
 
 function formatDeployments({ npmPackageName, network, githubBaseUrl }) {
-  const result = []
+  const result = [];
 
-  const hardhatNetworkName = network.hardhatNetworkName || network.name
-  const projectRoot = `./node_modules/${npmPackageName}`
-  
-  const deploymentsDirectory = `${projectRoot}/deployments/${hardhatNetworkName}`
-  const deploymentsDirectoryWithChainId = `${projectRoot}/deployments/${hardhatNetworkName}_${network.chainId}`
-  
-  let contractPaths
+  const hardhatNetworkName = network.hardhatNetworkName || network.name;
+  const projectRoot = `./node_modules/${npmPackageName}`;
+
+  const deploymentsDirectory = `${projectRoot}/deployments/${hardhatNetworkName}`;
+  const deploymentsDirectoryWithChainId = `${projectRoot}/deployments/${hardhatNetworkName}_${network.chainId}`;
+
+  let contractPaths;
   if (fs.existsSync(deploymentsDirectory)) {
-    contractPaths = glob.sync(`${deploymentsDirectory}/*.json`)
+    contractPaths = glob.sync(`${deploymentsDirectory}/*.json`);
   } else if (fs.existsSync(deploymentsDirectoryWithChainId)) {
-    contractPaths = glob.sync(`${deploymentsDirectoryWithChainId}/*.json`)
+    contractPaths = glob.sync(`${deploymentsDirectoryWithChainId}/*.json`);
   } else {
-    return result
+    return result;
   }
 
   for (let cpi = 0; cpi < contractPaths.length; cpi++) {
-    const contractPath = contractPaths[cpi]
+    const contractPath = contractPaths[cpi];
 
-    const contract = JSON.parse(fs.readFileSync(contractPath))
-    const contractName = path.basename(contractPath, ".json")
-      
-    console.log(chalk.dim(`Found contract ${contractName}...`))
+    const contract = JSON.parse(fs.readFileSync(contractPath));
+    const contractName = path.basename(contractPath, ".json");
 
-    let contractLink
+    console.log(chalk.dim(`Found contract ${contractName}...`));
 
-    if(fs.existsSync(`${projectRoot}/contracts`)){
-      solidityFilepaths = find.fileSync(`${contractName}.sol`, `${projectRoot}/contracts`)
-      
+    let contractLink;
+
+    if (fs.existsSync(`${projectRoot}/contracts`)) {
+      solidityFilepaths = find.fileSync(
+        `${contractName}.sol`,
+        `${projectRoot}/contracts`
+      );
+
       if (solidityFilepaths.length > 0) {
-        const solidityFilePath = solidityFilepaths[0].split("/contracts")[1]
-        contractLink = `[${contractName}](${githubBaseUrl}/contracts${solidityFilePath})`
+        const solidityFilePath = solidityFilepaths[0].split("/contracts")[1];
+        contractLink = `[${contractName}](${githubBaseUrl}/contracts${solidityFilePath})`;
       } else {
-        contractLink = contractName
+        contractLink = contractName;
       }
-
+    } else {
+      // case where no contracts folder in package
+      contractLink = contractName;
     }
-    else { // case where no contracts folder in package
-      contractLink = contractName
-    }
 
-    result.push(`| ${contractLink} | [${contract.address}](${formatAddressUrl(network, contract.address)}) | [Artifact](${githubBaseUrl + `/deployments/${hardhatNetworkName}/${path.basename(contractPath)}`}) |`)
+    result.push(
+      `| ${contractLink} | [${contract.address}](${formatAddressUrl(
+        network,
+        contract.address
+      )}) | [Artifact](${
+        githubBaseUrl +
+        `/deployments/${hardhatNetworkName}/${path.basename(contractPath)}`
+      }) |`
+    );
   }
 
-  return result
+  return result;
 }
 
 function capitalizeFirstLetter(string) {
@@ -101,22 +111,22 @@ const appendNoNewline = (out, str) => {
 async function generateBlockchainNetworks({
   name,
   networkDeployments,
-  outputFilePath
+  outputFilePath,
 }) {
   const outputFile = fs.openSync(outputFilePath, "w");
 
   console.log(chalk.yellow(`Generating deployments for ${name}...`));
 
-  append(outputFile, `---`)
-  append(outputFile, `title: ${name}`)
-  append(outputFile, `---`)
-  append(outputFile, ``)
-  append(outputFile, `# ${name}`)
-  append(outputFile, ``)
-  
+  append(outputFile, `---`);
+  append(outputFile, `title: ${name}`);
+  append(outputFile, `---`);
+  append(outputFile, ``);
+  append(outputFile, `# ${name}`);
+  append(outputFile, ``);
+
   for (let ni = 0; ni < networkDeployments.length; ni++) {
     const { network, deployments } = networkDeployments[ni];
-    
+
     if (deployments.length > 0) {
       console.log(chalk.yellow(`Generating network ${network.name}...`));
       append(outputFile, `## ${capitalizeFirstLetter(network.name)}`);
@@ -191,21 +201,22 @@ async function generate() {
     {
       chainId: 42220,
       name: "Celo",
-      hardhatNetworkName: 'celo'
+      hardhatNetworkName: "celo",
     },
     {
       chainId: 44787,
-      name: 'Alfajores',
-      hardhatNetworkName: 'celoTestnet'
-    }
-  ]
+      name: "Alfajores",
+      hardhatNetworkName: "celoTestnet",
+    },
+  ];
 
-  const allNetworks = ethereumNetworks.concat(xDaiNetworks).concat(maticNetworks).concat(binanceNetworks).concat(celoNetworks)
+  const allNetworks = ethereumNetworks
+    .concat(xDaiNetworks)
+    .concat(maticNetworks)
+    .concat(binanceNetworks)
+    .concat(celoNetworks);
 
-  function buildNetworkDeployments({
-    npmPackageName,
-    githubBaseUrl
-  }) {
+  function buildNetworkDeployments({ npmPackageName, githubBaseUrl }) {
     return allNetworks.map((network) => {
       return {
         network,
@@ -213,21 +224,20 @@ async function generate() {
           npmPackageName,
           network,
           githubBaseUrl,
-        })
-      }
-    })
+        }),
+      };
+    });
   }
 
   const networkDeployments = buildNetworkDeployments({
     npmPackageName: "@pooltogether/v4-rinkeby",
-    githubBaseUrl:
-      "https://github.com/pooltogether/v4-rinkeby/tree/master",
-  })
-  
+    githubBaseUrl: "https://github.com/pooltogether/v4-rinkeby/tree/master",
+  });
+
   await generateBlockchainNetworks({
     name: "V4 Testnet",
     networkDeployments,
-    outputFilePath: `./docs/reference/deployments/testnet.md`
+    outputFilePath: `./docs/reference/deployments/testnet.md`,
   });
 
   console.log(chalk.green(`Done!`));
