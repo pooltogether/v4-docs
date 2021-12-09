@@ -3,22 +3,24 @@ title: Prize API
 sidebar_position: 4
 ---
 
-# Usage
+The Prize API is an easy way to access the information related to Prizes claimable in PoolTogether v4.
 
 For a detailed description of the Prize API as a concept see [here](../concepts/prize-api).
 
+# Usage
+
 The API data is sorted by Prize Distributor. This is the contract that distributes the prizes associated with a Ticket on a network. This is because a Ticket may have multiple Prize Distributors.
 
-| Network | Prize Distributor                                                                                                                        |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| mainnet | [0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe](https://etherscan.io/address/0xb9a179DcA5a7bf5f8B9E088437B3A85ebB495eFe)                    |
-| polygon | [0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056](https://explorer-mainnet.maticvigil.com/address/0x8141BcFBcEE654c5dE17C4e2B2AF26B67f9B9056) |
+| Network | Prize Distributor                                                                                                        |
+| ------- | ------------------------------------------------------------------------------------------------------------------------ |
+| mainnet | [0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe](https://etherscan.io/address/0xb9a179DcA5a7bf5f8B9E088437B3A85ebB495eFe)    |
+| polygon | [0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056](https://polygonscan.com/address/0x8141BcFBcEE654c5dE17C4e2B2AF26B67f9B9056) |
 
 **NOTE**: The Prize API does not reduce the prizes awardable according to the `maxPicksPerUser` protocol limit.
 
 ## Hosted API
 
-The hosted API can be used to query prize winners per Draw for each Network and Ticket associated Prize Distributor.
+The following section describes how to use the hosted API at https://api.pooltogether.com/prizes
 
 ### All Prizes per Draw
 

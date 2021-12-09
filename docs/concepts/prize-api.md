@@ -5,7 +5,9 @@ sidebar_position: 4
 
 # Description
 
-The Prizes API is a convenient HTTP API that summarizes the Prizes awardable across the Prize Linked Network.
+The Prize API is an easy way to access the information related to Prizes claimable in PoolTogether v4.
+
+The Prizes API is a convenient HTTP API that summarizes the claimable Prizes across the Prize Linked Network.
 Prizes information is provided in a HTTP JSON server. This API is entirely replicable from onchain data.
 This data contains:
 
