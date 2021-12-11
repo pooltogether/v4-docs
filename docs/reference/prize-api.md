@@ -165,12 +165,12 @@ margin-right="auto"
 
 </div>
 
-### Prize Data Available
+## Prize Data Available
 
 The prize data begins its lifecycle when the `PrizeDistributionSet` event is fired from the `PrizeDistributionBuffer` contract for a particular network.
 When this event fires all of the parameters required to calculate the winners are now available.
 
-### Draw Calculator Prize Mining
+## Draw Calculator Prize Mining
 
 The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for this new draw. This NodeJs program is run in the `v4-draw-results` repo [action workflow](https://github.com/pooltogether/v4-draw-results/actions).
 
