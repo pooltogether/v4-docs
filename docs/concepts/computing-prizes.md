@@ -3,46 +3,37 @@ title: Computing Prizes
 sidebar_position: 4
 ---
 
-# Description
+# Computing Prizes
 
-The PoolTogether v4 protocol produces a lot of information surrounding prizes and winners across networks and draws.
+## Description
 
-This data contains:
+This section outlines how the prizes are computed. The Draw Calculator contract is responsible for calculating prizes. For each draw, it takes several inputs:
 
-1. Which addresses won prizes for each draw across networks
-1. How much each address won for each draw
-1. Which lucky pick won for each prize
+- The users TWAB
+- The total supply TWAB
+- The Prize Distribution
+- The winning random number
 
-## Prize Data Lifecycle Overview
+However since the user may have hundreds or thousands of picks, this calculation can also be replicated off-chain.
 
-This rich Prizes data set is made available off-chain via the Prizes API. The Prize HTTP API is an easy way to access the information related to Prizes claimable in PoolTogether v4. This data is entirely replicable from onchain data.
-
-<div class="myDiv" display="flex">
-
+<a href={require('/img/guides/ComputingPrizes.png').default} target="\_blank">
 <img
-src={require('/img/guides/PrizesApiArchitecture.png').default}
-alt='Prize Mining Datacycle'
-margin-left="auto"
-margin-right="auto"
+src={require('/img/guides/ComputingPrizes.png').default}
+alt='Prize Pool'
+class='img-full'
 />
+</a>
 
-</div>
+## Draw Calculator
 
-### Prize Data Available
+The draw calculator does the following:
 
-The prize data begins its lifecycle when the `PrizeDistributionSet` event is fired from the `PrizeDistributionBuffer` contract for a particular network.
-When this event fires all of the parameters required to calculate the winners are now available.
+- Calculates the number of picks for the user (derived from the user's fraction of the total supply TWAB).
+- For each of the user's picks and the winning random number:
+  - Within the `matchCardinality` and over the `bitRangeSize`, how many sequential matches occur.
+- Given the number of matches, calculating the prize tier the user falls in.
+- Returns the absolute amount of prize (if any) the user will receive for the draw.
 
-### Draw Calculator Prize Mining
+## Prize API
 
-The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for this new draw. This NodeJs program is run in the `v4-draw-results` repo [action workflow](https://github.com/pooltogether/v4-draw-results/actions).
-
-The CLI tool ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw.
-
-The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the [Prize Distribution](./prize-distribution#summary) parameters necessary to replicate the Draw Calculator contract off-chain. We call this process "Prize Mining" since it is computationally heavy as every pick is checked for the user!
-
-The CLI computation results are then commited to the [v4-draw-results repo](https://github.com/pooltogether/v4-draw-results).
-
-### Prize API
-
-Finally Netlify automatically deploys a new API build with the new JSON files for that drawId and network, creating the hosted Prize API. Detailed usage of the Prize API is described [here](../reference/prize-api).
+All prize data is made readily available at the [Prize API](../reference/prize-api).

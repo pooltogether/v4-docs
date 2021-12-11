@@ -3,11 +3,22 @@ title: Prize API
 sidebar_position: 4
 ---
 
-The Prize API is an easy way to access the information related to Prizes claimable in PoolTogether v4.
+# Prize API
 
-For a detailed description of the Prize API as a concept see [here](../concepts/prize-api).
+The Prize API is an easy way to access the PoolTogether v4 prize data. For a detailed description of how the prizes are calculated see [here](../concepts/computing-prizes).
 
-The data can be accessed via the hosted API and/or locally.
+This data contains:
+
+1. Which addresses won prizes for each draw across networks
+1. How much each address won for each draw
+1. Which lucky pick won for each users prize
+
+This data can be accessed via:
+
+- the hosted API
+- locally
+
+The provenance and [lifecycle](#prize-data-lifecycle-overview) of the data is also detailed.
 
 # Usage
 
@@ -20,9 +31,9 @@ The data is then catagorized by Prize Distributor address. This is the contract 
 | mainnet | [0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe](https://etherscan.io/address/0xb9a179DcA5a7bf5f8B9E088437B3A85ebB495eFe)    |
 | polygon | [0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056](https://polygonscan.com/address/0x8141BcFBcEE654c5dE17C4e2B2AF26B67f9B9056) |
 
-**NOTE**: These addresses must be lower case.
+Finally the data is sorted by `drawId`, where `drawId` is unique and sequentially increasing over time.
 
-Finally the data is sorted by drawId, where drawId is unique and sequentially increasing over time.
+**NOTE**: These addresses must be lower case.
 
 **NOTE**: The Prize data does not reduce the prizes claimable according to the `maxPicksPerUser` protocol limit.
 
@@ -85,7 +96,7 @@ This API endpoint serves a JSON file for an individual address per Draw, enablin
 | drawId                  | the integer drawId               | drawId's are sequential over time                |
 | address                 | the address of the user          | this address must be lower case                  |
 
-The endpoint will return a 404 if the address passed was not a winner for that Draw.
+The endpoint will return a `404` status if the address passed was not a winner for that Draw.
 
 #### Examples
 
@@ -127,7 +138,7 @@ In your `package.json` add:
   ...
   "dependencies": {
     ...
-    "v4PrizesData": "git:@pooltogether/v4-draw-results.git"
+    "v4PrizesData": "git+https://github.com/pooltogether/v4-draw-results.git
   }
   ...
 ```
@@ -135,8 +146,36 @@ In your `package.json` add:
 This data can then be imported into scripts for analysis using:
 
 ```javascript
-import prizesData from "v4PrizesData";
-
-// all winners data for draw 15 on polygon
-const allWinnersDraw15 = require("prizesData/data/prizes/137/0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056/draw/15/prizes");
+// all winners data for draw 2 on mainet
+import allWinnersDraw15 from "./node_modules/v4PrizesData/api/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/2/prizes";
 ```
+
+# Prize Data Lifecycle Overview
+
+This section describes how the prize data lifecycle.
+
+<div class="myDiv" display="flex">
+
+<img
+src={require('/img/guides/PrizesApiArchitecture.png').default}
+alt='Prize Mining Datacycle'
+margin-left="auto"
+margin-right="auto"
+/>
+
+</div>
+
+### Prize Data Available
+
+The prize data begins its lifecycle when the `PrizeDistributionSet` event is fired from the `PrizeDistributionBuffer` contract for a particular network.
+When this event fires all of the parameters required to calculate the winners are now available.
+
+### Draw Calculator Prize Mining
+
+The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for this new draw. This NodeJs program is run in the `v4-draw-results` repo [action workflow](https://github.com/pooltogether/v4-draw-results/actions).
+
+The CLI tool ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw.
+
+The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the [Prize Distribution](./prize-distribution#summary) parameters necessary to replicate the Draw Calculator contract off-chain. We call this process "Prize Mining" since it is computationally heavy as every pick is checked for the user!
+
+The CLI computation results are then commited to the [v4-draw-results repo](https://github.com/pooltogether/v4-draw-results), the repository which serves the Netlify hosted API.
