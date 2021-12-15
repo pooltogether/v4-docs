@@ -92,7 +92,7 @@ This API endpoint serves a JSON file for an individual address per Draw, enablin
 | Field                   | Description                      | Example/Description                              |
 | ----------------------- | -------------------------------- | ------------------------------------------------ |
 | chainId                 | the chainId of the network       | 1 for Ethereum mainnet, 137 for Polygon          |
-| prizeDistributorAddress | address of the prize distributor | the Prize Distributor associated with this prize |
+| prizeDistributorAddress | address of the prize distributor | the prize distributor associated with this prize |
 | drawId                  | the integer drawId               | drawId's are sequential over time                |
 | address                 | the address of the user          | this address must be lower case                  |
 
@@ -138,7 +138,7 @@ In your `package.json` add:
   ...
   "dependencies": {
     ...
-    "v4PrizesData": "git+https://github.com/pooltogether/v4-draw-results.git
+    "v4PrizesData": "git+https://github.com/pooltogether/v4-draw-results.git"
   }
   ...
 ```
@@ -146,6 +146,6 @@ In your `package.json` add:
 This data can then be imported into scripts for analysis using:
 
 ```javascript
-// all winners data for draw 2 on mainet
+// all winners data for draw 2 on mainnet
 import allWinnersDraw15 from "./node_modules/v4PrizesData/api/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/2/prizes";
 ```
