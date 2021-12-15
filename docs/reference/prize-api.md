@@ -15,10 +15,8 @@ This data contains:
 
 This data can be accessed via:
 
-- the hosted API
-- locally
-
-The provenance and [lifecycle](#prize-data-lifecycle-overview) of the data is also detailed.
+- Hosted API
+- Locally
 
 # Usage
 
@@ -33,7 +31,7 @@ The data is then catagorized by Prize Distributor address. This is the contract 
 
 Finally the data is sorted by `drawId`, where `drawId` is unique and sequentially increasing over time.
 
-**NOTE**: These addresses must be lower case.
+**NOTE**: These addresses **must** be lower case.
 
 **NOTE**: The Prize data does not reduce the prizes claimable according to the `maxPicksPerUser` protocol limit.
 
@@ -73,7 +71,7 @@ The following section describes how to use the hosted API at https://api.pooltog
 
 ### All Prizes per Draw
 
-This API endpoint serves a JSON file with _all_ the winners for that particular drawId.
+This API endpoint serves a JSON file with _all_ the winners for that particular `drawId`.
 
 `HTTP GET` **https://api.pooltogether.com/prizes/:chainId/:prizeDistributorAddress/draw/:drawId/prizes.json**
 
@@ -85,7 +83,7 @@ This API endpoint serves a JSON file with _all_ the winners for that particular 
 
 ### All Prizes per Address for a Draw
 
-This API endpoint serves a JSON file for an individual address per Draw, enabling more granular usage/analysis.
+This API endpoint serves a JSON file for an individual address per draw, enabling more granular usage/analysis.
 
 `HTTP GET` **https://api.pooltogether.com/prizes/:chainId/:prizeDistributorAddress/draw/:drawId/:address.json**
 
@@ -96,11 +94,11 @@ This API endpoint serves a JSON file for an individual address per Draw, enablin
 | drawId                  | the integer drawId               | drawId's are sequential over time                |
 | address                 | the address of the user          | this address must be lower case                  |
 
-The endpoint will return a `404` status if the address passed was not a winner for that Draw.
+The endpoint will return a `404` status if the address passed was not a winner for that draw.
 
 #### Examples
 
-For example, using Javascript and [Fetch](https://www.npmjs.com/package/node-fetch), getting the results for drawId 10 on Ethereum mainnet:
+For example, using Javascript and [Fetch](https://www.npmjs.com/package/node-fetch), getting the results for `drawId` 10 on Ethereum mainnet:
 
 ```js
 const draw10PrizesResult = await fetch(
@@ -147,5 +145,5 @@ This data can then be imported into scripts for analysis using:
 
 ```javascript
 // all winners data for draw 2 on mainnet
-import allWinnersDraw15 from "./node_modules/v4PrizesData/api/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/2/prizes";
+import allWinnersDraw2 from "./node_modules/v4PrizesData/api/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/2/prizes";
 ```
