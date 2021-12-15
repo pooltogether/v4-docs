@@ -28,7 +28,8 @@ The high-level steps of this process are:
 
 - Query the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) for each user's balance for the draw
 - For each of these users run [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js), which returns prizes for users (if any).
-  These steps are combined in the [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) and executed in the [v4-draw-results repo](https://github.com/pooltogether/v4-draw-results) workflow to create the prize data.
+
+These steps are combined in the [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) and executed in the [v4-draw-results repo](https://github.com/pooltogether/v4-draw-results) workflow to create the prize data.
 
 ## Prize API
 
