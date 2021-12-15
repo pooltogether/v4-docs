@@ -149,33 +149,3 @@ This data can then be imported into scripts for analysis using:
 // all winners data for draw 2 on mainet
 import allWinnersDraw15 from "./node_modules/v4PrizesData/api/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/2/prizes";
 ```
-
-# Prize Data Lifecycle Overview
-
-This section describes how the prize data lifecycle.
-
-<div class="myDiv" display="flex">
-
-<img
-src={require('/img/guides/PrizesApiArchitecture.png').default}
-alt='Prize Mining Datacycle'
-margin-left="auto"
-margin-right="auto"
-/>
-
-</div>
-
-## Prize Data Available
-
-The prize data begins its lifecycle when the `PrizeDistributionSet` event is fired from the `PrizeDistributionBuffer` contract for a particular network.
-When this event fires all of the parameters required to calculate the winners are now available.
-
-## Draw Calculator Prize Mining
-
-The [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) tool is then run automatically for this new draw. This NodeJs program is run in the `v4-draw-results` repo [action workflow](https://github.com/pooltogether/v4-draw-results/actions).
-
-The CLI tool ingests data from the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) to calculate each users normalized balance eligible for that draw.
-
-The CLI [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js) is then run with these balances as input for each user, along with the [Prize Distribution](./prize-distribution#summary) parameters necessary to replicate the Draw Calculator contract off-chain. We call this process "Prize Mining" since it is computationally heavy as every pick is checked for the user!
-
-The CLI computation results are then commited to the [v4-draw-results repo](https://github.com/pooltogether/v4-draw-results), the repository which serves the Netlify hosted API.

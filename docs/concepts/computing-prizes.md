@@ -5,16 +5,13 @@ sidebar_position: 4
 
 # Computing Prizes
 
-## Description
+This section outlines how the prizes are computed for each draw. The high-level steps of this process are:
 
-This section outlines how the prizes are computed. The Draw Calculator contract is responsible for calculating prizes. For each draw, it takes several inputs:
-
-- The users TWAB
-- The total supply TWAB
-- The Prize Distribution
-- The winning random number
-
-However since the user may have hundreds or thousands of picks, this calculation can also be replicated off-chain.
+- Get the Draw & Prize Distribution from the DrawBuffer and PrizeDistributionBuffer contracts respectively
+- Compute the user's TWAB for the draw given the draw start teimstamp, beacon period & offsets
+- Get the total ticket supply TWAB
+- Compute the number of picks a user gets (this is the user's fraction of TWAB vs. total supply TWAB multipled by the number of picks for the draw)
+- For each pick, compute the users random number and compare it to winning random number
 
 <a href={require('/img/guides/ComputingPrizes.png').default} target="\_blank">
 <img
@@ -24,15 +21,14 @@ class='img-full'
 />
 </a>
 
-## Draw Calculator
+## Offchain Prize Calculation
 
-The draw calculator does the following:
+Since the user may have hundreds or thousands of picks, this calculation can also be replicated off-chain.
+The high-level steps of this process are:
 
-- Calculates the number of picks for the user (derived from the user's fraction of the total supply TWAB).
-- For each of the user's picks and the winning random number:
-  - Within the `matchCardinality` and over the `bitRangeSize`, how many sequential matches occur.
-- Given the number of matches, calculating the prize tier the user falls in.
-- Returns the absolute amount of prize (if any) the user will receive for the draw.
+- Query the [Total Weighted Average Balance Subgraph](https://github.com/pooltogether/twab-subgraph) for each user's balance for the draw
+- For each of these users run [Draw Calculator library](https://github.com/pooltogether/draw-calculator-js), which returns prizes for users (if any).
+  These steps are combined in the [Draw Calculator CLI](https://github.com/pooltogether/draw-calculator-cli) and executed in the [v4-draw-results repo](https://github.com/pooltogether/v4-draw-results) workflow to create the prize data.
 
 ## Prize API
 
