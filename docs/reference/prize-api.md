@@ -18,6 +18,8 @@ This data can be accessed via:
 - Hosted API
 - Locally
 
+This data can be reproduced by following the instructions [here](https://github.com/pooltogether/v4-draw-results).
+
 # Usage
 
 The Prize data is first catagorized by network, specifically chainId.
