@@ -1,8 +1,6 @@
-L1TimelockTrigger(s) acts as an intermediary between multiple V4 smart contracts.
-            The L1TimelockTrigger is responsible for pushing Draws to a DrawBuffer and routing
-            claim requests from a PrizeDistributor to a DrawCalculator. The primary objective is
-            to  include a "cooldown" period for all new Draws. Allowing the correction of a
-            malicously set Draw in the unfortunate event an Owner is compromised.
+The BeaconTimelockTrigger smart contract is an upgrade of the L1TimelockTimelock smart contract.
+            Reducing protocol risk by eliminating off-chain computation of PrizeDistribution parameters. The timelock will
+            only pass the total supply of all tickets in a "PrizePool Network" to the prize distribution factory contract.
 
 
 
@@ -12,36 +10,36 @@ L1TimelockTrigger(s) acts as an intermediary between multiple V4 smart contracts
 ```solidity
   function constructor(
     address _owner,
-    contract IPrizeDistributionBuffer _prizeDistributionBuffer,
+    contract IPrizeDistributionFactory _prizeDistributionFactory,
     contract IDrawCalculatorTimelock _timelock
   ) public
 ```
-Initialize L1TimelockTrigger smart contract.
+Initialize BeaconTimelockTrigger smart contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address |                    Address of the L1TimelockTrigger owner.
-|`_prizeDistributionBuffer` | contract IPrizeDistributionBuffer | PrizeDistributionBuffer address
-|`_timelock` | contract IDrawCalculatorTimelock |                 Elapsed seconds before new Draw is available
+|`_owner` | address | The smart contract owner
+|`_prizeDistributionFactory` | contract IPrizeDistributionFactory | PrizeDistributionFactory address
+|`_timelock` | contract IDrawCalculatorTimelock | DrawCalculatorTimelock address
 
 ### push
 ```solidity
   function push(
-    struct IDrawBeacon.Draw _draw,
-    struct IPrizeDistributionBuffer.PrizeDistribution _prizeDistribution
+    struct IDrawBeacon.Draw draw,
+    uint256 totalNetworkTicketSupply
   ) external
 ```
-Push Draw onto draws ring buffer history.
+Locks next Draw and pushes totalNetworkTicketSupply to PrizeDistributionFactory
 
-   Restricts new draws by forcing a push timelock.
+   Restricts new draws for N seconds by forcing timelock on the next target draw id.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_draw` | struct IDrawBeacon.Draw | Draw struct
-|`_prizeDistribution` | struct IPrizeDistributionBuffer.PrizeDistribution | PrizeDistribution struct
+|`draw` | struct IDrawBeacon.Draw | Draw
+|`totalNetworkTicketSupply` | uint256 | totalNetworkTicketSupply
 
 ### manager
 ```solidity
@@ -135,36 +133,6 @@ This function is only callable by the `_pendingOwner`.
 
 
 ## Events
-### Deployed
-```solidity
-  event Deployed(
-    contract IPrizeDistributionBuffer prizeDistributionBuffer,
-    contract IDrawCalculatorTimelock timelock
-  )
-```
-Emitted when the contract is deployed.
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`prizeDistributionBuffer`| contract IPrizeDistributionBuffer | The address of the prize distribution buffer contract.
-|`timelock`| contract IDrawCalculatorTimelock | The address of the DrawCalculatorTimelock
-### PrizeDistributionPushed
-```solidity
-  event PrizeDistributionPushed(
-    uint32 drawId,
-    struct IPrizeDistributionBuffer.PrizeDistribution prizeDistribution
-  )
-```
-Emitted when target prize distribution is pushed.
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`drawId`| uint32 |    Draw ID
-|`prizeDistribution`| struct IPrizeDistributionBuffer.PrizeDistribution | PrizeDistribution
 ### ManagerTransferred
 ```solidity
   event ManagerTransferred(
@@ -208,3 +176,28 @@ Emitted when `_owner` has been changed.
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |`previousOwner`| address | previous `_owner` address.
 |`newOwner`| address | new `_owner` address.
+### Deployed
+```solidity
+  event Deployed(
+  )
+```
+Emitted when the contract is deployed.
+
+
+### DrawLockedAndTotalNetworkTicketSupplyPushed
+```solidity
+  event DrawLockedAndTotalNetworkTicketSupplyPushed(
+    uint32 drawId,
+    struct IDrawBeacon.Draw draw,
+    uint256 totalNetworkTicketSupply
+  )
+```
+Emitted when Draw is locked and totalNetworkTicketSupply is pushed to PrizeDistributionFactory
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`drawId`| uint32 | Draw ID
+|`draw`| struct IDrawBeacon.Draw | Draw
+|`totalNetworkTicketSupply`| uint256 | totalNetworkTicketSupply

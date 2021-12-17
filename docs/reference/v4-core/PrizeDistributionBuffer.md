@@ -4,6 +4,20 @@ The PrizeDistributionBuffer contract provides historical lookups of PrizeDistrib
             parameters can only be updated the owner. When adding a new PrizeDistribution basic sanity checks will be used to
             validate the incoming parameters.
 
+
+## Structs
+### `PrizeDistribution`
+  - uint8 bitRangeSize
+  - uint8 matchCardinality
+  - uint32 startTimestampOffset
+  - uint32 endTimestampOffset
+  - uint32 maxPicksPerUser
+  - uint32 expiryDuration
+  - uint104 numberOfPicks
+  - uint32[16] tiers
+  - uint256 prize
+
+
 ## Functions
 ### constructor
 ```solidity

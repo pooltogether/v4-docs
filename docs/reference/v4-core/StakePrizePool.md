@@ -1,5 +1,6 @@
-The Yield Source Prize Pool uses a yield source contract to generate prizes.
-        Funds that are deposited into the prize pool are then deposited into a yield source. (i.e. Aave, Compound, etc...)
+The Stake Prize Pool is a prize pool in which users can deposit an ERC20 token.
+        These tokens are simply held by the Stake Prize Pool and become eligible for prizes.
+        Prizes are added manually by the Stake Prize Pool owner and are distributed to users at the end of the prize period.
 
 
 
@@ -9,27 +10,17 @@ The Yield Source Prize Pool uses a yield source contract to generate prizes.
 ```solidity
   function constructor(
     address _owner,
-    contract IYieldSource _yieldSource
+    contract IERC20 _stakeToken
   ) public
 ```
-Deploy the Prize Pool and Yield Service with the required contract connections
+Deploy the Stake Prize Pool
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address | Address of the Yield Source Prize Pool owner
-|`_yieldSource` | contract IYieldSource | Address of the yield source
-
-### sweep
-```solidity
-  function sweep(
-  ) external
-```
-Sweeps any stray balance of deposit tokens into the yield source.
-
-This becomes prize money
-
+|`_owner` | address | Address of the Stake Prize Pool owner
+|`_stakeToken` | contract IERC20 | Address of the stake token
 
 ### balance
 ```solidity
@@ -452,29 +443,16 @@ This function is only callable by the `_pendingOwner`.
 ### Deployed
 ```solidity
   event Deployed(
-    address yieldSource
+    contract IERC20 stakeToken
   )
 ```
 
-Emitted when yield source prize pool is deployed.
+Emitted when stake prize pool is deployed.
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`yieldSource`| address | Address of the yield source.
-### Swept
-```solidity
-  event Swept(
-    uint256 amount
-  )
-```
-Emitted when stray deposit token balance in this contract is swept
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`amount`| uint256 | The amount that was swept
+|`stakeToken`| contract IERC20 | Address of the stake token.
 ### OwnershipOffered
 ```solidity
   event OwnershipOffered(

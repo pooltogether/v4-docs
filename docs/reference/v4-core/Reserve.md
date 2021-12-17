@@ -4,9 +4,12 @@ The Reserve contract provides historical lookups of a token balance increase dur
               By using the reserve and withdraw accumulators to create a new checkpoint, any contract or account
               can lookup the balance increase of the reserve for a target timerange.   
 
-   By calculating the total held tokens in a speicific time range, contracts that require knowledge 
-              of captured interest during a draw period, can easily call into the Reserve and determininstially
+   By calculating the total held tokens in a specific time range, contracts that require knowledge 
+              of captured interest during a draw period, can easily call into the Reserve and deterministically
               determine the newly aqcuired tokens for that time range.
+
+
+
 ## Functions
 ### constructor
 ```solidity

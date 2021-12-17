@@ -1,5 +1,17 @@
 IPrizeTierHistory is the base contract for PrizeTierHistory
 
+
+## Structs
+### `PrizeTier`
+  - uint8 bitRangeSize
+  - uint32 drawId
+  - uint32 maxPicksPerUser
+  - uint32 expiryDuration
+  - uint32 endTimestampOffset
+  - uint256 prize
+  - uint32[16] tiers
+
+
 ## Functions
 ### constructor
 ```solidity
@@ -13,7 +25,7 @@ IPrizeTierHistory is the base contract for PrizeTierHistory
 ### push
 ```solidity
   function push(
-  ) external returns (uint32)
+  ) external
 ```
 
 
@@ -22,7 +34,7 @@ IPrizeTierHistory is the base contract for PrizeTierHistory
 ### replace
 ```solidity
   function replace(
-  ) external returns (uint256)
+  ) external
 ```
 
 

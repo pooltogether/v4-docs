@@ -5,6 +5,20 @@ Manages RNG (random number generator) requests and pushing Draws onto DrawBuffer
             which will push the draw onto the DrawBuffer.
             If the RNG service fails to deliver a rng, when the request timeout elapses, the user can cancel the request.
 
+
+## Structs
+### `RngRequest`
+  - uint32 id
+  - uint32 lockBlock
+  - uint64 requestedAt
+### `Draw`
+  - uint256 winningRandomNumber
+  - uint32 drawId
+  - uint64 timestamp
+  - uint64 beaconPeriodStartedAt
+  - uint32 beaconPeriodSeconds
+
+
 ## Functions
 ### constructor
 ```solidity
@@ -111,7 +125,7 @@ Calculates the next beacon start time, assuming all beacon periods have occurred
 ### calculateNextBeaconPeriodStartTime
 ```solidity
   function calculateNextBeaconPeriodStartTime(
-    uint256 time
+    uint64 time
   ) external returns (uint64)
 ```
 Calculates when the next beacon period will start.
@@ -120,12 +134,12 @@ Calculates when the next beacon period will start.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`time` | uint256 | The timestamp to use as the current time
+|`time` | uint64 | The timestamp to use as the current time
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint256 | timestamp at which the next beacon period would start
+|`The`| uint64 | timestamp at which the next beacon period would start
 ### cancelDraw
 ```solidity
   function cancelDraw(

@@ -1,8 +1,19 @@
 The Ticket extends the standard ERC20 and ControlledToken interfaces with time-weighted average balance functionality.
-            The average balance held by a user between two timestamps can be calculated, as well as the historic balance.  The 
+            The average balance held by a user between two timestamps can be calculated, as well as the historic balance.  The
             historic total supply is available as well as the average total supply between two timestamps.
 
             A user may "delegate" their balance; increasing another user's historic balance while retaining their tokens.
+
+
+## Structs
+### `AccountDetails`
+  - uint224 balance
+  - uint16 nextTwabIndex
+  - uint16 cardinality
+### `Account`
+  - struct ITicket.AccountDetails details
+  - struct ObservationLib.Observation[65535] twabs
+
 
 ## Functions
 ### constructor

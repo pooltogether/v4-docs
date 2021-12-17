@@ -1,124 +1,105 @@
-OracleTimelock(s) acts as an intermediary between multiple V4 smart contracts.
-            The OracleTimelock is responsible for pushing Draws to a DrawBuffer and routing
-            claim requests from a PrizeDistributor to a DrawCalculator. The primary objective is
-            to include a "cooldown" period for all new Draws. Allowing the correction of a
-            maliciously set Draw in the unfortunate event an Owner is compromised.
+The Prize Distribution Factory populates a Prize Distribution Buffer for a prize pool.  It uses a Prize Tier History, Draw Buffer and Ticket
+to compute the correct prize distribution.  It automatically sets the cardinality based on the minPickCost and the total network ticket supply.
 
 
-## Structs
-### `Timelock`
-  - uint64 timestamp
-  - uint32 drawId
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _owner,
-    contract IDrawCalculator _calculator
   ) public
 ```
-Initialize DrawCalculatorTimelockTrigger smart contract.
 
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address |                       Address of the DrawCalculator owner.
-|`_calculator` | contract IDrawCalculator |                 DrawCalculator address.
 
-### calculate
+
+### pushPrizeDistribution
 ```solidity
-  function calculate(
-    address user,
-    uint32[] drawIds,
-    bytes data
-  ) external returns (uint256[], bytes)
-```
-Routes claim/calculate requests between PrizeDistributor and DrawCalculator.
-
-   Will enforce a "cooldown" period between when a Draw is pushed and when users can start to claim prizes.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address |    User address
-|`drawIds` | uint32[] | Draw.drawId
-|`data` | bytes |    Encoded pick indices
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Prizes`| address | awardable array
-### lock
-```solidity
-  function lock(
+  function pushPrizeDistribution(
     uint32 _drawId,
-    uint64 _timestamp
-  ) external returns (bool)
+    uint256 _totalNetworkTicketSupply
+  ) external returns (struct IPrizeDistributionBuffer.PrizeDistribution)
 ```
-Lock passed draw id for `timelockDuration` seconds.
-
-   Restricts new draws by forcing a push timelock.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_drawId` | uint32 | Draw id to lock.
-|`_timestamp` | uint64 | Epoch timestamp to unlock the draw.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| uint32 | if operation was successful.
-### getDrawCalculator
-```solidity
-  function getDrawCalculator(
-  ) external returns (contract IDrawCalculator)
-```
-Read internal DrawCalculator variable.
-
-
-
-
-### getTimelock
-```solidity
-  function getTimelock(
-  ) external returns (struct IDrawCalculatorTimelock.Timelock)
-```
-Read internal Timelock struct.
-
-
-
-
-### setTimelock
-```solidity
-  function setTimelock(
-    struct IDrawCalculatorTimelock.Timelock _timelock
-  ) external
-```
-Set the Timelock struct. Only callable by the contract owner.
+Allows the owner or manager to push a new prize distribution onto the buffer.
+The PrizeTier and Draw for the given draw id will be pulled in, and the total network ticket supply will be used to calculate cardinality.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_timelock` | struct IDrawCalculatorTimelock.Timelock | Timelock struct to set.
-
-### hasElapsed
-```solidity
-  function hasElapsed(
-  ) external returns (bool)
-```
-Returns bool for timelockDuration elapsing.
-
-
+|`_drawId` | uint32 | The draw id to compute for
+|`_totalNetworkTicketSupply` | uint256 | The total supply of tickets across all prize pools for the network that the ticket belongs to.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if timelockDuration, since last timelock has elapsed, false otherwise.
+|`The`| uint32 | resulting Prize Distribution
+### setPrizeDistribution
+```solidity
+  function setPrizeDistribution(
+    uint32 _drawId,
+    uint256 _totalNetworkTicketSupply
+  ) external returns (struct IPrizeDistributionBuffer.PrizeDistribution)
+```
+Allows the owner or manager to override an existing prize distribution in the buffer.
+The PrizeTier and Draw for the given draw id will be pulled in, and the total network ticket supply will be used to calculate cardinality.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_drawId` | uint32 | The draw id to compute for
+|`_totalNetworkTicketSupply` | uint256 | The total supply of tickets across all prize pools for the network that the ticket belongs to.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| uint32 | resulting Prize Distribution
+### calculatePrizeDistribution
+```solidity
+  function calculatePrizeDistribution(
+    uint32 _drawId,
+    uint256 _totalNetworkTicketSupply
+  ) public returns (struct IPrizeDistributionBuffer.PrizeDistribution)
+```
+Calculates what the prize distribution will be, given a draw id and total network ticket supply.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_drawId` | uint32 | The draw id to pull from the Draw Buffer and Prize Tier History
+|`_totalNetworkTicketSupply` | uint256 | The total of all ticket supplies across all prize pools in this network
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`PrizeDistribution`| uint32 | using info from the Draw for the given draw id, total network ticket supply, and PrizeTier for the draw.
+### calculatePrizeDistributionWithDrawData
+```solidity
+  function calculatePrizeDistributionWithDrawData(
+    uint32 _drawId,
+    uint256 _totalNetworkTicketSupply,
+    uint32 _beaconPeriodSeconds,
+    uint64 _drawTimestamp
+  ) public returns (struct IPrizeDistributionBuffer.PrizeDistribution)
+```
+Calculates what the prize distribution will be, given a draw id and total network ticket supply.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_drawId` | uint32 | The draw from which to use the Draw and
+|`_totalNetworkTicketSupply` | uint256 | The sum of all ticket supplies across all prize pools on the network
+|`_beaconPeriodSeconds` | uint32 | The beacon period in seconds
+|`_drawTimestamp` | uint64 | The timestamp at which the draw RNG request started.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`A`| uint32 | PrizeDistribution based on the given params and PrizeTier for the passed draw id
 ### manager
 ```solidity
   function manager(
@@ -211,19 +192,36 @@ This function is only callable by the `_pendingOwner`.
 
 
 ## Events
-### Deployed
+### PrizeDistributionPushed
 ```solidity
-  event Deployed(
-    contract IDrawCalculator drawCalculator
+  event PrizeDistributionPushed(
+    uint32 drawId,
+    uint256 totalNetworkTicketSupply
   )
 ```
-Deployed event when the constructor is called
+Emitted when a new Prize Distribution is pushed.
 
 
 #### Parameters:
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
-|`drawCalculator`| contract IDrawCalculator | DrawCalculator address bound to this timelock
+|`drawId`| uint32 | The draw id for which the prize dist was pushed
+|`totalNetworkTicketSupply`| uint256 | The total network ticket supply that was used to compute the cardinality and portion of picks
+### PrizeDistributionSet
+```solidity
+  event PrizeDistributionSet(
+    uint32 drawId,
+    uint256 totalNetworkTicketSupply
+  )
+```
+Emitted when a Prize Distribution is set (overrides another)
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`drawId`| uint32 | The draw id for which the prize dist was set
+|`totalNetworkTicketSupply`| uint256 | The total network ticket supply that was used to compute the cardinality and portion of picks
 ### ManagerTransferred
 ```solidity
   event ManagerTransferred(
@@ -267,31 +265,3 @@ Emitted when `_owner` has been changed.
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |`previousOwner`| address | previous `_owner` address.
 |`newOwner`| address | new `_owner` address.
-### LockedDraw
-```solidity
-  event LockedDraw(
-    uint32 drawId,
-    uint64 timestamp
-  )
-```
-Emitted when target draw id is locked.
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`drawId`| uint32 |    Draw ID
-|`timestamp`| uint64 | Block timestamp
-### TimelockSet
-```solidity
-  event TimelockSet(
-    struct IDrawCalculatorTimelock.Timelock timelock
-  )
-```
-Emitted event when the timelock struct is updated
-
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`timelock`| struct IDrawCalculatorTimelock.Timelock | Timelock struct set

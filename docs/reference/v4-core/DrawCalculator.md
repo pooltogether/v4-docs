@@ -4,11 +4,17 @@ The DrawCalculator calculates a user's prize by matching a winning random number
             A user with a higher average weighted balance (during each draw period) will be given a large number of
             picks to choose from, and thus a higher chance to match the winning numbers.
 
+
+## Structs
+### `PickPrize`
+  - bool won
+  - uint8 tierIndex
+
+
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _owner,
     contract ITicket _ticket,
     contract IDrawBuffer _drawBuffer,
     contract IPrizeDistributionBuffer _prizeDistributionBuffer
@@ -20,7 +26,6 @@ Constructor for DrawCalculator
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_owner` | address | Address of the DrawCalculator owner
 |`_ticket` | contract ITicket | Ticket associated with this DrawCalculator
 |`_drawBuffer` | contract IDrawBuffer | The address of the draw buffer to push draws to
 |`_prizeDistributionBuffer` | contract IPrizeDistributionBuffer | PrizeDistributionBuffer address
@@ -87,94 +92,7 @@ Returns a users balances expressed as a fraction of the total supply over time.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`Array`| address | of balances
-### owner
-```solidity
-  function owner(
-  ) public returns (address)
-```
-Returns the address of the current owner.
-
-
-
-### pendingOwner
-```solidity
-  function pendingOwner(
-  ) external returns (address)
-```
-Gets current `_pendingOwner`.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
-### renounceOwnership
-```solidity
-  function renounceOwnership(
-  ) external
-```
-Renounce ownership of the contract.
-
-Leaves the contract without owner. It will not be possible to call
-`onlyOwner` functions anymore. Can only be called by the current owner.
-NOTE: Renouncing ownership will leave the contract without an owner,
-thereby removing any functionality that is only available to the owner.
-
-
-### transferOwnership
-```solidity
-  function transferOwnership(
-    address _newOwner
-  ) external
-```
-Allows current owner to set the `_pendingOwner` address.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_newOwner` | address | Address to transfer ownership to.
-
-### claimOwnership
-```solidity
-  function claimOwnership(
-  ) external
-```
-Allows the `_pendingOwner` address to finalize the transfer.
-
-This function is only callable by the `_pendingOwner`.
-
-
 ## Events
-### OwnershipOffered
-```solidity
-  event OwnershipOffered(
-    address pendingOwner
-  )
-```
-
-Emitted when `_pendingOwner` has been changed.
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`pendingOwner`| address | new `_pendingOwner` address.
-### OwnershipTransferred
-```solidity
-  event OwnershipTransferred(
-    address previousOwner,
-    address newOwner
-  )
-```
-
-Emitted when `_owner` has been changed.
-
-#### Parameters:
-| Name                           | Type          | Description                                    |
-| :----------------------------- | :------------ | :--------------------------------------------- |
-|`previousOwner`| address | previous `_owner` address.
-|`newOwner`| address | new `_owner` address.
 ### Deployed
 ```solidity
   event Deployed(
