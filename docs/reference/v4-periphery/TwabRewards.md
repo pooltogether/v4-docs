@@ -4,164 +4,317 @@ In order to calculate user rewards, we use the TWAB (Time-Weighted Average Balan
 This way, users simply need to hold their tickets to be eligible to claim rewards.
 Rewards are calculated based on the average amount of tickets they hold during the epoch duration.
 
+This contract support only one prize pool ticket.
+This contract does not support the use of fee on transfer tokens.
 
 ## Structs
 ### `Promotion`
   - address creator
-  - address ticket
   - contract IERC20 token
-  - uint216 tokensPerEpoch
   - uint32 startTimestamp
+  - uint216 tokensPerEpoch
   - uint32 epochDuration
   - uint8 numberOfEpochs
+  - uint256 rewardsUnclaimed
 
 
 ## Functions
+### constructor
+```solidity
+  function constructor(
+    contract ITicket _ticket
+  ) public
+```
+Constructor of the contract.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_ticket` | contract ITicket | Prize Pool ticket address for which the promotions will be created
+
 ### createPromotion
 ```solidity
   function createPromotion(
+    contract IERC20 _token,
+    uint32 _startTimestamp,
+    uint216 _tokensPerEpoch,
+    uint32 _epochDuration,
+    uint8 _numberOfEpochs
   ) external returns (uint256)
 ```
-Create a new promotion.
-        @dev For sake of simplicity, `msg.sender` will be the creator of the promotion.
-        @dev `_latestPromotionId` starts at 0 and is incremented by 1 for each new promotion.
+Creates a new promotion.
+
+For sake of simplicity, `msg.sender` will be the creator of the promotion.
+`_latestPromotionId` starts at 0 and is incremented by 1 for each new promotion.
         So the first promotion will have id 1, the second 2, etc.
-        @param _ticket Prize Pool ticket address for which the promotion is created
-        @param _token Address of the token to be distributed
-        @param _tokensPerEpoch Number of tokens to be distributed per epoch
-        @param _startTimestamp Timestamp at which the promotion starts
-        @param _epochDuration Duration of one epoch in seconds
-        @param _numberOfEpochs Number of epochs the promotion will last for
-        @return Id of the newly created promotion
+Ideally, `_startTimestamp` should be set to a value far in the future.
+        So the transaction is minted in a block way ahead of the actual start of the promotion.
+        The transaction will revert if mined in a block with a timestamp lower to start timestamp.
+The transaction will revert if the amount of reward tokens provided is not equal to `_tokensPerEpoch * _numberOfEpochs`.
+        This scenario could happen if the token supplied is a fee on transfer one.
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_token` | contract IERC20 | Address of the token to be distributed
+|`_startTimestamp` | uint32 | Timestamp at which the promotion starts
+|`_tokensPerEpoch` | uint216 | Number of tokens to be distributed per epoch
+|`_epochDuration` | uint32 | Duration of one epoch in seconds
+|`_numberOfEpochs` | uint8 | Number of epochs the promotion will last for
 
-
-### cancelPromotion
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | Id of the newly created promotion
+### endPromotion
 ```solidity
-  function cancelPromotion(
+  function endPromotion(
+    uint256 _promotionId,
+    address _to
   ) external returns (bool)
 ```
-Cancel currently active promotion and send promotion tokens back to the creator.
-        @param _promotionId Promotion id to cancel
-        @param _to Address that will receive the remaining tokens if there are any left
-        @return true if cancelation was successful
+End currently active promotion and send promotion tokens back to the creator.
 
+Will only send back tokens from the epochs that have not yet started.
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_promotionId` | uint256 | Id of the promotion to end
+|`_to` | address | Address that will receive the remaining tokens if there are any left
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if operation was successful
+### destroyPromotion
+```solidity
+  function destroyPromotion(
+    uint256 _promotionId,
+    address _to
+  ) external returns (bool)
+```
+Delete an inactive promotion and send promotion tokens back to the creator.
+
+Will send back all the tokens that have not been claimed yet by users.
+After the promotion ends, a grace period of 60 days is given to users to claim their rewards.
+This function will revert if the grace period is not over yet.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_promotionId` | uint256 | Id of the promotion to destroy
+|`_to` | address | Address that will receive the remaining tokens if there are any left
+
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if operation was successful
 ### extendPromotion
 ```solidity
   function extendPromotion(
+    uint256 _promotionId,
+    uint8 _numberOfEpochs
   ) external returns (bool)
 ```
 Extend promotion by adding more epochs.
-        @param _promotionId Promotion id to extend
-        @param _numberOfEpochs Number of epochs to add
-        @return true if the operation was successful
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_promotionId` | uint256 | Id of the promotion to extend
+|`_numberOfEpochs` | uint8 | Number of epochs to add
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if the operation was successful
 ### claimRewards
 ```solidity
   function claimRewards(
+    address _user,
+    uint256 _promotionId,
+    uint8[] _epochIds
   ) external returns (uint256)
 ```
 Claim rewards for a given promotion and epoch.
-        @dev Rewards can be claimed on behalf of a user.
-        @dev Rewards can only be claimed for a past epoch.
-        @param _user Address of the user to claim rewards for
-        @param _promotionId Promotion id to claim rewards for
-        @param _epochIds Epoch ids to claim rewards for
-        @return Amount of rewards claimed
 
+Rewards can be claimed on behalf of a user.
+Rewards can only be claimed for a past epoch.
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_user` | address | Address of the user to claim rewards for
+|`_promotionId` | uint256 | Id of the promotion to claim rewards for
+|`_epochIds` | uint8[] | Epoch ids to claim rewards for
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | Total amount of rewards claimed
 ### getPromotion
 ```solidity
   function getPromotion(
+    uint256 _promotionId
   ) external returns (struct ITwabRewards.Promotion)
 ```
 Get settings for a specific promotion.
-        @param _promotionId Promotion id to get settings for
-        @return Promotion settings
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_promotionId` | uint256 | Id of the promotion to get settings for
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct ITwabRewards.Promotion | Promotion settings
 ### getCurrentEpochId
 ```solidity
   function getCurrentEpochId(
+    uint256 _promotionId
   ) external returns (uint256)
 ```
 Get the current epoch id of a promotion.
-        @dev Epoch ids and their boolean values are tightly packed and stored in a uint256, so epoch id starts at 0.
-        @param _promotionId Promotion id to get current epoch for
-        @return Epoch id
 
+Epoch ids and their boolean values are tightly packed and stored in a uint256, so epoch id starts at 0.
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_promotionId` | uint256 | Id of the promotion to get current epoch for
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | Current epoch id of the promotion
 ### getRemainingRewards
 ```solidity
   function getRemainingRewards(
+    uint256 _promotionId
   ) external returns (uint256)
 ```
 Get the total amount of tokens left to be rewarded.
-        @param _promotionId Promotion id to get the total amount of tokens left to be rewarded for
-        @return Amount of tokens left to be rewarded
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_promotionId` | uint256 | Id of the promotion to get the total amount of tokens left to be rewarded for
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | Amount of tokens left to be rewarded
 ### getRewardsAmount
 ```solidity
   function getRewardsAmount(
+    address _user,
+    uint256 _promotionId,
+    uint8[] _epochIds
   ) external returns (uint256[])
 ```
 Get amount of tokens to be rewarded for a given epoch.
-        @dev Will be 0 if user has already claimed rewards for the epoch.
-        @param _user Address of the user to get amount of rewards for
-        @param _promotionId Promotion id from which the epoch is
-        @param _epochIds Epoch ids to get reward amount for
-        @return Amount of tokens to be rewarded
 
+Rewards amount can only be retrieved for epochs that are over.
+Will revert if `_epochId` is over the total number of epochs or if epoch is not over.
+Will return 0 if the user average balance of tickets is 0.
+Will be 0 if user has already claimed rewards for the epoch.
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_user` | address | Address of the user to get amount of rewards for
+|`_promotionId` | uint256 | Id of the promotion from which the epoch is
+|`_epochIds` | uint8[] | Epoch ids to get reward amount for
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256[] | Amount of tokens per epoch to be rewarded
 ## Events
 ### PromotionCreated
 ```solidity
   event PromotionCreated(
+    uint256 promotionId
   )
 ```
 Emitted when a promotion is created.
-        @param promotionId Id of the newly created promotion
 
 
-### PromotionCancelled
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`promotionId`| uint256 | Id of the newly created promotion
+### PromotionEnded
 ```solidity
-  event PromotionCancelled(
+  event PromotionEnded(
+    uint256 promotionId,
+    address recipient,
+    uint256 amount
   )
 ```
-Emitted when a promotion is cancelled.
-        @param promotionId Id of the promotion being cancelled
-        @param amount Amount of tokens transferred to the promotion creator
+Emitted when a promotion is ended.
 
 
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`promotionId`| uint256 | Id of the promotion being ended
+|`recipient`| address | Address of the recipient that will receive the remaining rewards
+|`amount`| uint256 | Amount of tokens transferred to the recipient
+### PromotionDestroyed
+```solidity
+  event PromotionDestroyed(
+    uint256 promotionId,
+    address recipient,
+    uint256 amount
+  )
+```
+Emitted when a promotion is destroyed.
+
+
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`promotionId`| uint256 | Id of the promotion being destroyed
+|`recipient`| address | Address of the recipient that will receive the unclaimed rewards
+|`amount`| uint256 | Amount of tokens transferred to the recipient
 ### PromotionExtended
 ```solidity
   event PromotionExtended(
+    uint256 promotionId,
+    uint256 numberOfEpochs
   )
 ```
 Emitted when a promotion is extended.
-        @param promotionId Id of the promotion being extended
-        @param numberOfEpochs Number of epochs the promotion has been extended by
 
 
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`promotionId`| uint256 | Id of the promotion being extended
+|`numberOfEpochs`| uint256 | Number of epochs the promotion has been extended by
 ### RewardsClaimed
 ```solidity
   event RewardsClaimed(
+    uint256 promotionId,
+    uint8[] epochIds,
+    address user,
+    uint256 amount
   )
 ```
 Emitted when rewards have been claimed.
-        @param promotionId Id of the promotion for which epoch rewards were claimed
-        @param epochIds Ids of the epochs being claimed
-        @param user Address of the user for which the rewards were claimed
-        @param amount Amount of tokens transferred to the recipient address
 
 
+#### Parameters:
+| Name                           | Type          | Description                                    |
+| :----------------------------- | :------------ | :--------------------------------------------- |
+|`promotionId`| uint256 | Id of the promotion for which epoch rewards were claimed
+|`epochIds`| uint8[] | Ids of the epochs being claimed
+|`user`| address | Address of the user for which the rewards were claimed
+|`amount`| uint256 | Amount of tokens transferred to the recipient address
