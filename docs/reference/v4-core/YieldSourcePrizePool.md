@@ -40,9 +40,9 @@ This becomes prize money
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | underlying balance of assets
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The underlying balance of assets
 ### awardBalance
 ```solidity
   function awardBalance(
@@ -54,9 +54,9 @@ captureAwardBalance() should be called first
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | total amount of assets to be awarded for the current prize
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The total amount of assets to be awarded for the current prize
 ### canAwardExternal
 ```solidity
   function canAwardExternal(
@@ -72,9 +72,9 @@ Checks with the Prize Pool if a specific token type may be awarded as an externa
 |`externalToken` | address | The address of the token to check
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| address | if the token may be awarded, false otherwise
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if the token may be awarded, false otherwise
 ### isControlled
 ```solidity
   function isControlled(
@@ -90,9 +90,9 @@ Checks if a specific token is controlled by the Prize Pool
 |`controlledToken` | contract ITicket | The address of the token to check
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| contract ITicket | if the token is a controlled token, false otherwise
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if the token is a controlled token, false otherwise
 ### getAccountedBalance
 ```solidity
   function getAccountedBalance(
@@ -103,9 +103,9 @@ Read internal Ticket accounted balance.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uint256`|  | accountBalance
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | uint256 accountBalance
 ### getBalanceCap
 ```solidity
   function getBalanceCap(
@@ -162,9 +162,9 @@ This function also captures the reserve fees.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | total amount of assets to be awarded for the current prize
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The total amount of assets to be awarded for the current prize
 ### depositTo
 ```solidity
   function depositTo(
@@ -217,9 +217,9 @@ Withdraw assets from the Prize Pool instantly.  A fairness fee may be charged fo
 |`amount` | uint256 | The amount of tokens to redeem for assets.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | actual amount withdrawn
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The actual amount withdrawn
 ### award
 ```solidity
   function award(
@@ -311,9 +311,9 @@ Needs to be called after deploying a prize pool to be able to deposit into it.
 |`balanceCap` | uint256 | New balance cap.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| uint256 | if new balance cap has been successfully set.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if new balance cap has been successfully set.
 ### setLiquidityCap
 ```solidity
   function setLiquidityCap(
@@ -343,9 +343,9 @@ Set prize pool ticket.
 |`ticket` | contract ITicket | Address of the ticket to set.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| contract ITicket | if ticket has been successfully set.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if ticket has been successfully set.
 ### setPrizeStrategy
 ```solidity
   function setPrizeStrategy(
@@ -408,9 +408,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(

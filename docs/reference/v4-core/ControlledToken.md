@@ -88,9 +88,9 @@ This value should be equal to the decimals of the token used to deposit into the
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uint8`|  | decimals.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint8 | uint8 decimals.
 ### controller
 ```solidity
   function controller(
