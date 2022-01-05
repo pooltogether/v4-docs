@@ -51,9 +51,9 @@ Gets a users twab context.  This is a struct with their balance, next twab index
 |`user` | address | The user for whom to fetch the TWAB context.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | TWAB context, which includes { balance, nextTwabIndex, cardinality }
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct TwabLib.AccountDetails | The TWAB context, which includes { balance, nextTwabIndex, cardinality }
 ### getTwab
 ```solidity
   function getTwab(
@@ -71,9 +71,9 @@ Gets the TWAB at a specific index for a user.
 |`index` | uint16 | The index of the TWAB to fetch.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | TWAB, which includes the twab amount and the timestamp.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct ObservationLib.Observation | The TWAB, which includes the twab amount and the timestamp.
 ### getBalanceAt
 ```solidity
   function getBalanceAt(
@@ -91,9 +91,9 @@ Retrieves `user` TWAB balance.
 |`timestamp` | uint64 | Timestamp at which we want to retrieve the TWAB balance.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | TWAB balance at the given timestamp.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The TWAB balance at the given timestamp.
 ### getAverageBalancesBetween
 ```solidity
   function getAverageBalancesBetween(
@@ -113,9 +113,9 @@ Retrieves the average balances held by a user for a given time frame.
 |`endTimes` | uint64[] | The end time of the time frame.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | average balance that the user held during the time frame.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256[] | The average balance that the user held during the time frame.
 ### getAverageTotalSuppliesBetween
 ```solidity
   function getAverageTotalSuppliesBetween(
@@ -133,9 +133,9 @@ Retrieves the average total supply balance for a set of given time frames.
 |`endTimes` | uint64[] | Array of end times.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint64[] | average total supplies held during the time frame.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256[] | The average total supplies held during the time frame.
 ### getAverageBalanceBetween
 ```solidity
   function getAverageBalanceBetween(
@@ -155,9 +155,9 @@ Retrieves the average balance held by a user for a given time frame.
 |`endTime` | uint64 | The end time of the time frame.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | average balance that the user held during the time frame.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The average balance that the user held during the time frame.
 ### getBalancesAt
 ```solidity
   function getBalancesAt(
@@ -175,9 +175,9 @@ Retrieves `user` TWAB balances.
 |`timestamps` | uint64[] | Timestamps range at which we want to retrieve the TWAB balances.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`TWAB`| address | balances.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256[] | TWAB balances.
 ### getTotalSupplyAt
 ```solidity
   function getTotalSupplyAt(
@@ -193,9 +193,9 @@ Retrieves the total supply TWAB balance at the given timestamp.
 |`timestamp` | uint64 | Timestamp at which we want to retrieve the total supply TWAB balance.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint64 | total supply TWAB balance at the given timestamp.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | The total supply TWAB balance at the given timestamp.
 ### getTotalSuppliesAt
 ```solidity
   function getTotalSuppliesAt(
@@ -211,9 +211,9 @@ Retrieves the total supply TWAB balance between the given timestamps range.
 |`timestamps` | uint64[] | Timestamps range at which we want to retrieve the total supply TWAB balance.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Total`| uint64[] | supply TWAB balances.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256[] | Total supply TWAB balances.
 ### delegateOf
 ```solidity
   function delegateOf(
@@ -230,9 +230,9 @@ Address of the delegate will be the zero address if `user` has not delegated the
 |`user` | address | Address of the delegator.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Address`| address | of the delegate.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Address of the delegate.
 ### controllerDelegateFor
 ```solidity
   function controllerDelegateFor(
@@ -355,9 +355,9 @@ This value should be equal to the decimals of the token used to deposit into the
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uint8`|  | decimals.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint8 | uint8 decimals.
 ### controller
 ```solidity
   function controller(

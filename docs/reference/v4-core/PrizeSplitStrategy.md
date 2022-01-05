@@ -40,9 +40,9 @@ Capture the award balance and distribute to prize splits.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Prize`|  | captured from PrizePool
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | Prize captured from PrizePool
 ### getPrizePool
 ```solidity
   function getPrizePool(
@@ -69,9 +69,9 @@ Read prize split config from active PrizeSplits.
 |`prizeSplitIndex` | uint256 | Index position of PrizeSplitConfig
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`PrizeSplitConfig`| uint256 | Single prize split config
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct IPrizeSplit.PrizeSplitConfig | PrizeSplitConfig Single prize split config
 ### getPrizeSplits
 ```solidity
   function getPrizeSplits(
@@ -83,9 +83,9 @@ Read all prize splits configs.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Array`|  | of PrizeSplitConfig structs
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct IPrizeSplit.PrizeSplitConfig[] | Array of PrizeSplitConfig structs
 ### setPrizeSplits
 ```solidity
   function setPrizeSplits(
@@ -137,9 +137,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(

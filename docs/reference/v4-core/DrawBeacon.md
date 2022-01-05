@@ -54,9 +54,9 @@ Returns whether the random number request has completed.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if a random number request has completed, false otherwise.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if a random number request has completed, false otherwise.
 ### isRngRequested
 ```solidity
   function isRngRequested(
@@ -67,9 +67,9 @@ Returns whether a random number has been requested
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if a random number has been requested, false otherwise.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if a random number has been requested, false otherwise.
 ### isRngTimedOut
 ```solidity
   function isRngTimedOut(
@@ -80,9 +80,9 @@ Returns whether the random number request has timed out.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if a random number request has timed out, false otherwise.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if a random number request has timed out, false otherwise.
 ### canStartDraw
 ```solidity
   function canStartDraw(
@@ -93,9 +93,9 @@ Returns whether a Draw can be started.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if a Draw can be started, false otherwise.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if a Draw can be started, false otherwise.
 ### canCompleteDraw
 ```solidity
   function canCompleteDraw(
@@ -106,9 +106,9 @@ Returns whether a Draw can be completed.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if a Draw can be completed, false otherwise.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if a Draw can be completed, false otherwise.
 ### calculateNextBeaconPeriodStartTimeFromCurrentTime
 ```solidity
   function calculateNextBeaconPeriodStartTimeFromCurrentTime(
@@ -119,9 +119,9 @@ Calculates the next beacon start time, assuming all beacon periods have occurred
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | next beacon period start time
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint64 | The next beacon period start time
 ### calculateNextBeaconPeriodStartTime
 ```solidity
   function calculateNextBeaconPeriodStartTime(
@@ -137,9 +137,9 @@ Calculates when the next beacon period will start.
 |`time` | uint64 | The timestamp to use as the current time
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint64 | timestamp at which the next beacon period would start
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint64 | The timestamp at which the next beacon period would start
 ### cancelDraw
 ```solidity
   function cancelDraw(
@@ -168,9 +168,9 @@ Returns the number of seconds remaining until the beacon period can be complete.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | number of seconds remaining until the beacon period can be complete.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint64 | The number of seconds remaining until the beacon period can be complete.
 ### beaconPeriodEndAt
 ```solidity
   function beaconPeriodEndAt(
@@ -181,9 +181,9 @@ Returns the timestamp at which the beacon period ends
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | timestamp at which the beacon period ends.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint64 | The timestamp at which the beacon period ends.
 ### getBeaconPeriodSeconds
 ```solidity
   function getBeaconPeriodSeconds(
@@ -230,9 +230,9 @@ Returns the block number that the current RNG request has been locked to.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | block number that the RNG request is locked to
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | The block number that the RNG request is locked to
 ### getLastRngRequestId
 ```solidity
   function getLastRngRequestId(
@@ -270,9 +270,9 @@ Returns whether the beacon period is over
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`|  | if the beacon period is over, false otherwise
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | True if the beacon period is over, false otherwise
 ### setDrawBuffer
 ```solidity
   function setDrawBuffer(
@@ -360,9 +360,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(

@@ -45,9 +45,9 @@ Read a ring buffer cardinality
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Ring`|  | buffer cardinality
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | Ring buffer cardinality
 ### getPrizeDistribution
 ```solidity
   function getPrizeDistribution(
@@ -91,9 +91,9 @@ Otherwise, it will return the NewestPrizeDistribution index + 1.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`|  | of PrizeDistributions stored in the prize distributions ring buffer.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | Number of PrizeDistributions stored in the prize distributions ring buffer.
 ### getNewestPrizeDistribution
 ```solidity
   function getNewestPrizeDistribution(
@@ -156,9 +156,9 @@ Gets current `_manager`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_manager` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_manager` address.
 ### setManager
 ```solidity
   function setManager(
@@ -175,9 +175,9 @@ Throws if called by any account other than the owner.
 |`_newManager` | address | New _manager address.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Boolean`| address | to indicate if the operation was successful or not.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | Boolean to indicate if the operation was successful or not.
 ### owner
 ```solidity
   function owner(
@@ -197,9 +197,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(

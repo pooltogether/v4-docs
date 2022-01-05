@@ -51,9 +51,9 @@ Claim prize payout(s) by submitting valud drawId(s) and winning pick indice(s). 
 |`data` | bytes |    The data to pass to the draw calculator
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Total`| address | claim payout. May include calcuations from multiple draws.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | Total claim payout. May include calcuations from multiple draws.
 ### withdrawERC20
 ```solidity
   function withdrawERC20(
@@ -74,9 +74,9 @@ Transfer ERC20 tokens out of contract to recipient address.
 |`amount` | uint256 | Amount of tokens to transfer.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`true`| contract IERC20 | if operation is successful.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | true if operation is successful.
 ### getDrawCalculator
 ```solidity
   function getDrawCalculator(
@@ -128,9 +128,9 @@ Sets DrawCalculator reference contract.
 |`newCalculator` | contract IDrawCalculator | DrawCalculator address
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`New`| contract IDrawCalculator | DrawCalculator address
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| contract IDrawCalculator | New DrawCalculator address
 ### owner
 ```solidity
   function owner(
@@ -150,9 +150,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(

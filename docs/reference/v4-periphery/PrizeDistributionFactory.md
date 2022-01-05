@@ -32,9 +32,9 @@ The PrizeTier and Draw for the given draw id will be pulled in, and the total ne
 |`_totalNetworkTicketSupply` | uint256 | The total supply of tickets across all prize pools for the network that the ticket belongs to.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint32 | resulting Prize Distribution
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct IPrizeDistributionBuffer.PrizeDistribution | The resulting Prize Distribution
 ### setPrizeDistribution
 ```solidity
   function setPrizeDistribution(
@@ -53,9 +53,9 @@ The PrizeTier and Draw for the given draw id will be pulled in, and the total ne
 |`_totalNetworkTicketSupply` | uint256 | The total supply of tickets across all prize pools for the network that the ticket belongs to.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint32 | resulting Prize Distribution
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct IPrizeDistributionBuffer.PrizeDistribution | The resulting Prize Distribution
 ### calculatePrizeDistribution
 ```solidity
   function calculatePrizeDistribution(
@@ -73,9 +73,9 @@ Calculates what the prize distribution will be, given a draw id and total networ
 |`_totalNetworkTicketSupply` | uint256 | The total of all ticket supplies across all prize pools in this network
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`PrizeDistribution`| uint32 | using info from the Draw for the given draw id, total network ticket supply, and PrizeTier for the draw.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct IPrizeDistributionBuffer.PrizeDistribution | PrizeDistribution using info from the Draw for the given draw id, total network ticket supply, and PrizeTier for the draw.
 ### calculatePrizeDistributionWithDrawData
 ```solidity
   function calculatePrizeDistributionWithDrawData(
@@ -97,9 +97,9 @@ Calculates what the prize distribution will be, given a draw id and total networ
 |`_drawTimestamp` | uint64 | The timestamp at which the draw RNG request started.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`A`| uint32 | PrizeDistribution based on the given params and PrizeTier for the passed draw id
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| struct IPrizeDistributionBuffer.PrizeDistribution | A PrizeDistribution based on the given params and PrizeTier for the passed draw id
 ### manager
 ```solidity
   function manager(
@@ -110,9 +110,9 @@ Gets current `_manager`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_manager` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_manager` address.
 ### setManager
 ```solidity
   function setManager(
@@ -129,9 +129,9 @@ Throws if called by any account other than the owner.
 |`_newManager` | address | New _manager address.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Boolean`| address | to indicate if the operation was successful or not.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | Boolean to indicate if the operation was successful or not.
 ### owner
 ```solidity
   function owner(
@@ -151,9 +151,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(

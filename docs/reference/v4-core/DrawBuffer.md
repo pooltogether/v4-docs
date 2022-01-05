@@ -36,9 +36,9 @@ Read a ring buffer cardinality
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Ring`|  | buffer cardinality
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | Ring buffer cardinality
 ### getDraw
 ```solidity
   function getDraw(
@@ -84,9 +84,9 @@ Otherwise, it will return the NewestDraw index + 1.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`|  | of Draws held in the draw ring buffer.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | Number of Draws held in the draw ring buffer.
 ### getNewestDraw
 ```solidity
   function getNewestDraw(
@@ -151,9 +151,9 @@ Gets current `_manager`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_manager` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_manager` address.
 ### setManager
 ```solidity
   function setManager(
@@ -170,9 +170,9 @@ Throws if called by any account other than the owner.
 |`_newManager` | address | New _manager address.
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Boolean`| address | to indicate if the operation was successful or not.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | Boolean to indicate if the operation was successful or not.
 ### owner
 ```solidity
   function owner(
@@ -192,9 +192,9 @@ Gets current `_pendingOwner`.
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Current`|  | `_pendingOwner` address.
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | Current `_pendingOwner` address.
 ### renounceOwnership
 ```solidity
   function renounceOwnership(
