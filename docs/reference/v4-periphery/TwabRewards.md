@@ -4,7 +4,7 @@ In order to calculate user rewards, we use the TWAB (Time-Weighted Average Balan
 This way, users simply need to hold their tickets to be eligible to claim rewards.
 Rewards are calculated based on the average amount of tickets they hold during the epoch duration.
 
-This contract support only one prize pool ticket.
+This contract supports only one prize pool ticket.
 This contract does not support the use of fee on transfer tokens.
 
 ## Structs
