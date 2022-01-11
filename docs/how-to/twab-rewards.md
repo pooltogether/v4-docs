@@ -80,3 +80,41 @@ We are now ready to fill out the promotion parameters.
 />
 
 Click on the `Write` button to send the transaction.
+
+Once the transaction has been mined, you should look at the transaction on Etherscan and go to the `Logs` section to retrieve the id of the promotion you just created.
+
+Here, the promotion id is `1`.
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-create-promotion-log-etherscan.png').default}
+  alt='Twab Rewards PromotionCreated log on Etherscan'
+/>
+
+## How to extend a promotion
+
+The process to extend a promotion is fairly straight forward.
+
+The following parameters need to be filled out:
+- `_promotionId`: id of the promotion you wish to extend
+- `_numberOfEpochs`: number of epochs the promotion will be extended for.
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-extend-promotion-etherscan.png').default}
+  alt='Twab Rewards extendPromotion function on Etherscan'
+  class='padding-bottom--md'
+/>
+
+Now let's say we want to extend the promotion we just created by a month:
+- `_promotionId`: will be `1`
+- `_numberOfEpochs`: will be `4` since `_epochDuration` is equal to a week
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-extend-promotion-filled-etherscan.png').default}
+  alt='Twab Rewards extendPromotion function filled on Etherscan'
+  class='padding-bottom--md'
+/>
+
+Before sending the transaction, make sure you have enough tokens in your wallet. In our case, we award 1,000 tokens per epoch, so we need to have at least 4,000 tokens.
+
+Click on the `Write` button to send the transaction. Once your transaction is mined, your promotion is extended by 4 weeks at the end of the last epoch.
+
