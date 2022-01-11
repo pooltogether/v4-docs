@@ -43,7 +43,7 @@ You will be able to end the promotion at any time by calling `endPromotion` and 
 Once the promotion has ended, you can call `destroyPromotion` to destroy it and receive the tokens that have not been claimed yet.
 This function is only callable 60 days after the end of the promotion to give some time to users to claim their rewards.
 
-Tutorials in this section are here to explain you how the above functions work.
+Tutorials in this section are here to explain you how the above functions work and how you can interact with them.
 
 Now that you know the inner workings of a promotion, you are ready to create your first promotion.
 
@@ -95,7 +95,7 @@ Here, the promotion id is `1`.
 The process to extend a promotion is fairly straight forward.
 
 The following parameters need to be filled out:
-- `_promotionId`: id of the promotion you wish to extend
+- `_promotionId`: id of the promotion you wish to extend.
 - `_numberOfEpochs`: number of epochs the promotion will be extended for.
 
 <img
@@ -105,8 +105,8 @@ The following parameters need to be filled out:
 />
 
 Now let's say we want to extend the promotion we just created by a month:
-- `_promotionId`: will be `1`
-- `_numberOfEpochs`: will be `4` since `_epochDuration` is equal to a week
+- `_promotionId`: will be `1`.
+- `_numberOfEpochs`: will be `4` since `_epochDuration` is equal to a week.
 
 <img
   src={require('/img/how-to/twab-rewards/twab-rewards-extend-promotion-filled-etherscan.png').default}
@@ -120,17 +120,17 @@ Click on the `Write` button to send the transaction. Once your transaction is mi
 
 ## How to end a promotion
 
-You can call the `endPromotion` function to end the promotion.
+You can call the `endPromotion` function to end a promotion.
 
 Keep in mind that you will only receive the amount of tokens from the epochs that have not yet started.
 
 The following parameters need to be filled out:
-- `_promotionId`: id of the promotion you wish to end
-- `_to`: address of the wallet you wish to send the tokens to
+- `_promotionId`: id of the promotion you wish to end.
+- `_to`: address of the wallet you wish to send the tokens to.
 
 <img
   src={require('/img/how-to/twab-rewards/twab-rewards-end-promotion-etherscan.png').default}
-  alt='Twab Rewards endPromotion function filled on Etherscan'
+  alt='Twab Rewards endPromotion function on Etherscan'
   class='padding-bottom--md'
 />
 
@@ -146,3 +146,32 @@ This is how you will fill out the parameters:
 
 Click on the `Write` button to send the transaction. Once your transaction is mined, you should receive the tokens from the epochs that have not yet started.
 
+## How to destroy a promotion
+
+You can call the `destroyPromotion` function to destroy a promotion.
+
+Only promotions that have ended can be destroyed. Which means that no epoch is currently running for this promotion.
+
+Keep in mind that you can only destroy a promotion 60 days after the end of the promotion. Only the tokens that have not been claimed yet will be sent back to the wallet you specify.
+
+The following parameters need to be filled out:
+- `_promotionId`: id of the promotion you wish to destroy.
+- `_to`: address of the wallet you wish to send the remaining tokens to.
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-destroy-promotion-etherscan.png').default}
+  alt='Twab Rewards destroyPromotion function on Etherscan'
+  class='padding-bottom--md'
+/>
+
+Let's say you want to end the promotion with id `1` and send the tokens to `0x3A791e828fDd420fbE16416efDF509E4b9088Dd4`.
+
+This is how you will fill out the parameters:
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-destroy-promotion-filled-etherscan.png').default}
+  alt='Twab Rewards destroyPromotion function filled on Etherscan'
+  class='padding-bottom--md'
+/>
+
+Click on the `Write` button to send the transaction. Once your transaction is mined, you should receive the tokens that have not been claimed.
