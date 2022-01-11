@@ -114,7 +114,7 @@ Equivalently, `drawId` 10 on Avalanche:
 
 ```js
 const draw10PrizesResult = await fetch(
-  `https://api.pooltogether.com/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/10/prizes.json`
+  `https://api.pooltogether.com/prizes/43114/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/10/prizes.json`
 );
 const draw10PrizesArray = await draw10PrizesResult.json();
 ```
