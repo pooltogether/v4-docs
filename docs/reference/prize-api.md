@@ -26,10 +26,11 @@ The Prize data is first catagorized by network, specifically chainId.
 
 The data is then catagorized by Prize Distributor address. This is the contract that distributes the prizes associated with a Ticket on a network. This is because a Ticket may have multiple Prize Distributors.
 
-| Network | Prize Distributor                                                                                                        |
-| ------- | ------------------------------------------------------------------------------------------------------------------------ |
-| mainnet | [0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe](https://etherscan.io/address/0xb9a179DcA5a7bf5f8B9E088437B3A85ebB495eFe)    |
-| polygon | [0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056](https://polygonscan.com/address/0x8141BcFBcEE654c5dE17C4e2B2AF26B67f9B9056) |
+| Network   | Prize Distributor                                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------------------------------------ |
+| mainnet   | [0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe](https://etherscan.io/address/0xb9a179DcA5a7bf5f8B9E088437B3A85ebB495eFe)    |
+| polygon   | [0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056](https://polygonscan.com/address/0x8141BcFBcEE654c5dE17C4e2B2AF26B67f9B9056) |
+| avalanche | [0x83332f908f403ce795d90f677ce3f382fe73f3d1](https://snowtrace.com/address/0x83332f908f403ce795d90f677ce3f382fe73f3d1)   |
 
 Finally the data is sorted by `drawId`, where `drawId` is unique and sequentially increasing over time.
 
@@ -77,11 +78,11 @@ This API endpoint serves a JSON file with _all_ the winners for that particular 
 
 `HTTP GET` **https://api.pooltogether.com/prizes/:chainId/:prizeDistributorAddress/draw/:drawId/prizes.json**
 
-| Field                   | Description                      | Example/Description                                      |
-| ----------------------- | -------------------------------- | -------------------------------------------------------- |
-| chainId                 | the chainId of the network       | 1 for Ethereum mainnet, 137 for Polygon                  |
-| prizeDistributorAddress | address of the prize distributor | the prize distributor address associated with this prize |
-| drawId                  | the integer drawId               | drawId's are unique and sequential over time             |
+| Field                   | Description                      | Example/Description                                          |
+| ----------------------- | -------------------------------- | ------------------------------------------------------------ |
+| chainId                 | the chainId of the network       | 1 for Ethereum mainnet, 137 for Polygon, 43114 for Avalanche |
+| prizeDistributorAddress | address of the prize distributor | the prize distributor address associated with this prize     |
+| drawId                  | the integer drawId               | drawId's are unique and sequential over time                 |
 
 ### All Prizes per Address for a Draw
 
@@ -89,18 +90,27 @@ This API endpoint serves a JSON file for an individual address per draw, enablin
 
 `HTTP GET` **https://api.pooltogether.com/prizes/:chainId/:prizeDistributorAddress/draw/:drawId/:address.json**
 
-| Field                   | Description                      | Example/Description                              |
-| ----------------------- | -------------------------------- | ------------------------------------------------ |
-| chainId                 | the chainId of the network       | 1 for Ethereum mainnet, 137 for Polygon          |
-| prizeDistributorAddress | address of the prize distributor | the prize distributor associated with this prize |
-| drawId                  | the integer drawId               | drawId's are sequential over time                |
-| address                 | the address of the user          | this address must be lower case                  |
+| Field                   | Description                      | Example/Description                                          |
+| ----------------------- | -------------------------------- | ------------------------------------------------------------ |
+| chainId                 | the chainId of the network       | 1 for Ethereum mainnet, 137 for Polygon, 43114 for Avalanche |
+| prizeDistributorAddress | address of the prize distributor | the prize distributor associated with this prize             |
+| drawId                  | the integer drawId               | drawId's are sequential over time                            |
+| address                 | the address of the user          | this address must be lower case                              |
 
 The endpoint will return a `404` status if the address passed was not a winner for that draw.
 
 #### Examples
 
 For example, using Javascript and [Fetch](https://www.npmjs.com/package/node-fetch), getting the results for `drawId` 10 on Ethereum mainnet:
+
+```js
+const draw10PrizesResult = await fetch(
+  `https://api.pooltogether.com/prizes/1/0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe/draw/10/prizes.json`
+);
+const draw10PrizesArray = await draw10PrizesResult.json();
+```
+
+Equivalently, `drawId` 10 on Avalanche:
 
 ```js
 const draw10PrizesResult = await fetch(
