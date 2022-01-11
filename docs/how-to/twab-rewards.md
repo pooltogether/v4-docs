@@ -118,3 +118,31 @@ Before sending the transaction, make sure you have enough tokens in your wallet.
 
 Click on the `Write` button to send the transaction. Once your transaction is mined, your promotion is extended by 4 weeks at the end of the last epoch.
 
+## How to end a promotion
+
+You can call the `endPromotion` function to end the promotion.
+
+Keep in mind that you will only receive the amount of tokens from the epochs that have not yet started.
+
+The following parameters need to be filled out:
+- `_promotionId`: id of the promotion you wish to end
+- `_to`: address of the wallet you wish to send the tokens to
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-end-promotion-etherscan.png').default}
+  alt='Twab Rewards endPromotion function filled on Etherscan'
+  class='padding-bottom--md'
+/>
+
+Let's say you want to end the promotion with id `1` and send the tokens to `0x3A791e828fDd420fbE16416efDF509E4b9088Dd4`.
+
+This is how you will fill out the parameters:
+
+<img
+  src={require('/img/how-to/twab-rewards/twab-rewards-end-promotion-filled-etherscan.png').default}
+  alt='Twab Rewards endPromotion function filled on Etherscan'
+  class='padding-bottom--md'
+/>
+
+Click on the `Write` button to send the transaction. Once your transaction is mined, you should receive the tokens from the epochs that have not yet started.
+
