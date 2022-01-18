@@ -1,6 +1,6 @@
 ---
 id: index
-title: 💻 PoolTogether Client Library || PoolTogether V4
+title: V4 JS Client
 ---
 
 ![npm](https://img.shields.io/npm/v/@pooltogether/v4-js-client)
