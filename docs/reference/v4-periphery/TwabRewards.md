@@ -10,11 +10,12 @@ This contract does not support the use of fee on transfer tokens.
 ## Structs
 ### `Promotion`
   - address creator
-  - contract IERC20 token
-  - uint32 startTimestamp
-  - uint216 tokensPerEpoch
-  - uint32 epochDuration
+  - uint64 startTimestamp
   - uint8 numberOfEpochs
+  - uint48 epochDuration
+  - uint48 createdAt
+  - contract IERC20 token
+  - uint256 tokensPerEpoch
   - uint256 rewardsUnclaimed
 
 
@@ -37,9 +38,9 @@ Constructor of the contract.
 ```solidity
   function createPromotion(
     contract IERC20 _token,
-    uint32 _startTimestamp,
-    uint216 _tokensPerEpoch,
-    uint32 _epochDuration,
+    uint64 _startTimestamp,
+    uint256 _tokensPerEpoch,
+    uint48 _epochDuration,
     uint8 _numberOfEpochs
   ) external returns (uint256)
 ```
@@ -47,20 +48,17 @@ Creates a new promotion.
 
 For sake of simplicity, `msg.sender` will be the creator of the promotion.
 `_latestPromotionId` starts at 0 and is incremented by 1 for each new promotion.
-        So the first promotion will have id 1, the second 2, etc.
-Ideally, `_startTimestamp` should be set to a value far in the future.
-        So the transaction is minted in a block way ahead of the actual start of the promotion.
-        The transaction will revert if mined in a block with a timestamp lower to start timestamp.
+So the first promotion will have id 1, the second 2, etc.
 The transaction will revert if the amount of reward tokens provided is not equal to `_tokensPerEpoch * _numberOfEpochs`.
-        This scenario could happen if the token supplied is a fee on transfer one.
+This scenario could happen if the token supplied is a fee on transfer one.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_token` | contract IERC20 | Address of the token to be distributed
-|`_startTimestamp` | uint32 | Timestamp at which the promotion starts
-|`_tokensPerEpoch` | uint216 | Number of tokens to be distributed per epoch
-|`_epochDuration` | uint32 | Duration of one epoch in seconds
+|`_startTimestamp` | uint64 | Timestamp at which the promotion starts
+|`_tokensPerEpoch` | uint256 | Number of tokens to be distributed per epoch
+|`_epochDuration` | uint48 | Duration of one epoch in seconds
 |`_numberOfEpochs` | uint8 | Number of epochs the promotion will last for
 
 #### Return Values:
@@ -76,18 +74,18 @@ The transaction will revert if the amount of reward tokens provided is not equal
 ```
 End currently active promotion and send promotion tokens back to the creator.
 
-Will only send back tokens from the epochs that have not yet started.
+Will only send back tokens from the epochs that have not completed.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_promotionId` | uint256 | Id of the promotion to end
+|`_promotionId` | uint256 | Promotion id to end
 |`_to` | address | Address that will receive the remaining tokens if there are any left
 
 #### Return Values:
 | Type          | Description                                                                  |
 | :------------ | :--------------------------------------------------------------------------- |
-| bool | True if operation was successful
+| bool | true if operation was successful
 ### destroyPromotion
 ```solidity
   function destroyPromotion(
@@ -98,13 +96,13 @@ Will only send back tokens from the epochs that have not yet started.
 Delete an inactive promotion and send promotion tokens back to the creator.
 
 Will send back all the tokens that have not been claimed yet by users.
-After the promotion ends, a grace period of 60 days is given to users to claim their rewards.
+This function will revert if the promotion is still active.
 This function will revert if the grace period is not over yet.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_promotionId` | uint256 | Id of the promotion to destroy
+|`_promotionId` | uint256 | Promotion id to destroy
 |`_to` | address | Address that will receive the remaining tokens if there are any left
 
 #### Return Values:
@@ -255,7 +253,8 @@ Emitted when a promotion is created.
   event PromotionEnded(
     uint256 promotionId,
     address recipient,
-    uint256 amount
+    uint256 amount,
+    uint8 epochNumber
   )
 ```
 Emitted when a promotion is ended.
@@ -267,6 +266,7 @@ Emitted when a promotion is ended.
 |`promotionId`| uint256 | Id of the promotion being ended
 |`recipient`| address | Address of the recipient that will receive the remaining rewards
 |`amount`| uint256 | Amount of tokens transferred to the recipient
+|`epochNumber`| uint8 | Epoch number at which the promotion ended
 ### PromotionDestroyed
 ```solidity
   event PromotionDestroyed(
