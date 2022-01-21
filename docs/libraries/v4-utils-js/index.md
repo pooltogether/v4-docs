@@ -97,21 +97,25 @@ For example, in the `DrawCalculator` smart contract an account `address` is used
 
 In other words, the library exposes low-level functions like `hashUserAddress` and `calculateNumberOfMatches` so it's easier to build the high-level abstractions, like `winningPicks` which simply takes a user address, plus historical Draw/PrizeDistribution structs and generates/encode all potential winning picks for a user into a single transaction.
 
-### Compute User Picks ([calculateNumberOfMatches](protocol/libraries/v4-utils-js/calculate#calculatenumberofmatches))
+### Compute User Picks ([computeUserPicks](/protocol/libraries/v4-utils-js/compute#computeuserpicks))
 Calculates a depositor potential picks using the totalNumberOfPicks relative to the normalizedBalance.
 
 ```ts
 import { parseEther } from '@ethersproject/units';
 import { computeUserPicks } from '@pooltogether/v4-utils-js';
 
+const totalPicks = parseUnits('1000', 18);
+const address = '0x000.000';
+const normalizedBalance = parseUnits('0.1', 18)
+
 const userPicksByIndexAndHash = computeUserPicks(
+    totalPicks,
     address,
-    parseUnits('1000', 18)
-    parseUnits('0.1', 18)
+    normalizedBalance
 );
 ```
 
-### Calculate Number of Matches
+### Calculate Number of Matches ([calculateNumberOfMatches](/protocol/libraries/v4-utils-js/calculate#calculatenumberofmatches))
 
 A user's pick number and the Draw random generated number are compared to compute winning picks.
 
