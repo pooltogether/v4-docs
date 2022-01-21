@@ -1,72 +1,146 @@
-### Namespaces
+# Utility Library
+![Tests](https://github.com/pooltogether/v4-utils-js/actions/workflows/main.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-utils-js/badge.svg?branch=main)](https://coveralls.io/github/pooltogether/v4-utils-js?branch=main)
+![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+![npm](https://img.shields.io/npm/v/@pooltogether/v4-utils-js)
 
-- [calculate](calculate)
-- [compute](compute)
-- [utils](utils)
+The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and general utility functions for the PoolTogether V4 protocol.
 
-### References
+### Calculate
+- [calculateCardinality](calculate/#calculatecardinality)
+- [calculateFractionOfPrize](calculate/#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](calculate/#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](calculate/#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](calculate/#calculatenumberofprizesfortierindex)
+- [calculatePick](calculate/#calculatepick)
+- [calculatePicks](calculate/#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](calculate/#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](calculate/#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](calculate/#calculatetierindexfrommatches)
 
-- [calculateCardinality](calculate#calculatecardinality)
-- [calculateFractionOfPrize](calculate#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](calculate#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](calculate#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](calculate#calculatenumberofprizesfortierindex)
-- [calculatePick](calculate#calculatepick)
-- [calculatePicks](calculate#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](calculate#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](calculate#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](calculate#calculatetierindexfrommatches)
-- [computeDrawResults](compute/#computedrawresults)
-- [computePickPrize](compute/#computepickprize)
-- [computePicksPrizes](compute/#computepicksprizes)
-- [computePrizeAmount](compute/#computeprizeamount)
-- [computePrizeDistributionFromTicketAverageTotalSupplies](compute/#computeprizedistributionfromticketaveragetotalsupplies)
-- [computeUserPicks](compute/#computeuserpicks)
-- [computeUserWinningPicksForRandomNumber](compute/#computeuserwinningpicksforrandomnumber)
-- [computeWinningPicks](compute/#computewinningpicks)
+### Compute
+- [computeDrawResults](compute#computedrawresults)
+- [computePickPrize](compute#computepickprize)
+- [computePicksPrizes](compute#computepicksprizes)
+- [computePrizeAmount](compute#computeprizeamount)
+- [computePrizeDistributionFromTicketAverageTotalSupplies](compute#computeprizedistributionfromticketaveragetotalsupplies)
+- [computeUserPicks](compute#computeuserpicks)
+- [computeUserWinningPicksForRandomNumber](compute#computeuserwinningpicksforrandomnumber)
+- [computeWinningPicks](compute#computewinningpicks)
 
-## Functions
+### Utilities
+- [createDrawResultsObject](utils#createdrawresultsobject)
+- [filterResultsByValue](utils#filterresultsbyvalue)
+- [findBitMatchesAtIndex](utils#findbitmatchesatindex)
+- [formatTierPercentage](utils#formattierpercentage)
+- [hashUserAddress](utils#hashuseraddress)
+- [isBitRangeSizeValid](utils#isbitrangesizevalid)
+- [isTiersValid](utils#istiersvalid)
+- [sanityCheckPrizeDistribution](utils#sanitycheckprizedistribution)
+- [sortByBigNumberAsc](utils#sortbybignumberasc)
+- [sortByBigNumberDesc](utils#sortbybignumberdesc)
+- [sumBigNumbers](utils#sumbignumbers)
+- [sumTwoBigNumbers](utils#sumtwobignumbers)
+- [updateDrawResultsWithWinningPicks](utils#updatedrawresultswithwinningpicks)
 
-- [encodeWinningPicks](#encodewinningpicks)
-- [winningPicks](#winningpicks)
+The utility library was designed to be modular: enabling developers to more easily use low-level primitives to create the higher-level abstractions/operations.
 
-### encodeWinningPicks
+High-order operations like `winningPicks` which takes an account address, plus historical chain state fetched via `v4-js-client` and returns an encoded transaction that's ready to be sent to any EVM supported network.
 
-▸ **encodeWinningPicks**(`user`, `drawResults`): `Claim`
+*Have Questions?*<br/>**Join the PoolTogether Discord and get help from the community.**
 
-#### Parameters
+[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JFBPMxv5tr)
 
-| Name | Type |
-| :------ | :------ |
-| `user` | `User` |
-| `drawResults` | `DrawResults`[] |
+## Installation
 
-#### Returns
+This project is available as an NPM package:
 
-`Claim`
+```sh
+npm install @pooltogether/v4-utils-js
+```
 
-#### Defined in
+```sh
+yarn add @pooltogether/v4-utils-js
+```
 
-[encodeWinningPicks.ts:7](https://github.com/pooltogether/v4-js/blob/2137ee6/src/encodeWinningPicks.ts#L7)
+The repo can be cloned from Github for contributions.
 
-___
+```sh
+git clone https://github.com/pooltogether/v4-utils-js
+```
 
-### winningPicks
+## Quickstart
 
-▸ **winningPicks**(`user`, `draws`, `prizeDistributions`): `Claim`
+Draw and PrizeDistrubtion structs should be fetched using the [v4-js-client](https://github.com/pooltogether/v4-js-client) node module.
 
-#### Parameters
+### Winnings Picks
+```ts
+import { winningPicks } from '@pooltogether/v4-utils-js';
+const computedAndEncodedWinningPicks = winningPicks(wallet.address, [draw], [prizeDistribution]);
+wallet.send(computedAndEncodedWinningPicks.encodedWinningPickIndices)
+```
 
-| Name | Type |
-| :------ | :------ |
-| `user` | `User` |
-| `draws` | `Draw`[] |
-| `prizeDistributions` | `PrizeDistribution`[] |
+### Compute & Encode Winnings Picks
+```ts
+import { computeWinningPicks, encodeWinningPicks } from '@pooltogether/v4-utils-js';
+const computedPicks = computeWinningPicks(wallet.address, [draw], [prizeDistribution]);
+const transaction = encodeWinningPicks(wallet.address, computedWinningPicks);
+wallet.send(transaction.encodedWinningPickIndices)
+```
 
-#### Returns
+## Low-Level Calculations & Computations
 
-`Claim`
+The utility library simulates smart contract rules/operations and also encapsulates higher-level abstractions common to PoolTogether V4 required transactions.
 
-#### Defined in
+For example, in the `DrawCalculator` smart contract an account `address` is used to generate a random number via the `keccak256` hashing function. The hashed address is subquentially encoded with a `pickIndices` to calculate a `randomNumber`. Using a depositors `normalizedBalance` and `totalPrizeDistributionPicks` we can find the ceiling for the number of picks to calculate for each Draw epoch timerange.
 
-[winningPicks.ts:5](https://github.com/pooltogether/v4-js/blob/2137ee6/src/winningPicks.ts#L5)
+In other words, the library exposes low-level functions like `hashUserAddress` and `calculateNumberOfMatches` so it's easier to build the high-level abstractions, like `winningPicks` which simply takes a user address, plus historical Draw/PrizeDistribution structs and generates/encode all potential winning picks for a user into a single transaction.
+
+### Compute User Picks
+Calculates a depositor potential picks using the totalNumberOfPicks relative to the normalizedBalance.
+
+```ts
+import { parseEther } from '@ethersproject/units';
+import { computeUserPicks } from '@pooltogether/v4-utils-js';
+
+const userPicksByIndexAndHash = computeUserPicks(
+    address,
+    parseUnits('1000', 18)
+    parseUnits('0.1', 18)
+);
+```
+
+### Calculate Number of Matches
+
+A user's pick number and the Draw random generated number are compared to compute winning picks.
+
+The pickNumber and winningRandomNumber are NOT compared directly calculating winning picks. 
+
+Instead using `bitwise` operations in conjuction with `bitRangeSize` and `matchCardinality` the pick/randomNumber can be compared at the bit level via dynamic "index" positions and "indexRanges" supplied by the PrizeDistrubtion parameters.
+
+**Abstract Example**
+
+**UserPicks:** 22, 6, 30, 2, 52, 90
+**WinningRandomNumber:** 22, 6, 30, 66, 100, 40
+**Matches:** true true true false false false
+**TotalMatches:** 3
+
+```ts
+import { BigNumber } from '@ethersproject/bignumber';
+import { calculateNumberOfMatches } from '@pooltogether/v4-utils-js';
+
+const pickNumber = BigNumber.from('3'); <br/>
+const winningRandomNumber = BigNumber.from('52525'); <br/>
+const bitRangeSize = 10; <br/>
+const matchCardinality = 3; <br/>
+
+const numberOfMatchesForAPickNumber = calculateNumberOfMatches(
+    pickNumber,
+    winningRandomNumber,
+    bitRangeSize,
+    matchCardinality
+);
+```
+
+**Reminder: All inputs should be formatted to match the underlying asset decimals.**
