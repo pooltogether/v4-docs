@@ -1,4 +1,4 @@
-# Namespace: utils
+#  utils
 
 ## Table of contents
 

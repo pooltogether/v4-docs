@@ -1,4 +1,4 @@
-# Namespace: calculate
+#  calculate
 
 ## Table of contents
 

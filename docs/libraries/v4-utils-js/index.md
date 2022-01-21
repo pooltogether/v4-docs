@@ -7,17 +7,25 @@
 
 The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and general utility functions for the PoolTogether V4 protocol.
 
+As normally the case, the utility library was designed to be modular: enabling developers to more easily use low-level primitives to create the higher-level abstractions/operations.
+
+High-order operations like `winningPicks` which takes an account address, plus historical chain state fetched via `v4-js-client` and returns an encoded transaction that's ready to be sent to any EVM supported network.
+
+**Join the PoolTogether Discord, ask questions and get help from the community.**
+
+[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JFBPMxv5tr)
+
 ### Calculate
-- [calculateCardinality](calculate/#calculatecardinality)
-- [calculateFractionOfPrize](calculate/#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](calculate/#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](calculate/#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](calculate/#calculatenumberofprizesfortierindex)
-- [calculatePick](calculate/#calculatepick)
-- [calculatePicks](calculate/#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](calculate/#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](calculate/#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](calculate/#calculatetierindexfrommatches)
+- [calculateCardinality](calculate#calculatecardinality)
+- [calculateFractionOfPrize](calculate#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](calculate#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](calculate#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](calculate#calculatenumberofprizesfortierindex)
+- [calculatePick](calculate#calculatepick)
+- [calculatePicks](calculate#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](calculate#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](calculate#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](calculate#calculatetierindexfrommatches)
 
 ### Compute
 - [computeDrawResults](compute#computedrawresults)
@@ -43,14 +51,6 @@ The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/pack
 - [sumBigNumbers](utils#sumbignumbers)
 - [sumTwoBigNumbers](utils#sumtwobignumbers)
 - [updateDrawResultsWithWinningPicks](utils#updatedrawresultswithwinningpicks)
-
-The utility library was designed to be modular: enabling developers to more easily use low-level primitives to create the higher-level abstractions/operations.
-
-High-order operations like `winningPicks` which takes an account address, plus historical chain state fetched via `v4-js-client` and returns an encoded transaction that's ready to be sent to any EVM supported network.
-
-*Have Questions?*<br/>**Join the PoolTogether Discord and get help from the community.**
-
-[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JFBPMxv5tr)
 
 ## Installation
 
@@ -115,25 +115,27 @@ const userPicksByIndexAndHash = computeUserPicks(
 
 A user's pick number and the Draw random generated number are compared to compute winning picks.
 
-The pickNumber and winningRandomNumber are NOT compared directly calculating winning picks. 
+The `pick` and `winningRandomNumber` are **NOT** compared directly when calculating winning picks. 
 
 Instead using `bitwise` operations in conjuction with `bitRangeSize` and `matchCardinality` the pick/randomNumber can be compared at the bit level via dynamic "index" positions and "indexRanges" supplied by the PrizeDistrubtion parameters.
 
 **Abstract Example**
 
-**UserPicks:** 22, 6, 30, 2, 52, 90
-**WinningRandomNumber:** 22, 6, 30, 66, 100, 40
-**Matches:** true true true false false false
-**TotalMatches:** 3
+**UserPicks:** `22`, `6`, `30`, `2`, `52`, `90` <br/>
+**WinningRandomNumber:** `22`, `6`, `30`, `66`, `100`, `40` <br/>
+**Matches:** `true` `true` `true` `false` `false` `false` <br/>
+**TotalMatches:** `3` <br/>
+
+For efficient EVM storage the protocol avoids literal array representation for matching winning numbers -  opting instead for cost-efficient bitwise operators, but the end result is the same: **matching sets of numbers.**
 
 ```ts
 import { BigNumber } from '@ethersproject/bignumber';
 import { calculateNumberOfMatches } from '@pooltogether/v4-utils-js';
 
-const pickNumber = BigNumber.from('3'); <br/>
-const winningRandomNumber = BigNumber.from('52525'); <br/>
-const bitRangeSize = 10; <br/>
-const matchCardinality = 3; <br/>
+const pickNumber = BigNumber.from('0x03030303030');
+const winningRandomNumber = BigNumber.from('0x525255252552525');
+const bitRangeSize = 10;
+const matchCardinality = 3;
 
 const numberOfMatchesForAPickNumber = calculateNumberOfMatches(
     pickNumber,
