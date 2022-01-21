@@ -72,7 +72,7 @@ git clone https://github.com/pooltogether/v4-utils-js
 
 ## 🏎️ &nbsp;Quickstart 
 
-Draw and PrizeDistrubtion structs should be fetched using the [v4-js-client](https://github.com/pooltogether/v4-js-client) node module.
+Draw and PrizeDistrubtion structs should be fetched using the [@pooltogether/v4-js-client](/protocol/libraries/v4-js-client/) node module.
 
 ### Winnings Picks
 ```ts
