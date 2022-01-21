@@ -7,15 +7,15 @@
 
 The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and general utility functions for the PoolTogether V4 protocol.
 
-As normally the case, the utility library was designed to be modular: enabling developers to more easily use low-level primitives to create the higher-level abstractions/operations.
+As normally the case, the utility library was designed to be modular. Enabling developers to more easily use low-level primitives to create the higher-level computations/operations. High-order operations like `winningPicks()` which takes an `address`, plus `Draw` and `PrizeDistribution` EVM structs fetched via `v4-js-client`: returning encoded transactions **ready for any EVM network**.
 
-High-order operations like `winningPicks` which takes an account address, plus historical chain state fetched via `v4-js-client` and returns an encoded transaction that's ready to be sent to any EVM supported network.
+Helping with both **low-level calculations** and **higher-order computations**, plus **essential utilities** like encoding, filtering and sorting.
 
 **Join the PoolTogether Discord, ask questions and get help from the community.**
 
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JFBPMxv5tr)
 
-### Calculate
+**Calculate**
 - [calculateCardinality](calculate#calculatecardinality)
 - [calculateFractionOfPrize](calculate#calculatefractionofprize)
 - [calculateNormalizedBalancePicksFromTotalPicks](calculate#calculatenormalizedbalancepicksfromtotalpicks)
@@ -27,7 +27,7 @@ High-order operations like `winningPicks` which takes an account address, plus h
 - [calculatePrizeForTierPercentage](calculate#calculateprizefortierpercentage)
 - [calculateTierIndexFromMatches](calculate#calculatetierindexfrommatches)
 
-### Compute
+**Compute**
 - [computeDrawResults](compute#computedrawresults)
 - [computePickPrize](compute#computepickprize)
 - [computePicksPrizes](compute#computepicksprizes)
@@ -37,7 +37,7 @@ High-order operations like `winningPicks` which takes an account address, plus h
 - [computeUserWinningPicksForRandomNumber](compute#computeuserwinningpicksforrandomnumber)
 - [computeWinningPicks](compute#computewinningpicks)
 
-### Utilities
+**Utilities**
 - [createDrawResultsObject](utils#createdrawresultsobject)
 - [filterResultsByValue](utils#filterresultsbyvalue)
 - [findBitMatchesAtIndex](utils#findbitmatchesatindex)
@@ -52,7 +52,7 @@ High-order operations like `winningPicks` which takes an account address, plus h
 - [sumTwoBigNumbers](utils#sumtwobignumbers)
 - [updateDrawResultsWithWinningPicks](utils#updatedrawresultswithwinningpicks)
 
-## Installation
+## 💾 &nbsp;Installation
 
 This project is available as an NPM package:
 
@@ -70,7 +70,7 @@ The repo can be cloned from Github for contributions.
 git clone https://github.com/pooltogether/v4-utils-js
 ```
 
-## Quickstart
+## 🏎️ &nbsp;Quickstart 
 
 Draw and PrizeDistrubtion structs should be fetched using the [v4-js-client](https://github.com/pooltogether/v4-js-client) node module.
 
@@ -89,7 +89,7 @@ const transaction = encodeWinningPicks(wallet.address, computedWinningPicks);
 wallet.send(transaction.encodedWinningPickIndices)
 ```
 
-## Low-Level Calculations & Computations
+## 🧮 &nbsp;Examples
 
 The utility library simulates smart contract rules/operations and also encapsulates higher-level abstractions common to PoolTogether V4 required transactions.
 
