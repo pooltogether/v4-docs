@@ -97,7 +97,7 @@ For example, in the `DrawCalculator` smart contract an account `address` is used
 
 In other words, the library exposes low-level functions like `hashUserAddress` and `calculateNumberOfMatches` so it's easier to build the high-level abstractions, like `winningPicks` which simply takes a user address, plus historical Draw/PrizeDistribution structs and generates/encode all potential winning picks for a user into a single transaction.
 
-### Compute User Picks
+### Compute User Picks ([calculateNumberOfMatches](protocol/libraries/v4-utils-js/calculate#calculatenumberofmatches))
 Calculates a depositor potential picks using the totalNumberOfPicks relative to the normalizedBalance.
 
 ```ts
