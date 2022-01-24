@@ -1,4 +1,4 @@
-#  compute
+#  Compute
 
 ## Table of contents
 

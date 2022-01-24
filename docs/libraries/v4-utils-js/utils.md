@@ -1,4 +1,4 @@
-#  utils
+#  Utilities
 
 ## Table of contents
 

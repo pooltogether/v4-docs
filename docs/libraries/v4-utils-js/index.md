@@ -7,13 +7,13 @@
 
 The `@pooltogether/v4-utils-js` [node module package](https://www.npmjs.com/package/@pooltogether/v4-utils-js) provides calculations, computations and general utility functions for the PoolTogether V4 protocol.
 
-As normally the case, the utility library was designed to be modular. Enabling developers to more easily use low-level primitives to create the higher-level computations/operations. High-order operations like `winningPicks()` which takes an `address`, plus `Draw` and `PrizeDistribution` EVM structs fetched via `v4-js-client`: returning encoded transactions **ready for any EVM network**.
-
 Helping with both **low-level calculations** and **higher-order computations**, plus **essential utilities** like encoding, filtering and sorting.
 
 **Join the PoolTogether Discord, ask questions and get help from the community.**
 
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JFBPMxv5tr)
+
+## Table of Contents
 
 ### Namespaces
 

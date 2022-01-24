@@ -1,4 +1,4 @@
-#  calculate
+#  Calculate
 
 ## Table of contents
 
