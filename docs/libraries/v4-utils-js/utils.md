@@ -4,19 +4,19 @@
 
 ### Functions
 
-- [createDrawResultsObject](utils.md#createdrawresultsobject)
-- [filterResultsByValue](utils.md#filterresultsbyvalue)
-- [findBitMatchesAtIndex](utils.md#findbitmatchesatindex)
-- [formatTierPercentage](utils.md#formattierpercentage)
-- [hashUserAddress](utils.md#hashuseraddress)
-- [isBitRangeSizeValid](utils.md#isbitrangesizevalid)
-- [isTiersValid](utils.md#istiersvalid)
-- [sanityCheckPrizeDistribution](utils.md#sanitycheckprizedistribution)
-- [sortByBigNumberAsc](utils.md#sortbybignumberasc)
-- [sortByBigNumberDesc](utils.md#sortbybignumberdesc)
-- [sumBigNumbers](utils.md#sumbignumbers)
-- [sumTwoBigNumbers](utils.md#sumtwobignumbers)
-- [updateDrawResultsWithWinningPicks](utils.md#updatedrawresultswithwinningpicks)
+- [createDrawResultsObject](utils#createdrawresultsobject)
+- [filterResultsByValue](utils#filterresultsbyvalue)
+- [findBitMatchesAtIndex](utils#findbitmatchesatindex)
+- [formatTierPercentage](utils#formattierpercentage)
+- [hashUserAddress](utils#hashuseraddress)
+- [isBitRangeSizeValid](utils#isbitrangesizevalid)
+- [isTiersValid](utils#istiersvalid)
+- [sanityCheckPrizeDistribution](utils#sanitycheckprizedistribution)
+- [sortByBigNumberAsc](utils#sortbybignumberasc)
+- [sortByBigNumberDesc](utils#sortbybignumberdesc)
+- [sumBigNumbers](utils#sumbignumbers)
+- [sumTwoBigNumbers](utils#sumtwobignumbers)
+- [updateDrawResultsWithWinningPicks](utils#updatedrawresultswithwinningpicks)
 
 ## Functions
 
@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[utils/createDrawResultsObject.ts:5](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/createDrawResultsObject.ts#L5)
+[utils/createDrawResultsObject.ts:5](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/createDrawResultsObject.ts#L5)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[utils/filterResultsByValue.ts:7](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/filterResultsByValue.ts#L7)
+[utils/filterResultsByValue.ts:7](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/filterResultsByValue.ts#L7)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[utils/findBitMatchesAtIndex.ts:6](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/findBitMatchesAtIndex.ts#L6)
+[utils/findBitMatchesAtIndex.ts:6](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/findBitMatchesAtIndex.ts#L6)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[utils/formatTierPercentage.ts:4](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/formatTierPercentage.ts#L4)
+[utils/formatTierPercentage.ts:4](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/formatTierPercentage.ts#L4)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[utils/hashUserAddress.ts:3](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/hashUserAddress.ts#L3)
+[utils/hashUserAddress.ts:3](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/hashUserAddress.ts#L3)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[utils/isBitRangeSizeValid.ts:1](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/isBitRangeSizeValid.ts#L1)
+[utils/isBitRangeSizeValid.ts:1](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/isBitRangeSizeValid.ts#L1)
 
 ___
 
@@ -161,7 +161,7 @@ ___
 
 #### Defined in
 
-[utils/isTiersValid.ts:5](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/isTiersValid.ts#L5)
+[utils/isTiersValid.ts:5](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/isTiersValid.ts#L5)
 
 ___
 
@@ -181,7 +181,7 @@ ___
 
 #### Defined in
 
-[utils/sanityCheckPrizeDistribution.ts:5](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/sanityCheckPrizeDistribution.ts#L5)
+[utils/sanityCheckPrizeDistribution.ts:5](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/sanityCheckPrizeDistribution.ts#L5)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[utils/sortByBigNumber.ts:3](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/sortByBigNumber.ts#L3)
+[utils/sortByBigNumber.ts:3](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/sortByBigNumber.ts#L3)
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 #### Defined in
 
-[utils/sortByBigNumber.ts:10](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/sortByBigNumber.ts#L10)
+[utils/sortByBigNumber.ts:10](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/sortByBigNumber.ts#L10)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[utils/sumBigNumbers.ts:10](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/sumBigNumbers.ts#L10)
+[utils/sumBigNumbers.ts:10](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/sumBigNumbers.ts#L10)
 
 ___
 
@@ -264,7 +264,7 @@ ___
 
 #### Defined in
 
-[utils/sumBigNumbers.ts:3](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/sumBigNumbers.ts#L3)
+[utils/sumBigNumbers.ts:3](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/sumBigNumbers.ts#L3)
 
 ___
 
@@ -286,4 +286,5 @@ ___
 
 #### Defined in
 
-[utils/updateDrawResultsWithWinningPicks.ts:5](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/utils/updateDrawResultsWithWinningPicks.ts#L5)
+[utils/updateDrawResultsWithWinningPicks.ts:5](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/utils/updateDrawResultsWithWinningPicks.ts#L5)
+dateDrawResultsWithWinningPicks.ts#L5)

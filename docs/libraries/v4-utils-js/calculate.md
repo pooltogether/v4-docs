@@ -4,16 +4,16 @@
 
 ### Functions
 
-- [calculateCardinality](#calculatecardinality)
-- [calculateFractionOfPrize](#calculatefractionofprize)
-- [calculateNormalizedBalancePicksFromTotalPicks](#calculatenormalizedbalancepicksfromtotalpicks)
-- [calculateNumberOfMatches](#calculatenumberofmatches)
-- [calculateNumberOfPrizesForTierIndex](#calculatenumberofprizesfortierindex)
-- [calculatePick](#calculatepick)
-- [calculatePicks](#calculatepicks)
-- [calculatePicksFromAverageTotalSuppliesBetween](#calculatepicksfromaveragetotalsuppliesbetween)
-- [calculatePrizeForTierPercentage](#calculateprizefortierpercentage)
-- [calculateTierIndexFromMatches](#calculatetierindexfrommatches)
+- [calculateCardinality](calculate.md#calculatecardinality)
+- [calculateFractionOfPrize](calculate.md#calculatefractionofprize)
+- [calculateNormalizedBalancePicksFromTotalPicks](calculate.md#calculatenormalizedbalancepicksfromtotalpicks)
+- [calculateNumberOfMatches](calculate.md#calculatenumberofmatches)
+- [calculateNumberOfPrizesForTierIndex](calculate.md#calculatenumberofprizesfortierindex)
+- [calculatePick](calculate.md#calculatepick)
+- [calculatePicks](calculate.md#calculatepicks)
+- [calculatePicksFromAverageTotalSuppliesBetween](calculate.md#calculatepicksfromaveragetotalsuppliesbetween)
+- [calculatePrizeForTierPercentage](calculate.md#calculateprizefortierpercentage)
+- [calculateTierIndexFromMatches](calculate.md#calculatetierindexfrommatches)
 
 ## Functions
 
@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[calculate/calculateCardinality.ts:6](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculateCardinality.ts#L6)
+[calculate/calculateCardinality.ts:6](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculateCardinality.ts#L6)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[calculate/calculateFractionOfPrize.ts:4](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculateFractionOfPrize.ts#L4)
+[calculate/calculateFractionOfPrize.ts:4](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculateFractionOfPrize.ts#L4)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[calculate/calculateNormalizedBalancePicksFromTotalPicks.ts:3](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculateNormalizedBalancePicksFromTotalPicks.ts#L3)
+[calculate/calculateNormalizedBalancePicksFromTotalPicks.ts:3](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculateNormalizedBalancePicksFromTotalPicks.ts#L3)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[calculate/calculateNumberOfMatches.ts:5](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculateNumberOfMatches.ts#L5)
+[calculate/calculateNumberOfMatches.ts:5](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculateNumberOfMatches.ts#L5)
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 #### Defined in
 
-[calculate/calculateNumberOfPrizesForTierIndex.ts:1](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculateNumberOfPrizesForTierIndex.ts#L1)
+[calculate/calculateNumberOfPrizesForTierIndex.ts:1](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculateNumberOfPrizesForTierIndex.ts#L1)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[calculate/calculatePick.ts:6](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculatePick.ts#L6)
+[calculate/calculatePick.ts:6](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculatePick.ts#L6)
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 #### Defined in
 
-[calculate/calculatePicks.ts:6](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculatePicks.ts#L6)
+[calculate/calculatePicks.ts:6](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculatePicks.ts#L6)
 
 ___
 
@@ -185,7 +185,7 @@ ___
 
 #### Defined in
 
-[calculate/calculatePicksFromAverageTotalSuppliesBetween.ts:7](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculatePicksFromAverageTotalSuppliesBetween.ts#L7)
+[calculate/calculatePicksFromAverageTotalSuppliesBetween.ts:7](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculatePicksFromAverageTotalSuppliesBetween.ts#L7)
 
 ___
 
@@ -208,7 +208,7 @@ ___
 
 #### Defined in
 
-[calculate/calculatePrizeForTierPercentage.ts:6](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculatePrizeForTierPercentage.ts#L6)
+[calculate/calculatePrizeForTierPercentage.ts:6](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculatePrizeForTierPercentage.ts#L6)
 
 ___
 
@@ -229,4 +229,5 @@ ___
 
 #### Defined in
 
-[calculate/calculateTierIndexFromMatches.ts:1](https://github.com/pooltogether/v4-utils-js/blob/4a945a2/src/calculate/calculateTierIndexFromMatches.ts#L1)
+[calculate/calculateTierIndexFromMatches.ts:1](https://github.com/pooltogether/v4-utils-js/blob/e8b45cf/src/calculate/calculateTierIndexFromMatches.ts#L1)
+es.ts#L1)

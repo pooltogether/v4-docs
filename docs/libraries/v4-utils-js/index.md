@@ -15,6 +15,17 @@ Helping with both **low-level calculations** and **higher-order computations**, 
 
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/JFBPMxv5tr)
 
+### Namespaces
+
+- [calculate](calculate)
+- [compute](compute)
+- [core](core)
+- [utils](utils)
+
+**Core**
+- [encodeWinningPicks](core#encodeWinningPicks)
+- [winningPicks](core#winningPicks)
+
 **Calculate**
 - [calculateCardinality](calculate#calculatecardinality)
 - [calculateFractionOfPrize](calculate#calculatefractionofprize)
