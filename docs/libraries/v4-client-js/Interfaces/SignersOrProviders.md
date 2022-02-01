@@ -1,4 +1,4 @@
-[@pooltogether/v4-js-client](../README.md) / [Exports](../modules.md) / SignersOrProviders
+[@pooltogether/v4-client-js](../) / [Exports](../modules) / SignersOrProviders
 
 # Interface: SignersOrProviders
 

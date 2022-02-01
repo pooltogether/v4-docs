@@ -1,12 +1,12 @@
-[@pooltogether/v4-js-client](../README.md) / [Exports](../modules.md) / Contract
+[@pooltogether/v4-client-js](../) / [Exports](../modules) / Contract
 
 # Interface: Contract
 
 ## Hierarchy
 
-- [`ABIIdentifier`](ABIIdentifier.md)
+- [`ABIIdentifier`](ABIIdentifier)
 
-- [`ContractIdentifier`](ContractIdentifier.md)
+- [`ContractIdentifier`](ContractIdentifier)
 
   ↳ **`Contract`**
 
@@ -14,13 +14,13 @@
 
 ### Properties
 
-- [abi](Contract.md#abi)
-- [address](Contract.md#address)
-- [chainId](Contract.md#chainid)
-- [extensions](Contract.md#extensions)
-- [tags](Contract.md#tags)
-- [type](Contract.md#type)
-- [version](Contract.md#version)
+- [abi](Contract#abi)
+- [address](Contract#address)
+- [chainId](Contract#chainid)
+- [extensions](Contract#extensions)
+- [tags](Contract#tags)
+- [type](Contract#type)
+- [version](Contract#version)
 
 ## Properties
 
@@ -32,7 +32,7 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:21
 
-___
+---
 
 ### address
 
@@ -40,13 +40,13 @@ ___
 
 #### Inherited from
 
-[ContractIdentifier](ContractIdentifier.md).[address](ContractIdentifier.md#address)
+[ContractIdentifier](ContractIdentifier).[address](ContractIdentifier#address)
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:18
 
-___
+---
 
 ### chainId
 
@@ -54,13 +54,13 @@ ___
 
 #### Inherited from
 
-[ContractIdentifier](ContractIdentifier.md).[chainId](ContractIdentifier.md#chainid)
+[ContractIdentifier](ContractIdentifier).[chainId](ContractIdentifier#chainid)
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:17
 
-___
+---
 
 ### extensions
 
@@ -74,7 +74,7 @@ ___
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:23
 
-___
+---
 
 ### tags
 
@@ -84,7 +84,7 @@ ___
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:22
 
-___
+---
 
 ### type
 
@@ -92,21 +92,21 @@ ___
 
 #### Inherited from
 
-[ABIIdentifier](ABIIdentifier.md).[type](ABIIdentifier.md#type)
+[ABIIdentifier](ABIIdentifier).[type](ABIIdentifier#type)
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:14
 
-___
+---
 
 ### version
 
-• `Readonly` **version**: [`Version`](Version.md)
+• `Readonly` **version**: [`Version`](Version)
 
 #### Inherited from
 
-[ABIIdentifier](ABIIdentifier.md).[version](ABIIdentifier.md#version)
+[ABIIdentifier](ABIIdentifier).[version](ABIIdentifier#version)
 
 #### Defined in
 

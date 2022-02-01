@@ -1,13 +1,13 @@
 ---
 id: index
-title: V4 JS Client
+title: V4 Client JS
 ---
 
-![npm](https://img.shields.io/npm/v/@pooltogether/v4-js-client)
+![npm](https://img.shields.io/npm/v/@pooltogether/v4-client-js)
 ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
-![Tests](https://github.com/pooltogether/v4-js-client/actions/workflows/main.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-js-client/badge.svg?branch=main)](https://coveralls.io/github/pooltogether/v4-js-client?branch=main)
-[![MIT license](https://img.shields.io/npm/l/@pooltogether/v4-js-client)](https://img.shields.io/npm/l/@pooltogether/v4-js-client)
+![Tests](https://github.com/pooltogether/v4-client-js/actions/workflows/main.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-client-js/badge.svg?branch=main)](https://coveralls.io/github/pooltogether/v4-client-js?branch=main)
+[![MIT license](https://img.shields.io/npm/l/@pooltogether/v4-client-js)](https://img.shields.io/npm/l/@pooltogether/v4-client-js)
 
 <img src="https://github.com/pooltogether/pooltogether--brand-assets/blob/977e03604c49c63314450b5d432fe57d34747c66/logo/pooltogether-logo--purple-gradient.png?raw=true" alt="Brand" width="200"/>
 
@@ -31,7 +31,7 @@ There are several classes that provide interfaces to the different aspects of th
 This project is available as an NPM package:
 
 ```bash
-yarn add @pooltogether/v4-js-client
+yarn add @pooltogether/v4-client-js
 ```
 
 ## 🌱 Initialization
@@ -46,7 +46,7 @@ To create an instance of `PrizePoolNetwork` you will need:
 - [Ethers providers](https://docs.ethers.io/v5/api/providers/) for every chain that a Prize Pool is deployed on.
 
 ```js
-import { PrizePoolNetwork } from "@pooltogether/v4-js-client";
+import { PrizePoolNetwork } from "@pooltogether/v4-client-js";
 import { mainnet } from "@pooltogether/v4-pool-data";
 
 const PrizePoolNetwork = new PrizePoolNetwork(providers, mainnet);

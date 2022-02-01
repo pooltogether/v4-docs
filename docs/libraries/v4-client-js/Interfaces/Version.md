@@ -1,4 +1,4 @@
-[@pooltogether/v4-js-client](../README.md) / [Exports](../modules.md) / Version
+[@pooltogether/v4-client-js](../) / [Exports](../modules) / Version
 
 # Interface: Version
 
@@ -6,9 +6,9 @@
 
 ### Properties
 
-- [major](Version.md#major)
-- [minor](Version.md#minor)
-- [patch](Version.md#patch)
+- [major](Version#major)
+- [minor](Version#minor)
+- [patch](Version#patch)
 
 ## Properties
 
@@ -20,7 +20,7 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:2
 
-___
+---
 
 ### minor
 
@@ -30,7 +30,7 @@ ___
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:3
 
-___
+---
 
 ### patch
 

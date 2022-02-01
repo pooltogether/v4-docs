@@ -1,4 +1,4 @@
-[@pooltogether/v4-js-client](../README.md) / [Exports](../modules.md) / ContractIdentifier
+[@pooltogether/v4-client-js](../) / [Exports](../modules) / ContractIdentifier
 
 # Interface: ContractIdentifier
 
@@ -6,14 +6,14 @@
 
 - **`ContractIdentifier`**
 
-  ↳ [`Contract`](Contract.md)
+  ↳ [`Contract`](Contract)
 
 ## Table of contents
 
 ### Properties
 
-- [address](ContractIdentifier.md#address)
-- [chainId](ContractIdentifier.md#chainid)
+- [address](ContractIdentifier#address)
+- [chainId](ContractIdentifier#chainid)
 
 ## Properties
 
@@ -25,7 +25,7 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:18
 
-___
+---
 
 ### chainId
 
