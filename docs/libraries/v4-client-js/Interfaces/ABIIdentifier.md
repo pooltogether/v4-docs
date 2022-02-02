@@ -1,4 +1,4 @@
-[@pooltogether/v4-js-client](../README.md) / [Exports](../modules.md) / ABIIdentifier
+[@pooltogether/v4-client-js](../) / [Exports](../modules) / ABIIdentifier
 
 # Interface: ABIIdentifier
 
@@ -6,14 +6,14 @@
 
 - **`ABIIdentifier`**
 
-  ↳ [`Contract`](Contract.md)
+  ↳ [`Contract`](Contract)
 
 ## Table of contents
 
 ### Properties
 
-- [type](ABIIdentifier.md#type)
-- [version](ABIIdentifier.md#version)
+- [type](ABIIdentifier#type)
+- [version](ABIIdentifier#version)
 
 ## Properties
 
@@ -25,11 +25,11 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:14
 
-___
+---
 
 ### version
 
-• `Readonly` **version**: [`Version`](Version.md)
+• `Readonly` **version**: [`Version`](Version)
 
 #### Defined in
 
