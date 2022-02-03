@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Prize API
 
-The Prize API is an easy way to access the PoolTogether v4 prize data. For a detailed description of how the prizes are calculated see [here](../concepts/computing-prizes).
+The Prize API is an easy way to access the PoolTogether V4 prize data. For a detailed description of how the prizes are calculated see [here](../concepts/computing-prizes).
 
 This data contains:
 
