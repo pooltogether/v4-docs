@@ -83,7 +83,7 @@ export const Guides = [
   {
     title: "JS Client Quick start",
     text: "Get started on web integrations with the Javascript Client.",
-    to: "./protocol/libraries/v4-client-js/",
+    to: "./protocol/tutorials/js-client-quickstart/",
   },
   {
     title: "All Tutorials",
