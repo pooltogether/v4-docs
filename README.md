@@ -3,6 +3,7 @@
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 # Contributing to PoolTogether Docs
+
 Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](https://github.com/PoolTogether/v4-docs/blob/main/CONTRIBUTING.md).
 
 # How to generate markdown files from solidity Natspec comments
@@ -39,6 +40,10 @@ Edit config.json file with
 # How to add a new page
 
 Create a markdown file in its respective versioned docs, or versioned SDK, directory.
+
+# How to add internal links
+
+Relative or absolute paths work. End links with a trailing `/`
 
 ## Installation
 
