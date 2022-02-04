@@ -11,12 +11,12 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 960px) {
   .heroBanner {
     padding: 2rem;
   }
 }
-@media screen and (min-width: 997px) {
+@media screen and (min-width: 960px) {
   :root {
     --ifm-font-size-base: 17px;
   }
