@@ -19,9 +19,9 @@ To interact with the latest PoolTogether V4 deployment you'll need to install 2 
 yarn add @pooltogether/v4-client-js @pooltogether/v4-pool-data
 ```
 
-## 💻 The Code
+## Getting Started
 
-### 1. Prize Pool Network
+### 1. Prize Pool Networks
 
 To begin, we'll create an instance of the deployed [Prize Pool Network](/protocol/concepts/prize-pools-network). The [`PrizePoolNetwork`](/protocol/libraries/v4-client-js/Classes/PrizePoolNetwork) class is the root of most interaction through the [client library](/protocol/libraries/v4-client-js/), so we'll begin by creating an instance of it.
 
@@ -51,19 +51,7 @@ const PrizePoolNetwork = new PrizePoolNetwork(providers, mainnet);
 
 That's it! Now we're ready to start reading data from the PoolTogether Prize Pool Network!
 
-### 2. Fetching Token Balances
-
-A very basic action is just getting a users token balances. We want to know the amount of tokens a user has deposited, how many of hte underlying token the user has, as well as other details about the token like it's decimals and symbol.
-
-We can use [`getUsersPrizePoolBalances`](/protocol/libraries/v4-client-js/Classes/PrizePoolNetwork#getusersprizepoolbalances) to fetch a users token balances across all of the networks.
-
-```js
-const usersTokenBalances = await PrizePoolNetwork.getUsersPrizePoolBalances(
-  "0x27fcf06DcFFdDB6Ec5F62D466987e863ec6aE6A0"
-);
-```
-
-### 3. Prize Pool
+### 2. Prize Pools
 
 A [`PrizePool`](/protocol/libraries/v4-client-js/Classes/PrizePool) is a representation of a Prize Pool deployment. The Prize Pool is responsible for managing deposits, withdrawals & delegation. `PrizePool` is a read only object, for write capabilities see `User`.
 
@@ -76,7 +64,7 @@ const prizePool = PrizePoolNetwork.getPrizePool(
 );
 ```
 
-### 4. User
+### 3. Users
 
 A [`User`](/protocol/libraries/v4-client-js/Classes/User) is wrapper around `PrizePool` with the ability to send transactions to manage deposits, withdrawals and delegation.
 
@@ -86,7 +74,27 @@ It is created by passing an instance of an [ethers Signer](https://docs.ethers.i
 const user = new User(prizePool.prizePoolMetadata, signer, prizePool);
 ```
 
-### 5. Depositing
+### 4. How to Get Token Balances
+
+A very basic action is just getting a users token balances. We want to know the amount of tokens a user has deposited, the amount of underlying token the user has, as well as other details about the token like it's decimals, name and symbol.
+
+We can use [`getUsersPrizePoolBalances`](/protocol/libraries/v4-client-js/Classes/PrizePoolNetwork#getusersprizepoolbalances) to fetch a users token balances across all of the networks.
+
+```js
+const balances = await PrizePoolNetwork.getUsersPrizePoolBalances(
+  "0x1D9312B477E38397c6A69A6bBA2A1AD009CcF685"
+);
+```
+
+Alternatively we can use [`getUsersDepositAllowance`](/protocol/libraries/v4-client-js/Classes/PrizePool#getusersdepositallowance) to fetch a users token balances for a specific Prize Pool.
+
+```js
+const balances = await PrizePool.getUsersDepositAllowance(
+  "0x1D9312B477E38397c6A69A6bBA2A1AD009CcF685"
+);
+```
+
+### 5. How to Deposit
 
 Before we can make a deposit, we need to make sure hte user has approved the `YieldSourcePrizePool` to use the users underlying token (USDC in this case).
 
@@ -117,6 +125,6 @@ const txResponse: TransactionResponse = await user.deposit(
 );
 ```
 
-### 6. Claiming Prizes
+### 6. How to Claim Prizes
 
 TODO

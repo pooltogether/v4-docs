@@ -7,9 +7,9 @@ There are several javascript packages available to help users build dApps. See b
 
 #### Current Packages
 
-- [**V4 Client JS**](./v4-client-js): A simplified interface for interacting with a V4 PoolTogether deployment.
+- [**V4 Client JS**](./v4-client-js/): A simplified interface for interacting with a V4 PoolTogether deployment.
 
-- [**V4 Utility JS**](./v4-utils-js): Provides calculations, computations and general utility functions for the PoolTogether V4 protocol.
+- [**V4 Utility JS**](./v4-utils-js/): Provides calculations, computations and general utility functions for the PoolTogether V4 protocol.
 
 - [**V4 Pool Data**](https://www.npmjs.com/package/@pooltogether/v4-pool-data): A collection of contract lists populated with mainnet and testnet V4 deployments.
 

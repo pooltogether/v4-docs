@@ -27,21 +27,21 @@ export const actions = [
     title: "What is PoolTogether",
     href: "#",
     icon: InformationCircleIcon,
-    to: "./protocol/introduction",
+    to: "./protocol/introduction/",
     text: `A brief explanation about what PoolTogether is. Governance, protocol, interface, inc.`,
   },
   {
-    title: "PoolTogether Concepts",
+    title: "Architecture",
     href: "#",
     icon: LightBulbIcon,
-    to: "./protocol/concepts",
+    to: "./protocol/architecture/",
     text: `Learn about the core concepts of the PoolTogether protocol. A prize savings network.`,
   },
   {
     title: "Deployments",
     href: "#",
     icon: BookOpenIcon,
-    to: "./protocol/deployments",
+    to: "./protocol/deployments/",
     text: `Comprehensive list of deployed contracts for both production and testnet.`,
   },
 ];
@@ -78,7 +78,7 @@ export const Guides = [
   {
     title: "JS Libraries Overview",
     text: "Learn the differences between the JS libraries available.",
-    to: "./protocol/libraries",
+    to: "./protocol/libraries/",
   },
   {
     title: "JS Client Quick start",
@@ -95,7 +95,7 @@ export const quick = [
   {
     title: "Smart Contracts",
     text: "Start swapping from a smart contract",
-    to: "./protocol/tutorials/smart-contracts",
+    to: "./protocol/tutorials/smart-contracts/",
   },
 ];
 
