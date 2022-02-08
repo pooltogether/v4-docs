@@ -1,5 +1,8 @@
 Provides an interface for requesting random numbers from 3rd-party RNG services (Chainlink VRF, Starkware VDF, etc..)
 
+
+
+
 ## Functions
 ### getLastRequestId
 ```solidity
@@ -11,9 +14,9 @@ Gets the last request id used by the RNG service
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`requestId`|  | The last request id used in the last request
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | requestId The last request id used in the last request
 ### getRequestFee
 ```solidity
   function getRequestFee(
@@ -24,10 +27,10 @@ Gets the Fee for making a Request against an RNG service
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`feeToken`|  | The address of the token that is used to pay fees
-|`requestFee`|  | The fee required to be paid to make a request
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | feeToken The address of the token that is used to pay fees
+| uint256 | requestFee The fee required to be paid to make a request
 ### requestRandomNumber
 ```solidity
   function requestRandomNumber(
@@ -40,11 +43,11 @@ Some services require payment in the form of a token, such as $LINK for Chainlin
 
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`requestId`|  | The ID of the request used to get the results of the RNG service
-|`lockBlock`|  | The block number at which the RNG service will start generating time-delayed randomness.  The calling contract
-should "lock" all activity until the result is available via the `requestId`
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint32 | requestId The ID of the request used to get the results of the RNG service
+| uint32 | lockBlock The block number at which the RNG service will start generating time-delayed randomness.
+The calling contract should "lock" all activity until the result is available via the `requestId`
 ### isRequestComplete
 ```solidity
   function isRequestComplete(
@@ -61,9 +64,9 @@ For time-delayed requests, this function is used to check/confirm completion
 |`requestId` | uint32 | The ID of the request used to get the results of the RNG service
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`isCompleted`| uint32 | True if the request has completed and a random number is available, false otherwise
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| bool | isCompleted True if the request has completed and a random number is available, false otherwise
 ### randomNumber
 ```solidity
   function randomNumber(
@@ -79,9 +82,9 @@ Gets the random number produced by the 3rd-party service
 |`requestId` | uint32 | The ID of the request used to get the results of the RNG service
 
 #### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`randomNum`| uint32 | The random number
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint256 | randomNum The random number
 ## Events
 ### RandomNumberRequested
 ```solidity

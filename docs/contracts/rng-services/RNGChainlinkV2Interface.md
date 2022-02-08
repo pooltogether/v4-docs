@@ -1,54 +1,94 @@
-
+Provides an interface for requesting random numbers from Chainlink VRF V2.
 
 
 
 
 ## Functions
-### constructor
+### getSubscriptionId
 ```solidity
-  function constructor(
-  ) public
+  function getSubscriptionId(
+  ) external returns (uint64)
 ```
+Get Chainlink VRF subscription id associated with this contract.
 
-Public constructor
 
 
-### getLink
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint64 | uint64 Chainlink VRF subscription id
+### getVrfCoordinator
 ```solidity
-  function getLink(
+  function getVrfCoordinator(
   ) external returns (address)
 ```
+Get Chainlink VRF coordinator contract address associated with this contract.
 
 
 
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| address | address Chainlink VRF coordinator address
+### setSubscriptionId
+```solidity
+  function setSubscriptionId(
+    uint64 subId
+  ) external
+```
+Set Chainlink VRF subscription id associated with this contract.
+
+This function is only callable by the owner.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`subId` | uint64 | Chainlink VRF subscription id
+
+### setCallbackGasLimit
+```solidity
+  function setCallbackGasLimit(
+    uint32 callbackGasLimit
+  ) external
+```
+Set Chainlink VRF callback gas limit.
+
+This function is only callable by the owner.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`callbackGasLimit` | uint32 | Chainlink VRF callback gas limit
+
+### setRequestConfirmations
+```solidity
+  function setRequestConfirmations(
+    uint16 requestConfirmations
+  ) external
+```
+Set Chainlink VRF request confirmations.
+
+This function is only callable by the owner.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`requestConfirmations` | uint16 | Chainlink VRF request confirmations
 
 ### setKeyhash
 ```solidity
   function setKeyhash(
-    bytes32 _keyhash
+    bytes32 keyHash
   ) external
 ```
-Allows governance to set the VRF keyhash
+Set Chainlink VRF keyHash.
 
+This function is only callable by the owner.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_keyhash` | bytes32 | The keyhash to be used by the VRF
-
-### setFee
-```solidity
-  function setFee(
-    uint256 _fee
-  ) external
-```
-Allows governance to set the fee per request required by the VRF
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_fee` | uint256 | The fee to be charged for a request
+|`keyHash` | bytes32 | Chainlink VRF keyHash
 
 ### getLastRequestId
 ```solidity
@@ -92,8 +132,8 @@ Some services require payment in the form of a token, such as $LINK for Chainlin
 | Type          | Description                                                                  |
 | :------------ | :--------------------------------------------------------------------------- |
 | uint32 | requestId The ID of the request used to get the results of the RNG service
-| uint32 | lockBlock The block number at which the RNG service will start generating time-delayed randomness.  The calling contract
-should "lock" all activity until the result is available via the `requestId`
+| uint32 | lockBlock The block number at which the RNG service will start generating time-delayed randomness.
+The calling contract should "lock" all activity until the result is available via the `requestId`
 ### isRequestComplete
 ```solidity
   function isRequestComplete(
@@ -131,87 +171,7 @@ Gets the random number produced by the 3rd-party service
 | Type          | Description                                                                  |
 | :------------ | :--------------------------------------------------------------------------- |
 | uint256 | randomNum The random number
-### owner
-```solidity
-  function owner(
-  ) public returns (address)
-```
-
-Returns the address of the current owner.
-
-
-### renounceOwnership
-```solidity
-  function renounceOwnership(
-  ) public
-```
-
-Leaves the contract without owner. It will not be possible to call
-`onlyOwner` functions anymore. Can only be called by the current owner.
-NOTE: Renouncing ownership will leave the contract without an owner,
-thereby removing any functionality that is only available to the owner.
-
-
-### transferOwnership
-```solidity
-  function transferOwnership(
-  ) public
-```
-
-Transfers ownership of the contract to a new account (`newOwner`).
-Can only be called by the current owner.
-
-
-### rawFulfillRandomness
-```solidity
-  function rawFulfillRandomness(
-  ) external
-```
-
-
-
-
 ## Events
-### KeyHashSet
-```solidity
-  event KeyHashSet(
-  )
-```
-
-
-
-### FeeSet
-```solidity
-  event FeeSet(
-  )
-```
-
-
-
-### VrfCoordinatorSet
-```solidity
-  event VrfCoordinatorSet(
-  )
-```
-
-
-
-### VRFRequested
-```solidity
-  event VRFRequested(
-  )
-```
-
-
-
-### OwnershipTransferred
-```solidity
-  event OwnershipTransferred(
-  )
-```
-
-
-
 ### RandomNumberRequested
 ```solidity
   event RandomNumberRequested(

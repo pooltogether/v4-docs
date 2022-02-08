@@ -18,6 +18,7 @@ title: RNG Services
 # Overview
 - [RNGBlockhash](./RNGBlockhash.md)
 - [RNGChainlink](./RNGChainlink.md)
+- [RNGChainlinkV2](./RNGChainlinkV2.md)
 
 # Setup
 
