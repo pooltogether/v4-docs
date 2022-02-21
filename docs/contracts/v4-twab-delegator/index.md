@@ -3,8 +3,6 @@ id: v4-twab-delegator
 title: V4 TWAB Delegator
 ---
 
-[![Coverage Status](https://coveralls.io/repos/github/pooltogether/v4-twab-delegator/badge.svg?branch=master)](https://coveralls.io/github/pooltogether/v4-twab-delegator?branch=master)
-
 ![Tests](https://github.com/pooltogether/v4-twab-delegator/actions/workflows/main.yml/badge.svg)
 
 The PoolTogether V4 TWAB Delegator contract allows accounts to easily delegate their chance of winning to other accounts.
@@ -29,6 +27,8 @@ Representatives are accounts that can manage delegations for a delegator.  They 
 
 # User Flow
 
+## Delegator Flow
+
 The main user flow is that a delegator delegates tickets to a delegatee. The flow proceeds like so:
 
 1. Delegator creates a delegation for the given slot:
@@ -39,6 +39,8 @@ createDelegation(address delegatorAddress, uint256 slotIndex, address delegatee,
 ```solidity
 fundDelegation(address delegator, uint256 slotIndex, uint256 amount)
 ```
+
+## Representative Flow
 
 If a delegator wishes a representative to manage their delegations for them, then the delegator can stake on the contract instead. The representative can use the stake to create delegations, but cannot withdraw the stake.
 
@@ -55,11 +57,11 @@ setRepresentative(address rep, bool isRep)
 
 The representative would follow a similar flow to create a delegation, but would instead fund from the stake:
 
-1. Delegator creates a delegation for the given slot:
+1. Representative creates a delegation for the given slot:
 ```solidity
 createDelegation(address delegatorAddress, uint256 slotIndex, address delegatee, uint256 lockDuration)
 ```
-2. Delegator funds the delegation (transfers tickets into the delegation)
+2. Representative funds the delegation (transfers tickets into the delegation)
 ```solidity
 fundDelegationFromStake(address delegator, uint256 slotIndex, uint256 amount)
 ```
