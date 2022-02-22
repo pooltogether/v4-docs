@@ -14,3 +14,4 @@ cache/
 typechain/
 
 .history
+.env
