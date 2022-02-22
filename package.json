@@ -15,21 +15,19 @@
     "gen-deployments": "rm -rf docs/reference/deployments/** && yarn add-deployments-category && ./scripts/generateDeployments.js"
   },
   "dependencies": {
-    "@babel/core": "^7.14.6",
-    "@docusaurus/core": "^2.0.0-beta.1",
-    "@docusaurus/plugin-content-docs": "^2.0.0-beta.1",
-    "@docusaurus/preset-classic": "^2.0.0-beta.1",
-    "@docusaurus/theme-search-algolia": "^2.0.0-beta.1",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "@heroicons/react": "^1.0.1",
-    "@mdx-js/react": "^1.6.21",
-    "@types/react": "^17.0.11",
-    "algoliasearch": "^4.9.1",
-    "clsx": "^1.1.1",
-    "intl-locales-supported": "^1.8.12",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "@babel/core": "7.17.5",
+    "@docusaurus/core": "2.0.0-beta.15",
+    "@docusaurus/plugin-content-docs": "2.0.0-beta.15",
+    "@docusaurus/preset-classic": "2.0.0-beta.15",
+    "@emotion/react": "11.8.1",
+    "@emotion/styled": "11.8.1",
+    "@heroicons/react": "1.0.5",
+    "@types/react": "17.0.39",
+    "algoliasearch": "4.12.1",
+    "clsx": "1.1.1",
+    "intl-locales-supported": "1.8.12",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "browserslist": {
     "production": [
