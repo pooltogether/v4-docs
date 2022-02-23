@@ -1,6 +1,4 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / Version
-
-# Interface: Version
+#   Version
 
 ## Table of contents
 
@@ -20,7 +18,7 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:2
 
----
+___
 
 ### minor
 
@@ -30,7 +28,7 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:2
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:3
 
----
+___
 
 ### patch
 

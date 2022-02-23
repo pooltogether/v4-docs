@@ -1,6 +1,4 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / PrizePoolTokenBalances
-
-# Interface: PrizePoolTokenBalances
+#   PrizePoolTokenBalances
 
 ## Table of contents
 
@@ -17,9 +15,9 @@
 
 #### Defined in
 
-[src/types.ts:11](https://github.com/pooltogether/v4-client-js/blob/d352428/src/types.ts#L11)
+[src/types.ts:32](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/types.ts#L32)
 
----
+___
 
 ### token
 
@@ -27,4 +25,4 @@
 
 #### Defined in
 
-[src/types.ts:12](https://github.com/pooltogether/v4-client-js/blob/d352428/src/types.ts#L12)
+[src/types.ts:33](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/types.ts#L33)

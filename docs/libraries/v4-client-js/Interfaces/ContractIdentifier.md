@@ -1,12 +1,10 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / ContractIdentifier
-
-# Interface: ContractIdentifier
+#   ContractIdentifier
 
 ## Hierarchy
 
 - **`ContractIdentifier`**
 
-  ↳ [`Contract`](Contract)
+  ↳ [`Contract`](Contract )
 
 ## Table of contents
 
@@ -25,7 +23,7 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:18
 
----
+___
 
 ### chainId
 

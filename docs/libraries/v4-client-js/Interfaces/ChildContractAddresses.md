@@ -1,7 +1,5 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / ChildContractAddresses
-
-# Interface: ChildContractAddresses
+#   ChildContractAddresses
 
 ## Indexable
 
-▪ [chainId: `number`]: { [contractAddress: string]: { [childContractType: string]: `string`; }; }
+▪ [chainId: `number`]: { [contractAddress: string]: { [childContractType: string]: `string`;  };  }
