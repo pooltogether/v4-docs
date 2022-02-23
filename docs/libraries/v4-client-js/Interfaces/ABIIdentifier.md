@@ -1,12 +1,10 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / ABIIdentifier
-
-# Interface: ABIIdentifier
+#   ABIIdentifier
 
 ## Hierarchy
 
 - **`ABIIdentifier`**
 
-  ↳ [`Contract`](Contract)
+  ↳ [`Contract`](Contract )
 
 ## Table of contents
 
@@ -25,11 +23,11 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:14
 
----
+___
 
 ### version
 
-• `Readonly` **version**: [`Version`](Version)
+• `Readonly` **version**: [`Version`](Version )
 
 #### Defined in
 

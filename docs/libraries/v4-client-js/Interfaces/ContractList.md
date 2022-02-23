@@ -1,6 +1,4 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / ContractList
-
-# Interface: ContractList
+#   ContractList
 
 ## Table of contents
 
@@ -15,13 +13,13 @@
 
 ### contracts
 
-• **contracts**: [`Contract`](Contract)[]
+• **contracts**: [`Contract`](Contract )[]
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:31
 
----
+___
 
 ### name
 
@@ -31,21 +29,21 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:31
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:28
 
----
+___
 
 ### tags
 
-• **tags**: [`Tags`](Tags)
+• **tags**: [`Tags`](Tags )
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:30
 
----
+___
 
 ### version
 
-• **version**: [`Version`](Version)
+• **version**: [`Version`](Version )
 
 #### Defined in
 

@@ -1,6 +1,4 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / PrizePool
-
-# Class: PrizePool
+#   PrizePool
 
 A Prize Pool.
 Provides read only functions for the contracts that make up the deployment of this Prize Pool.
@@ -9,7 +7,7 @@ Provides read only functions for the contracts that make up the deployment of th
 
 - **`PrizePool`**
 
-  ↳ [`User`](User)
+  ↳ [`User`](User )
 
 ## Table of contents
 
@@ -55,15 +53,15 @@ Create an instance of a PrizePool by providing the metadata for the YieldSourceP
 
 #### Parameters
 
-| Name                   | Type                                   | Description                                                          |
-| :--------------------- | :------------------------------------- | :------------------------------------------------------------------- |
-| `prizePoolMetadata`    | [`Contract`](../interfaces/Contract)   | the metadata for the YieldSourcePrizePool contract in the Prize Pool |
-| `signerOrProvider`     | `Signer` \| `Provider`                 | a Provider or Signer for the network the Prize Pool deployment is on |
-| `contractMetadataList` | [`Contract`](../interfaces/Contract)[] | an array of metadata for the Prize Pool                              |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `prizePoolMetadata` | [`Contract`](../Interfaces/Contract ) | the metadata for the YieldSourcePrizePool contract in the Prize Pool |
+| `signerOrProvider` | `Signer` \| `Provider` | a Provider or Signer for the network the Prize Pool deployment is on |
+| `contractMetadataList` | [`Contract`](../Interfaces/Contract )[] | an array of metadata for the Prize Pool |
 
 #### Defined in
 
-[src/PrizePool.ts:49](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L49)
+[src/PrizePool.ts:49](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L49)
 
 ## Properties
 
@@ -73,9 +71,9 @@ Create an instance of a PrizePool by providing the metadata for the YieldSourceP
 
 #### Defined in
 
-[src/PrizePool.ts:30](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L30)
+[src/PrizePool.ts:30](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L30)
 
----
+___
 
 ### chainId
 
@@ -83,19 +81,19 @@ Create an instance of a PrizePool by providing the metadata for the YieldSourceP
 
 #### Defined in
 
-[src/PrizePool.ts:29](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L29)
+[src/PrizePool.ts:29](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L29)
 
----
+___
 
 ### contractMetadataList
 
-• `Readonly` **contractMetadataList**: [`Contract`](../interfaces/Contract)[]
+• `Readonly` **contractMetadataList**: [`Contract`](../Interfaces/Contract )[]
 
 #### Defined in
 
-[src/PrizePool.ts:27](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L27)
+[src/PrizePool.ts:27](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L27)
 
----
+___
 
 ### prizePoolContract
 
@@ -103,19 +101,19 @@ Create an instance of a PrizePool by providing the metadata for the YieldSourceP
 
 #### Defined in
 
-[src/PrizePool.ts:38](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L38)
+[src/PrizePool.ts:38](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L38)
 
----
+___
 
 ### prizePoolMetadata
 
-• `Readonly` **prizePoolMetadata**: [`Contract`](../interfaces/Contract)
+• `Readonly` **prizePoolMetadata**: [`Contract`](../Interfaces/Contract )
 
 #### Defined in
 
-[src/PrizePool.ts:33](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L33)
+[src/PrizePool.ts:33](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L33)
 
----
+___
 
 ### signerOrProvider
 
@@ -123,47 +121,47 @@ Create an instance of a PrizePool by providing the metadata for the YieldSourceP
 
 #### Defined in
 
-[src/PrizePool.ts:28](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L28)
+[src/PrizePool.ts:28](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L28)
 
----
+___
 
 ### ticketContract
 
-• **ticketContract**: `undefined` \| `Contract`
+• **ticketContract**: `Contract`
 
 #### Defined in
 
-[src/PrizePool.ts:39](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L39)
+[src/PrizePool.ts:39](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L39)
 
----
+___
 
 ### ticketMetadata
 
-• **ticketMetadata**: `undefined` \| [`Contract`](../interfaces/Contract)
+• **ticketMetadata**: [`Contract`](../Interfaces/Contract )
 
 #### Defined in
 
-[src/PrizePool.ts:34](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L34)
+[src/PrizePool.ts:34](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L34)
 
----
+___
 
 ### tokenContract
 
-• **tokenContract**: `undefined` \| `Contract`
+• **tokenContract**: `Contract`
 
 #### Defined in
 
-[src/PrizePool.ts:40](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L40)
+[src/PrizePool.ts:40](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L40)
 
----
+___
 
 ### tokenMetadata
 
-• **tokenMetadata**: `undefined` \| [`Contract`](../interfaces/Contract)
+• **tokenMetadata**: [`Contract`](../Interfaces/Contract )
 
 #### Defined in
 
-[src/PrizePool.ts:35](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L35)
+[src/PrizePool.ts:35](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L35)
 
 ## Methods
 
@@ -181,27 +179,27 @@ an ethers contract for the ticket
 
 #### Defined in
 
-[src/PrizePool.ts:273](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L273)
+[src/PrizePool.ts:273](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L273)
 
----
+___
 
 ### getTicketData
 
-▸ **getTicketData**(): `Promise`<[`TokenData`](../interfaces/TokenData)\>
+▸ **getTicketData**(): `Promise`<[`TokenData`](../Interfaces/TokenData )\>
 
 Fetches decimals, name and symbol for the Ticket.
 
 #### Returns
 
-`Promise`<[`TokenData`](../interfaces/TokenData)\>
+`Promise`<[`TokenData`](../Interfaces/TokenData )\>
 
 decimals, name and symbol for the ticket
 
 #### Defined in
 
-[src/PrizePool.ts:201](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L201)
+[src/PrizePool.ts:201](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L201)
 
----
+___
 
 ### getTicketTotalSupply
 
@@ -217,9 +215,9 @@ the total supply of the ticket
 
 #### Defined in
 
-[src/PrizePool.ts:213](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L213)
+[src/PrizePool.ts:213](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L213)
 
----
+___
 
 ### getTokenContract
 
@@ -235,27 +233,27 @@ an ethers contract for the underlying token
 
 #### Defined in
 
-[src/PrizePool.ts:296](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L296)
+[src/PrizePool.ts:296](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L296)
 
----
+___
 
 ### getTokenData
 
-▸ **getTokenData**(): `Promise`<[`TokenData`](../interfaces/TokenData)\>
+▸ **getTokenData**(): `Promise`<[`TokenData`](../Interfaces/TokenData )\>
 
 Fetches decimals, name and symbol for the underling Token.
 
 #### Returns
 
-`Promise`<[`TokenData`](../interfaces/TokenData)\>
+`Promise`<[`TokenData`](../Interfaces/TokenData )\>
 
 decimals, name and symbol for the underling token
 
 #### Defined in
 
-[src/PrizePool.ts:189](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L189)
+[src/PrizePool.ts:189](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L189)
 
----
+___
 
 ### getUsersDepositAllowance
 
@@ -265,8 +263,8 @@ Fetches a users deposit allowance for the Prize Pool.
 
 #### Parameters
 
-| Name           | Type     | Description                                    |
-| :------------- | :------- | :--------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `usersAddress` | `string` | the address to fetch the deposit allowance for |
 
 #### Returns
@@ -277,33 +275,33 @@ the amount the user has approved for deposits
 
 #### Defined in
 
-[src/PrizePool.ts:159](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L159)
+[src/PrizePool.ts:159](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L159)
 
----
+___
 
 ### getUsersPrizePoolBalances
 
-▸ **getUsersPrizePoolBalances**(`usersAddress`): `Promise`<[`PrizePoolTokenBalances`](../interfaces/PrizePoolTokenBalances)\>
+▸ **getUsersPrizePoolBalances**(`usersAddress`): `Promise`<[`PrizePoolTokenBalances`](../Interfaces/PrizePoolTokenBalances )\>
 
 Fetches a users balances for the Prize Pool underlying Token and Ticket.
 
 #### Parameters
 
-| Name           | Type     | Description                             |
-| :------------- | :------- | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `usersAddress` | `string` | the users address to fetch balances for |
 
 #### Returns
 
-`Promise`<[`PrizePoolTokenBalances`](../interfaces/PrizePoolTokenBalances)\>
+`Promise`<[`PrizePoolTokenBalances`](../Interfaces/PrizePoolTokenBalances )\>
 
 the users balances for the underlying deposit token and the ticket token
 
 #### Defined in
 
-[src/PrizePool.ts:93](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L93)
+[src/PrizePool.ts:93](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L93)
 
----
+___
 
 ### getUsersTicketBalance
 
@@ -313,8 +311,8 @@ Fetches a users balance for the Prize Pools Ticket.
 
 #### Parameters
 
-| Name           | Type     | Description                          |
-| :------------- | :------- | :----------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `usersAddress` | `string` | the address to fetch the balance for |
 
 #### Returns
@@ -325,9 +323,9 @@ the users ticket balance
 
 #### Defined in
 
-[src/PrizePool.ts:114](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L114)
+[src/PrizePool.ts:114](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L114)
 
----
+___
 
 ### getUsersTicketDelegate
 
@@ -337,8 +335,8 @@ Fetches the address a user has delegated to.
 
 #### Parameters
 
-| Name           | Type     | Description                           |
-| :------------- | :------- | :------------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `usersAddress` | `string` | the address to fetch the delegate for |
 
 #### Returns
@@ -349,9 +347,9 @@ the address a user has delegated to
 
 #### Defined in
 
-[src/PrizePool.ts:176](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L176)
+[src/PrizePool.ts:176](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L176)
 
----
+___
 
 ### getUsersTicketTwabAt
 
@@ -361,10 +359,10 @@ Fetches a users Ticket TWAB at a specific unix timestamp.
 
 #### Parameters
 
-| Name            | Type     | Description                              |
-| :-------------- | :------- | :--------------------------------------- |
-| `usersAddress`  | `string` | the address to fetch the ticket TWAB for |
-| `unixTimestamp` | `number` | the unix timestamp to fetch in seconds   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `usersAddress` | `string` | the address to fetch the ticket TWAB for |
+| `unixTimestamp` | `number` | the unix timestamp to fetch in seconds |
 
 #### Returns
 
@@ -374,9 +372,9 @@ the users TWAB at the requested time
 
 #### Defined in
 
-[src/PrizePool.ts:129](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L129)
+[src/PrizePool.ts:129](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L129)
 
----
+___
 
 ### getUsersTokenBalance
 
@@ -386,8 +384,8 @@ Fetches a users balance for the Prize Pools underlying Token.
 
 #### Parameters
 
-| Name           | Type     | Description                          |
-| :------------- | :------- | :----------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `usersAddress` | `string` | the address to fetch the balance for |
 
 #### Returns
@@ -398,9 +396,9 @@ the users token balance
 
 #### Defined in
 
-[src/PrizePool.ts:145](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L145)
+[src/PrizePool.ts:145](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L145)
 
----
+___
 
 ### id
 
@@ -416,4 +414,4 @@ a unique id for the Prize Pool
 
 #### Defined in
 
-[src/PrizePool.ts:82](https://github.com/pooltogether/v4-client-js/blob/d352428/src/PrizePool.ts#L82)
+[src/PrizePool.ts:82](https://github.com/pooltogether/v4-client-js/blob/97109bb/src/PrizePool.ts#L82)

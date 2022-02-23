@@ -1,12 +1,10 @@
-[@pooltogether/v4-client-js](../) / [Exports](../modules) / Contract
-
-# Interface: Contract
+#   Contract
 
 ## Hierarchy
 
-- [`ABIIdentifier`](ABIIdentifier)
+- [`ABIIdentifier`](ABIIdentifier )
 
-- [`ContractIdentifier`](ContractIdentifier)
+- [`ContractIdentifier`](ContractIdentifier )
 
   ↳ **`Contract`**
 
@@ -32,7 +30,7 @@
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:21
 
----
+___
 
 ### address
 
@@ -40,13 +38,13 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:21
 
 #### Inherited from
 
-[ContractIdentifier](ContractIdentifier).[address](ContractIdentifier#address)
+[ContractIdentifier](ContractIdentifier ).[address](ContractIdentifier#address)
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:18
 
----
+___
 
 ### chainId
 
@@ -54,13 +52,13 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:18
 
 #### Inherited from
 
-[ContractIdentifier](ContractIdentifier).[chainId](ContractIdentifier#chainid)
+[ContractIdentifier](ContractIdentifier ).[chainId](ContractIdentifier#chainid)
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:17
 
----
+___
 
 ### extensions
 
@@ -74,7 +72,7 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:17
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:23
 
----
+___
 
 ### tags
 
@@ -84,7 +82,7 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:23
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:22
 
----
+___
 
 ### type
 
@@ -92,21 +90,21 @@ node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:22
 
 #### Inherited from
 
-[ABIIdentifier](ABIIdentifier).[type](ABIIdentifier#type)
+[ABIIdentifier](ABIIdentifier ).[type](ABIIdentifier#type)
 
 #### Defined in
 
 node_modules/@pooltogether/contract-list-schema/dist/types.d.ts:14
 
----
+___
 
 ### version
 
-• `Readonly` **version**: [`Version`](Version)
+• `Readonly` **version**: [`Version`](Version )
 
 #### Inherited from
 
-[ABIIdentifier](ABIIdentifier).[version](ABIIdentifier#version)
+[ABIIdentifier](ABIIdentifier ).[version](ABIIdentifier#version)
 
 #### Defined in
 
