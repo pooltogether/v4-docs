@@ -32,8 +32,8 @@ create .env file with `APPLICATION_ID` and the `API_KEY` (write access)
 Edit config.json file with
 
 - start url from updated website
-- sitemap url from updated website: ex) for docs: https://docs.pooltogether.com/sitemap.xml
-- "v3-docs" index name
+- sitemap url from updated website: ex) for docs: https://dev.pooltogether.com/sitemap.xml
+- "v4_docs" index name
 - install jq : `brew install jq`
   run `docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper`
 

@@ -1,10 +1,10 @@
 {
-  "index_name": "v3-docs",
+  "index_name": "v4_docs",
   "start_urls": [
-    "https://docs.pooltogether.com/"
+    "https://dev.pooltogether.com/"
   ],
   "sitemap_urls": [
-    "https://docs.pooltogether.com/sitemap.xml"
+    "https://dev.pooltogether.com/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [],
