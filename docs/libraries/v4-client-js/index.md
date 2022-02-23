@@ -56,10 +56,10 @@ To create an instance of `PrizePoolNetwork` you will need:
 - [Ethers providers](https://docs.ethers.io/v5/api/providers/) for every chain that a Prize Pool is deployed on.
 
 ```js
-import { PrizePoolNetwork } from '@pooltogether/v4-client-js'
-import { mainnet } from '@pooltogether/v4-pool-data'
+import { PrizePoolNetwork } from "@pooltogether/v4-client-js";
+import { mainnet } from "@pooltogether/v4-pool-data";
 
-const PrizePoolNetwork = new PrizePoolNetwork(providers, mainnet)
+const PrizePoolNetwork = new PrizePoolNetwork(providers, mainnet);
 ```
 
 ### PrizePool
@@ -67,7 +67,7 @@ const PrizePoolNetwork = new PrizePoolNetwork(providers, mainnet)
 A `PrizePool` is a representation of a Prize Pool deployment. The Prize Pool is responsible for managing deposits, withdrawals & delegation. `PrizePool` is a read only object, for write capabilities check out `User`
 
 ```js
-const prizePool = PrizePoolNetwork.getPrizePool(1, '0xabc123')
+const prizePool = PrizePoolNetwork.getPrizePool(1, "0xabc123");
 ```
 
 ### User
@@ -75,7 +75,7 @@ const prizePool = PrizePoolNetwork.getPrizePool(1, '0xabc123')
 A `User` is wrapper around `PrizePool` with the ability to send transactions to manage deposits, withdrawals and delegation.
 
 ```js
-const user = new User(prizePool.prizePoolMetadata, signer, prizePool)
+const user = new User(prizePool.prizePoolMetadata, signer, prizePool);
 ```
 
 ### PrizeDistributor
@@ -83,17 +83,17 @@ const user = new User(prizePool.prizePoolMetadata, signer, prizePool)
 A `PrizeDistributor` is what handles prizes. It is used to determine the current draw, check for prizes & claiming prizes. For write capabilities, pass a Signer when creating an instance.
 
 ```js
-const prizeDistributor = PrizePoolNetwork.getPrizeDistributor(1, '0xabc123')
+const prizeDistributor = PrizePoolNetwork.getPrizeDistributor(1, "0xabc123");
 ```
 
 ```js
-const prizeDistributor = PrizePoolNetwork.getPrizeDistributor(1, '0xabc123')
-const signer = provider.getSigner()
+const prizeDistributor = PrizePoolNetwork.getPrizeDistributor(1, "0xabc123");
+const signer = provider.getSigner();
 const signerPrizeDistributor = new PrizeDistributor(
   prizeDistributor.prizeDistributorMetadata,
   signer,
   prizeDistributor.contractMetadataList
-)
+);
 ```
 
 ## 🧮 &nbsp; Examples
@@ -101,8 +101,8 @@ const signerPrizeDistributor = new PrizeDistributor(
 ### Get token data for a Prize Pool
 
 ```js
-const tokenData = await prizePool.getTokenData() // Underlying token (ex. USDC)
-const ticketData = await prizePool.getTicketData() // Ticket token
+const tokenData = await prizePool.getTokenData(); // Underlying token (ex. USDC)
+const ticketData = await prizePool.getTicketData(); // Ticket token
 ```
 
 ### Get a users deposit token & ticket balances
@@ -111,14 +111,15 @@ const ticketData = await prizePool.getTicketData() // Ticket token
 const usersBalances: {
   chainId: number,
   address: string,
-  balances: PrizePoolTokenBalances
-}[] = await PrizePoolNetwork.getUsersPrizePoolBalances(usersAddress)
+  balances: PrizePoolTokenBalances,
+}[] = await PrizePoolNetwork.getUsersPrizePoolBalances(usersAddress);
 ```
 
 ### Get a users deposit token & ticket balance
 
 ```js
-const balance: PrizePoolTokenBalances = await prizePool.getUsersPrizePoolBalances(usersAddress)
+const balance: PrizePoolTokenBalances =
+  await prizePool.getUsersPrizePoolBalances(usersAddress);
 ```
 
 ### Approve deposits
@@ -128,7 +129,7 @@ NOTE: Make sure you're shifting by the proper decimal amount
 ```js
 const txResponse: TransactionResponse = await user.approveDeposits(
   ethers.utils.parseUnits(10, decimals)
-)
+);
 ```
 
 ### Deposit and delegate tokens
@@ -138,7 +139,7 @@ NOTE: Make sure you're shifting by the proper decimal amount
 ```js
 const txResponse: TransactionResponse = await user.depositAndDelegate(
   ethers.utils.parseUnits(10, decimals)
-)
+);
 ```
 
 ### Deposit tokens
@@ -146,7 +147,9 @@ const txResponse: TransactionResponse = await user.depositAndDelegate(
 NOTE: Make sure you're shifting by the proper decimal amount
 
 ```js
-const txResponse: TransactionResponse = await user.deposit(ethers.utils.parseUnits(10, decimals))
+const txResponse: TransactionResponse = await user.deposit(
+  ethers.utils.parseUnits(10, decimals)
+);
 ```
 
 ### Withdraw tokens
@@ -154,7 +157,9 @@ const txResponse: TransactionResponse = await user.deposit(ethers.utils.parseUni
 NOTE: Make sure you're shifting by the proper decimal amount
 
 ```js
-const txResponse: TransactionResponse = await user.withdraw(ethers.utils.parseUnits(10, decimals))
+const txResponse: TransactionResponse = await user.withdraw(
+  ethers.utils.parseUnits(10, decimals)
+);
 ```
 
 ### Get valid draw ids
@@ -162,7 +167,7 @@ const txResponse: TransactionResponse = await user.withdraw(ethers.utils.parseUn
 Valid draw ids are draw ids that have all of the relevant data pushed to their respective chain & are not expired.
 
 ```js
-const drawIds = await prizeDistributor.getValidDrawIds()
+const drawIds = await prizeDistributor.getValidDrawIds();
 ```
 
 ### Get a users prizes
@@ -174,7 +179,7 @@ const drawResults = await PrizeApi.getUsersDrawResultsByDraw(
   prizeDistributorAddress,
   drawId,
   maxPicksPerUser
-)
+);
 ```
 
 ### Claim a users prizes
@@ -182,5 +187,6 @@ const drawResults = await PrizeApi.getUsersDrawResultsByDraw(
 NOTE: Ensure the `PrizeDistributor` was initialized with a `Signer`
 
 ```js
-const txResponse: TransactionResponse = await prizeDistributor.claimPrizesByDraw(1)
+const txResponse: TransactionResponse =
+  await prizeDistributor.claimPrizesByDraw(1);
 ```

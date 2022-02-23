@@ -8,13 +8,9 @@ import styled from "@emotion/styled";
 import Discord from "@site/static/img/discord.svg";
 
 import ThemedImage from "@theme/ThemedImage";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-
-import SearchBar from "@theme-original/SearchBar";
 
 import {
   InformationCircleIcon,
-  QuestionMarkCircleIcon,
   LightBulbIcon,
   CurrencyDollarIcon,
   BookOpenIcon,
@@ -285,11 +281,6 @@ export default function Home() {
               {" "}
               Welcome to the PoolTogether Docs
             </h1>
-            {/*
-            <HideMedium>
-              <SearchBar />{" "}
-            </HideMedium>
-            */}
           </div>
           <Row>
             {actions.map((action) => (

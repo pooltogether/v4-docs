@@ -69,4 +69,4 @@ fundDelegationFromStake(address delegator, uint256 slotIndex, uint256 amount)
 
 # Permit & Multicall
 
-This contract implements the Multicall interface which allows EOAs to batch transactions together. It also implements a special [`permitAndMulticall`](http://localhost:3000/protocol/contracts/v4-twab-delegator/TWABDelegator#permitandmulticall) function so that users can also approve the ticket contract before running transactions, allowing them to create a delegation in a single tx.
+This contract implements the Multicall interface which allows EOAs to batch transactions together. It also implements a special [`permitAndMulticall`](https://dev.pooltogether.com/protocol/contracts/v4-twab-delegator/TWABDelegator#permitandmulticall) function so that users can also approve the ticket contract before running transactions, allowing them to create a delegation in a single tx.
