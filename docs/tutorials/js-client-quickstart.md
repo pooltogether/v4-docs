@@ -23,7 +23,7 @@ yarn add @pooltogether/v4-client-js @pooltogether/v4-pool-data
 
 ### 1. Prize Pool Networks
 
-To begin, we'll create an instance of the deployed [Prize Pool Network](/protocol/concepts/prize-pools-network). The [`PrizePoolNetwork`](/protocol/libraries/v4-client-js/Classes/PrizePoolNetwork) class is the root of most interaction through the [client library](/protocol/libraries/v4-client-js/), so we'll begin by creating an instance of it.
+To begin, we'll create an instance of the deployed [Prize Pool Network](/protocol/architecture/prize-pools-network). The [`PrizePoolNetwork`](/protocol/libraries/v4-client-js/Classes/PrizePoolNetwork) class is the root of most interaction through the [client library](/protocol/libraries/v4-client-js/), so we'll begin by creating an instance of it.
 
 You'll need to create instances of [ethers Providers](https://docs.ethers.io/v5/api/providers/) to read data from each blockchain the contract list contains deployments for. Default code is provided below but acquiring your own API keys for better performance is recommended.
 
