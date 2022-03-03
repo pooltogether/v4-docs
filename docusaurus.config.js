@@ -47,7 +47,7 @@ module.exports = {
           dropdownItemsBefore: [],
           dropdownItemsAfter: [
             {
-              to: "https://discord.gg/wVxaC4Gj",
+              to: "https://discord.gg/wxkAw2f7",
               label: "Help us translate",
             },
           ],
