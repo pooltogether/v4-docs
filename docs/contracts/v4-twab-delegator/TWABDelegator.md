@@ -199,9 +199,9 @@ Will revert if delegation is still locked.
     address _to
   ) external returns (contract Delegation)
 ```
-Withdraw an `_amount` of tickets from a delegation. The delegator is assumed to be the caller. The tickets are transferred to the caller.
+Withdraw an `_amount` of tickets from a delegation. The delegator is assumed to be the caller.
 
-Will directly send the tickets to the delegator wallet.
+Tickets are sent directly to the passed `_to` address.
 Will revert if delegation is still locked.
 
 #### Parameters:
@@ -257,7 +257,7 @@ Returns whether or not the given rep is a representative of the delegator.
 ```solidity
   function multicall(
     bytes[] _data
-  ) external returns (bytes[] results)
+  ) external returns (bytes[])
 ```
 Allows a user to call multiple functions on the same contract.  Useful for EOA who wants to batch transactions.
 
@@ -270,11 +270,10 @@ Allows a user to call multiple functions on the same contract.  Useful for EOA w
 #### Return Values:
 | Type          | Description                                                                  |
 | :------------ | :--------------------------------------------------------------------------- |
-| bytes[] | results The results from each function call
+| bytes[] | The results from each function call
 ### permitAndMulticall
 ```solidity
   function permitAndMulticall(
-    address _from,
     uint256 _amount,
     struct PermitAndMulticall.Signature _permitSignature,
     bytes[] _data
@@ -286,7 +285,6 @@ Alow a user to approve ticket and run various calls in one transaction.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_from` | address | Address of the sender
 |`_amount` | uint256 | Amount of tickets to approve
 |`_permitSignature` | struct PermitAndMulticall.Signature | Permit signature
 |`_data` | bytes[] | Datas to call with `functionDelegateCall`
@@ -335,6 +333,20 @@ Computes the address of the delegation for the delegator + slot combination.
 | Type          | Description                                                                  |
 | :------------ | :--------------------------------------------------------------------------- |
 | address | The address of the delegation.  This is the address that holds the balance of tickets.
+### decimals
+```solidity
+  function decimals(
+  ) public returns (uint8)
+```
+Returns the ERC20 token decimals.
+
+This value is equal to the decimals of the ticket being delegated.
+
+
+#### Return Values:
+| Type          | Description                                                                  |
+| :------------ | :--------------------------------------------------------------------------- |
+| uint8 | ERC20 token decimals
 ### name
 ```solidity
   function name(
@@ -352,23 +364,6 @@ Returns the name of the token.
 
 Returns the symbol of the token, usually a shorter version of the
 name.
-
-
-### decimals
-```solidity
-  function decimals(
-  ) public returns (uint8)
-```
-
-Returns the number of decimals used to get its user representation.
-For example, if `decimals` equals `2`, a balance of `505` tokens should
-be displayed to a user as `5.05` (`505 / 10 ** 2`).
-Tokens usually opt for a value of 18, imitating the relationship between
-Ether and Wei. This is the value {ERC20} uses, unless this function is
-overridden;
-NOTE: This information is only used for _display_ purposes: it in
-no way affects any of the arithmetic of the contract, including
-{IERC20-balanceOf} and {IERC20-transfer}.
 
 
 ### totalSupply
@@ -598,7 +593,7 @@ Emitted when a delegation is funded from the staked amount.
 |`delegator`| address | Address of the delegator
 |`slot`| uint256 | Slot of the delegation
 |`amount`| uint256 | Amount of tickets that were sent to the delegation
-|`user`| address | Address of the user who funded the delegation
+|`user`| address | Address of the user who pulled funds from the delegator stake to the delegation
 ### WithdrewDelegationToStake
 ```solidity
   event WithdrewDelegationToStake(
@@ -615,7 +610,7 @@ Emitted when an amount of tickets has been withdrawn from a delegation. The tick
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
 |`delegator`| address | Address of the delegator
-|`slot`| uint256 |  Slot of the delegation
+|`slot`| uint256 | Slot of the delegation
 |`amount`| uint256 | Amount of tickets withdrawn
 |`user`| address | Address of the user who withdrew the tickets
 ### TransferredDelegation
@@ -623,10 +618,11 @@ Emitted when an amount of tickets has been withdrawn from a delegation. The tick
   event TransferredDelegation(
     address delegator,
     uint256 slot,
-    uint256 amount
+    uint256 amount,
+    address to
   )
 ```
-Emitted when a delegator withdraws an amount of tickets from a delegation to their wallet.
+Emitted when a delegator withdraws an amount of tickets from a delegation to a specified wallet.
 
 
 #### Parameters:
@@ -635,6 +631,7 @@ Emitted when a delegator withdraws an amount of tickets from a delegation to the
 |`delegator`| address | Address of the delegator
 |`slot`| uint256 |  Slot of the delegation
 |`amount`| uint256 | Amount of tickets withdrawn
+|`to`| address | Recipient address of withdrawn tickets
 ### RepresentativeSet
 ```solidity
   event RepresentativeSet(
