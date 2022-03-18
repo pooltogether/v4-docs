@@ -1,6 +1,5 @@
 ---
 title: V4 Mainnet
-sidebar_position: 1
 ---
 
 # V4 Mainnet
@@ -24,6 +23,7 @@ sidebar_position: 1
 | PrizeTierHistory | [0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D](https://etherscan.io/address/0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/PrizeTierHistory.json) |
 | Reserve | [0xadB4D93D84b18b5D82063aCf58b21587c92fdfb5](https://etherscan.io/address/0xadB4D93D84b18b5D82063aCf58b21587c92fdfb5) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/Reserve.json) |
 | Ticket | [0xdd4d117723C257CEe402285D3aCF218E9A8236E1](https://etherscan.io/address/0xdd4d117723C257CEe402285D3aCF218E9A8236E1) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/Ticket.json) |
+| TWABDelegator | [0x5cFbEE38362B9A60be276763753f64245EA990F7](https://etherscan.io/address/0x5cFbEE38362B9A60be276763753f64245EA990F7) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/TWABDelegator.json) |
 | TwabRewards | [0x3Cb049Db6d3E100b8b4765Ca051C809adcC17ed1](https://etherscan.io/address/0x3Cb049Db6d3E100b8b4765Ca051C809adcC17ed1) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/TwabRewards.json) |
 | YieldSourcePrizePool | [0xd89a09084555a7D0ABe7B111b1f78DFEdDd638Be](https://etherscan.io/address/0xd89a09084555a7D0ABe7B111b1f78DFEdDd638Be) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/YieldSourcePrizePool.json) |
 
@@ -45,6 +45,7 @@ sidebar_position: 1
 | ReceiverTimelockTrigger | [0x37A7ADD22E0da57220CeF887a75cbfA959F34784](https://explorer-mainnet.maticvigil.com/address/0x37A7ADD22E0da57220CeF887a75cbfA959F34784) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/ReceiverTimelockTrigger.json) |
 | Reserve | [0xCE148f6acFee9FEFb42A736B4976e657f35982b8](https://explorer-mainnet.maticvigil.com/address/0xCE148f6acFee9FEFb42A736B4976e657f35982b8) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/Reserve.json) |
 | Ticket | [0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076](https://explorer-mainnet.maticvigil.com/address/0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/Ticket.json) |
+| TWABDelegator | [0x89Ee77Ce3F4C1b0346FF96E3004ff7C9f972dEF8](https://explorer-mainnet.maticvigil.com/address/0x89Ee77Ce3F4C1b0346FF96E3004ff7C9f972dEF8) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/TWABDelegator.json) |
 | TwabRewards | [0xCa9adB15E33948199066f772C3cb02B62356d764](https://explorer-mainnet.maticvigil.com/address/0xCa9adB15E33948199066f772C3cb02B62356d764) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/TwabRewards.json) |
 | YieldSourcePrizePool | [0x19DE635fb3678D8B8154E37d8C9Cdf182Fe84E60](https://explorer-mainnet.maticvigil.com/address/0x19DE635fb3678D8B8154E37d8C9Cdf182Fe84E60) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/YieldSourcePrizePool.json) |
 
@@ -66,6 +67,7 @@ sidebar_position: 1
 | ReceiverTimelockTrigger | [0xC2E914f1eBe630335F10e6240A0bf0635A2E9cB7](https://snowtrace.io/address/0xC2E914f1eBe630335F10e6240A0bf0635A2E9cB7) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/ReceiverTimelockTrigger.json) |
 | Reserve | [0xf04E5B81e69Cdc3c08BC5Da64ca053AD46a3d029](https://snowtrace.io/address/0xf04E5B81e69Cdc3c08BC5Da64ca053AD46a3d029) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/Reserve.json) |
 | Ticket | [0xB27f379C050f6eD0973A01667458af6eCeBc1d90](https://snowtrace.io/address/0xB27f379C050f6eD0973A01667458af6eCeBc1d90) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/Ticket.json) |
+| TWABDelegator | [0xd23723fef8A16B77eaDc1fC822aE4170bA9d4009](https://snowtrace.io/address/0xd23723fef8A16B77eaDc1fC822aE4170bA9d4009) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/TWABDelegator.json) |
 | TwabRewards | [0x46d2f8e4D8Ff3d76cf252D89dD9b422f04123D2c](https://snowtrace.io/address/0x46d2f8e4D8Ff3d76cf252D89dD9b422f04123D2c) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/TwabRewards.json) |
 | YieldSourcePrizePool | [0xF830F5Cb2422d555EC34178E27094a816c8F95EC](https://snowtrace.io/address/0xF830F5Cb2422d555EC34178E27094a816c8F95EC) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/YieldSourcePrizePool.json) |
 
