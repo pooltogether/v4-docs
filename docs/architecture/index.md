@@ -11,7 +11,7 @@ A few of the major components that make up PoolTogether V4.
 
 - [**Time-Weighted Average Balance**](./time-weighted-average-balance/): A TWAB is a user's balance at any time in the past, or their average balance held between two timestamps.
 
-- [**Computing Prizes**](./computing-prizes/): Computing prizes is an calculation intensive process done off chain. Prizes are hten submitted to the contract for verification when claiming.
+- [**Computing Prizes**](./computing-prizes/): Computing prizes is a calculation-intensive process done off chain. Prizes are then submitted to the contract for verification when claiming.
 
 - [**Flow of funds**](./flow-of-funds/): See how funds are managed for a single Prize Pool.
 
