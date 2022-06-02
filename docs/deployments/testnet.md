@@ -26,7 +26,7 @@ sidebar_position: 4
 | RNGChainlinkV2 | [0xFfF6e20deb5cC0E66Bc697eB779f7a884ecFaB5d](https://rinkeby.etherscan.io/address/0xFfF6e20deb5cC0E66Bc697eB779f7a884ecFaB5d) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/RNGChainlinkV2.json) |
 | Ticket | [0x325E456e8Ac0bCB65a5515FA70B6b9D581809c36](https://rinkeby.etherscan.io/address/0x325E456e8Ac0bCB65a5515FA70B6b9D581809c36) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/Ticket.json) |
 | TWABDelegator | [0x448200d83e48f561B42e90274566d3FA3914B8A4](https://rinkeby.etherscan.io/address/0x448200d83e48f561B42e90274566d3FA3914B8A4) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/TWABDelegator.json) |
-| TwabRewards | [0xa912709E589c58A5F740AB6B49A035A2e4eF9b74](https://rinkeby.etherscan.io/address/0xa912709E589c58A5F740AB6B49A035A2e4eF9b74) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/TwabRewards.json) |
+| TwabRewards | [0x87DD45AbA0678d581edEFcA8527A1e4C83157d74](https://rinkeby.etherscan.io/address/0x87DD45AbA0678d581edEFcA8527A1e4C83157d74) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/TwabRewards.json) |
 | YieldSourcePrizePool | [0xB452d71016Ed5f4FE98707b33C005fE9E17Fba19](https://rinkeby.etherscan.io/address/0xB452d71016Ed5f4FE98707b33C005fE9E17Fba19) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/YieldSourcePrizePool.json) |
 
 ## Mumbai
@@ -49,7 +49,7 @@ sidebar_position: 4
 | RNGServiceStub | [0x157827E77a64bed6eB564eeA917C24dE525186Ce](https://explorer-mumbai.maticvigil.com/address/0x157827E77a64bed6eB564eeA917C24dE525186Ce) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/RNGServiceStub.json) |
 | Ticket | [0x34445304E2ad5418CD052E6511652a5dA80aA0aE](https://explorer-mumbai.maticvigil.com/address/0x34445304E2ad5418CD052E6511652a5dA80aA0aE) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/Ticket.json) |
 | TWABDelegator | [0xaAc4688AB7AD2c0CbC51E9674D53Bf394910aF6a](https://explorer-mumbai.maticvigil.com/address/0xaAc4688AB7AD2c0CbC51E9674D53Bf394910aF6a) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/TWABDelegator.json) |
-| TwabRewards | [0x18771cC0bbcA24d3B28C040669DCc7b5Ffba30FB](https://explorer-mumbai.maticvigil.com/address/0x18771cC0bbcA24d3B28C040669DCc7b5Ffba30FB) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/TwabRewards.json) |
+| TwabRewards | [0x9Bd20CD20C30F463f191a81ad370304f8B9D23E0](https://explorer-mumbai.maticvigil.com/address/0x9Bd20CD20C30F463f191a81ad370304f8B9D23E0) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/TwabRewards.json) |
 | YieldSourcePrizePool | [0xff349E7c5d8815cf058252393D104117e1BADBC1](https://explorer-mumbai.maticvigil.com/address/0xff349E7c5d8815cf058252393D104117e1BADBC1) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/YieldSourcePrizePool.json) |
 
 ## Fuji
@@ -72,6 +72,6 @@ sidebar_position: 4
 | RNGServiceStub | [0x93EaD18C448840083Be586c759067c975f101162](https://testnet.snowtrace.io/address/0x93EaD18C448840083Be586c759067c975f101162) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/RNGServiceStub.json) |
 | Ticket | [0x1758E6930fF20B56f55247b498E0a4dc01360234](https://testnet.snowtrace.io/address/0x1758E6930fF20B56f55247b498E0a4dc01360234) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/Ticket.json) |
 | TWABDelegator | [0xdB4B551C21860028c4CA951CC7067699eB7c5Bfe](https://testnet.snowtrace.io/address/0xdB4B551C21860028c4CA951CC7067699eB7c5Bfe) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/TWABDelegator.json) |
-| TwabRewards | [0xF567588A82660F9F93059E97063360900387a2cc](https://testnet.snowtrace.io/address/0xF567588A82660F9F93059E97063360900387a2cc) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/TwabRewards.json) |
+| TwabRewards | [0x94827AF5F6E981F4C67507dCDdAB541c78655d6B](https://testnet.snowtrace.io/address/0x94827AF5F6E981F4C67507dCDdAB541c78655d6B) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/TwabRewards.json) |
 | YieldSourcePrizePool | [0xB7d1A750B2A662a0b331775B4EC21EaB0BdB84B7](https://testnet.snowtrace.io/address/0xB7d1A750B2A662a0b331775B4EC21EaB0BdB84B7) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/YieldSourcePrizePool.json) |
 
