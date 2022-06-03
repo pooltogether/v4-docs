@@ -26,7 +26,7 @@ sidebar_position: 4
 | RNGChainlinkV2 | [0xFfF6e20deb5cC0E66Bc697eB779f7a884ecFaB5d](https://rinkeby.etherscan.io/address/0xFfF6e20deb5cC0E66Bc697eB779f7a884ecFaB5d) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/RNGChainlinkV2.json) |
 | Ticket | [0x325E456e8Ac0bCB65a5515FA70B6b9D581809c36](https://rinkeby.etherscan.io/address/0x325E456e8Ac0bCB65a5515FA70B6b9D581809c36) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/Ticket.json) |
 | TWABDelegator | [0x448200d83e48f561B42e90274566d3FA3914B8A4](https://rinkeby.etherscan.io/address/0x448200d83e48f561B42e90274566d3FA3914B8A4) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/TWABDelegator.json) |
-| TwabRewards | [0xa912709E589c58A5F740AB6B49A035A2e4eF9b74](https://rinkeby.etherscan.io/address/0xa912709E589c58A5F740AB6B49A035A2e4eF9b74) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/TwabRewards.json) |
+| TwabRewards | [0x87DD45AbA0678d581edEFcA8527A1e4C83157d74](https://rinkeby.etherscan.io/address/0x87DD45AbA0678d581edEFcA8527A1e4C83157d74) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/TwabRewards.json) |
 | YieldSourcePrizePool | [0xB452d71016Ed5f4FE98707b33C005fE9E17Fba19](https://rinkeby.etherscan.io/address/0xB452d71016Ed5f4FE98707b33C005fE9E17Fba19) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/rinkeby/YieldSourcePrizePool.json) |
 
 ## Mumbai
@@ -49,7 +49,7 @@ sidebar_position: 4
 | RNGServiceStub | [0x157827E77a64bed6eB564eeA917C24dE525186Ce](https://explorer-mumbai.maticvigil.com/address/0x157827E77a64bed6eB564eeA917C24dE525186Ce) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/RNGServiceStub.json) |
 | Ticket | [0x34445304E2ad5418CD052E6511652a5dA80aA0aE](https://explorer-mumbai.maticvigil.com/address/0x34445304E2ad5418CD052E6511652a5dA80aA0aE) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/Ticket.json) |
 | TWABDelegator | [0xaAc4688AB7AD2c0CbC51E9674D53Bf394910aF6a](https://explorer-mumbai.maticvigil.com/address/0xaAc4688AB7AD2c0CbC51E9674D53Bf394910aF6a) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/TWABDelegator.json) |
-| TwabRewards | [0x18771cC0bbcA24d3B28C040669DCc7b5Ffba30FB](https://explorer-mumbai.maticvigil.com/address/0x18771cC0bbcA24d3B28C040669DCc7b5Ffba30FB) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/TwabRewards.json) |
+| TwabRewards | [0x9Bd20CD20C30F463f191a81ad370304f8B9D23E0](https://explorer-mumbai.maticvigil.com/address/0x9Bd20CD20C30F463f191a81ad370304f8B9D23E0) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/TwabRewards.json) |
 | YieldSourcePrizePool | [0xff349E7c5d8815cf058252393D104117e1BADBC1](https://explorer-mumbai.maticvigil.com/address/0xff349E7c5d8815cf058252393D104117e1BADBC1) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/YieldSourcePrizePool.json) |
 
 ## Fuji
@@ -72,6 +72,28 @@ sidebar_position: 4
 | RNGServiceStub | [0x93EaD18C448840083Be586c759067c975f101162](https://testnet.snowtrace.io/address/0x93EaD18C448840083Be586c759067c975f101162) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/RNGServiceStub.json) |
 | Ticket | [0x1758E6930fF20B56f55247b498E0a4dc01360234](https://testnet.snowtrace.io/address/0x1758E6930fF20B56f55247b498E0a4dc01360234) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/Ticket.json) |
 | TWABDelegator | [0xdB4B551C21860028c4CA951CC7067699eB7c5Bfe](https://testnet.snowtrace.io/address/0xdB4B551C21860028c4CA951CC7067699eB7c5Bfe) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/TWABDelegator.json) |
-| TwabRewards | [0xF567588A82660F9F93059E97063360900387a2cc](https://testnet.snowtrace.io/address/0xF567588A82660F9F93059E97063360900387a2cc) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/TwabRewards.json) |
+| TwabRewards | [0x94827AF5F6E981F4C67507dCDdAB541c78655d6B](https://testnet.snowtrace.io/address/0x94827AF5F6E981F4C67507dCDdAB541c78655d6B) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/TwabRewards.json) |
 | YieldSourcePrizePool | [0xB7d1A750B2A662a0b331775B4EC21EaB0BdB84B7](https://testnet.snowtrace.io/address/0xB7d1A750B2A662a0b331775B4EC21EaB0BdB84B7) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/YieldSourcePrizePool.json) |
+
+## Optimism Kovan
+
+| Contract | Address | Artifact |
+| :--- | :--- | :--- |
+| DrawBuffer | [0xA2C882C66797b201788EEF25E3Ca3411204bf3D7](https://kovan-optimistic.etherscan.io/0xA2C882C66797b201788EEF25E3Ca3411204bf3D7) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/DrawBuffer.json) |
+| DrawCalculator | [0x94Db8aaae2b1D143dBaB67257cFA608374A4AC40](https://kovan-optimistic.etherscan.io/0x94Db8aaae2b1D143dBaB67257cFA608374A4AC40) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/DrawCalculator.json) |
+| DrawCalculatorTimelock | [0xa365317291122b44a549C34a383CCd117b71941e](https://kovan-optimistic.etherscan.io/0xa365317291122b44a549C34a383CCd117b71941e) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/DrawCalculatorTimelock.json) |
+| EIP2612PermitAndDeposit | [0xb75c7e8D65FDc32678617FD20F4C2404CB492562](https://kovan-optimistic.etherscan.io/0xb75c7e8D65FDc32678617FD20F4C2404CB492562) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/EIP2612PermitAndDeposit.json) |
+| MockYieldSource | [0xEeF2297e15CD085A0ad33197CE8c2Eab6F023c2B](https://kovan-optimistic.etherscan.io/0xEeF2297e15CD085A0ad33197CE8c2Eab6F023c2B) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/MockYieldSource.json) |
+| PrizeDistributionBuffer | [0x79ED98ef5561f1Ed3058acb5A30F05E8f64e560b](https://kovan-optimistic.etherscan.io/0x79ED98ef5561f1Ed3058acb5A30F05E8f64e560b) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/PrizeDistributionBuffer.json) |
+| PrizeDistributionFactory | [0xA843CFbf6549E3c93453A74e762f1af66575Ee89](https://kovan-optimistic.etherscan.io/0xA843CFbf6549E3c93453A74e762f1af66575Ee89) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/PrizeDistributionFactory.json) |
+| PrizeDistributor | [0xa6EC73C91D0aE39A854bd50A6b1cF9aA7da46Ba4](https://kovan-optimistic.etherscan.io/0xa6EC73C91D0aE39A854bd50A6b1cF9aA7da46Ba4) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/PrizeDistributor.json) |
+| PrizeFlush | [0x74312Cab0d0AB42D4b4f7Ae424EF2Ea35E3CD472](https://kovan-optimistic.etherscan.io/0x74312Cab0d0AB42D4b4f7Ae424EF2Ea35E3CD472) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/PrizeFlush.json) |
+| PrizeSplitStrategy | [0x1bD4745df0b5286d410F22fE6d43E797C4d5ce98](https://kovan-optimistic.etherscan.io/0x1bD4745df0b5286d410F22fE6d43E797C4d5ce98) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/PrizeSplitStrategy.json) |
+| PrizeTierHistory | [0x91A252E0bC6082e6cA0Fc554968177BC5dbd53f1](https://kovan-optimistic.etherscan.io/0x91A252E0bC6082e6cA0Fc554968177BC5dbd53f1) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/PrizeTierHistory.json) |
+| ReceiverTimelockTrigger | [0xa206773ED77Be8cCD48aCD6e0E241B08E5D1B611](https://kovan-optimistic.etherscan.io/0xa206773ED77Be8cCD48aCD6e0E241B08E5D1B611) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/ReceiverTimelockTrigger.json) |
+| Reserve | [0x79a80e8f952CfB4249613315Eb71bc63B1d2b685](https://kovan-optimistic.etherscan.io/0x79a80e8f952CfB4249613315Eb71bc63B1d2b685) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/Reserve.json) |
+| Ticket | [0x5E5b54cd73872ba3103cd95A58067A7079d0259b](https://kovan-optimistic.etherscan.io/0x5E5b54cd73872ba3103cd95A58067A7079d0259b) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/Ticket.json) |
+| TWABDelegator | [0x8E6670D62Ea8d0bA4662DE8B4Db690C70af9440e](https://kovan-optimistic.etherscan.io/0x8E6670D62Ea8d0bA4662DE8B4Db690C70af9440e) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/TWABDelegator.json) |
+| TwabRewards | [0xdcD989ca22e51035e1bdBa936A980546f89D40Dc](https://kovan-optimistic.etherscan.io/0xdcD989ca22e51035e1bdBa936A980546f89D40Dc) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/TwabRewards.json) |
+| YieldSourcePrizePool | [0x73A7D35bb34E6c7b0Bc06E6399CdDE05320bcBc3](https://kovan-optimistic.etherscan.io/0x73A7D35bb34E6c7b0Bc06E6399CdDE05320bcBc3) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/optimismkovan/YieldSourcePrizePool.json) |
 
