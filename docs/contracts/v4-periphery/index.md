@@ -15,6 +15,7 @@ title: V4 Periphery
 - [PrizeDistributionFactory](./PrizeDistributionFactory)
 - [PrizeFlush](./PrizeFlush)
 - [PrizeTierHistory](./PrizeTierHistory)
+- [TwabRewards](./TwabRewards)
 
 # Deployments
 - [Ethereum](../../deployments/mainnet#mainnet)
