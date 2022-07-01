@@ -72,3 +72,25 @@ title: V4 Mainnet
 | TwabRewards | [0x01A1F0699356afeB850f5A80226C35A9319CAf74](https://snowtrace.io/address/0x01A1F0699356afeB850f5A80226C35A9319CAf74) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/TwabRewards.json) |
 | YieldSourcePrizePool | [0xF830F5Cb2422d555EC34178E27094a816c8F95EC](https://snowtrace.io/address/0xF830F5Cb2422d555EC34178E27094a816c8F95EC) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/YieldSourcePrizePool.json) |
 
+## Optimism
+
+| Contract | Address | Artifact |
+| :--- | :--- | :--- |
+| AaveV3YieldSource | [0xEeF2297e15CD085A0ad33197CE8c2Eab6F023c2B](https://optimistic.etherscan.io/address/0xEeF2297e15CD085A0ad33197CE8c2Eab6F023c2B) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/AaveV3YieldSource.json) |
+| DrawBuffer | [0xA2C882C66797b201788EEF25E3Ca3411204bf3D7](https://optimistic.etherscan.io/address/0xA2C882C66797b201788EEF25E3Ca3411204bf3D7) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/DrawBuffer.json) |
+| DrawCalculator | [0x94Db8aaae2b1D143dBaB67257cFA608374A4AC40](https://optimistic.etherscan.io/address/0x94Db8aaae2b1D143dBaB67257cFA608374A4AC40) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/DrawCalculator.json) |
+| DrawCalculatorTimelock | [0x79a80e8f952CfB4249613315Eb71bc63B1d2b685](https://optimistic.etherscan.io/address/0x79a80e8f952CfB4249613315Eb71bc63B1d2b685) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/DrawCalculatorTimelock.json) |
+| EIP2612PermitAndDeposit | [0xb75c7e8D65FDc32678617FD20F4C2404CB492562](https://optimistic.etherscan.io/address/0xb75c7e8D65FDc32678617FD20F4C2404CB492562) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/EIP2612PermitAndDeposit.json) |
+| PrizeDistributionBuffer | [0x79ED98ef5561f1Ed3058acb5A30F05E8f64e560b](https://optimistic.etherscan.io/address/0x79ED98ef5561f1Ed3058acb5A30F05E8f64e560b) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/PrizeDistributionBuffer.json) |
+| PrizeDistributionFactory | [0xA843CFbf6549E3c93453A74e762f1af66575Ee89](https://optimistic.etherscan.io/address/0xA843CFbf6549E3c93453A74e762f1af66575Ee89) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/PrizeDistributionFactory.json) |
+| PrizeDistributor | [0xa365317291122b44a549C34a383CCd117b71941e](https://optimistic.etherscan.io/address/0xa365317291122b44a549C34a383CCd117b71941e) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/PrizeDistributor.json) |
+| PrizeFlush | [0xB47e3984B81298F10C0Ba75E26362E044B8488F9](https://optimistic.etherscan.io/address/0xB47e3984B81298F10C0Ba75E26362E044B8488F9) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/PrizeFlush.json) |
+| PrizeSplitStrategy | [0xa6EC73C91D0aE39A854bd50A6b1cF9aA7da46Ba4](https://optimistic.etherscan.io/address/0xa6EC73C91D0aE39A854bd50A6b1cF9aA7da46Ba4) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/PrizeSplitStrategy.json) |
+| PrizeTierHistory | [0x91A252E0bC6082e6cA0Fc554968177BC5dbd53f1](https://optimistic.etherscan.io/address/0x91A252E0bC6082e6cA0Fc554968177BC5dbd53f1) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/PrizeTierHistory.json) |
+| ReceiverTimelockTrigger | [0x8E6670D62Ea8d0bA4662DE8B4Db690C70af9440e](https://optimistic.etherscan.io/address/0x8E6670D62Ea8d0bA4662DE8B4Db690C70af9440e) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/ReceiverTimelockTrigger.json) |
+| Reserve | [0x1bD4745df0b5286d410F22fE6d43E797C4d5ce98](https://optimistic.etherscan.io/address/0x1bD4745df0b5286d410F22fE6d43E797C4d5ce98) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/Reserve.json) |
+| Ticket | [0x5E5b54cd73872ba3103cd95A58067A7079d0259b](https://optimistic.etherscan.io/address/0x5E5b54cd73872ba3103cd95A58067A7079d0259b) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/Ticket.json) |
+| TWABDelegator | [0xa206773ED77Be8cCD48aCD6e0E241B08E5D1B611](https://optimistic.etherscan.io/address/0xa206773ED77Be8cCD48aCD6e0E241B08E5D1B611) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/TWABDelegator.json) |
+| TwabRewards | [0x74312Cab0d0AB42D4b4f7Ae424EF2Ea35E3CD472](https://optimistic.etherscan.io/address/0x74312Cab0d0AB42D4b4f7Ae424EF2Ea35E3CD472) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/TwabRewards.json) |
+| YieldSourcePrizePool | [0x73A7D35bb34E6c7b0Bc06E6399CdDE05320bcBc3](https://optimistic.etherscan.io/address/0x73A7D35bb34E6c7b0Bc06E6399CdDE05320bcBc3) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/optimism/YieldSourcePrizePool.json) |
+
