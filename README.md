@@ -1,6 +1,21 @@
-# Website
+# PoolTogether V4 Docs
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+The documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
+
+# Contributing
+
+## Update Deployed Contracts
+
+You'll find the deployed networks in `docs/deployments`:
+
+- **mainnet.md**: Generated using `yarn docs` in the [v4-mainnet](https://github.com/pooltogether/v4-mainnet) project. The PT V4 prize pool network. Note: this includes multiple blockchains, such as Ethereum, Polygon, Optimism, etc.
+- **testnet.md**: Generated using `yarn docs` in the [v4-testnet](https://github.com/pooltogether/v4-testnet) project. The PT V4 prize pool test network. Rinkeby, Optimistic Kovan, etc.
+
+To update a network after a new deployment:
+
+1. Depending on what you're updating, git clone the mainnet or testnet projects (linked above)
+2. Run `yarn docs` to generate either the `mainnet.md` or `testnet.md` file
+3. Replace the similarly named file in the project (located at `docs/deployments`) with the new file.
 
 # Contributing to PoolTogether Docs
 
