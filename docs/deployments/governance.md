@@ -18,10 +18,10 @@ sidebar_position: 3
 
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
-| [POOL Token](https://github.com/pooltogether/governance/tree/master/contractsundefined) | [0x25788a1a171ec66Da6502f9975a15B609fF54CF6](https://polygonscan.com/address/0x25788a1a171ec66Da6502f9975a15B609fF54CF6) | [Artifact](https://github.com/pooltogether/governance/tree/master/contractsundefined) |
+| [POOL Token](https://github.com/pooltogether/governance/tree/master/contractsundefined) | [0x25788a1a171ec66Da6502f9975a15B609fF54CF6](https://polygonscan.com/address/0x25788a1a171ec66Da6502f9975a15B609fF54CF6) | standard Polygon token |
 
 ## Optimism
 
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
-| [POOL Token](https://github.com/pooltogether/governance/tree/master/contractsundefined) | [0x395Ae52bB17aef68C2888d941736A71dC6d4e125](https://optimistic.etherscan.io/address/0x395ae52bb17aef68c2888d941736a71dc6d4e125) | [Artifact](https://github.com/pooltogether/governance/tree/master/contractsundefined) |
+| [POOL Token](https://github.com/pooltogether/governance/tree/master/contractsundefined) | [0x395Ae52bB17aef68C2888d941736A71dC6d4e125](https://optimistic.etherscan.io/address/0x395ae52bb17aef68c2888d941736a71dc6d4e125) | standard Optimism token |
