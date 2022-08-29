@@ -465,7 +465,7 @@ export default function Home() {
         <Row>
           <Link
             style={{ textDecoration: "none" }}
-            href={"https://discord.gg/JBzfTu63"}
+            href={"https://pooltogether.com/discord"}
           >
             <CenterCard>
               <Discord style={{ width: "48px", height: "48px" }} />
