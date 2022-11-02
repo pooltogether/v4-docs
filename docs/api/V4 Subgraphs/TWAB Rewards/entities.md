@@ -1,6 +1,6 @@
 ---
 title: Entities
-sidebar_position: 5
+sidebar_position: 4
 sidebar_label: Entities
 ---
 
@@ -55,3 +55,34 @@ sidebar_label: Entities
 | epochs      | [BigInt!] | Epochs from the promotion that have been claimed by the account |
 | rewards     | BigInt!   | Total amount of rewards that have been claimed by the account   |
 | ticket      | Ticket    | Ticket to which the promotion is associated                     |
+
+
+
+## Sample Queries
+
+Below are some sample queries you can use to gather information from the TWAB Rewards subgraph.
+
+You can build your own queries using a [GraphQL Explorer](https://graphiql-online.com/graphiql) and enter your endpoint to limit the data to exactly what you need.
+
+### Promotion
+
+Description: This query fetches users, their claimed promotions, their associated tickets, and unclaimed rewards.
+
+```graphql
+{
+  accounts {
+    claimedPromotions {
+      promotionId
+      rewards
+      epochs
+      ticket {
+        id
+        promotions {
+          rewardsUnclaimed
+        }
+      }
+    }
+  }
+}
+```
+

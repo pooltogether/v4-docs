@@ -1,6 +1,6 @@
 ---
 title: Entities
-sidebar_position: 11
+sidebar_position: 7
 sidebar_label: Entities
 ---
 
@@ -75,3 +75,49 @@ sidebar_label: Entities
 | delegatedVotesRaw   | BigInt!     | Total number of votes delegated expressed in the smallest unit of the governance token              |
 | delegatedVotes      | BigDecimal! | Total number of votes delegated expressed as a BigDecimal normalized value for the governance token |
 | proposalsQueued     | BigInt!     | Number of proposals currently queued for execution                                                  |
+
+
+
+## Sample Queries
+
+Below are some sample queries you can use to gather information from the Governance subgraph.
+
+You can build your own queries using a [GraphQL Explorer](https://graphiql-online.com/graphiql) and enter your endpoint to limit the data to exactly what you need.
+
+### Delegated Votes
+
+Description: This query filters token holders, tokens held by them, and their delegated votes.
+
+```graphql
+{
+  tokenHolders(where: { delegate_not: "null" }) {
+    id
+    totalTokensHeld
+    delegate {
+      delegatedVotes
+      votes {
+        votes
+      }
+    }
+  }
+}
+```
+
+### Governance
+
+Description: This query fetches governance data aggregate.
+
+```graphql
+{
+  governances {
+    id
+    proposals
+    proposalsQueued
+    delegatedVotes
+    currentTokenHolders
+    currentDelegates
+    totalDelegates
+    totalTokenHolders
+  }
+}
+```

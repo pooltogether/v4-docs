@@ -18,7 +18,7 @@ The PoolTogether subgraphs work by listening for events emitted by one or more d
 
 Learn more about how subgraphs work by checking out [The Graph's official documentation](https://thegraph.com/docs/en/). If you are unfamiliar with GraphQL, we recommend taking a quick look through their documentation first [here](https://graphql.org/learn/)
 
-# Current Subgraph locations
+## Current Subgraph locations
 
 ## Mainnet
 
