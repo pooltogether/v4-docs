@@ -1,10 +1,10 @@
 ---
-title: Entities
+title: Entities & Sample Queries
 sidebar_position: 7
-sidebar_label: Entities
+sidebar_label: Governance
 ---
 
-# Entities
+## Governance - Entities
 
 - [TokenHolder](#tokenholder)
 - [Delegate](#delegate)
@@ -76,8 +76,6 @@ sidebar_label: Entities
 | delegatedVotes      | BigDecimal! | Total number of votes delegated expressed as a BigDecimal normalized value for the governance token |
 | proposalsQueued     | BigInt!     | Number of proposals currently queued for execution                                                  |
 
-
-
 ## Sample Queries
 
 Below are some sample queries you can use to gather information from the Governance subgraph.
@@ -103,7 +101,7 @@ Description: This query filters token holders, tokens held by them, and their de
 }
 ```
 
-### Governance
+### Governance - Query
 
 Description: This query fetches governance data aggregate.
 

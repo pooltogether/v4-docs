@@ -1,10 +1,10 @@
 ---
-title: Entities
+title: Entities & Sample Queries
 sidebar_position: 5
-sidebar_label: Entities
+sidebar_label: TWAB Delegator
 ---
 
-# Entities
+## TWAB Delegator - Entities
 
 - [Ticket](#ticket)
 - [Delegation](#delegation)
@@ -36,8 +36,6 @@ sidebar_label: Entities
 | id          | ID!            | Account ID                  |
 | delegations | [Delegation!]! | Delegations made by user    |
 | ticket      | Ticket         | Ticket associated with user |
-
-
 
 ## Sample Queries
 
@@ -86,4 +84,3 @@ Description: This query fetches user accounts and their delegations.
   }
 }
 ```
-

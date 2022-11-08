@@ -1,10 +1,10 @@
 ---
-title: Entities
+title: Entities & Sample Queries
 sidebar_position: 3
-sidebar_label: Entities
+sidebar_label: Prizes Claimed
 ---
 
-# Entities
+## Prizes Claimed - Entities
 
 - [Aggregate](#aggregate)
 - [Account](#account)
@@ -47,15 +47,13 @@ Description: A total sum of all prizes claimed on this network
 | claimed            | BigInt!  | Amount claimed by user for this single draw |
 | createdAtTimestamp | BigInt!  | Time draw was created                       |
 
-
-
 ## Sample Queries
 
 Below are some sample queries you can use to gather information from the Prizes-Claimed subgraph.
 
 You can build your own queries using a [GraphQL Explorer](https://graphiql-online.com/graphiql) and enter your endpoint to limit the data to exactly what you need.
 
-### Aggregate
+### Aggregate - Query
 
 Description: This query fetches the total sum of all prizes claimed on this network. It also sorts for the first 20 draws, and their total claimed.
 

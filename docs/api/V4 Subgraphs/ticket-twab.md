@@ -1,10 +1,10 @@
 ---
-title: Entities
+title: Entities & Sample Queries
 sidebar_position: 6
-sidebar_label: Entities
+sidebar_label: Ticket TWAB
 ---
 
-# Entities
+## Ticket TWAB - Entities
 
 - [Ticket](#ticket)
 - [Account](#account)
@@ -38,8 +38,6 @@ sidebar_label: Entities
 | delegateBalance | BigInt!  | Amount of tickets delegated                    |
 | timestamp       | BigInt!  | Time stamp for twab                            |
 | account         | Account! | User account                                   |
-
-
 
 ## Sample Queries
 

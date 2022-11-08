@@ -1,10 +1,10 @@
 ---
-title: Entities
+title: Entities & Sample Queries
 sidebar_position: 4
-sidebar_label: Entities
+sidebar_label: TWAB Rewards
 ---
 
-# Entities
+## TWAB Rewards - Entities
 
 - [Ticket](#ticket)
 - [Promotion](#promotion)
@@ -56,15 +56,13 @@ sidebar_label: Entities
 | rewards     | BigInt!   | Total amount of rewards that have been claimed by the account   |
 | ticket      | Ticket    | Ticket to which the promotion is associated                     |
 
-
-
 ## Sample Queries
 
 Below are some sample queries you can use to gather information from the TWAB Rewards subgraph.
 
 You can build your own queries using a [GraphQL Explorer](https://graphiql-online.com/graphiql) and enter your endpoint to limit the data to exactly what you need.
 
-### Promotion
+### Promotion - Query
 
 Description: This query fetches users, their claimed promotions, their associated tickets, and unclaimed rewards.
 
@@ -85,4 +83,3 @@ Description: This query fetches users, their claimed promotions, their associate
   }
 }
 ```
-
