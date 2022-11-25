@@ -111,6 +111,10 @@ module.exports = {
               label: "Twitter",
               href: "https://twitter.com/PoolTogether_",
             },
+            { //my contribution to get the GitPOAP :)
+              label: "Merch Store",
+              href: "https://pooly.me/",
+            },
           ],
         },
       ],
