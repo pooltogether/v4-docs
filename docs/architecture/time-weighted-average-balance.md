@@ -12,7 +12,7 @@ For example:
 - if a user held 100 tokens between Dec 20 and Dec 27, then their average balance was 100.
 - if instead they bought another 100 tokens halfway through, then their average between Dec 20 and Dec 27 would be 150.
 
-The TWAB is wholly inspired by Uniswap's Time-Weighted Average Price, which [is described here](https://docs.uniswap.org/protocol/V2/concepts/core-concepts/oracles).
+The TWAB is wholly inspired by Uniswap's Time-Weighted Average Price, which [is described here](https://docs.uniswap.org/contracts/v2/concepts/core-concepts/oracles).
 
 # Computing the TWAB
 
