@@ -30,7 +30,8 @@ The data is then catagorized by Prize Distributor address. This is the contract 
 | --------- | ------------------------------------------------------------------------------------------------------------------------ |
 | mainnet   | [0xb9a179dca5a7bf5f8b9e088437b3a85ebb495efe](https://etherscan.io/address/0xb9a179DcA5a7bf5f8B9E088437B3A85ebB495eFe)    |
 | polygon   | [0x8141bcfbcee654c5de17c4e2b2af26b67f9b9056](https://polygonscan.com/address/0x8141BcFBcEE654c5dE17C4e2B2AF26B67f9B9056) |
-| avalanche | [0x83332f908f403ce795d90f677ce3f382fe73f3d1](https://snowtrace.com/address/0x83332f908f403ce795d90f677ce3f382fe73f3d1)   |
+| avalanche | [0x83332f908f403ce795d90f677ce3f382fe73f3d1](https://snowtrace.io/address/0x83332f908f403ce795d90f677ce3f382fe73f3d1)   |
+| optimism | [0x722e9BFC008358aC2d445a8d892cF7b62B550F3F](https://optimistic.etherscan.io/address/0x722e9BFC008358aC2d445a8d892cF7b62B550F3F)   |
 
 Finally the data is sorted by `drawId`, where `drawId` is unique and sequentially increasing over time.
 
