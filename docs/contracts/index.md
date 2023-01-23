@@ -75,6 +75,6 @@ class='img-max'
 
 ### Draw Calculator
 
-The Draw Calculator determines the prize payout amount for each pick. For an in-depth explanation see [Prize Distribution](/protocol/concepts/prize-distribution).
+The Draw Calculator determines the prize payout amount for each pick. For an in-depth explanation see [Prize Distribution](/protocol/architecture/prize-distribution).
 
 To calculate the payout for a draw, the Draw Calculator will retrieve the Draw and Prize Distribution for the given draw id. The Draw includes the winning random number and timestamp, and the Prize Distribution includes the data required to calculate winners.
