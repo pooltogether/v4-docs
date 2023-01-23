@@ -33,7 +33,7 @@ Put the updated template `contract.hbs` in a /templates folder under the same di
 
 Run `npx solidity-docgen --solc-module solc-0.7 -t ./templates`
 
-# How to gernerate markdown files from typescript commments
+# How to generate markdown files from typescript comments
 
 `npm install --save-dev typedoc typedoc-plugin-markdown`
 
