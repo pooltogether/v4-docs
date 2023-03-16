@@ -13,9 +13,9 @@ This section outlines how the prizes are computed for each draw. The high-level 
 - Compute the number of picks a user gets (this is the user's fraction of TWAB vs. total supply TWAB multipled by the number of picks for the draw)
 - For each pick, compute the users random number and compare it to winning random number
 
-<a href={require('/img/guides/ComputingPrizes.png').default} target="\_blank">
+<a href={require('/img/v4/guides/ComputingPrizes.png').default} target="\_blank">
 <img
-src={require('/img/guides/ComputingPrizes.png').default}
+src={require('/img/v4/guides/ComputingPrizes.png').default}
 alt='Prize Pool'
 class='img-full'
 />

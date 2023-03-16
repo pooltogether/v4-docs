@@ -13,7 +13,7 @@ The following diagram shows the flow of funds for a single Prize Pool instance. 
 6. The prize pool network will deposit funds into the Prize Distributor to bootstrap prizes.
 
 <img
-  src={require('/img/guides/FlowofFunds.png').default}
+  src={require('/img/v4/guides/FlowofFunds.png').default}
   alt='Flow of Funds'
   class='img-max'
 />
