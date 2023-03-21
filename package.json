@@ -10,9 +10,7 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "add-deployments-category": "echo '{ \"label\": \"Deployments\", \"position\": 6 }' > docs/reference/deployments/_category_.json",
-    "gen-solidity-docs": "rm -rf docs/reference/core/** && yarn add-contracts-category && solidity-docgen --solc-module solc-0.8 -i node_modules/@pooltogether/v4/contracts -o docs/reference/core -t templates",
-    "gen-deployments": "rm -rf docs/reference/deployments/** && yarn add-deployments-category && ./scripts/generateDeployments.js"
+    "gen-testnet-deployments": "rm -rf docs/reference/deployments/** && ./scripts/generateDeployments.js $TESTNET_DEPLOYMENT_JSON_URL"
   },
   "dependencies": {
     "@babel/core": "7.17.5",
@@ -24,7 +22,10 @@
     "@heroicons/react": "1.0.5",
     "@types/react": "17.0.39",
     "algoliasearch": "4.12.1",
+    "chalk": "^4.1.2",
     "clsx": "1.1.1",
+    "commander": "^10.0.0",
+    "find": "^0.3.0",
     "intl-locales-supported": "1.8.12",
     "react": "17.0.2",
     "react-dom": "17.0.2"

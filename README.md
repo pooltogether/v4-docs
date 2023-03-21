@@ -8,38 +8,16 @@ The documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
 You'll find the deployed networks in `docs/deployments`:
 
-- **mainnet.md**: Generated using `yarn docs` in the [v4-mainnet](https://github.com/pooltogether/v4-mainnet) project. The PT V4 prize pool network. Note: this includes multiple blockchains, such as Ethereum, Polygon, Optimism, etc.
-- **testnet.md**: Generated using `yarn docs` in the [v4-testnet](https://github.com/pooltogether/v4-testnet) project. The PT V4 prize pool test network. Rinkeby, Optimistic Kovan, etc.
+- **testnet.md**: Generated using `./scripts/generateV5TestnetDeployments.js`.
 
 To update a network after a new deployment:
 
-1. Depending on what you're updating, git clone the mainnet or testnet projects (linked above)
-2. Run `yarn docs` to generate either the `mainnet.md` or `testnet.md` file
-3. Replace the similarly named file in the project (located at `docs/deployments`) with the new file.
+1. Update the data file in `data` (e.g. `data/testnet-contracts.json`)
+2. Run the corresponding script: `./scripts/generateV5TestnetDeployments.js`
 
 # Contributing to PoolTogether Docs
 
 Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](https://github.com/PoolTogether/v4-docs/blob/main/CONTRIBUTING.md).
-
-# How to generate markdown files from solidity Natspec comments
-
-Install solidity doc gen
-`npm install solidity-docgen`
-
-Get the correct compiler version
-`npm install -D solc-0.7@npm:solc@0.7.6`
-
-Put the updated template `contract.hbs` in a /templates folder under the same directory as /contracts that you want to generate
-
-Run `npx solidity-docgen --solc-module solc-0.7 -t ./templates`
-
-# How to generate markdown files from typescript comments
-
-`npm install --save-dev typedoc typedoc-plugin-markdown`
-
-`typedoc --out <docs> src/index.ts`
-
-see https://www.npmjs.com/package/typedoc-plugin-markdown for details
 
 # How to Update search indices with algolia
 
