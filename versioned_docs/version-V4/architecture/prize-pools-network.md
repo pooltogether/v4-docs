@@ -15,7 +15,7 @@ PoolTogether V4 is unique as it enables a Prize Pool Network.  A Prize Pool Netw
 Users deposit into Prize Pool contracts, which generate yield that goes to the network prize liquidity.
 
 <img
-  src={require('/img/guides/PrizeNetworkLiquidity.png').default}
+  src={require('/img/v4/guides/PrizeNetworkLiquidity.png').default}
   alt='Prize Network Liquidity'
   class='img-max'
 />
@@ -25,7 +25,7 @@ Users deposit into Prize Pool contracts, which generate yield that goes to the n
 The prize pool yield contributions are compared and weighted odds are pushed out to each prize pool.  Note, that these are the *odds* that are pushed out, not the actual prize liquidity.  The possible prizes for all users is the same, but their odds are weighted according to how much liquidity they contributed to the prize network liquidity.
 
 <img
-  src={require('/img/guides/TsunamiBroadcast.png').default}
+  src={require('/img/v4/guides/TsunamiBroadcast.png').default}
   alt='Tsunami Prize Distribution'
   class='img-max'
 />
@@ -35,7 +35,7 @@ The prize pool yield contributions are compared and weighted odds are pushed out
 Prize Pools will largely feed off of their own interest, but at times liquidity may need to be rebalanced by the protocol to satisfy prize distributions. Initially the Prize Distributor contract on each chain will be bootstrapped to ensure there is always enough liqudity for users to claim prizes on that chain. 
 
 <img
-  src={require('/img/guides/PrizeDistribution.png').default}
+  src={require('/img/v4/guides/PrizeDistribution.png').default}
   alt='Prize Distribution'
   class='img-max'
 />

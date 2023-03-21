@@ -6,7 +6,7 @@ title: Smart Contracts Overview
 PoolTogether 4.0 is a prize savings network. Users deposit into the network to win prize money. The deposits generate yield, which is then distributed as prizes. These are the two fundamental PoolTogether processes: yield capture and prize distribution.
 
 <img
-src={require('/img/guides/Overview.png').default}
+src={require('/img/v4/guides/Overview.png').default}
 alt='Overview'
 class='img-max'
 />
@@ -22,7 +22,7 @@ Yield is captured by Prize Pools. Users deposit into prize pools and receive "Ti
 There are no fees in PoolTogether 4.0!
 
 <img
-src={require('/img/guides/PrizePool.png').default}
+src={require('/img/v4/guides/PrizePool.png').default}
 alt='Prize Pool'
 class='img-max'
 />
@@ -32,7 +32,7 @@ class='img-max'
 Each prize pool has a Prize Split Strategy that determines how interest is disbursed. At any time anyone can tell the Prize Split Strategy to disburse the currently accrued interest. The strategy will mint Tickets to the Protocol Reserve, which allows the protocol to measure the prize pool's reserve contribution and sweep the funds.
 
 <img
-src={require('/img/guides/ProtocolReserve.png').default}
+src={require('/img/v4/guides/ProtocolReserve.png').default}
 alt='Protocol Reserve'
 class='img-max'
 />
@@ -55,7 +55,7 @@ The Draw is created in two steps:
 2. The Draw is "completed": the random number is consumed and a new Draw is pushed to the Draw Buffer.
 
 <img
-src={require('/img/guides/DrawBeacon.png').default}
+src={require('/img/v4/guides/DrawBeacon.png').default}
 alt='Draw Beacon'
 class='img-max'
 />
@@ -68,7 +68,7 @@ Users claim their prizes from the PrizeDistributor contract, which holds the liq
 - The PrizeDistributor transfers the payout as tickets to the user
 
 <img
-src={require('/img/guides/PrizeDistributor.png').default}
+src={require('/img/v4/guides/PrizeDistributor.png').default}
 alt='Prize Distributor'
 class='img-max'
 />

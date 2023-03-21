@@ -39,7 +39,7 @@ This contract being tied to a pool, it is important that you first verify that t
 To do so, you can load the `YieldSourcePrizePool` contract in Etherscan, or one of his clones, and look at the `getTicket` view function, in the `Read Contract` section, to retrieve the Ticket address.
 
 <img
-src={require('/img/how-to/twab-rewards/yield-source-prize-pool-get-ticket-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/yield-source-prize-pool-get-ticket-etherscan.png').default}
 alt='Yield Source Prize Pool getTicket view function on Etherscan'
 class='padding-bottom--md'
 />
@@ -47,7 +47,7 @@ class='padding-bottom--md'
 To get the ticket address used by the `TwabRewards` contract, you can load it in Etherscan and look at the `ticket` variable in the `Read Contract` section.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-ticket-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-ticket-etherscan.png').default}
 alt='TWAB Rewards ticket address on Etherscan'
 class='padding-bottom--md'
 />
@@ -72,7 +72,7 @@ After loading the contract in Etherscan, you should first check the number of de
 To do so, you can look at the `decimals` variable in the `Read Contract` section.
 
 <img
-src={require('/img/how-to/twab-rewards/usdc-decimals-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/usdc-decimals-etherscan.png').default}
 alt='USDC decimals variable on Etherscan'
 class='padding-bottom--md'
 />
@@ -89,7 +89,7 @@ This is the parameters the function expects:
 Fill the `spender` parameter with the address of the TWAB Rewards contract.
 
 <img
-src={require('/img/how-to/twab-rewards/usdc-spender-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/usdc-spender-etherscan.png').default}
 alt='USDC spender on Etherscan'
 class='padding-bottom--md'
 />
@@ -99,7 +99,7 @@ Fill the `amount` parameter with the amount of tokens you want to approve. 12,00
 To pad the amount, you can use the useful `Add zeroes` popin by clicking on the `+` button.
 
 <img
-src={require('/img/how-to/twab-rewards/usdc-amount-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/usdc-amount-etherscan.png').default}
 alt='USDC amount on Etherscan'
 class='padding-bottom--md'
 />
@@ -107,7 +107,7 @@ class='padding-bottom--md'
 Then select `10ˆ6` and click on the `Add` button.
 
 <img
-src={require('/img/how-to/twab-rewards/usdc-pad-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/usdc-pad-etherscan.png').default}
 alt='USDC Add zeroes popin on Etherscan'
 class='padding-bottom--md'
 />
@@ -115,7 +115,7 @@ class='padding-bottom--md'
 The parameters should look like this:
 
 <img
-src={require('/img/how-to/twab-rewards/usdc-approve-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/usdc-approve-etherscan.png').default}
 alt='USDC approve function on Etherscan'
 class='padding-bottom--md'
 />
@@ -129,7 +129,7 @@ Once your transaction is mined, the TWAB Rewards contract can now spend up to 12
 Load the TWAB Rewards contract in Etherscan, go to the `Write Contract` section and unfold the `createPromotion` function.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-create-promotion-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-create-promotion-etherscan.png').default}
 alt='TWAB Rewards createPromotion function on Etherscan'
 class='padding-bottom--md'
 />
@@ -153,7 +153,7 @@ Now that we have the number of epochs, we can calculate the amount of `_tokensPe
 We are now ready to fill out the promotion parameters.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-create-promotion-filled-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-create-promotion-filled-etherscan.png').default}
 alt='TWAB Rewards createPromotion function filled on Etherscan'
 class='padding-bottom--md'
 />
@@ -171,7 +171,7 @@ Load the transaction that created your promotion on Etherscan and go to the `Log
 Here, the promotion id is `1`.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-create-promotion-log-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-create-promotion-log-etherscan.png').default}
 alt='TWAB Rewards PromotionCreated log on Etherscan'
 />
 
@@ -189,7 +189,7 @@ You will need to fill the following parameters:
 - `_numberOfEpochs`: number of epochs the promotion will be extended for.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-extend-promotion-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-extend-promotion-etherscan.png').default}
 alt='TWAB Rewards extendPromotion function on Etherscan'
 class='padding-bottom--md'
 />
@@ -200,7 +200,7 @@ Now let's say we want to extend the promotion we just created by a month:
 - `_numberOfEpochs`: will be `4` since `_epochDuration` is equal to a week.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-extend-promotion-filled-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-extend-promotion-filled-etherscan.png').default}
 alt='TWAB Rewards extendPromotion function filled on Etherscan'
 class='padding-bottom--md'
 />
@@ -221,7 +221,7 @@ The following parameters need to be filled out:
 - `_to`: address of the wallet you wish to send the tokens to.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-end-promotion-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-end-promotion-etherscan.png').default}
 alt='TWAB Rewards endPromotion function on Etherscan'
 class='padding-bottom--md'
 />
@@ -231,7 +231,7 @@ Let's say you want to end the promotion with id `1` and send the tokens to `0x3A
 This is how you will fill out the parameters:
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-end-promotion-filled-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-end-promotion-filled-etherscan.png').default}
 alt='TWAB Rewards endPromotion function filled on Etherscan'
 class='padding-bottom--md'
 />
@@ -254,7 +254,7 @@ The following parameters need to be filled out:
 - `_to`: address of the wallet you wish to send the remaining tokens to.
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-destroy-promotion-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-destroy-promotion-etherscan.png').default}
 alt='TWAB Rewards destroyPromotion function on Etherscan'
 class='padding-bottom--md'
 />
@@ -264,7 +264,7 @@ Let's say you want to end the promotion with id `1` and send the tokens to `0x3A
 This is how you will fill out the parameters:
 
 <img
-src={require('/img/how-to/twab-rewards/twab-rewards-destroy-promotion-filled-etherscan.png').default}
+src={require('/img/v4/how-to/twab-rewards/twab-rewards-destroy-promotion-filled-etherscan.png').default}
 alt='TWAB Rewards destroyPromotion function filled on Etherscan'
 class='padding-bottom--md'
 />

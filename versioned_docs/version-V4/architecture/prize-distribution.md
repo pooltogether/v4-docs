@@ -8,7 +8,7 @@ PoolTogether V4 uses a statistical approach for prize distribution. It allows a 
 The algorithm is called Tsunami as it brings a massive wave of prizes.
 
 <img
-src={require('/img/Tsunami.png').default}
+src={require('/img/v4/Tsunami.png').default}
 alt='Tsunami'
 class='img-max'
 />

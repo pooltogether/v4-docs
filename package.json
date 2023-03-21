@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@babel/core": "7.17.5",
-    "@docusaurus/core": "2.0.0-beta.15",
-    "@docusaurus/plugin-content-docs": "2.0.0-beta.15",
-    "@docusaurus/preset-classic": "2.0.0-beta.15",
+    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/plugin-content-docs": "^2.3.1",
+    "@docusaurus/preset-classic": "^2.3.1",
     "@emotion/react": "11.8.1",
     "@emotion/styled": "11.8.1",
     "@heroicons/react": "1.0.5",

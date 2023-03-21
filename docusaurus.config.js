@@ -27,6 +27,11 @@ module.exports = {
       },
       items: [
         {
+          type: 'docsVersionDropdown',
+          position: 'left',
+          dropdownActiveClassDisabled: true,
+        },
+        {
           href: "https://poolgrants.org/",
           label: "Grants",
           position: "right",
@@ -130,17 +135,7 @@ module.exports = {
 
       // Should we use the prefers-color-scheme media-query,
       // using user system preferences, instead of the hardcoded defaultMode
-      respectPrefersColorScheme: true,
-
-      // Dark/light switch icon options
-      switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: "\u{263D}",
-
-        // Unicode icons such as '\u2600' will work
-        // Unicode with 5 chars require brackets: '\u{1F602}'
-        lightIcon: "\u{263C}",
-      },
+      respectPrefersColorScheme: true
     },
   },
   presets: [
@@ -151,11 +146,17 @@ module.exports = {
           path: "docs",
           routeBasePath: "protocol/",
           editUrl: "https://github.com/pooltogether/v4-docs/tree/main/",
+          // lastVersion: "current",
+          includeCurrentVersion: true,
+          versions: {
+            current: {
+              label: "V5"
+            }
+          }
         },
 
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-          customCss2: require.resolve("./src/css/colors.css"),
+          customCss: require.resolve("./src/css/custom.css")
         },
       },
     ],

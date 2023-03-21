@@ -7,9 +7,9 @@ At launch, the prize pool network will include a USDC prize pool on Ethereum and
 
 (Click image to open in new tab)
 
-<a href={require('/img/guides/V4_Launch_Architecture.png').default} target="_blank">
+<a href={require('/img/v4/guides/V4_Launch_Architecture.png').default} target="_blank">
   <img
-    src={require('/img/guides/V4_Launch_Architecture.png').default}
+    src={require('/img/v4/guides/V4_Launch_Architecture.png').default}
     alt='Prize Pool'
     class='img-full'
   />
