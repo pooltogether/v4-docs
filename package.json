@@ -26,9 +26,12 @@
     "clsx": "1.1.1",
     "commander": "^10.0.0",
     "find": "^0.3.0",
+    "hast-util-is-element": "1.1.0",
     "intl-locales-supported": "1.8.12",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "rehype-katex": "5",
+    "remark-math": "3"
   },
   "browserslist": {
     "production": [
