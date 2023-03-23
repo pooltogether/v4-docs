@@ -44,7 +44,7 @@ The Liquidation Pair will have a limited amount of yield available.
 
 Compute how much yield is available using the `maxAmountOut()` function on the Liquidation Pair. This function returns the maximum number of tokens you can swap out.
 
-You could also check the profitability of a swap by calling the Liquidation Router `swapExactAmountIn()` or `swapExactAmountOut()` statically (no stage change), and get the return value.
+You could also check the profitability of a swap by calling the Liquidation Router `swapExactAmountIn()` or `swapExactAmountOut()` statically (no state change), and get the return value.
 
 ## Execute a Swap
 
