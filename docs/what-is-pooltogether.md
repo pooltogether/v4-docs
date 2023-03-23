@@ -13,7 +13,7 @@ The PoolTogether Protocol promotes financial security by making it fun to save!
 
 Never lose your principal, and have a chance to win big.
 
-[Learn how you can earn fees and extend the protocol](./guides)
+[Learn how you can earn fees and extend the protocol](guides)
 
 ## What's New in V5
 
@@ -22,4 +22,4 @@ Version 5 of PoolTogether brings massive improvements. The protocol is now:
 - **Autonomous:** there is no central entity (whether an admin or governance) controlling the protocol.
 - **Permissionless:** anyone will be able to add new assets and yield sources to the protocol.
 
-To find out more, the best place to start is the [Protocol Design](./design).
+To find out more, the best place to start is the [Protocol Design](design).
