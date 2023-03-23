@@ -11,6 +11,7 @@ title: Testnet
 | MarketRate | [0x354E47B9f58BA53b47C96D77d5AF89f8a945347D](https://goerli.etherscan.io/address/0x354E47B9f58BA53b47C96D77d5AF89f8a945347D) |
 | TokenFaucet | [0xF8c8613BF1d4bF3829C6A2F808168Ea1Aa636097](https://goerli.etherscan.io/address/0xF8c8613BF1d4bF3829C6A2F808168Ea1Aa636097) |
 | TwabController | [0x448200d83e48f561B42e90274566d3FA3914B8A4](https://goerli.etherscan.io/address/0x448200d83e48f561B42e90274566d3FA3914B8A4) |
+| UserFaker | [0xcaf376aef49dca009afe52e203d0c7a08cb716a5](https://goerli.etherscan.io/address/0xcaf376aef49dca009afe52e203d0c7a08cb716a5) |
 | ERC20Mintable | [0xFfF6e20deb5cC0E66Bc697eB779f7a884ecFaB5d](https://goerli.etherscan.io/address/0xFfF6e20deb5cC0E66Bc697eB779f7a884ecFaB5d) |
 | PrizePool | [0x29A2C67a6F3bEF9c77B59B135E528d8A49b9b1F1](https://goerli.etherscan.io/address/0x29A2C67a6F3bEF9c77B59B135E528d8A49b9b1F1) |
 | Claimer | [0xe99c7c06CE3D2291474e3cD5ba777626476DAb5E](https://goerli.etherscan.io/address/0xe99c7c06CE3D2291474e3cD5ba777626476DAb5E) |
