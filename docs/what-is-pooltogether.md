@@ -1,7 +1,7 @@
 ---
 id: introduction
 title: What Is PoolTogether?
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 The PoolTogether Protocol promotes financial security by making it fun to save!
