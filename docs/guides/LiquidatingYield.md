@@ -46,6 +46,8 @@ Compute how much yield is available using the `maxAmountOut()` function on the L
 
 You could also check the profitability of a swap by calling the Liquidation Router `swapExactAmountIn()` or `swapExactAmountOut()` statically (no state change), and get the return value.
 
+**Note:** `swapExactAmountIn()` and `swapExactAmountOut()` both exist on the LiquidationPair contracts, however for your swaps to be successful you will need to run them on the LiquidationRouter.
+
 ## Execute a Swap
 
 If a swap is profitable, then you can execute the swap using the Liquidation Router.  The Router provides two functions to do so: `swapExactAmountIn()` lets the caller execute a swap with an exact amount of POOL tokens, or `swapExactAmountOut()` which allows the caller to define the expected number of output tokens.
