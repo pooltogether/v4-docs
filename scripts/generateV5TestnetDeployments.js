@@ -109,4 +109,4 @@ async function generate(name, outputFilePath, inputFilePath) {
   console.log(chalk.green(`Done!`));
 }
 
-generate("Testnet", "./docs/reference/deployments/testnet.md", "./data/testnet-contracts.json")
+generate("Testnet", "./docs/deployments/testnet.md", "./data/testnet-contracts.json")

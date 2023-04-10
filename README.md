@@ -8,12 +8,12 @@ The documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
 You'll find the deployed networks in `docs/deployments`:
 
-- **testnet.md**: Generated using `./scripts/generateV5TestnetDeployments.js`.
+- **testnet.md**: Generated using `./scripts/generateV5TestnetDeployments.js` and `data/testnet-contracts.json`
 
-To update a network after a new deployment:
+To update the testnet:
 
-1. Update the data file in `data` (e.g. `data/testnet-contracts.json`)
-2. Run the corresponding script: `./scripts/generateV5TestnetDeployments.js`
+1. Copy the `contracts.json` file from [v5-testnet](https://github.com/pooltogether/v5-testnet) to `data/testnet-contracts.json`
+2. Run the script: `./scripts/generateV5TestnetDeployments.js`
 
 # Contributing to PoolTogether Docs
 
