@@ -4,7 +4,7 @@ title: Liquidation Pairs
 sidebar_position: 2
 ---
 
-# Liquidation Pairs
+# Liquidation Pair
 
 A key component of the PoolTogether V5 is the consolidation of yield from many different assets into POOL, which is then awarded as prizes. The protocol will consolidate yield from potentially thousands of different tokens in order to build a single pool of prize liquidity.
 
@@ -18,7 +18,7 @@ A secondary goal is to on-board new assets rapidly, so we need the ability to li
 - The code should not rely on oracles, as they support a limited set of assets
 - The code should be autonomous, as we won't be able to manually track hundreds of assets.
 
-The PoolTogether Liquidation Pair achieves the above goals using a virtual AMM pair.
+The PoolTogether Liquidation Pair is a single-sided virtual AMM that achieves the above goals.
 
 ## Reframing Consolidation as Swaps
 
