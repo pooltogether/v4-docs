@@ -9,7 +9,7 @@ title: V4 Mainnet
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
 | ATokenYieldSource | [0x32e8D4c9d1B711BC958d0Ce8D14b41F77Bb03a64](https://etherscan.io/address/0x32e8D4c9d1B711BC958d0Ce8D14b41F77Bb03a64) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/ATokenYieldSource.json) |
-| BeaconTimelockTrigger | [0x6C04Eeeed2dEFedbC9A0f3f63bf14F39a189F607](https://etherscan.io/address/0x6C04Eeeed2dEFedbC9A0f3f63bf14F39a189F607) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/BeaconTimelockTrigger.json) |
+| BeaconTimelockTrigger (Deprecated) | [0x6C04Eeeed2dEFedbC9A0f3f63bf14F39a189F607](https://etherscan.io/address/0x6C04Eeeed2dEFedbC9A0f3f63bf14F39a189F607) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/BeaconTimelockTrigger.json) |
 | DrawBeacon | [0x0D33612870cd9A475bBBbB7CC38fC66680dEcAC5](https://etherscan.io/address/0x0D33612870cd9A475bBBbB7CC38fC66680dEcAC5) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/DrawBeacon.json) |
 | DrawBuffer | [0x78Ea5a9595279DC2F9608283875571b1151F19D4](https://etherscan.io/address/0x78Ea5a9595279DC2F9608283875571b1151F19D4) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/DrawBuffer.json) |
 | DrawCalculator | [0x14d0675580C7255043a3AeD3726F5D7f33292730](https://etherscan.io/address/0x14d0675580C7255043a3AeD3726F5D7f33292730) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/mainnet/DrawCalculator.json) |
@@ -37,7 +37,7 @@ title: V4 Mainnet
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
 | ATokenYieldSource | [0xD4F6d570133401079D213EcF4A14FA0B4bfB5b9C](https://explorer-mainnet.maticvigil.com/address/0xD4F6d570133401079D213EcF4A14FA0B4bfB5b9C) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/ATokenYieldSource.json) |
-| BeaconTimelockTrigger | [0x94f23320ac3Ed351782791506266351eb4183e8d](https://explorer-mainnet.maticvigil.com/address/0x94f23320ac3Ed351782791506266351eb4183e8d) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/BeaconTimelockTrigger.json) |
+| BeaconTimelockTrigger (Deprecated) | [0x94f23320ac3Ed351782791506266351eb4183e8d](https://explorer-mainnet.maticvigil.com/address/0x94f23320ac3Ed351782791506266351eb4183e8d) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/BeaconTimelockTrigger.json) |
 | DrawBeacon | [0x52325504bD35aeC31D842F62A113E9e4b665d885](https://explorer-mainnet.maticvigil.com/address/0x52325504bD35aeC31D842F62A113E9e4b665d885) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/DrawBeacon.json) |
 | DrawBuffer | [0x44B1d66E7B9d4467139924f31754F34cbC392f44](https://explorer-mainnet.maticvigil.com/address/0x44B1d66E7B9d4467139924f31754F34cbC392f44) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/DrawBuffer.json) |
 | DrawCalculator | [0x3976BD6F4B82C97314570A77bc1e979f7A839A24](https://explorer-mainnet.maticvigil.com/address/0x3976BD6F4B82C97314570A77bc1e979f7A839A24) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/polygon/DrawCalculator.json) |
@@ -65,7 +65,7 @@ title: V4 Mainnet
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
 | ATokenYieldSource | [0x7437db21A0dEB844Fa64223e2d6Db569De9648Ff](https://snowtrace.io/address/0x7437db21A0dEB844Fa64223e2d6Db569De9648Ff) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/ATokenYieldSource.json) |
-| BeaconTimelockTrigger | [0x3Cb049Db6d3E100b8b4765Ca051C809adcC17ed1](https://snowtrace.io/address/0x3Cb049Db6d3E100b8b4765Ca051C809adcC17ed1) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/BeaconTimelockTrigger.json) |
+| BeaconTimelockTrigger (Deprecated) | [0x3Cb049Db6d3E100b8b4765Ca051C809adcC17ed1](https://snowtrace.io/address/0x3Cb049Db6d3E100b8b4765Ca051C809adcC17ed1) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/BeaconTimelockTrigger.json) |
 | DrawBeacon | [0x90bB095638DF36f56DB63bdC657CeE3cF5d00d7E](https://snowtrace.io/address/0x90bB095638DF36f56DB63bdC657CeE3cF5d00d7E) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/DrawBeacon.json) |
 | DrawBuffer | [0x31bCAF169D25f938A25c2e4C762f3D1D3FA7dB2E](https://snowtrace.io/address/0x31bCAF169D25f938A25c2e4C762f3D1D3FA7dB2E) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/DrawBuffer.json) |
 | DrawCalculator | [0x0F5F5EF16465371152fC46C72D06fb0ec9392a47](https://snowtrace.io/address/0x0F5F5EF16465371152fC46C72D06fb0ec9392a47) | [Artifact](https://github.com/pooltogether/v4-mainnet/tree/master/deployments/avalanche/DrawCalculator.json) |

@@ -9,7 +9,7 @@ title: V4 Testnet
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
 | AaveV3YieldSource | [0x6A501383A61ebFBc143Fc4BD41A2356bA71A6964](https://goerli.etherscan.io/address/0x6A501383A61ebFBc143Fc4BD41A2356bA71A6964) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/goerli/AaveV3YieldSource.json) |
-| BeaconTimelockTrigger | [0x7b968cc6D6Fd4ee93E19780E8Ee68B5ca62A2195](https://goerli.etherscan.io/address/0x7b968cc6D6Fd4ee93E19780E8Ee68B5ca62A2195) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/goerli/BeaconTimelockTrigger.json) |
+| BeaconTimelockTrigger (Deprecated) | [0x7b968cc6D6Fd4ee93E19780E8Ee68B5ca62A2195](https://goerli.etherscan.io/address/0x7b968cc6D6Fd4ee93E19780E8Ee68B5ca62A2195) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/goerli/BeaconTimelockTrigger.json) |
 | DrawBeacon | [0x6176776490147b41813C1a0e342080d2CAA4e618](https://goerli.etherscan.io/address/0x6176776490147b41813C1a0e342080d2CAA4e618) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/goerli/DrawBeacon.json) |
 | DrawBuffer | [0x02aCC9594161812E3004C174CF1735EdB10e20A4](https://goerli.etherscan.io/address/0x02aCC9594161812E3004C174CF1735EdB10e20A4) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/goerli/DrawBuffer.json) |
 | DrawCalculator | [0x49b86ba45C01957Df33Fe7bbB97002A0e4E5F964](https://goerli.etherscan.io/address/0x49b86ba45C01957Df33Fe7bbB97002A0e4E5F964) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/goerli/DrawCalculator.json) |
@@ -35,7 +35,7 @@ title: V4 Testnet
 
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
-| BeaconTimelockTrigger | [0x898527c580e75b6fCc108CC428aBA206b719FA5a](https://explorer-mumbai.maticvigil.com/address/0x898527c580e75b6fCc108CC428aBA206b719FA5a) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/BeaconTimelockTrigger.json) |
+| BeaconTimelockTrigger (Deprecated) | [0x898527c580e75b6fCc108CC428aBA206b719FA5a](https://explorer-mumbai.maticvigil.com/address/0x898527c580e75b6fCc108CC428aBA206b719FA5a) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/BeaconTimelockTrigger.json) |
 | DrawBeacon | [0xB2F60874248647B0a5e61680237d4b8Dc5CD8855](https://explorer-mumbai.maticvigil.com/address/0xB2F60874248647B0a5e61680237d4b8Dc5CD8855) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/DrawBeacon.json) |
 | DrawBuffer | [0xfa06Db0587bc2876A8FbFF964F04d8b37A8a345C](https://explorer-mumbai.maticvigil.com/address/0xfa06Db0587bc2876A8FbFF964F04d8b37A8a345C) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/DrawBuffer.json) |
 | DrawCalculator | [0x7f57bF4B6144a7b9d11F8c8528f1359b38F121cf](https://explorer-mumbai.maticvigil.com/address/0x7f57bF4B6144a7b9d11F8c8528f1359b38F121cf) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/mumbai/DrawCalculator.json) |
@@ -63,7 +63,7 @@ title: V4 Testnet
 | Contract | Address | Artifact |
 | :--- | :--- | :--- |
 | AaveV3YieldSource | [0xb38e46EBf90888D621Cde5661D3cC2476d7bCc2e](https://testnet.snowtrace.io/address/0xb38e46EBf90888D621Cde5661D3cC2476d7bCc2e) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/AaveV3YieldSource.json) |
-| BeaconTimelockTrigger | [0xA02b9B97b1C9557368BBd3113273BACbD4B03f6f](https://testnet.snowtrace.io/address/0xA02b9B97b1C9557368BBd3113273BACbD4B03f6f) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/BeaconTimelockTrigger.json) |
+| BeaconTimelockTrigger (Deprecated) | [0xA02b9B97b1C9557368BBd3113273BACbD4B03f6f](https://testnet.snowtrace.io/address/0xA02b9B97b1C9557368BBd3113273BACbD4B03f6f) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/BeaconTimelockTrigger.json) |
 | DrawBeacon | [0x267DEC85e719d56B79080D3b27929B3cAB6af581](https://testnet.snowtrace.io/address/0x267DEC85e719d56B79080D3b27929B3cAB6af581) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/DrawBeacon.json) |
 | DrawBuffer | [0x7b968cc6D6Fd4ee93E19780E8Ee68B5ca62A2195](https://testnet.snowtrace.io/address/0x7b968cc6D6Fd4ee93E19780E8Ee68B5ca62A2195) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/DrawBuffer.json) |
 | DrawCalculator | [0xA3A1cB15DE725d621134998a610A491e87586D43](https://testnet.snowtrace.io/address/0xA3A1cB15DE725d621134998a610A491e87586D43) | [Artifact](https://github.com/pooltogether/v4-testnet/tree/master/deployments/fuji/DrawCalculator.json) |
