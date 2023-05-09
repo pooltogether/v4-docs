@@ -27,7 +27,7 @@ function formatAddressUrl(chainId, address) {
   } else if (chainId == 137) {
     url = `https://polygonscan.com/address/${address}`;
   } else if (chainId == 80001) {
-    url = `https://explorer-mumbai.maticvigil.com/address/${address}`;
+    url = `https://mumbai.polygonscan.com/address/${address}`;
   } else if (chainId == 42220) {
     url = `https://explorer.celo.org/address/${address}`;
   } else if (chainId == 44787) {
@@ -43,7 +43,7 @@ function formatNetworkName(chainId) {
   if (chainId == 1) {
     return "Ethereum"
   } else if (chainId == 5) {
-    return "Goerli"
+    return "Ethereum Goerli"
   } else if (chainId == 56) {
     return "Binance Smart Chain"
   } else if (chainId == 77) {
@@ -70,17 +70,8 @@ const append = (out, str) => {
   fs.writeSync(out, str + "\n");
 };
 
-async function generate(name, outputFilePath, inputFilePath) {
+async function generate(name, outputFilePath, inputFilePaths) {
   const outputFile = fs.openSync(outputFilePath, "w");
-
-  const contracts = JSON.parse(fs.readFileSync(inputFilePath))
-  const networks = {}
-  contracts.contracts.map(({chainId, address, type}) => {
-    if (!networks[chainId]) {
-      networks[chainId] = []
-    }
-    networks[chainId].push({address, type})
-  })
 
   append(outputFile, `---`);
   append(outputFile, `title: ${name}`);
@@ -89,24 +80,43 @@ async function generate(name, outputFilePath, inputFilePath) {
   append(outputFile, `# ${name}`);
   append(outputFile, ``);
 
-  const chainIds = Object.keys(networks)
-  for (let i = 0; i < chainIds.length; i++) {
-    const chainId = chainIds[i];
-    const networkName = formatNetworkName(chainId)
-    const contracts = networks[chainId]
+  inputFilePaths.map((inputFilePath) => {
+    const contracts = JSON.parse(fs.readFileSync(inputFilePath));
+    const networks = {};
 
-    append(outputFile, `## ${networkName}`);
-    append(outputFile, "");
-    append(outputFile, `| Contract | Address |`);
-    append(outputFile, `| :--- | :--- |`);
-    append(outputFile, contracts.map(({type, address}) => `| ${type} | [${address}](${formatAddressUrl(chainId, address)}) |`).join("\n"));
-    append(outputFile, "");
+    contracts.contracts.map(({ chainId, address, type }) => {
+      if (!networks[chainId]) {
+        networks[chainId] = [];
+      }
+      networks[chainId].push({ address, type });
+    });
 
-  }
 
+    const chainIds = Object.keys(networks);
+    for (let i = 0; i < chainIds.length; i++) {
+      const chainId = chainIds[i];
+      const networkName = formatNetworkName(chainId);
+      const contracts = networks[chainId];
+
+      append(outputFile, `## ${networkName}`);
+      append(outputFile, "");
+      append(outputFile, `| Contract | Address |`);
+      append(outputFile, `| :--- | :--- |`);
+      append(
+        outputFile,
+        contracts
+          .map(
+            ({ type, address }) =>
+              `| ${type} | [${address}](${formatAddressUrl(chainId, address)}) |`,
+          )
+          .join("\n"),
+      );
+      append(outputFile, "");
+    }
+  });
 
   fs.closeSync(outputFile);
   console.log(chalk.green(`Done!`));
 }
 
-generate("Testnet", "./docs/deployments/testnet.md", "./data/testnet-contracts.json")
+generate("Testnet", "./docs/deployments/testnet.md", ["./data/ethGoerli-contracts.json", "./data/mumbai-contracts.json"]);
