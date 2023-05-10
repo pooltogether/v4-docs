@@ -24,7 +24,7 @@ The PoolTogether Liquidation Pair is a single-sided virtual AMM that achieves th
 
 Let's reframe yield liquidation in terms of swaps. These are the two sides to the swap:
 
-- The protocol is swapping yield for POOL (protocol wants prize tokens)
+- The protocol is swapping yield for POOL (protocol wants POOL)
 - Users are swapping POOL for yield (users want to arbitrage yield)
 
 When you swap with an AMM, you are shifting token liquidity. A swap adds tokens to one side and removes tokens from the other:
@@ -32,7 +32,7 @@ When you swap with an AMM, you are shifting token liquidity. A swap adds tokens 
 - Swapping yield tokens for POOL: adds yield tokens, removes POOL
 - Swapping POOL for yield tokens: adds POOL, removes yield tokens
 
-By swapping yield tokens for POOL we increase the yield liquidity and decrease the prize token liquidity. There is now more yield token per prize token in the pair, so the *buying power of POOL has increased*. Vice versa for the other side of the swap. This is how price changes occur in an AMM.
+By swapping yield tokens for POOL we increase the yield liquidity and decrease the POOL liquidity. There is now more yield token per POOL in the pair, so the *buying power of POOL has increased*. Vice versa for the other side of the swap. This is how price changes occur in an AMM.
 
 This behaviour is useful to us; as the protocol swaps yield for prizes the buying power of the POOL increases. The value of the POOL will exceed the going market rate, and it will become an arbitrage opportunity.
 
@@ -45,7 +45,7 @@ In an AMM the liquidity of the pair is held by the contract itself: each Uniswap
 - Yield accrues gradually in the prize pools
 - POOL is sent to the prize pool
 
-Instead, we'll need to create "virtual" liquidity; when we create the liquidation pair we'll configure virtual liquidity amounts for both the yield tokens and prize tokens.
+Instead, we'll need to create "virtual" liquidity; when we create the liquidation pair we'll configure virtual liquidity amounts for both the yield tokens and POOL.
 
 For AMM pairs the size of the liquidity determines the price "slippage" for trades, so we'll want the virtual liquidity amounts to be appropriate for the rate of accrual of yield. More on this later....
 
@@ -76,13 +76,13 @@ With these in mind, let's analyze market conditions with respect to the value of
 
 The market condition is the difference between the token price on the liquidator and the market rate.
 
-For example: if the yield tokens are USDC and the prize tokens are POOL, then the liquidator price of tokens will be USDC per POOL. This price may or may not differ from the current market price of POOL.
+For example: if the yield tokens are USDC and the POOL are POOL, then the liquidator price of tokens will be USDC per POOL. This price may or may not differ from the current market price of POOL.
 
 There are three market conditions we will consider:
 
-1. When the market price of prize tokens is the same as the liquidator price
-2. When the market price of prize tokens is higher than the liquidator price
-3. When the market price of prize tokens is lower than the liquidator price
+1. When the market price of POOL is the same as the liquidator price
+2. When the market price of POOL is higher than the liquidator price
+3. When the market price of POOL is lower than the liquidator price
 
 ## Market Price Matches Liquidator Price
 
@@ -92,7 +92,7 @@ When the exchange rate on the liquidator matches the market the user will arbitr
 
 ## Market Price is Higher
 
-In this scenario the market is trading the prize tokens at a higher price than the liquidator. Remember our earlier observation: a rational user will only capture the above market rate for tokens. Users will only arbitrage up until the market rate:
+In this scenario the market is trading the POOL at a higher price than the liquidator. Remember our earlier observation: a rational user will only capture the above market rate for tokens. Users will only arbitrage up until the market rate:
 
 <img src='/img/v5/yield-liquidation/ValueOfTokenRises.png' />
 
@@ -114,7 +114,7 @@ To do this, we can add an additional virtual swap to every user swap. This virtu
 
 <img src='/img/v5/yield-liquidation/ValueOfTokenDecreasesVirtualSwap.png' />
 
-You can see how after multiple swaps the liquidator's prize token price begins to stabilize at the market price:
+You can see how after multiple swaps the liquidator's POOL price begins to stabilize at the market price:
 
 <img src='/img/v5/yield-liquidation/VirtualSwapLostPortion.png' />
 
