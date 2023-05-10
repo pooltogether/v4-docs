@@ -57,7 +57,7 @@ title: Testnet
 | ERC20Mintable | [0xC138A7C89C357d8FA5A9b7CE775e612b766153e7](https://mumbai.polygonscan.com/address/0xC138A7C89C357d8FA5A9b7CE775e612b766153e7) |
 | TwabController | [0xf8ced175e56318FbAe092dBD112544B8D6D78777](https://mumbai.polygonscan.com/address/0xf8ced175e56318FbAe092dBD112544B8D6D78777) |
 | PrizePool | [0xA32C8f94191c9295634f0034eb2b0e2749e77974](https://mumbai.polygonscan.com/address/0xA32C8f94191c9295634f0034eb2b0e2749e77974) |
-| Claimer | [0xC1aed8978B36af7Fb99E87ac7B399fECed47eeAD](https://mumbai.polygonscan.com/address/0xC1aed8978B36af7Fb99E87ac7B399fECed47eeAD) |
+| Claimer | [0x6a339df45f9c09fabb6df4f5cbcb17db2b2a3c7d](https://mumbai.polygonscan.com/address/0x6a339df45f9c09fabb6df4f5cbcb17db2b2a3c7d) |
 | LiquidationPairFactory | [0x1A113b4963dA9Cdd6880112Ab39398b0a90c2bba](https://mumbai.polygonscan.com/address/0x1A113b4963dA9Cdd6880112Ab39398b0a90c2bba) |
 | LiquidationRouter | [0x4780547675e4de6A1eB28EdF5c601dB47F8bb053](https://mumbai.polygonscan.com/address/0x4780547675e4de6A1eB28EdF5c601dB47F8bb053) |
 | YieldVault | [0x35462546B9df77cB58D6754D0c157a5C97359F76](https://mumbai.polygonscan.com/address/0x35462546B9df77cB58D6754D0c157a5C97359F76) |
