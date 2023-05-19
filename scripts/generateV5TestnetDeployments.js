@@ -16,6 +16,8 @@ function formatAddressUrl(chainId, address) {
     url = `https://etherscan.io/address/${address}`;
   } else if (chainId == 5) {
     url = `https://goerli.etherscan.io/address/${address}`;
+  } else if (chainId == 11155111) {
+    url = `https://sepolia.etherscan.io/address/${address}`;
   } else if (chainId == 56) {
     url = `https://bscscan.com/address/${address}`;
   } else if (chainId == 77) {
@@ -44,6 +46,8 @@ function formatNetworkName(chainId) {
     return "Ethereum"
   } else if (chainId == 5) {
     return "Ethereum Goerli"
+  } else if (chainId == 11155111) {
+    return "Ethereum Sepolia"
   } else if (chainId == 56) {
     return "Binance Smart Chain"
   } else if (chainId == 77) {
@@ -119,4 +123,4 @@ async function generate(name, outputFilePath, inputFilePaths) {
   console.log(chalk.green(`Done!`));
 }
 
-generate("Testnet", "./docs/deployments/testnet.md", ["./data/ethGoerli-contracts.json", "./data/mumbai-contracts.json"]);
+generate("Testnet", "./docs/deployments/testnet.md", ["./data/ethGoerli-contracts.json", "./data/ethSepolia-contracts.json", "./data/mumbai-contracts.json"]);
