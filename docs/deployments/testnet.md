@@ -7,7 +7,7 @@ title: Testnet
 ## Ethereum Goerli
 
 | Contract | Address |
-| :-- | :-- |
+| :--- | :--- |
 | MarketRate | [0x16010bbb01aa2283Ec5dAa59AFBbd44536C8f634](https://goerli.etherscan.io/address/0x16010bbb01aa2283Ec5dAa59AFBbd44536C8f634) |
 | TokenFaucet | [0x6e65eE4F471945Bd3A98F9d958216Cf1B1c61229](https://goerli.etherscan.io/address/0x6e65eE4F471945Bd3A98F9d958216Cf1B1c61229) |
 | ERC20Mintable | [0xEF8743fb2f5bEa4a6e6e821895D479042A9Bb5ca](https://goerli.etherscan.io/address/0xEF8743fb2f5bEa4a6e6e821895D479042A9Bb5ca) |
@@ -46,7 +46,7 @@ title: Testnet
 ## Ethereum Sepolia
 
 | Contract | Address |
-| :-- | :-- |
+| :--- | :--- |
 | MarketRate | [0x27Ed5760Edc0128E3043F6cC0C3428E337396A66](https://sepolia.etherscan.io/address/0x27Ed5760Edc0128E3043F6cC0C3428E337396A66) |
 | TokenFaucet | [0x177B14c6b571262057C3c30E3AE6bB044F62e55c](https://sepolia.etherscan.io/address/0x177B14c6b571262057C3c30E3AE6bB044F62e55c) |
 | ERC20Mintable | [0x501B79e61843B3432E5B48d59CB7E6A93185e50C](https://sepolia.etherscan.io/address/0x501B79e61843B3432E5B48d59CB7E6A93185e50C) |
@@ -85,7 +85,7 @@ title: Testnet
 ## Polygon Mumbai
 
 | Contract | Address |
-| :-- | :-- |
+| :--- | :--- |
 | MarketRate | [0xb1426CB8adE6805c77bBF3eab1037735aeCbFdaf](https://mumbai.polygonscan.com/address/0xb1426CB8adE6805c77bBF3eab1037735aeCbFdaf) |
 | TokenFaucet | [0xC7a469F83849501F02ebb50522eDa43CcCcf47fB](https://mumbai.polygonscan.com/address/0xC7a469F83849501F02ebb50522eDa43CcCcf47fB) |
 | ERC20Mintable | [0x2990cf846Ec4738A672273Df204Cd93196D98D5f](https://mumbai.polygonscan.com/address/0x2990cf846Ec4738A672273Df204Cd93196D98D5f) |
@@ -120,3 +120,4 @@ title: Testnet
 | LiquidationPair | [0x571e4EF095F44991E052cE6037AFA02B050A1B75](https://mumbai.polygonscan.com/address/0x571e4EF095F44991E052cE6037AFA02B050A1B75) |
 | Vault | [0x224060242784caB6c0E2Ec72C29F3Eac945Be7b9](https://mumbai.polygonscan.com/address/0x224060242784caB6c0E2Ec72C29F3Eac945Be7b9) |
 | LiquidationPair | [0xecbdEF43C2d57F72501e3836D478151687c89C40](https://mumbai.polygonscan.com/address/0xecbdEF43C2d57F72501e3836D478151687c89C40) |
+
