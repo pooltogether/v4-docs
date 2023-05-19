@@ -43,6 +43,45 @@ title: Testnet
 | Vault | [0x427Bb82e04DD13c60167fb9fd7C32BcD4332748B](https://goerli.etherscan.io/address/0x427Bb82e04DD13c60167fb9fd7C32BcD4332748B) |
 | LiquidationPair | [0x619B4349C77b62F058dc8cAb70c0C23bf637C10F](https://goerli.etherscan.io/address/0x619B4349C77b62F058dc8cAb70c0C23bf637C10F) |
 
+## Ethereum Sepolia
+
+| Contract | Address |
+| :--- | :--- |
+| MarketRate | [0x27Ed5760Edc0128E3043F6cC0C3428E337396A66](https://sepolia.etherscan.io/address/0x27Ed5760Edc0128E3043F6cC0C3428E337396A66) |
+| TokenFaucet | [0x177B14c6b571262057C3c30E3AE6bB044F62e55c](https://sepolia.etherscan.io/address/0x177B14c6b571262057C3c30E3AE6bB044F62e55c) |
+| ERC20Mintable | [0x501B79e61843B3432E5B48d59CB7E6A93185e50C](https://sepolia.etherscan.io/address/0x501B79e61843B3432E5B48d59CB7E6A93185e50C) |
+| ERC20Mintable | [0x1977822061d8a394726803e2c2F6524a4E3e7Aff](https://sepolia.etherscan.io/address/0x1977822061d8a394726803e2c2F6524a4E3e7Aff) |
+| ERC20Mintable | [0xa577C58435e0334B5039f5e71cCb4a45641c3495](https://sepolia.etherscan.io/address/0xa577C58435e0334B5039f5e71cCb4a45641c3495) |
+| ERC20Mintable | [0x3Bd2312250C67Ca96C442fe8490A27d24D70e41C](https://sepolia.etherscan.io/address/0x3Bd2312250C67Ca96C442fe8490A27d24D70e41C) |
+| ERC20Mintable | [0xa4DE6Eb323dd2f8A8B4D07B6b295dC57Bb1dE30A](https://sepolia.etherscan.io/address/0xa4DE6Eb323dd2f8A8B4D07B6b295dC57Bb1dE30A) |
+| ERC20Mintable | [0x7cB28bB4cDbBA6F509D5b9022108138D662042Bf](https://sepolia.etherscan.io/address/0x7cB28bB4cDbBA6F509D5b9022108138D662042Bf) |
+| TwabController | [0x690838d786FECb828909d993b0c5fcb8378047DF](https://sepolia.etherscan.io/address/0x690838d786FECb828909d993b0c5fcb8378047DF) |
+| PrizePool | [0xa77D6014e77F294C3297a18363f9951b3d57Eb95](https://sepolia.etherscan.io/address/0xa77D6014e77F294C3297a18363f9951b3d57Eb95) |
+| Claimer | [0x2a3e8e7384598C21c6311a2d8D350CdFEE9d5B37](https://sepolia.etherscan.io/address/0x2a3e8e7384598C21c6311a2d8D350CdFEE9d5B37) |
+| LiquidationPairFactory | [0x37203b841CB891F0D263C3895Bf50866519B7746](https://sepolia.etherscan.io/address/0x37203b841CB891F0D263C3895Bf50866519B7746) |
+| LiquidationRouter | [0x3dd2C38AfD2e620f3d1BE16e2a4E428cf0901cE3](https://sepolia.etherscan.io/address/0x3dd2C38AfD2e620f3d1BE16e2a4E428cf0901cE3) |
+| YieldVault | [0xCDccBa7e1a211142097378F384cD2C23BF398bdb](https://sepolia.etherscan.io/address/0xCDccBa7e1a211142097378F384cD2C23BF398bdb) |
+| YieldVault | [0xCB1B037A0B5f2bcBC748279876C3aFe17bf549ce](https://sepolia.etherscan.io/address/0xCB1B037A0B5f2bcBC748279876C3aFe17bf549ce) |
+| YieldVault | [0x6C0EA8742c930FF4D629852EeA9C270d90016dc7](https://sepolia.etherscan.io/address/0x6C0EA8742c930FF4D629852EeA9C270d90016dc7) |
+| YieldVault | [0xc57e4fC79ab33DB6A7Bf26CC1Ca43511744F83CD](https://sepolia.etherscan.io/address/0xc57e4fC79ab33DB6A7Bf26CC1Ca43511744F83CD) |
+| YieldVault | [0xAFCeDe71e62684De45D423712FeEeBB83863DfDE](https://sepolia.etherscan.io/address/0xAFCeDe71e62684De45D423712FeEeBB83863DfDE) |
+| YieldVault | [0x1B227Be74a34A604a2839cbc9A50e9dBcac4f371](https://sepolia.etherscan.io/address/0x1B227Be74a34A604a2839cbc9A50e9dBcac4f371) |
+| YieldVault | [0xe34deF1114d7Bb0298636A2026D9Cf3D67F19FBd](https://sepolia.etherscan.io/address/0xe34deF1114d7Bb0298636A2026D9Cf3D67F19FBd) |
+| Vault | [0x92a6e57583262bDEFBA0bf36f651F0f4a1856737](https://sepolia.etherscan.io/address/0x92a6e57583262bDEFBA0bf36f651F0f4a1856737) |
+| LiquidationPair | [0xc3680298C2d19647B1826ed4b96e566c8bB79896](https://sepolia.etherscan.io/address/0xc3680298C2d19647B1826ed4b96e566c8bB79896) |
+| Vault | [0x95990dd6C8A75b8Cd0D8f424aa216FCE8963Ad13](https://sepolia.etherscan.io/address/0x95990dd6C8A75b8Cd0D8f424aa216FCE8963Ad13) |
+| LiquidationPair | [0x25CB358F05C59CEa05CE04B80Bf94D88982dD6B9](https://sepolia.etherscan.io/address/0x25CB358F05C59CEa05CE04B80Bf94D88982dD6B9) |
+| Vault | [0xb7024b6b3c886519AFE27A6B19FAd4b7b916BA97](https://sepolia.etherscan.io/address/0xb7024b6b3c886519AFE27A6B19FAd4b7b916BA97) |
+| LiquidationPair | [0x43E7fc801b84b3Bafe24F925BCdED9af22abD719](https://sepolia.etherscan.io/address/0x43E7fc801b84b3Bafe24F925BCdED9af22abD719) |
+| Vault | [0x871506aFB4adBC21Bb497c531954e6a10313Fd8A](https://sepolia.etherscan.io/address/0x871506aFB4adBC21Bb497c531954e6a10313Fd8A) |
+| LiquidationPair | [0x6620958491d0dfE9009aa75b3FD01F89278859B6](https://sepolia.etherscan.io/address/0x6620958491d0dfE9009aa75b3FD01F89278859B6) |
+| Vault | [0x64AB9296B1C7686407085c44A971e8C090eA768b](https://sepolia.etherscan.io/address/0x64AB9296B1C7686407085c44A971e8C090eA768b) |
+| LiquidationPair | [0xEAC5b78759A6Ef894223cb93603B0E9F0Bd36719](https://sepolia.etherscan.io/address/0xEAC5b78759A6Ef894223cb93603B0E9F0Bd36719) |
+| Vault | [0x65e08197357a23bB47De4337CfBb79497E01680e](https://sepolia.etherscan.io/address/0x65e08197357a23bB47De4337CfBb79497E01680e) |
+| LiquidationPair | [0xE962F78da5b09342d9c45F7D02FaaCDbCc911696](https://sepolia.etherscan.io/address/0xE962F78da5b09342d9c45F7D02FaaCDbCc911696) |
+| Vault | [0xB18E7808201b34C3BD2930b26fc9Aae5C0d365EE](https://sepolia.etherscan.io/address/0xB18E7808201b34C3BD2930b26fc9Aae5C0d365EE) |
+| LiquidationPair | [0xe51ef544E7115d0960B85f8EF728C500f28F7796](https://sepolia.etherscan.io/address/0xe51ef544E7115d0960B85f8EF728C500f28F7796) |
+
 ## Polygon Mumbai
 
 | Contract | Address |
@@ -57,7 +96,7 @@ title: Testnet
 | ERC20Mintable | [0xC138A7C89C357d8FA5A9b7CE775e612b766153e7](https://mumbai.polygonscan.com/address/0xC138A7C89C357d8FA5A9b7CE775e612b766153e7) |
 | TwabController | [0xf8ced175e56318FbAe092dBD112544B8D6D78777](https://mumbai.polygonscan.com/address/0xf8ced175e56318FbAe092dBD112544B8D6D78777) |
 | PrizePool | [0xA32C8f94191c9295634f0034eb2b0e2749e77974](https://mumbai.polygonscan.com/address/0xA32C8f94191c9295634f0034eb2b0e2749e77974) |
-| Claimer | [0x6a339df45f9c09fabb6df4f5cbcb17db2b2a3c7d](https://mumbai.polygonscan.com/address/0x6a339df45f9c09fabb6df4f5cbcb17db2b2a3c7d) |
+| Claimer | [0xC1aed8978B36af7Fb99E87ac7B399fECed47eeAD](https://mumbai.polygonscan.com/address/0xC1aed8978B36af7Fb99E87ac7B399fECed47eeAD) |
 | LiquidationPairFactory | [0x1A113b4963dA9Cdd6880112Ab39398b0a90c2bba](https://mumbai.polygonscan.com/address/0x1A113b4963dA9Cdd6880112Ab39398b0a90c2bba) |
 | LiquidationRouter | [0x4780547675e4de6A1eB28EdF5c601dB47F8bb053](https://mumbai.polygonscan.com/address/0x4780547675e4de6A1eB28EdF5c601dB47F8bb053) |
 | YieldVault | [0x35462546B9df77cB58D6754D0c157a5C97359F76](https://mumbai.polygonscan.com/address/0x35462546B9df77cB58D6754D0c157a5C97359F76) |
