@@ -17,11 +17,13 @@ module.exports = {
       additionalLanguages: ["solidity"],
       theme: require("prism-react-renderer/themes/dracula"),
     },
-    algolia: {
-      apiKey: process.env.SEARCH_API_KEY,
-      indexName: "v4_docs",
-      appId: process.env.APPLICATION_ID,
-    },
+    ...(process.env.NO_ALGOLIA ? {} : {
+      algolia: {
+        apiKey: process.env.SEARCH_API_KEY,
+        indexName: "v4_docs",
+        appId: process.env.APPLICATION_ID,
+      }
+    }),
     navbar: {
       title: "PoolTogether Docs",
       logo: {

@@ -47,8 +47,10 @@ yarn install
 ## Local Development
 
 ```console
-yarn run start
+yarn start
 ```
+
+> *Note: use "`yarn dev`" instead if you want to test the docs without providing an Algolia API key*
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
