@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2023-05-18T04:02:53.558Z",
+  "timestamp": "2023-06-02T18:41:11.308Z",
   "contracts": [
     {
       "chainId": 11155111,
-      "address": "0x27Ed5760Edc0128E3043F6cC0C3428E337396A66",
+      "address": "0x9464506e291b6AD228F1B448cF16B33caDF1d0E2",
       "version": {
         "major": 1,
         "minor": 0,
@@ -361,7 +361,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x177B14c6b571262057C3c30E3AE6bB044F62e55c",
+      "address": "0x7c01a0343595403422190C6Af9a3342c8b2Dc4C7",
       "version": {
         "major": 1,
         "minor": 0,
@@ -386,7 +386,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x501B79e61843B3432E5B48d59CB7E6A93185e50C",
+      "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
       "version": {
         "major": 1,
         "minor": 0,
@@ -976,7 +976,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x1977822061d8a394726803e2c2F6524a4E3e7Aff",
+      "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1566,7 +1566,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xa577C58435e0334B5039f5e71cCb4a45641c3495",
+      "address": "0x6EBa7deCd74D8327FA83b7Edc6Cb1dEADDfD8EFA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2156,7 +2156,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x3Bd2312250C67Ca96C442fe8490A27d24D70e41C",
+      "address": "0xbdaAB70E7d8767e94680AD2D27B503daE01447A4",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2746,7 +2746,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xa4DE6Eb323dd2f8A8B4D07B6b295dC57Bb1dE30A",
+      "address": "0x07056BA1bD5D71AA743F33Aa3A7BB76f08834873",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3336,7 +3336,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x7cB28bB4cDbBA6F509D5b9022108138D662042Bf",
+      "address": "0x21925199568C8bd5623622FF31d719749f920A8D",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3926,7 +3926,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x690838d786FECb828909d993b0c5fcb8378047DF",
+      "address": "0xd037f82EE26D0160843E7Ba4848513Abac956301",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3934,17 +3934,6 @@
       },
       "type": "TwabController",
       "abi": [
-        {
-          "inputs": [
-            {
-              "internalType": "uint32",
-              "name": "_overwriteFrequency",
-              "type": "uint32"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "constructor"
-        },
         {
           "anonymous": false,
           "inputs": [
@@ -3962,39 +3951,15 @@
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "amount",
-              "type": "uint112"
+              "type": "uint96"
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "delegateAmount",
-              "type": "uint112"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "isNew",
-              "type": "bool"
-            },
-            {
-              "components": [
-                {
-                  "internalType": "uint224",
-                  "name": "amount",
-                  "type": "uint224"
-                },
-                {
-                  "internalType": "uint32",
-                  "name": "timestamp",
-                  "type": "uint32"
-                }
-              ],
-              "indexed": false,
-              "internalType": "struct ObservationLib.Observation",
-              "name": "twab",
-              "type": "tuple"
+              "type": "uint96"
             }
           ],
           "name": "DecreasedBalance",
@@ -4011,39 +3976,15 @@
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "amount",
-              "type": "uint112"
+              "type": "uint96"
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "delegateAmount",
-              "type": "uint112"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "isNew",
-              "type": "bool"
-            },
-            {
-              "components": [
-                {
-                  "internalType": "uint224",
-                  "name": "amount",
-                  "type": "uint224"
-                },
-                {
-                  "internalType": "uint32",
-                  "name": "timestamp",
-                  "type": "uint32"
-                }
-              ],
-              "indexed": false,
-              "internalType": "struct ObservationLib.Observation",
-              "name": "twab",
-              "type": "tuple"
+              "type": "uint96"
             }
           ],
           "name": "DecreasedTotalSupply",
@@ -4091,39 +4032,15 @@
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "amount",
-              "type": "uint112"
+              "type": "uint96"
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "delegateAmount",
-              "type": "uint112"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "isNew",
-              "type": "bool"
-            },
-            {
-              "components": [
-                {
-                  "internalType": "uint224",
-                  "name": "amount",
-                  "type": "uint224"
-                },
-                {
-                  "internalType": "uint32",
-                  "name": "timestamp",
-                  "type": "uint32"
-                }
-              ],
-              "indexed": false,
-              "internalType": "struct ObservationLib.Observation",
-              "name": "twab",
-              "type": "tuple"
+              "type": "uint96"
             }
           ],
           "name": "IncreasedBalance",
@@ -4140,14 +4057,45 @@
             },
             {
               "indexed": false,
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "amount",
+              "type": "uint96"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint96",
+              "name": "delegateAmount",
+              "type": "uint96"
+            }
+          ],
+          "name": "IncreasedTotalSupply",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint112",
+              "name": "balance",
               "type": "uint112"
             },
             {
               "indexed": false,
               "internalType": "uint112",
-              "name": "delegateAmount",
+              "name": "delegateBalance",
               "type": "uint112"
             },
             {
@@ -4159,9 +4107,14 @@
             {
               "components": [
                 {
-                  "internalType": "uint224",
-                  "name": "amount",
-                  "type": "uint224"
+                  "internalType": "uint128",
+                  "name": "cumulativeBalance",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "balance",
+                  "type": "uint96"
                 },
                 {
                   "internalType": "uint32",
@@ -4171,11 +4124,65 @@
               ],
               "indexed": false,
               "internalType": "struct ObservationLib.Observation",
-              "name": "twab",
+              "name": "observation",
               "type": "tuple"
             }
           ],
-          "name": "IncreasedTotalSupply",
+          "name": "ObservationRecorded",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint112",
+              "name": "balance",
+              "type": "uint112"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint112",
+              "name": "delegateBalance",
+              "type": "uint112"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "isNew",
+              "type": "bool"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint128",
+                  "name": "cumulativeBalance",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "balance",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "timestamp",
+                  "type": "uint32"
+                }
+              ],
+              "indexed": false,
+              "internalType": "struct ObservationLib.Observation",
+              "name": "observation",
+              "type": "tuple"
+            }
+          ],
+          "name": "TotalSupplyObservationRecorded",
           "type": "event"
         },
         {
@@ -4213,6 +4220,24 @@
             }
           ],
           "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "internalType": "uint96",
+              "name": "_amount",
+              "type": "uint96"
+            }
+          ],
+          "name": "burn",
+          "outputs": [],
+          "stateMutability": "nonpayable",
           "type": "function"
         },
         {
@@ -4312,7 +4337,7 @@
                     },
                     {
                       "internalType": "uint16",
-                      "name": "nextTwabIndex",
+                      "name": "nextObservationIndex",
                       "type": "uint16"
                     },
                     {
@@ -4328,9 +4353,14 @@
                 {
                   "components": [
                     {
-                      "internalType": "uint224",
-                      "name": "amount",
-                      "type": "uint224"
+                      "internalType": "uint128",
+                      "name": "cumulativeBalance",
+                      "type": "uint128"
+                    },
+                    {
+                      "internalType": "uint96",
+                      "name": "balance",
+                      "type": "uint96"
                     },
                     {
                       "internalType": "uint32",
@@ -4339,76 +4369,13 @@
                     }
                   ],
                   "internalType": "struct ObservationLib.Observation[365]",
-                  "name": "twabs",
+                  "name": "observations",
                   "type": "tuple[365]"
                 }
               ],
               "internalType": "struct TwabLib.Account",
               "name": "",
               "type": "tuple"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "vault",
-              "type": "address"
-            },
-            {
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "internalType": "uint32",
-              "name": "startTime",
-              "type": "uint32"
-            },
-            {
-              "internalType": "uint32",
-              "name": "endTime",
-              "type": "uint32"
-            }
-          ],
-          "name": "getAverageBalanceBetween",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "vault",
-              "type": "address"
-            },
-            {
-              "internalType": "uint32",
-              "name": "startTime",
-              "type": "uint32"
-            },
-            {
-              "internalType": "uint32",
-              "name": "endTime",
-              "type": "uint32"
-            }
-          ],
-          "name": "getAverageTotalSupplyBetween",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
             }
           ],
           "stateMutability": "view",
@@ -4456,19 +4423,24 @@
               "type": "address"
             }
           ],
-          "name": "getNewestTwab",
+          "name": "getNewestObservation",
           "outputs": [
             {
               "internalType": "uint16",
-              "name": "index",
+              "name": "",
               "type": "uint16"
             },
             {
               "components": [
                 {
-                  "internalType": "uint224",
-                  "name": "amount",
-                  "type": "uint224"
+                  "internalType": "uint128",
+                  "name": "cumulativeBalance",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "balance",
+                  "type": "uint96"
                 },
                 {
                   "internalType": "uint32",
@@ -4477,7 +4449,48 @@
                 }
               ],
               "internalType": "struct ObservationLib.Observation",
-              "name": "twab",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            }
+          ],
+          "name": "getNewestTotalSupplyObservation",
+          "outputs": [
+            {
+              "internalType": "uint16",
+              "name": "",
+              "type": "uint16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint128",
+                  "name": "cumulativeBalance",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "balance",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "timestamp",
+                  "type": "uint32"
+                }
+              ],
+              "internalType": "struct ObservationLib.Observation",
+              "name": "",
               "type": "tuple"
             }
           ],
@@ -4497,19 +4510,24 @@
               "type": "address"
             }
           ],
-          "name": "getOldestTwab",
+          "name": "getOldestObservation",
           "outputs": [
             {
               "internalType": "uint16",
-              "name": "index",
+              "name": "",
               "type": "uint16"
             },
             {
               "components": [
                 {
-                  "internalType": "uint224",
-                  "name": "amount",
-                  "type": "uint224"
+                  "internalType": "uint128",
+                  "name": "cumulativeBalance",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "balance",
+                  "type": "uint96"
                 },
                 {
                   "internalType": "uint32",
@@ -4518,7 +4536,137 @@
                 }
               ],
               "internalType": "struct ObservationLib.Observation",
-              "name": "twab",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            }
+          ],
+          "name": "getOldestTotalSupplyObservation",
+          "outputs": [
+            {
+              "internalType": "uint16",
+              "name": "",
+              "type": "uint16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint128",
+                  "name": "cumulativeBalance",
+                  "type": "uint128"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "balance",
+                  "type": "uint96"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "timestamp",
+                  "type": "uint32"
+                }
+              ],
+              "internalType": "struct ObservationLib.Observation",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "time",
+              "type": "uint32"
+            }
+          ],
+          "name": "getTimestampPeriod",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            }
+          ],
+          "name": "getTotalSupplyAccount",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint112",
+                      "name": "balance",
+                      "type": "uint112"
+                    },
+                    {
+                      "internalType": "uint112",
+                      "name": "delegateBalance",
+                      "type": "uint112"
+                    },
+                    {
+                      "internalType": "uint16",
+                      "name": "nextObservationIndex",
+                      "type": "uint16"
+                    },
+                    {
+                      "internalType": "uint16",
+                      "name": "cardinality",
+                      "type": "uint16"
+                    }
+                  ],
+                  "internalType": "struct TwabLib.AccountDetails",
+                  "name": "details",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint128",
+                      "name": "cumulativeBalance",
+                      "type": "uint128"
+                    },
+                    {
+                      "internalType": "uint96",
+                      "name": "balance",
+                      "type": "uint96"
+                    },
+                    {
+                      "internalType": "uint32",
+                      "name": "timestamp",
+                      "type": "uint32"
+                    }
+                  ],
+                  "internalType": "struct ObservationLib.Observation[365]",
+                  "name": "observations",
+                  "type": "tuple[365]"
+                }
+              ],
+              "internalType": "struct TwabLib.Account",
+              "name": "",
               "type": "tuple"
             }
           ],
@@ -4550,16 +4698,200 @@
           "type": "function"
         },
         {
-          "inputs": [],
-          "name": "overwriteFrequency",
-          "outputs": [
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
             {
               "internalType": "uint32",
-              "name": "",
+              "name": "startTime",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "endTime",
               "type": "uint32"
             }
           ],
+          "name": "getTotalSupplyTwabBetween",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
           "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "startTime",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "endTime",
+              "type": "uint32"
+            }
+          ],
+          "name": "getTwabBetween",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "startTime",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "endTime",
+              "type": "uint32"
+            }
+          ],
+          "name": "isTimeRangeSafe",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "time",
+              "type": "uint32"
+            }
+          ],
+          "name": "isTimeSafe",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "startTime",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "endTime",
+              "type": "uint32"
+            }
+          ],
+          "name": "isTotalSupplyTimeRangeSafe",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "time",
+              "type": "uint32"
+            }
+          ],
+          "name": "isTotalSupplyTimeSafe",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint96",
+              "name": "_amount",
+              "type": "uint96"
+            }
+          ],
+          "name": "mint",
+          "outputs": [],
+          "stateMutability": "nonpayable",
           "type": "function"
         },
         {
@@ -4621,53 +4953,17 @@
               "type": "address"
             },
             {
-              "internalType": "uint112",
-              "name": "_amount",
-              "type": "uint112"
-            }
-          ],
-          "name": "twabBurn",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
               "internalType": "address",
               "name": "_to",
               "type": "address"
             },
             {
-              "internalType": "uint112",
+              "internalType": "uint96",
               "name": "_amount",
-              "type": "uint112"
+              "type": "uint96"
             }
           ],
-          "name": "twabMint",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "_from",
-              "type": "address"
-            },
-            {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
-            },
-            {
-              "internalType": "uint112",
-              "name": "_amount",
-              "type": "uint112"
-            }
-          ],
-          "name": "twabTransfer",
+          "name": "transfer",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
@@ -4676,7 +4972,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xa77D6014e77F294C3297a18363f9951b3d57Eb95",
+      "address": "0xC5a77bcb8cD13c5619153d46fB7379c9158a8884",
       "version": {
         "major": 1,
         "minor": 0,
@@ -5848,6 +6144,19 @@
         },
         {
           "inputs": [],
+          "name": "reserveForNextDraw",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
           "name": "reserveShares",
           "outputs": [
             {
@@ -5906,7 +6215,7 @@
         },
         {
           "inputs": [],
-          "name": "totalClaimedPrizes",
+          "name": "totalWithdrawn",
           "outputs": [
             {
               "internalType": "uint256",
@@ -6007,7 +6316,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x2a3e8e7384598C21c6311a2d8D350CdFEE9d5B37",
+      "address": "0x2cf5A98a21f90Db59323e27156F9B3090273ac5D",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6196,6 +6505,25 @@
           "type": "function"
         },
         {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_claimCount",
+              "type": "uint256"
+            }
+          ],
+          "name": "computeTotalFees",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
           "inputs": [],
           "name": "decayConstant",
           "outputs": [
@@ -6270,7 +6598,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x37203b841CB891F0D263C3895Bf50866519B7746",
+      "address": "0x32C45E4596931eC5900eA4D2703E7CF961Ce2ad6",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6448,7 +6776,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x3dd2C38AfD2e620f3d1BE16e2a4E428cf0901cE3",
+      "address": "0xF7eB1E290D88322180293D187e1f01FBCD2Fb76f",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6552,7 +6880,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xCDccBa7e1a211142097378F384cD2C23BF398bdb",
+      "address": "0x3428e7fA4c91aFACb40B258A1ba8dBCF2FB0b4EA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7526,7 +7854,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xCB1B037A0B5f2bcBC748279876C3aFe17bf549ce",
+      "address": "0x8b7fBF3B9CD7AfD0fFC73Fb6EBaCfb627Ea2eBad",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8500,7 +8828,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x6C0EA8742c930FF4D629852EeA9C270d90016dc7",
+      "address": "0xAc3b788d614a43Dc2fD5e8DCDd896b2c44AD4E25",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9474,7 +9802,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xc57e4fC79ab33DB6A7Bf26CC1Ca43511744F83CD",
+      "address": "0x366147C73E070F7C70fE6021c27081646c0a2e7d",
       "version": {
         "major": 1,
         "minor": 0,
@@ -10448,7 +10776,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xAFCeDe71e62684De45D423712FeEeBB83863DfDE",
+      "address": "0x61682FBA8394970CE014bcDE8ae0eC149c29757c",
       "version": {
         "major": 1,
         "minor": 0,
@@ -11422,7 +11750,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x1B227Be74a34A604a2839cbc9A50e9dBcac4f371",
+      "address": "0xD1f46c4A4fe6f2983220271dbF13E4bBc384e551",
       "version": {
         "major": 1,
         "minor": 0,
@@ -12396,7 +12724,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xe34deF1114d7Bb0298636A2026D9Cf3D67F19FBd",
+      "address": "0x06a36F610682e20BEF9F02C5A2530B1c2A36E862",
       "version": {
         "major": 1,
         "minor": 0,
@@ -13370,7 +13698,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x92a6e57583262bDEFBA0bf36f651F0f4a1856737",
+      "address": "0x0C393C363bAE8Eebe6E1Afe4716e317CbD2E9949",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15095,13 +15423,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x92a6e57583262bDEFBA0bf36f651F0f4a1856737",
+          "address": "0x0C393C363bAE8Eebe6E1Afe4716e317CbD2E9949",
           "name": "PoolTogether Dai Stablecoin Low Yield Prize Token",
           "decimals": 18,
           "symbol": "PTDAILYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x501B79e61843B3432E5B48d59CB7E6A93185e50C",
+              "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -15111,7 +15439,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xc3680298C2d19647B1826ed4b96e566c8bB79896",
+      "address": "0xB7Dd2a4A31F861E603467Ff64e1baF213abf31aA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15463,7 +15791,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x95990dd6C8A75b8Cd0D8f424aa216FCE8963Ad13",
+      "address": "0x171df7a2D8547322de5BA27FD9856B04620A3562",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17188,13 +17516,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x95990dd6C8A75b8Cd0D8f424aa216FCE8963Ad13",
+          "address": "0x171df7a2D8547322de5BA27FD9856B04620A3562",
           "name": "PoolTogether Dai Stablecoin High Yield Prize Token",
           "decimals": 18,
           "symbol": "PTDAIHYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x501B79e61843B3432E5B48d59CB7E6A93185e50C",
+              "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -17204,7 +17532,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x25CB358F05C59CEa05CE04B80Bf94D88982dD6B9",
+      "address": "0x0A896b3b97769546eD428Ef66fCD34A66B00e013",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17556,7 +17884,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xb7024b6b3c886519AFE27A6B19FAd4b7b916BA97",
+      "address": "0xe288828FFb4087F633E17D4715103648266C0cdb",
       "version": {
         "major": 1,
         "minor": 0,
@@ -19281,13 +19609,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0xb7024b6b3c886519AFE27A6B19FAd4b7b916BA97",
+          "address": "0xe288828FFb4087F633E17D4715103648266C0cdb",
           "name": "PoolTogether USD Coin Low Yield Prize Token",
           "decimals": 6,
           "symbol": "PTUSDCLYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x1977822061d8a394726803e2c2F6524a4E3e7Aff",
+              "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -19297,7 +19625,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x43E7fc801b84b3Bafe24F925BCdED9af22abD719",
+      "address": "0x6cE0913aC773E704D58B3aD737E1FBCDF1f7f61d",
       "version": {
         "major": 1,
         "minor": 0,
@@ -19649,7 +19977,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x871506aFB4adBC21Bb497c531954e6a10313Fd8A",
+      "address": "0x0B87bF0822AFAecDEb367cfAaCcf40c0e895F3AD",
       "version": {
         "major": 1,
         "minor": 0,
@@ -21374,13 +21702,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x871506aFB4adBC21Bb497c531954e6a10313Fd8A",
+          "address": "0x0B87bF0822AFAecDEb367cfAaCcf40c0e895F3AD",
           "name": "PoolTogether USD Coin High Yield Prize Token",
           "decimals": 6,
           "symbol": "PTUSDCHYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x1977822061d8a394726803e2c2F6524a4E3e7Aff",
+              "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -21390,7 +21718,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x6620958491d0dfE9009aa75b3FD01F89278859B6",
+      "address": "0xb0Eca9B1b3c1939A8954177eC49Af5832B128553",
       "version": {
         "major": 1,
         "minor": 0,
@@ -21742,7 +22070,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x64AB9296B1C7686407085c44A971e8C090eA768b",
+      "address": "0xebC5c1257A6DB56d2c3C9466A5271C5Be4FB1397",
       "version": {
         "major": 1,
         "minor": 0,
@@ -23467,13 +23795,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x64AB9296B1C7686407085c44A971e8C090eA768b",
+          "address": "0xebC5c1257A6DB56d2c3C9466A5271C5Be4FB1397",
           "name": "PoolTogether Gemini dollar Prize Token",
           "decimals": 2,
           "symbol": "PTGUSDT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xa577C58435e0334B5039f5e71cCb4a45641c3495",
+              "address": "0x6EBa7deCd74D8327FA83b7Edc6Cb1dEADDfD8EFA",
               "symbol": "GUSD",
               "name": "Gemini dollar"
             }
@@ -23483,7 +23811,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xEAC5b78759A6Ef894223cb93603B0E9F0Bd36719",
+      "address": "0x3B2934DeD25Fb5d4C37fA74a320d6BBC379D0C7B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -23835,7 +24163,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x65e08197357a23bB47De4337CfBb79497E01680e",
+      "address": "0x7Ea2e76587962c526B60492bd8342AAe859f1219",
       "version": {
         "major": 1,
         "minor": 0,
@@ -25560,13 +25888,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x65e08197357a23bB47De4337CfBb79497E01680e",
+          "address": "0x7Ea2e76587962c526B60492bd8342AAe859f1219",
           "name": "PoolTogether Wrapped BTC Prize Token",
           "decimals": 8,
           "symbol": "PTWBTCT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x3Bd2312250C67Ca96C442fe8490A27d24D70e41C",
+              "address": "0xbdaAB70E7d8767e94680AD2D27B503daE01447A4",
               "symbol": "WBTC",
               "name": "Wrapped BTC"
             }
@@ -25576,7 +25904,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xE962F78da5b09342d9c45F7D02FaaCDbCc911696",
+      "address": "0x8d268B3f56e31B4580B39be87e252B79222032fd",
       "version": {
         "major": 1,
         "minor": 0,
@@ -25928,7 +26256,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xB18E7808201b34C3BD2930b26fc9Aae5C0d365EE",
+      "address": "0xD6D82beB1243A254A61ae4B3a1936Da962F947b7",
       "version": {
         "major": 1,
         "minor": 0,
@@ -27653,13 +27981,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0xB18E7808201b34C3BD2930b26fc9Aae5C0d365EE",
+          "address": "0xD6D82beB1243A254A61ae4B3a1936Da962F947b7",
           "name": "PoolTogether Wrapped Ether Prize Token",
           "decimals": 18,
           "symbol": "PTWETHT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xa4DE6Eb323dd2f8A8B4D07B6b295dC57Bb1dE30A",
+              "address": "0x07056BA1bD5D71AA743F33Aa3A7BB76f08834873",
               "symbol": "WETH",
               "name": "Wrapped Ether"
             }
@@ -27669,7 +27997,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xe51ef544E7115d0960B85f8EF728C500f28F7796",
+      "address": "0x7575F9A29E64f1EC1E8dA5908eA19F736094Fa82",
       "version": {
         "major": 1,
         "minor": 0,
