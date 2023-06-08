@@ -24,8 +24,8 @@ Learn more about how subgraphs work by checking out [The Graph's official docume
 
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
-| Prize Pool | https://api.studio.thegraph.com/query/41211/v5-prize-pool-eth-sepolia/v0.0.1 |
-| TWAB Controller | https://api.studio.thegraph.com/query/41211/v5-twab-controller-eth-sepolia/v0.0.1 |
+| Prize Pool | https://api.studio.thegraph.com/query/41211/v5-prize-pool-eth-sepolia/v0.0.2 |
+| TWAB Controller | https://api.studio.thegraph.com/query/41211/v5-twab-controller-eth-sepolia/v0.0.2 |
 
 ### [Ethereum Goerli](../../deployments/testnet#ethereum-goerli)
 
