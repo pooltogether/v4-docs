@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2023-06-02T18:41:11.308Z",
+  "timestamp": "2023-06-24T01:40:07.035Z",
   "contracts": [
     {
       "chainId": 11155111,
-      "address": "0x9464506e291b6AD228F1B448cF16B33caDF1d0E2",
+      "address": "0x0EBA4e7003F80AD550Fe61aF7851f4fe49036B33",
       "version": {
         "major": 1,
         "minor": 0,
@@ -361,7 +361,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x7c01a0343595403422190C6Af9a3342c8b2Dc4C7",
+      "address": "0x7De5077DfA7B87038710c3782d1Dfd76261562BC",
       "version": {
         "major": 1,
         "minor": 0,
@@ -386,7 +386,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
+      "address": "0xB20Ff9fe4065CC1494dFa3A273A527A05871074F",
       "version": {
         "major": 1,
         "minor": 0,
@@ -976,7 +976,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
+      "address": "0x59D6b2E784f45568a76b9627De97e06Fc237DA83",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1566,7 +1566,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x6EBa7deCd74D8327FA83b7Edc6Cb1dEADDfD8EFA",
+      "address": "0x73b3f9fecf92b4f0Eb6a20c977cBb30964858fD7",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2156,7 +2156,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xbdaAB70E7d8767e94680AD2D27B503daE01447A4",
+      "address": "0xf78De71CF358a92AeE3370A7a3B743bF63c257d4",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2746,7 +2746,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x07056BA1bD5D71AA743F33Aa3A7BB76f08834873",
+      "address": "0x62739A657d3bB724694b46B35795532EC9B42b47",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3336,7 +3336,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x21925199568C8bd5623622FF31d719749f920A8D",
+      "address": "0x09f06F4BC026fB75E0064747edd49D371D20D434",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3926,7 +3926,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xd037f82EE26D0160843E7Ba4848513Abac956301",
+      "address": "0x21A7c83D23d75b5eA80115974e3473fc35B1f263",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3934,6 +3934,75 @@
       },
       "type": "TwabController",
       "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "_periodLength",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "_periodOffset",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint112",
+              "name": "balance",
+              "type": "uint112"
+            },
+            {
+              "internalType": "uint96",
+              "name": "amount",
+              "type": "uint96"
+            },
+            {
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "name": "BalanceLTAmount",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint112",
+              "name": "delegateBalance",
+              "type": "uint112"
+            },
+            {
+              "internalType": "uint96",
+              "name": "delegateAmount",
+              "type": "uint96"
+            },
+            {
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "name": "DelegateBalanceLTAmount",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "delegate",
+              "type": "address"
+            }
+          ],
+          "name": "SameDelegateAlreadySet",
+          "type": "error"
+        },
         {
           "anonymous": false,
           "inputs": [
@@ -4184,6 +4253,32 @@
           ],
           "name": "TotalSupplyObservationRecorded",
           "type": "event"
+        },
+        {
+          "inputs": [],
+          "name": "PERIOD_LENGTH",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "PERIOD_OFFSET",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
         },
         {
           "inputs": [],
@@ -4600,7 +4695,7 @@
               "type": "uint32"
             }
           ],
-          "stateMutability": "pure",
+          "stateMutability": "view",
           "type": "function"
         },
         {
@@ -4972,7 +5067,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xC5a77bcb8cD13c5619153d46fB7379c9158a8884",
+      "address": "0xA377A589C1957D7777F6eDF1b7C22C911a56e90F",
       "version": {
         "major": 1,
         "minor": 0,
@@ -4983,63 +5078,80 @@
         {
           "inputs": [
             {
-              "internalType": "contract IERC20",
-              "name": "_prizeToken",
-              "type": "address"
-            },
-            {
-              "internalType": "contract TwabController",
-              "name": "_twabController",
-              "type": "address"
-            },
-            {
-              "internalType": "uint32",
-              "name": "_grandPrizePeriodDraws",
-              "type": "uint32"
-            },
-            {
-              "internalType": "uint32",
-              "name": "_drawPeriodSeconds",
-              "type": "uint32"
-            },
-            {
-              "internalType": "uint64",
-              "name": "nextDrawStartsAt_",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint8",
-              "name": "_numberOfTiers",
-              "type": "uint8"
-            },
-            {
-              "internalType": "uint8",
-              "name": "_tierShares",
-              "type": "uint8"
-            },
-            {
-              "internalType": "uint8",
-              "name": "_canaryShares",
-              "type": "uint8"
-            },
-            {
-              "internalType": "uint8",
-              "name": "_reserveShares",
-              "type": "uint8"
-            },
-            {
-              "internalType": "UD2x18",
-              "name": "_claimExpansionThreshold",
-              "type": "uint64"
-            },
-            {
-              "internalType": "SD1x18",
-              "name": "_smoothing",
-              "type": "int64"
+              "components": [
+                {
+                  "internalType": "contract IERC20",
+                  "name": "prizeToken",
+                  "type": "address"
+                },
+                {
+                  "internalType": "contract TwabController",
+                  "name": "twabController",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "drawManager",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "grandPrizePeriodDraws",
+                  "type": "uint16"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "drawPeriodSeconds",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "firstDrawStartsAt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "numberOfTiers",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "tierShares",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "canaryShares",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "reserveShares",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "UD2x18",
+                  "name": "claimExpansionThreshold",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "SD1x18",
+                  "name": "smoothing",
+                  "type": "int64"
+                }
+              ],
+              "internalType": "struct ConstructorParams",
+              "name": "params",
+              "type": "tuple"
             }
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "AddToDrawZero",
+          "type": "error"
         },
         {
           "inputs": [
@@ -5060,12 +5172,134 @@
         {
           "inputs": [
             {
-              "internalType": "uint112",
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "drawManager",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotDrawManager",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "available",
+              "type": "uint256"
+            }
+          ],
+          "name": "ContributionGTDeltaBalance",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_address",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "tier",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "prizeIndex",
+              "type": "uint32"
+            }
+          ],
+          "name": "DidNotWin",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint16",
+              "name": "drawId",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "newestDrawId",
+              "type": "uint16"
+            }
+          ],
+          "name": "DrawClosed",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "DrawManagerAlreadySet",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "drawEndsAt",
+              "type": "uint64"
+            }
+          ],
+          "name": "DrawNotFinished",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "fee",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxFee",
+              "type": "uint256"
+            }
+          ],
+          "name": "FeeTooLarge",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint104",
               "name": "requestedLiquidity",
-              "type": "uint112"
+              "type": "uint104"
             }
           ],
           "name": "InsufficientLiquidity",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint104",
+              "name": "amount",
+              "type": "uint104"
+            },
+            {
+              "internalType": "uint104",
+              "name": "reserve",
+              "type": "uint104"
+            }
+          ],
+          "name": "InsufficientReserve",
           "type": "error"
         },
         {
@@ -5082,6 +5316,75 @@
             }
           ],
           "name": "InsufficientRewardsError",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint16",
+              "name": "endDrawId",
+              "type": "uint16"
+            }
+          ],
+          "name": "InvalidDisbursedEndDrawId",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint16",
+              "name": "startDrawId",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "endDrawId",
+              "type": "uint16"
+            }
+          ],
+          "name": "InvalidDrawRange",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "invalidPrizeIndex",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "prizeCount",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "tier",
+              "type": "uint8"
+            }
+          ],
+          "name": "InvalidPrizeIndex",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "tier",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "numberOfTiers",
+              "type": "uint8"
+            }
+          ],
+          "name": "InvalidTier",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "NoCompletedDraw",
           "type": "error"
         },
         {
@@ -5252,14 +5555,35 @@
           "type": "error"
         },
         {
+          "inputs": [],
+          "name": "RandomNumberIsZero",
+          "type": "error"
+        },
+        {
           "inputs": [
             {
-              "internalType": "UD60x18",
-              "name": "x",
-              "type": "uint256"
+              "internalType": "int64",
+              "name": "smoothing",
+              "type": "int64"
             }
           ],
-          "name": "PRBMath_UD60x18_IntoSD59x18_Overflow",
+          "name": "SmoothingGTEOne",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint128",
+              "name": "numWinners",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "numPrizeLists",
+              "type": "uint128"
+            }
+          ],
+          "name": "WinnerPrizeMismatch",
           "type": "error"
         },
         {
@@ -5267,9 +5591,9 @@
           "inputs": [
             {
               "indexed": true,
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "drawId",
-              "type": "uint32"
+              "type": "uint16"
             },
             {
               "indexed": true,
@@ -5297,12 +5621,6 @@
             },
             {
               "indexed": false,
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "indexed": false,
               "internalType": "uint96",
               "name": "fee",
               "type": "uint96"
@@ -5323,17 +5641,54 @@
             {
               "indexed": true,
               "internalType": "address",
-              "name": "previousManager",
+              "name": "vault",
               "type": "address"
             },
             {
               "indexed": true,
-              "internalType": "address",
-              "name": "newManager",
-              "type": "address"
+              "internalType": "uint16",
+              "name": "drawId",
+              "type": "uint16"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
             }
           ],
-          "name": "ManagerTransferred",
+          "name": "ContributePrizeTokens",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint16",
+              "name": "drawId",
+              "type": "uint16"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "winningRandomNumber",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "numTiers",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "nextNumTiers",
+              "type": "uint8"
+            }
+          ],
+          "name": "DrawCompleted",
           "type": "event"
         },
         {
@@ -5342,11 +5697,11 @@
             {
               "indexed": true,
               "internalType": "address",
-              "name": "pendingOwner",
+              "name": "drawManager",
               "type": "address"
             }
           ],
-          "name": "OwnershipOffered",
+          "name": "DrawManagerSet",
           "type": "event"
         },
         {
@@ -5355,17 +5710,42 @@
             {
               "indexed": true,
               "internalType": "address",
-              "name": "previousOwner",
+              "name": "to",
               "type": "address"
             },
             {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "available",
+              "type": "uint256"
             }
           ],
-          "name": "OwnershipTransferred",
+          "name": "WithdrawClaimRewards",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawReserve",
           "type": "event"
         },
         {
@@ -5390,25 +5770,6 @@
             }
           ],
           "name": "balanceOfClaimRewards",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint8",
-              "name": "_tier",
-              "type": "uint8"
-            }
-          ],
-          "name": "calculatePrizeSize",
           "outputs": [
             {
               "internalType": "uint256",
@@ -5547,32 +5908,25 @@
           "type": "function"
         },
         {
-          "inputs": [],
-          "name": "claimOwnership",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
           "inputs": [
-            {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
             {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizeIndices",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_fee",
+              "name": "_feePerPrizeClaim",
               "type": "uint96"
             },
             {
@@ -5581,7 +5935,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -5603,9 +5957,9 @@
           "name": "completeAndStartNextDraw",
           "outputs": [
             {
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "",
-              "type": "uint32"
+              "type": "uint16"
             }
           ],
           "stateMutability": "nonpayable",
@@ -5633,6 +5987,19 @@
             }
           ],
           "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "drawManager",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
           "type": "function"
         },
         {
@@ -5688,14 +6055,14 @@
               "type": "address"
             },
             {
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "_startDrawIdInclusive",
-              "type": "uint32"
+              "type": "uint16"
             },
             {
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "_endDrawIdInclusive",
-              "type": "uint32"
+              "type": "uint16"
             }
           ],
           "name": "getContributedBetween",
@@ -5727,9 +6094,9 @@
           "name": "getNextDrawId",
           "outputs": [
             {
-              "internalType": "uint256",
+              "internalType": "uint16",
               "name": "",
-              "type": "uint256"
+              "type": "uint16"
             }
           ],
           "stateMutability": "view",
@@ -5765,9 +6132,9 @@
           "name": "getTierAccrualDurationInDraws",
           "outputs": [
             {
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "",
-              "type": "uint32"
+              "type": "uint16"
             }
           ],
           "stateMutability": "view",
@@ -5784,25 +6151,44 @@
           "name": "getTierPrizeCount",
           "outputs": [
             {
-              "internalType": "uint256",
+              "internalType": "uint32",
               "name": "",
-              "type": "uint256"
+              "type": "uint32"
             }
           ],
-          "stateMutability": "pure",
+          "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [
             {
-              "internalType": "uint32",
+              "internalType": "uint8",
+              "name": "_tier",
+              "type": "uint8"
+            }
+          ],
+          "name": "getTierPrizeSize",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint16",
               "name": "_startDrawIdInclusive",
-              "type": "uint32"
+              "type": "uint16"
             },
             {
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "_endDrawIdInclusive",
-              "type": "uint32"
+              "type": "uint16"
             }
           ],
           "name": "getTotalContributedBetween",
@@ -5850,14 +6236,14 @@
               "type": "address"
             },
             {
-              "internalType": "uint32",
-              "name": "startDrawId",
-              "type": "uint32"
+              "internalType": "uint16",
+              "name": "_startDrawId",
+              "type": "uint16"
             },
             {
-              "internalType": "uint32",
-              "name": "endDrawId",
-              "type": "uint32"
+              "internalType": "uint16",
+              "name": "_endDrawId",
+              "type": "uint16"
             }
           ],
           "name": "getVaultPortion",
@@ -5923,9 +6309,9 @@
           "name": "grandPrizePeriodDraws",
           "outputs": [
             {
-              "internalType": "uint32",
+              "internalType": "uint16",
               "name": "",
-              "type": "uint32"
+              "type": "uint16"
             }
           ],
           "stateMutability": "view",
@@ -5960,6 +6346,11 @@
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "_prizeIndex",
+              "type": "uint32"
             }
           ],
           "name": "isWinner",
@@ -5988,7 +6379,7 @@
         },
         {
           "inputs": [],
-          "name": "lastCompletedDrawStartedAt",
+          "name": "lastCompletedDrawAwardedAt",
           "outputs": [
             {
               "internalType": "uint64",
@@ -6001,34 +6392,28 @@
         },
         {
           "inputs": [],
-          "name": "manager",
+          "name": "lastCompletedDrawEndedAt",
           "outputs": [
             {
-              "internalType": "address",
+              "internalType": "uint64",
               "name": "",
-              "type": "address"
+              "type": "uint64"
             }
           ],
           "stateMutability": "view",
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "bytes[]",
-              "name": "data",
-              "type": "bytes[]"
-            }
-          ],
-          "name": "multicall",
+          "inputs": [],
+          "name": "lastCompletedDrawStartedAt",
           "outputs": [
             {
-              "internalType": "bytes[]",
-              "name": "results",
-              "type": "bytes[]"
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
             }
           ],
-          "stateMutability": "nonpayable",
+          "stateMutability": "view",
           "type": "function"
         },
         {
@@ -6072,32 +6457,6 @@
         },
         {
           "inputs": [],
-          "name": "owner",
-          "outputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "pendingOwner",
-          "outputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
           "name": "prizeToken",
           "outputs": [
             {
@@ -6120,13 +6479,6 @@
             }
           ],
           "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "renounceOwnership",
-          "outputs": [],
-          "stateMutability": "nonpayable",
           "type": "function"
         },
         {
@@ -6172,18 +6524,12 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "_newManager",
+              "name": "_drawManager",
               "type": "address"
             }
           ],
-          "name": "setManager",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
+          "name": "setDrawManager",
+          "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
         },
@@ -6227,19 +6573,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "_newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "transferOwnership",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "twabController",
           "outputs": [
@@ -6263,6 +6596,11 @@
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "_prizeIndex",
+              "type": "uint32"
             }
           ],
           "name": "wasClaimed",
@@ -6316,7 +6654,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x2cf5A98a21f90Db59323e27156F9B3090273ac5D",
+      "address": "0x28781b60C9b3FE86c3018EBb9650766ea08673f5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6354,11 +6692,6 @@
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
-        },
-        {
-          "inputs": [],
-          "name": "DrawInvalid",
-          "type": "error"
         },
         {
           "inputs": [
@@ -6443,31 +6776,24 @@
         {
           "inputs": [
             {
-              "internalType": "uint256",
-              "name": "drawId",
-              "type": "uint256"
+              "internalType": "contract Vault",
+              "name": "vault",
+              "type": "address"
             },
             {
-              "components": [
-                {
-                  "internalType": "contract IVault",
-                  "name": "vault",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "winner",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint8",
-                  "name": "tier",
-                  "type": "uint8"
-                }
-              ],
-              "internalType": "struct Claim[]",
-              "name": "_claims",
-              "type": "tuple[]"
+              "internalType": "uint8",
+              "name": "tier",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address[]",
+              "name": "winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "prizeIndices",
+              "type": "uint32[][]"
             },
             {
               "internalType": "address",
@@ -6479,11 +6805,6 @@
           "outputs": [
             {
               "internalType": "uint256",
-              "name": "claimCount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
               "name": "totalFees",
               "type": "uint256"
             }
@@ -6492,7 +6813,37 @@
           "type": "function"
         },
         {
-          "inputs": [],
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_maxFee",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_claimCount",
+              "type": "uint256"
+            }
+          ],
+          "name": "computeFeePerClaim",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "_tier",
+              "type": "uint8"
+            }
+          ],
           "name": "computeMaxFee",
           "outputs": [
             {
@@ -6506,6 +6857,11 @@
         },
         {
           "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "_tier",
+              "type": "uint8"
+            },
             {
               "internalType": "uint256",
               "name": "_claimCount",
@@ -6593,12 +6949,25 @@
           ],
           "stateMutability": "view",
           "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "timeToReachMaxFee",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
         }
       ]
     },
     {
       "chainId": 11155111,
-      "address": "0x32C45E4596931eC5900eA4D2703E7CF961Ce2ad6",
+      "address": "0x59Ba766ff229c21b97184647292706039aF63dA1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6776,7 +7145,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xF7eB1E290D88322180293D187e1f01FBCD2Fb76f",
+      "address": "0x2C5bD053eA3D51a390Bfa0f88d064e211485037B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6880,7 +7249,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x3428e7fA4c91aFACb40B258A1ba8dBCF2FB0b4EA",
+      "address": "0x6D8c6c9408C7073b17Acb7bA1eBc541fb57c1aef",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7854,7 +8223,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x8b7fBF3B9CD7AfD0fFC73Fb6EBaCfb627Ea2eBad",
+      "address": "0xDE352b8556c1dbF3F1E3F49fdE5c5961fF17C2a3",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8828,7 +9197,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xAc3b788d614a43Dc2fD5e8DCDd896b2c44AD4E25",
+      "address": "0x7C77fE5a4261fe27e9219410c65f9d42747e5F69",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9802,7 +10171,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x366147C73E070F7C70fE6021c27081646c0a2e7d",
+      "address": "0x47d031Ddb80cC7a0a10d684eFd01b6Be76f0E391",
       "version": {
         "major": 1,
         "minor": 0,
@@ -10776,7 +11145,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x61682FBA8394970CE014bcDE8ae0eC149c29757c",
+      "address": "0xf33E8ECD7518e5E464ecB0FB94aE4Fc2f39adB5B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -11750,7 +12119,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xD1f46c4A4fe6f2983220271dbF13E4bBc384e551",
+      "address": "0xfC29e757A2D1f66649De91e9225F36AB6c1BD44d",
       "version": {
         "major": 1,
         "minor": 0,
@@ -12724,7 +13093,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x06a36F610682e20BEF9F02C5A2530B1c2A36E862",
+      "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
       "version": {
         "major": 1,
         "minor": 0,
@@ -13698,7 +14067,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x0C393C363bAE8Eebe6E1Afe4716e317CbD2E9949",
+      "address": "0x06B36307e4dA41F0C42efb7d7AbC02Df0c8b5c49",
       "version": {
         "major": 1,
         "minor": 0,
@@ -13763,8 +14132,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -13776,6 +14308,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -13801,25 +14412,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -14221,25 +14813,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -14294,23 +14867,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -14319,7 +14892,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -14481,25 +15054,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -15423,13 +15977,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x0C393C363bAE8Eebe6E1Afe4716e317CbD2E9949",
+          "address": "0x06B36307e4dA41F0C42efb7d7AbC02Df0c8b5c49",
           "name": "PoolTogether Dai Stablecoin Low Yield Prize Token",
           "decimals": 18,
           "symbol": "PTDAILYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
+              "address": "0xB20Ff9fe4065CC1494dFa3A273A527A05871074F",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -15439,7 +15993,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xB7Dd2a4A31F861E603467Ff64e1baF213abf31aA",
+      "address": "0x8D2f7af29454531A1Ca9aDCcc0E8e988D79492D0",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15791,7 +16345,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x171df7a2D8547322de5BA27FD9856B04620A3562",
+      "address": "0x041a898Bc37129d2D2232163c3374f4077255F74",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15856,8 +16410,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -15869,6 +16586,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -15894,25 +16690,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -16314,25 +17091,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -16387,23 +17145,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -16412,7 +17170,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -16574,25 +17332,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -17516,13 +18255,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x171df7a2D8547322de5BA27FD9856B04620A3562",
+          "address": "0x041a898Bc37129d2D2232163c3374f4077255F74",
           "name": "PoolTogether Dai Stablecoin High Yield Prize Token",
           "decimals": 18,
           "symbol": "PTDAIHYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
+              "address": "0xB20Ff9fe4065CC1494dFa3A273A527A05871074F",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -17532,7 +18271,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x0A896b3b97769546eD428Ef66fCD34A66B00e013",
+      "address": "0xcB998E913449016a985127aC9f5543Af2F68fb6c",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17884,7 +18623,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xe288828FFb4087F633E17D4715103648266C0cdb",
+      "address": "0x0771Ba4b988c66afb02f9AdF21F6E3A14d33C24E",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17949,8 +18688,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -17962,6 +18864,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -17987,25 +18968,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -18407,25 +19369,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -18480,23 +19423,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -18505,7 +19448,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -18667,25 +19610,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -19609,13 +20533,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0xe288828FFb4087F633E17D4715103648266C0cdb",
+          "address": "0x0771Ba4b988c66afb02f9AdF21F6E3A14d33C24E",
           "name": "PoolTogether USD Coin Low Yield Prize Token",
           "decimals": 6,
           "symbol": "PTUSDCLYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
+              "address": "0x59D6b2E784f45568a76b9627De97e06Fc237DA83",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -19625,7 +20549,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x6cE0913aC773E704D58B3aD737E1FBCDF1f7f61d",
+      "address": "0x218EB3364fCE798494c81C85CEC72eBa863Cf63f",
       "version": {
         "major": 1,
         "minor": 0,
@@ -19977,7 +20901,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x0B87bF0822AFAecDEb367cfAaCcf40c0e895F3AD",
+      "address": "0x0Ec780bE0191f8A364FAccdE91D13BE6F96632bE",
       "version": {
         "major": 1,
         "minor": 0,
@@ -20042,8 +20966,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -20055,6 +21142,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -20080,25 +21246,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -20500,25 +21647,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -20573,23 +21701,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -20598,7 +21726,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -20760,25 +21888,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -21702,13 +22811,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x0B87bF0822AFAecDEb367cfAaCcf40c0e895F3AD",
+          "address": "0x0Ec780bE0191f8A364FAccdE91D13BE6F96632bE",
           "name": "PoolTogether USD Coin High Yield Prize Token",
           "decimals": 6,
           "symbol": "PTUSDCHYT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
+              "address": "0x59D6b2E784f45568a76b9627De97e06Fc237DA83",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -21718,7 +22827,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xb0Eca9B1b3c1939A8954177eC49Af5832B128553",
+      "address": "0x1eDe085552A72C5C2317fd46FC550E01414ee09B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -22070,7 +23179,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xebC5c1257A6DB56d2c3C9466A5271C5Be4FB1397",
+      "address": "0x8FaF98698e4fF29149a8A9D06Db20E3509F3754b",
       "version": {
         "major": 1,
         "minor": 0,
@@ -22135,8 +23244,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -22148,6 +23420,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -22173,25 +23524,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -22593,25 +23925,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -22666,23 +23979,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -22691,7 +24004,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -22853,25 +24166,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -23795,13 +25089,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0xebC5c1257A6DB56d2c3C9466A5271C5Be4FB1397",
+          "address": "0x8FaF98698e4fF29149a8A9D06Db20E3509F3754b",
           "name": "PoolTogether Gemini dollar Prize Token",
           "decimals": 2,
           "symbol": "PTGUSDT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x6EBa7deCd74D8327FA83b7Edc6Cb1dEADDfD8EFA",
+              "address": "0x73b3f9fecf92b4f0Eb6a20c977cBb30964858fD7",
               "symbol": "GUSD",
               "name": "Gemini dollar"
             }
@@ -23811,7 +25105,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x3B2934DeD25Fb5d4C37fA74a320d6BBC379D0C7B",
+      "address": "0xbaAf2a638F68e734226F364Bec45098eCB37bB53",
       "version": {
         "major": 1,
         "minor": 0,
@@ -24163,7 +25457,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x7Ea2e76587962c526B60492bd8342AAe859f1219",
+      "address": "0xB9c16115DA139a0A6bF2e6d2418a7987cf6DCb83",
       "version": {
         "major": 1,
         "minor": 0,
@@ -24228,8 +25522,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -24241,6 +25698,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -24266,25 +25802,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -24686,25 +26203,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -24759,23 +26257,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -24784,7 +26282,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -24946,25 +26444,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -25888,13 +27367,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0x7Ea2e76587962c526B60492bd8342AAe859f1219",
+          "address": "0xB9c16115DA139a0A6bF2e6d2418a7987cf6DCb83",
           "name": "PoolTogether Wrapped BTC Prize Token",
           "decimals": 8,
           "symbol": "PTWBTCT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xbdaAB70E7d8767e94680AD2D27B503daE01447A4",
+              "address": "0xf78De71CF358a92AeE3370A7a3B743bF63c257d4",
               "symbol": "WBTC",
               "name": "Wrapped BTC"
             }
@@ -25904,7 +27383,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x8d268B3f56e31B4580B39be87e252B79222032fd",
+      "address": "0xc5798343eEAFAd8E80D1b90Bb763E5106F520476",
       "version": {
         "major": 1,
         "minor": 0,
@@ -26256,7 +27735,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0xD6D82beB1243A254A61ae4B3a1936Da962F947b7",
+      "address": "0x21b8f4c7E92a37B893BE39b4Ec447459fa5031C6",
       "version": {
         "major": 1,
         "minor": 0,
@@ -26321,8 +27800,171 @@
           "type": "constructor"
         },
         {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "claimer",
+              "type": "address"
+            }
+          ],
+          "name": "CallerNotClaimer",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositMoreThanMax",
+          "type": "error"
+        },
+        {
           "inputs": [],
           "name": "InvalidShortString",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LPZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amountOut",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "availableYield",
+              "type": "uint256"
+            }
+          ],
+          "name": "LiquidationAmountOutGTYield",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "LiquidationAmountOutZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "liquidationPair",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationCallerNotLP",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenIn",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "prizeToken",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenInNotPrizeToken",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "tokenOut",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultShare",
+              "type": "address"
+            }
+          ],
+          "name": "LiquidationTokenOutNotVaultShare",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "MintGTMax",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PrizePoolZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "RedeemMoreThanMax",
           "type": "error"
         },
         {
@@ -26334,6 +27976,85 @@
             }
           ],
           "name": "StringTooLong",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "TargetTokenNotSupported",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VaultUnderCollateralized",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "max",
+              "type": "uint256"
+            }
+          ],
+          "name": "WithdrawMoreThanMax",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "yieldFeeTotalSupply",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeeGTAvailable",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "yieldFeePercentage",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "feePrecision",
+              "type": "uint256"
+            }
+          ],
+          "name": "YieldFeePercentageGTPrecision",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "YieldVaultZeroAddress",
           "type": "error"
         },
         {
@@ -26359,25 +28080,6 @@
             }
           ],
           "name": "Approval",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "user",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "name": "AutoClaimDisabled",
           "type": "event"
         },
         {
@@ -26779,25 +28481,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "name": "autoClaimDisabled",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "availableYieldBalance",
           "outputs": [
@@ -26852,23 +28535,23 @@
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "_winner",
-              "type": "address"
-            },
-            {
               "internalType": "uint8",
               "name": "_tier",
               "type": "uint8"
             },
             {
-              "internalType": "address",
-              "name": "_to",
-              "type": "address"
+              "internalType": "address[]",
+              "name": "_winners",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint32[][]",
+              "name": "_prizes",
+              "type": "uint32[][]"
             },
             {
               "internalType": "uint96",
-              "name": "_claimFee",
+              "name": "_feePerClaim",
               "type": "uint96"
             },
             {
@@ -26877,7 +28560,7 @@
               "type": "address"
             }
           ],
-          "name": "claimPrize",
+          "name": "claimPrizes",
           "outputs": [
             {
               "internalType": "uint256",
@@ -27039,25 +28722,6 @@
               "internalType": "uint256",
               "name": "",
               "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_disable",
-              "type": "bool"
-            }
-          ],
-          "name": "disableAutoClaim",
-          "outputs": [
-            {
-              "internalType": "bool",
-              "name": "",
-              "type": "bool"
             }
           ],
           "stateMutability": "nonpayable",
@@ -27981,13 +29645,13 @@
       "tokens": [
         {
           "chainId": 11155111,
-          "address": "0xD6D82beB1243A254A61ae4B3a1936Da962F947b7",
+          "address": "0x21b8f4c7E92a37B893BE39b4Ec447459fa5031C6",
           "name": "PoolTogether Wrapped Ether Prize Token",
           "decimals": 18,
           "symbol": "PTWETHT",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x07056BA1bD5D71AA743F33Aa3A7BB76f08834873",
+              "address": "0x62739A657d3bB724694b46B35795532EC9B42b47",
               "symbol": "WETH",
               "name": "Wrapped Ether"
             }
@@ -27997,7 +29661,7 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x7575F9A29E64f1EC1E8dA5908eA19F736094Fa82",
+      "address": "0x41DdF34cC33f954Bf853188fBc830CBdD03839b3",
       "version": {
         "major": 1,
         "minor": 0,
