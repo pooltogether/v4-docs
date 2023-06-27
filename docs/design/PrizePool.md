@@ -35,7 +35,7 @@ With $t = 100$ and $a = 0.9$, we'd have a graph like so:
 <div class="max-width-wrapper">
 
 ![Smoothing Function](/img/v5/yield-smoothing/SmoothingFunction.png)
-
+**Tokens contributed by vaults are distributed over many draws.**
 </div>
 
 However, a "draw" is in fact a range of time. For daily draws, that range would span 24 hours. The contributions for draw 1 would be the sum of contributions between [0, 1]. To compute the allocated contribution for a draw $d$ we'd compute the integral:
@@ -63,34 +63,55 @@ To see an example of this, see the [yield smoothing example](#yield-smoothing-ex
 Each day a new random number is drawn and pushed into the Prize Pool. When a new draw is pushed the Prize Pool will:
 
 1. adjust the number of prize tiers
-2. distributes the draw's contributions over the prize tiers, canary tier, and reserve.
+2. distribute tokens allocated to a draw over the prize tiers, canary tier, and reserve.
 
-Let's dig into prize tiers, the canary tier, and the reserve. Afterwards we'll review the conditions for prize tier adjustment.
+## Incentivized Draws
+
+The Prize Pool allows a "draw manager" contract to complete the Draw and withdraw tokens from the reserve. This externalizes the Draw incentive mechanism.
 
 ## Prize Tiers
 
-The Prize Pool distributes prizes using prize "tiers". Tiers are ordered from 0 to $n-1$, where $n$ is the number of prize tiers. Tier 0 is the grand prize, and tier $n-1$ is the daily prize tier. The Prize Pool adjusts the prizes by changing the number of prize tiers $n$. The minimum number of tiers is 2, and the maximimum is 15.
+The Prize Pool distributes prizes using prize "tiers". Tiers are ordered from 0 to $n-1$, where $n$ is the number of prize tiers. The highest tier is called the canary tier, and it's treated differently. We'll address it below.
 
-The tier number determines:
+### Standard Prize Tiers
 
-- Number of prizes
-- Odds of occurring per draw
+The standard prize tiers run from 0 to $n-2$, where $n$ is the number of prize tiers. The number of tiers $n$ can range between 3 and 15.
 
-Each tier is essentially a bucket of liquidity, and the tier number determines the number and frequency of prizes.
+Each tier has a unique:
+
+- Odds of a prize occurring
+- Amount of available liquidity
+
+#### Odds of a Prize Occurring
+
+The odds of a prize tier being awarded are two-fold: there is an over-arch odds of the tier occurring, but also the number of prizes for a tier.
 
 **Number of prizes**
 
-A given tier $t$ will have $p$ prizes according to this function:
+A given standard tier $t$ will have $p$ prizes according to this function:
 
 $$
 p = 4^t
 $$
 
-You can see how tier 0, the grand prize, will have 1 prize.  The largest tier, 15, will have its prize liquidity split across 1,073,741,824 prizes
-
 **Odds of Occurring Per Draw**
 
-The Prize Pool adjusts the statistical odds of each tier so that tier 0 occurs yearly, and that the highest tier occurs daily.
+Each prize tier has different odds of occurring. This allows infrequent tiers to build up liquidity for larger prizes, and frequent tiers to have many small prizes. The range of frequency is determined by the *grandPrizePeriod*.
+
+Tier 0 is the infrequent grand prize, and the highest standard prize tier is the most common prize: occurring every single draw.
+
+For example, if:
+
+- There is a draw every day
+- The *grandPrizePeriod* is 365
+- $n = 3$
+
+Then:
+
+- There will always be prizes each day
+- There will be a large prize that occurs generally once per year.
+
+When $n > 3$, there will be tiers in-between the grand prize and the prizes that occur every draw.
 
 To compute the odds $o$ of a tier occurring per draw, let:
 
@@ -128,9 +149,9 @@ The Canary Tier is a special prize tier that receives a smaller amount of prize 
 The Canary Tier behaves as if the number of tiers is $n+1$ and the canary tier is tier $n$.
 
 - The canary tier has odds of occurring daily (as if it were the highest tier)
-- The canary tier's prize count is specially tuned
+- The canary tier's prize count is tuned so that the prize size would match the largest standard tier if the number of tiers was $n+1$
 
-The canary tier's role is to let us know whether it's worth offering $n+1$ tiers of prizes. This means that the canary tier prize size will match the prize tier $n$ if there were $n+1$ prize tiers.
+The canary tier's role is to let us know whether it's worth offering $n+1$ tiers of prizes. This means that the canary tier prize size for number of tiers $n$ will match the highest standard prize tier for $n+1$ prize tiers.
 
 ## Reserve
 
@@ -141,25 +162,43 @@ A portion of the vault contributions are captured as Reserve. This portion serve
 
 The reserve cannot be withdrawn by anyone; it can only be used to incentivize draws and supplement prize liquidity.
 
-## Distributing Contributions
+## Distributing Tokens using Shares
 
-The contributions for a draw are distributed using the concept of "shares".  Prize tiers each have a number of shares, the canary tier has its own shares, and the reserve has it's own shares. You can think of shares just like tokens, although shares are just used for internal accounting and there is no ERC20 interface. The Prize Pool distributes tokens by increasing a "share exchange rate", which determines the number of POOL tokens per share.
+Tokens are distributed using *shares*, which is conceptually just like an ERC-20 token though only used for internal accounting. Prize tiers are each allocated shares, the canary tier is allocated shares, and the reserve is allocated shares. The number of shares for each category cannot be changed after the Prize Pool contract is deployed.
 
-The Prize Pool is initialized with the number of shares per prize tier, canary tier, and reserve. The shares cannot be changed after it is created.
+For example, if:
 
-For example, if there are 100 shares per prize tier, 10 for the canary tier and 20 for the reserve, then if there are 4 prize tiers the total shares would be:
+- each "normal" prize tier has 100 shares
+- the canary tier has 30 shares
+- and the reserve has 70 shares
+- there are 10 prize tiers ($n = 10$)
+- there are 10,000 tokens to distribute for this draw
 
-$$
-100 * 4 + 10 + 10 = 420
-$$
+Then:
 
-When a draw is pushed the Prize Pool will increase the share exchange rate by the contributed amount over the current total shares.
+- the total number of shares is `9*100 + 30 + 70 = 1000`.
+- Each normal prize tier will receive ${100 \over 1000}$ portion of the draws liquidity
+- The canary prize tier will receive ${30 \over 1000}$ portion of the draws liquidity
+- The reserve will receive ${70 \over 1000}$ of the draws liquidity
+
+## Adjusting Prize Tiers
+
+The Prize Pool increases and decreases the number of prizes by adjusting the number of prize tiers. The Prize Pool is constructed with a percentage *claim threshold*, which determines when the number of tiers is increased.
+
+The number of tiers is increased when:
+
+- the number of claimed standard prizes exceeds the claim threshold % of the *expected* number of standard prizes.
+- the number of claimed canary prizes exceeds the expected number of canary prizes
+
+This means that if the canary prizes are sufficiently large, then they will be worth claiming and it's time to increase the number of tiers.
+
+The number of tiers is decreased if the highest tier claimed is less than $n-2$.
 
 # Claiming Prizes
 
-Vaults can claim prizes on behalf of their users
+Vaults can claim prizes on behalf of their users.
 
-NOTE: add detail
+TODO: Added details about the prize eligiblity
 
 # Appendix
 
