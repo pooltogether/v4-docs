@@ -26,17 +26,3 @@ Learn more about how subgraphs work by checking out [The Graph's official docume
 | :-- | :-- |
 | Prize Pool | https://api.studio.thegraph.com/query/41211/v5-prize-pool-eth-sepolia/v0.0.3 |
 | TWAB Controller | https://api.studio.thegraph.com/query/41211/v5-twab-controller-eth-sepolia/v0.0.3 |
-
-### [Ethereum Goerli](../../deployments/testnet#ethereum-goerli)
-
-| Subgraph | Hosted Service Endpoint |
-| :-- | :-- |
-| Prize Pool | https://api.thegraph.com/subgraphs/name/pooltogether/v5-eth-goerli-prize-pool |
-| TWAB Controller | https://api.thegraph.com/subgraphs/name/pooltogether/v5-eth-goerli-twab-controller |
-
-### [Polygon Mumbai](../../deployments/testnet#polygon-mumbai)
-
-| Subgraph | Hosted Service Endpoint |
-| :-- | :-- |
-| Prize Pool | https://api.thegraph.com/subgraphs/name/pooltogether/v5-polygon-mumbai-prize-pool |
-| TWAB Controller | https://api.thegraph.com/subgraphs/name/pooltogether/v5-polygon-mumbai-twab-control |
