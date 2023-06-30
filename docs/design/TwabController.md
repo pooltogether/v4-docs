@@ -1,7 +1,7 @@
 ---
 id: twab-controller
 title: Twab Controller
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 ## What is it?
@@ -138,7 +138,7 @@ Since there have been no changes between Observation 1 and the start of Period N
 As time progresses, the user takes some action after time *t’* that results in Observation 2 being overwritten with Observation 3.
 
 - When querying the balance at _t_ the balance will still be _X,_ some number calculated using **Observation 1**. Since period N-1 has ended and time _t_ falls between the newest Observation before the end of period N-1 and the end of period N-1, the balance will stay consistent and will be an accurate balance at time *t*.
-- However, when querying the balance at _t’_ the balance will be _Y’,_ some new number calculated using **Observation 1**, resulting in an inaccurate balance at time *t’*. Before Observation 3 was created a temporary Observation created at time *t’* would have been an accurate representation of history, since it was a time between the newest observation & the period ending. However, period N had not finished, so there was no guarantee that this would persist. After Observation 3 was created the queried balance for time _t’_ is no longer guaranteed to be accurate. 
+- However, when querying the balance at _t’_ the balance will be _Y’,_ some new number calculated using **Observation 1**, resulting in an inaccurate balance at time *t’*. Before Observation 3 was created a temporary Observation created at time *t’* would have been an accurate representation of history, since it was a time between the newest observation & the period ending. However, period N had not finished, so there was no guarantee that this would persist. After Observation 3 was created the queried balance for time _t’_ is no longer guaranteed to be accurate.
 
 This example scenario shows both that periods aren’t finalized until the full duration of the period has elapsed and highlights the impact of the loss of information when overwriting Observations.
 
@@ -148,6 +148,6 @@ This loss of information can be used to someones advantage if the Observations a
 
 <img src='/img/v5/twab-controller/overwriting-2.png' />
 
-Assume a PoolTogether draw spanned from time *t* until time _t’_. If a user held 10 tokens at Observation 1 and 0 tokens at Observation 2 then we can simply compute that their average balance over the duration of the draw the result was 5 tokens (10 for half, 0 for the other half). However, after the creation of Observation 3 we’ve lost the exact time that their balance went to 0. This means that querying their balance for the time range *t* to *t’* would result in an average balance of 10 tokens for the duration of the draw which is incorrect. 
+Assume a PoolTogether draw spanned from time *t* until time _t’_. If a user held 10 tokens at Observation 1 and 0 tokens at Observation 2 then we can simply compute that their average balance over the duration of the draw the result was 5 tokens (10 for half, 0 for the other half). However, after the creation of Observation 3 we’ve lost the exact time that their balance went to 0. This means that querying their balance for the time range *t* to *t’* would result in an average balance of 10 tokens for the duration of the draw which is incorrect.
 
 This scenario stresses the importance of querying at times that are guaranteed to be accurate representations of history for important procedures.
