@@ -8,16 +8,23 @@ The Prize Claimer contract allows anyone to claim prizes on behalf of winners, a
 
 Prizes are only claimable for the duration of 1 draw. For example, prizes would for a weekly draw would expire after 1 week since they were awarded. Due to this, ensuring the economics make sense for claimers is necessary to ensure depositors receive their prizes.
 
-## How does it work?
+## Details
 
 ### Fees
 
 The Prize Claimer contract uses a VRGDA (variable rate gradual dutch auction) to increase the fees one can earn over time. The longer between prize claims, the more fees someone can earn by claiming prizes.
 
-Fees are created by taking a percentage of the prize claimed. During contract initialization, a constant is set  for the maximum amount that a fee for a prize can take from the prize amount: `maxFeePortionOfPrize`.
+Fees are created by taking a percentage of the prize claimed. During contract initialization, constants are set for the minimum and maximum amounts that fees will take from the prize amount.
+
+### Claiming
+
+The external `claimPrizes` function is used to claim prizes for one specific vault and tier combination. Multiple winners and multiple prize indices can be included in the transaction. A fee recipient address is also included, this is the account that will accumulate the earned fees.
+
+### Auto-claim
+
+There is an auto-claim feature which a user can disable for their account if they do not want a bot to claim their prizes for them. Using this feature allows a depositor to choose to claim prizes they've won when they like (and in doing so also claim the associated fees).
 
 
-## Caveats
+## Guides
 
-**Auto-claim**: There is an auto-claim feature which a user can disable for their account if they do not want a bot to claim their prizes for them. Using this feature allows a depositor to choose to claim prizes they've won when they like (and in doing so also claim the associated fees).
-
+Read the [guide](../guides/claiming-prizes) on using the Prize Claimer.

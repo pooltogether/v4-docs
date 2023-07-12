@@ -1,14 +1,17 @@
 ---
 id: draw-auction
 title: Draw Auction
-sidebar_position: 3
+sidebar_position: 5
 ---
+
+### TODO: Update design docs about the draw auction:
 
 To encourage the completion of the Draw, the Prize Pool's reserve, which accumulated during the duration of the Draw, is distributed through an auction. A linear auction mechanism is used to distribute it.
 
 ## Draw Mechanism
 
 The Draw completion process involves two steps:
+
 1. Requesting a random number from an RNG service (e.g., Chainlink, Witnet)
 2. Utilizing the generated random number to compute the winners and complete the Draw.
 
