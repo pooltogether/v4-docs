@@ -1,6 +1,6 @@
 ---
 title: Vaults
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 The PoolTogether V5 Vault Factory makes it easy to deploy new Vaults without writing any code!
