@@ -143,11 +143,13 @@ const Card = styled.div`
   border: 1px solid transparent;
   border-radius: 20px;
   border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
   /* flex: 1 1 0px; */
 
   &:hover {
-    border: 1px solid var(--ifm-color-emphasis-400);
+    border: 1px solid var(--ifm-color-emphasis-300);
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+    color: #65f;
   }
 
   @media (max-width: 960px) {
@@ -176,7 +178,7 @@ const CenterCard = styled(Card)`
 
 const ShadowCard = styled(Card)`
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-  background-color: #ffffff10;
+  background-color: #00000010;
   backdrop-filter: blur(10px);
   min-height: 200px;
   /* background-color: var(--ifm-color-emphasis-0); */
@@ -270,7 +272,7 @@ export default function Home() {
         <DocsHeader>
           <div
             style={{
-              padding: "4rem 0  ",
+              padding: "3rem 0 1rem 0  ",
               textAlign: "center",
               display: "flex",
               flexDirection: "column",
@@ -316,8 +318,8 @@ export default function Home() {
           <div>
             <h2>Getting Started</h2>
             <p>
-              Explore these docs to get started integrating the PoolTogether
-              protocol in your dApp, smart contract or project.
+              Get started integrating the PoolTogether
+              protocol in your dapp, smart contract or project.
             </p>
             <div>
               {Guides.map((action) => (
@@ -329,7 +331,7 @@ export default function Home() {
                   <Card key={action.title} style={{ marginBottom: "1rem" }}>
                     <LinkRow>
                       <div style={{ display: "flex", alignItems: "center" }}>
-                        <h3 style={{ marginBottom: "0rem" }}>{action.title}</h3>
+                        <h3 style={{ marginBottom: "0.25rem" }}>{action.title}</h3>
                       </div>
                       <svg
                         style={{ width: "24px", opacity: 0.5 }}
