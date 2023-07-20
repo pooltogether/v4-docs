@@ -20,11 +20,6 @@ Fees are created by taking a percentage of the prize claimed. During contract in
 
 The external `claimPrizes` function is used to claim prizes for one specific vault and tier combination. Multiple winners and multiple prize indices can be included in the transaction. A fee recipient address is also included, this is the account that will accumulate the earned fees.
 
-### Auto-claim
-
-There is an auto-claim feature which a user can disable for their account if they do not want a bot to claim their prizes for them. Using this feature allows a depositor to choose to claim prizes they've won when they like (and in doing so also claim the associated fees).
-
-
 ## Guides
 
 Read the [guide](../guides/claiming-prizes) on using the Prize Claimer.
