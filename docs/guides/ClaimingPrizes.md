@@ -25,8 +25,6 @@ To get a list of accounts that have a non-zero balance for the Draw you are quer
 
 [APIs - Subgraphs](../api/subgraphs/index.md)
 
-Make sure to filter out any accounts who have `autoClaimDisabled` set to `true`.
-
 ### 2. Compute Winning Tiers
 
 To compute whether an account won you can call `isWinner(address vault, address account, uint8 tier, uint32 prizeIndex)` on the Prize Pool contract. The function returns `true` if the user won that prize for that tier.
