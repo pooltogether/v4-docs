@@ -8,10 +8,10 @@ title: Testnet
 
 | Contract | Address |
 | :--- | :--- |
-| ChainlinkVRFV2Direct | [0x561A2A7E8503116c6Cdd124Bc895490239FB077E](https://goerli.etherscan.io/address/0x561A2A7E8503116c6Cdd124Bc895490239FB077E) |
-| RngAuction | [0xcB0A8a7A1d37e35881461a3971148Dd432746401](https://goerli.etherscan.io/address/0xcB0A8a7A1d37e35881461a3971148Dd432746401) |
-| ChainlinkVRFV2DirectRngAuctionHelper | [0x0Aa9E2E0B37fB54c19E45CB246b17b0E700aB98d](https://goerli.etherscan.io/address/0x0Aa9E2E0B37fB54c19E45CB246b17b0E700aB98d) |
-| RngAuctionRelayerRemoteOwner | [0xF93329E78FefF1145fCe03A79d5b356588DeA215](https://goerli.etherscan.io/address/0xF93329E78FefF1145fCe03A79d5b356588DeA215) |
+| ChainlinkVRFV2Direct | [0x4D5f2CD31701f3e5dE77b3F89Ee7b80EB87b4Acc](https://goerli.etherscan.io/address/0x4D5f2CD31701f3e5dE77b3F89Ee7b80EB87b4Acc) |
+| RngAuction | [0x2589ff8614f74704741EE3B51851b4Ae812F1A21](https://goerli.etherscan.io/address/0x2589ff8614f74704741EE3B51851b4Ae812F1A21) |
+| ChainlinkVRFV2DirectRngAuctionHelper | [0xa99b3A8503260ab32753C382eac297aCd4a43908](https://goerli.etherscan.io/address/0xa99b3A8503260ab32753C382eac297aCd4a43908) |
+| RngAuctionRelayerRemoteOwner | [0x7C210BE12BcEf8090610914189A0De43e2192Ea0](https://goerli.etherscan.io/address/0x7C210BE12BcEf8090610914189A0De43e2192Ea0) |
 
 ## Optimism Goerli
 
@@ -27,8 +27,8 @@ title: Testnet
 | ERC20Mintable | [0x20524C0a56ec85A1aF9b0989202C5bDc1B649Def](https://goerli-optimism.etherscan.io/address/0x20524C0a56ec85A1aF9b0989202C5bDc1B649Def) |
 | TwabController | [0xc86175315BBd4519622200bF14b2fa4a974FE78C](https://goerli-optimism.etherscan.io/address/0xc86175315BBd4519622200bF14b2fa4a974FE78C) |
 | PrizePool | [0xC64bb8Fe4f023B650940D05E79c35454e12A111F](https://goerli-optimism.etherscan.io/address/0xC64bb8Fe4f023B650940D05E79c35454e12A111F) |
-| RemoteOwner | [0x7b0EC211E031BCBfacf13C3c392aE2a9680f94BB](https://goerli-optimism.etherscan.io/address/0x7b0EC211E031BCBfacf13C3c392aE2a9680f94BB) |
-| RngRelayAuction | [0x5DaE21532F2eE64eF4ECC68566e014C3390eCff8](https://goerli-optimism.etherscan.io/address/0x5DaE21532F2eE64eF4ECC68566e014C3390eCff8) |
+| RemoteOwner | [0x34963D0f2B10a4C0a437A0fae57E43E5D296D108](https://goerli-optimism.etherscan.io/address/0x34963D0f2B10a4C0a437A0fae57E43E5D296D108) |
+| RngRelayAuction | [0xA847394a0D9D5fEF624766D47cB6142A988b00e0](https://goerli-optimism.etherscan.io/address/0xA847394a0D9D5fEF624766D47cB6142A988b00e0) |
 | Claimer | [0x121aeCa0e662D6F89b5Da401894451Bfa76E134D](https://goerli-optimism.etherscan.io/address/0x121aeCa0e662D6F89b5Da401894451Bfa76E134D) |
 | LiquidationPairFactory | [0x9A57732A346ad4d1aFC16dC0A84FE27a7B9426ce](https://goerli-optimism.etherscan.io/address/0x9A57732A346ad4d1aFC16dC0A84FE27a7B9426ce) |
 | LiquidationRouter | [0xecFfa258d1fE0007ce88820859BceafA04158bad](https://goerli-optimism.etherscan.io/address/0xecFfa258d1fE0007ce88820859BceafA04158bad) |
