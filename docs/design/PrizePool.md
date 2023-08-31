@@ -1,7 +1,7 @@
 ---
 id: prize-pool
 title: Prize Pool
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 In PoolTogether V5 prizes are distributed through the Prize Pool contract. There is one Prize Pool deployed on each chain on which PT is deployed. The Prize Pool receives POOL tokens from Vaults, and releases the tokens as prizes in daily Draws. In this way, prize liquidity is isolated to a chain.

@@ -6,14 +6,31 @@ The documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
 ## Update Deployed Contracts
 
+### V4
+
+You'll find the deployed networks in `versioned_docs/version-V4/deployments`.
+
+### V5
+
 You'll find the deployed networks in `docs/deployments`:
 
-- **testnet.md**: Generated using `./scripts/generateV5TestnetDeployments.js` and `data/testnet-contracts.json`
+- **mainnet.md**: Generated using `./scripts/generateV5Deployments.js` and contracts list:
+  - `data/ethereum-contracts.json`
+  - `data/optimism-contracts.json`
 
-To update the testnet:
+- **testnet.md**: Generated using `./scripts/generateV5Deployments.js` and contracts list:
+  - `data/goerli-contracts.json`
+  - `data/optimismGoerli-contracts.json`
 
-1. Copy the `contracts.json` file from [v5-testnet](https://github.com/pooltogether/v5-testnet) to `data/testnet-contracts.json`
-2. Run the script: `./scripts/generateV5TestnetDeployments.js`
+To update the mainnet deployment:
+
+1. Copy the `contracts.json` files from `v5-mainnet` repository or  to `./data/`
+2. Run the NPM command: `npm run gen-v5-mainnet-deployment`
+
+To update the testnet deployment:
+
+1. Copy the `contracts.json` files from `v5-testnet` repository or  to `./data/`
+2. Run the NPM command: `npm run gen-v5-testnet-deployment`
 
 # Contributing to PoolTogether Docs
 
