@@ -1,8 +1,10 @@
 ---
-title: Mainnet
+title: Beta
 ---
 
-# Mainnet
+# Beta
+
+These contracts were deployed for the 30-day Beta Launch. See [announcement](https://pooltogether.mirror.xyz/IeSRsl6cRCF64LqBruoHINJb1EipiBcRm-JU2U9-WuI) and the [gov post](https://gov.pooltogether.com/t/v5-private-beta-launch-information/3021)
 
 ## Ethereum
 
