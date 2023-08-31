@@ -28,6 +28,8 @@ function formatAddressUrl(chainId, address) {
     url = `https://blockscout.com/xdai/mainnet/address/${address}`;
   } else if (chainId == 137) {
     url = `https://polygonscan.com/address/${address}`;
+  } else if (chainId == 420) {
+    url = `https://goerli-optimism.etherscan.io/address/${address}`;
   } else if (chainId == 80001) {
     url = `https://mumbai.polygonscan.com/address/${address}`;
   } else if (chainId == 42220) {
@@ -58,6 +60,8 @@ function formatNetworkName(chainId) {
     return "Gnosis Chain"
   } else if (chainId == 137) {
     return "Polygon"
+  } else if (chainId == 420) {
+    return "Optimism Goerli"
   } else if (chainId == 80001) {
     return "Polygon Mumbai"
   } else if (chainId == 42220) {
@@ -123,4 +127,11 @@ async function generate(name, outputFilePath, inputFilePaths) {
   console.log(chalk.green(`Done!`));
 }
 
-generate("Testnet", "./docs/deployments/testnet.md", ["./data/ethGoerli-contracts.json", "./data/ethSepolia-contracts.json", "./data/mumbai-contracts.json"]);
+generate(
+  "Testnet",
+  "./docs/deployments/testnet.md", 
+  [
+    "./data/goerli-contracts.json",
+    "./data/optimismGoerli-contracts.json"
+  ]
+);
