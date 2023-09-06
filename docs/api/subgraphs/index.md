@@ -18,11 +18,21 @@ The PoolTogether subgraphs work by listening for events emitted by one or more d
 
 Learn more about how subgraphs work by checking out [The Graph's official documentation](https://thegraph.com/docs/en/). If you are unfamiliar with GraphQL, we recommend taking a quick look through the [GraphQL documentation](https://graphql.org/learn/) first.
 
-## Current Testnet Subgraphs
+## Mainnet Beta Subgraphs
 
-### [Ethereum Sepolia](../../deployments/testnet#ethereum-sepolia)
+### [Optimism](../../deployments/beta)
 
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
-| Prize Pool | https://api.studio.thegraph.com/query/41211/v5-prize-pool-eth-sepolia/v0.0.3 |
-| TWAB Controller | https://api.studio.thegraph.com/query/41211/v5-twab-controller-eth-sepolia/v0.0.3 |
+| Prize Pool | https://api.studio.thegraph.com/query/41211/pt-v5-optimism-prize-pool/v0.0.1 |
+| TWAB Controller | https://api.studio.thegraph.com/query/41211/pt-v5-optimism-twab-controller/v0.0.1 |
+
+## Testnet Subgraphs
+
+### [Optimism Goerli](../../deployments/testnet#optimism-goerli)
+
+| Subgraph | Decentralized Service Endpoint |
+| :-- | :-- |
+| Prize Pool | https://api.studio.thegraph.com/query/41211/pt-v5-op-goerli-prize-pool/v0.0.2 |
+| TWAB Controller | https://api.studio.thegraph.com/query/41211/pt-v5-op-goerli-twab-control/v0.0.2 |
+
