@@ -1,8 +1,8 @@
 ---
-title: Mainnet
+title: Beta
 ---
 
-# Mainnet
+# Beta
 
 ## Ethereum
 

@@ -142,7 +142,7 @@ async function generate(name, outputFilePath, inputFilePaths) {
       switch (process.argv[2]) {
         case "beta":
           generate(
-            "Mainnet",
+            "Beta",
             "./docs/deployments/beta.md",
             [
               "./data/ethereum-contracts.json",
