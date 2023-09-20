@@ -14,4 +14,4 @@ The PoolTogether standard Vault doesn't liquidate the yield itself, but rather e
 
 You can create a new Vault without writing a line of code by using the PoolTogether Vault Factory. The only requirement is that you have an ERC-4626 compliant yield source.
 
-(Insert guide here)
+<!-- TODO: (Insert guide here) -->

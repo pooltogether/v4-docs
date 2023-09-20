@@ -1,10 +1,12 @@
 ---
 title: Liquidator
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 The PoolTogether V5 Liquidator is a single-side virtual AMM that allows us to liquidate one token for another.
 
-Read the code on [Github](https://github.com/pooltogether/v5-liquidator)
+Read the code on [Github](https://github.com/GenerationSoftware/pt-v5-cgda-liquidator).
 
-- Build a bot to [arbitrage yield liquidations](/docs/guides/LiquidatingYield.md)
+### Guides:
+
+- Guide to [arbitraging yield liquidations](/docs/guides/LiquidatingYield.md)

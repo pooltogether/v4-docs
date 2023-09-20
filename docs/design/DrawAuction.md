@@ -47,6 +47,7 @@ A draw is the process by which a prize pool uses a random number to distribute p
 Random Number Generation (or) Random Number Generator
 
 ### Bots
+
 3rd-party scripts that are designed to complete auction tasks to earn the available rewards.
 
 ## Types of Auctions

@@ -4,6 +4,8 @@ title: Claiming Prizes
 sidebar_position: 3
 ---
 
+#### **Tutorial:** [🏆 Creating a Prize Claiming bot](https://mirror.xyz/chuckbergeron-g9.eth/xPSEh1pfjV2IT1yswcsjN2gBBrVf548V8q9W23xxA8U)
+
 PoolTogether V5 incentivizes Claimers to claim prizes on behalf of winners. This means that anyone holding prize-wrapped assets will simply receive tokens; they don't need to run a transaction. You can compute and claim prizes for profit!
 
 Prizes expire every Draw. For daily prizes, that means they expire every 24 hours. Incentivizing claimers is critical to ensure that users get their prizes.
@@ -21,9 +23,13 @@ In order to earn fees on claiming prizes, you will need to:
 
 ### 1. List Active Accounts
 
-To get a list of accounts that have a non-zero balance for the Draw you are querying you can use the Twab Controller subgraph:
+To get a list of accounts that have a non-zero balance for the previous Draw you can use the Twab Controller subgraph:
 
 [APIs - Subgraphs](../api/subgraphs/index.md)
+
+There is also an npm library written with helper functions for getting vaults, computing prizes, and more located here: 
+
+[GitHub - pt-v5-utils-js](https://github.com/GenerationSoftware/pt-v5-utils-js#user-content--get-subgraph-vaults)
 
 ### 2. Compute Winning Tiers
 
@@ -53,4 +59,4 @@ It may also benefit you to rely on FlashBots (for networks which support it) to 
 
 To see code examples, a reference Implementation of a prize claiming bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
 
-https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/prize-claimer
+[GitHub - pt-v5-autotasks-prize-claimer](https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/prize-claimer)
