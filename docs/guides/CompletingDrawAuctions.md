@@ -79,22 +79,32 @@ The expected reward from the **RngRelayAuction** is a bit more involved as it re
 
 #### RngAuction
 
-The **RngAuction** requires we find the cost of the RNG (in **LINK**):
+In some test environments the RNG uses the blockhash, which is not useful in production. When the RNG is derived from the blockhash we can use the **RngAuction** contract directly.
+
+In production, currently the Chainlink VRF2 Direct Funding model is used to receive a random number. This requires we find the cost of the RNG in **LINK**. There is a helper contract specifically for working with the VRF. The **estimateRequestFee** function requires the current chain's gas price as an argument:
+
+```sol
+  (address _feeToken, uint256 _requestFee) = 
+    ChainlinkVRFV2DirectRngAuctionHelperContract.estimateRequestFee(
+      gasPrice
+    );
+```
 
 #### RngRelayAuction
 
 The **RngRelayAuction** does not have any other associated costs, other than typical chain gas costs.
 
 
+
 ### 4. Completing an Auction
 
 #### RngAuction
 
-
+allowance
 
 #### RngRelayAuction
 
-
+allowance
 
 
 ## Reference Implementation
