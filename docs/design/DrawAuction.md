@@ -9,6 +9,7 @@ sidebar_position: 5
 Unlike previous versions of PoolTogether, the V5 protocol is no longer reliant on permissioned controls to close the prize draws and instead incentivises 3rd parties to close the periodic draws using a sequence of timed auctions. The draw auctions outlined in these docs leverage an incentivisation mechanism to encourage competition among third parties to complete the draws in a timely manner while maximizing cost efficiency.
 
 # Motivation
+
 The PoolTogether V5 protocol is designed to be permissionless and self-sustainable, with daily prize pool draws that must run efficiently without any central control points. The completion of a prize pool draw requires at least two major steps:
 
 1. Requesting an onchain random number from a proveably random source
@@ -26,6 +27,7 @@ To ensure the timely closing of draws, the protocol must incentivise each step o
 The V5 protocol requires a system that accomplishes these tasks consitently and efficiently on a daily basis.
 
 # Design
+
 The design for the closing of PoolTogether V5 draws revolves around a sequence of timed auctions, each permissionlessly incentivising the completion of a specific task.
 
 ## Terminology
@@ -120,9 +122,7 @@ Examples:
 
 With PFDA pricing, each auction can adjust its target bid price to be the last sale price while setting the target sale time to be earlier in the auction duration to speed up the process and allow more time to be given to the other incentivised processes in the protocol (see info on the Claimer and Liquidator).
 
-## Code Examples & Interfaces
-
-TODO…
+<!-- TODO: ## Code Examples & Interfaces -->
 
 ## Conclusion
 

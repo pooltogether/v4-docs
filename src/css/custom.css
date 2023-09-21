@@ -452,3 +452,20 @@ html[data-theme="dark"] .DocSearch-Hit a {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center > a {
+  margin-left: 10px
+}
+
+[data-theme='light'] .github-img-light {
+  display:none;
+}
+
+[data-theme='dark'] .github-img-dark {
+  display:none;
+}

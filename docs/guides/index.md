@@ -10,7 +10,7 @@ PoolTogether V5 supports many new ways to interact:
 - You can [create vaults](CreatingVaults.md) to support a new asset and, optionally, capture a portion of the yield
 - You can profit by [arbitraging yield liquidations](LiquidatingYield.md) that is being liquidated for POOL
 - You can earn fees by [claiming prizes](ClaimingPrizes.md) for winners
-- You can run [draw auction](DrawAuction.md) functions to get random numbers and process draw winners
+- You can [complete draw auctions](completing-draw-auctions) functions to get random numbers and process draw winners
 
 ## 🤖 Bot Tutorials:
 

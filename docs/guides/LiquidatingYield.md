@@ -8,6 +8,8 @@ sidebar_position: 2
 
 #### **Tutorial:** [💸 Creating an Arbitrage Swapping bot](https://mirror.xyz/chuckbergeron-g9.eth/ES-IJduktYPb0X_sBikfqL-PVFRweNpoPrlr01zcVX8)
 
+---
+
 PoolTogether V5 continuously liquidates all yield for POOL tokens and deposits them into a Prize Pool. Liquidation sells yield at a slight discount for POOL, creating an arbitrage opportunity.
 
 Liquidation Pairs are the mechanism by which yield is liquidated. Each PoolTogether Vault will have one or more associated Liquidation Pairs. A Liquidation Pair is like a Uniswap pair, but it only supports swaps in a single direction.
@@ -55,3 +57,12 @@ You could also check the profitability of a swap by calling the Liquidation Rout
 
 If a swap is profitable, then you can execute the swap using the Liquidation Router.  The Router provides only `swapExactAmountOut()` which allows the caller to define the expected number of output tokens.
 
+## Reference Implementation
+
+To see code examples, a reference implementation of an arbitrage bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
+
+<div className='flex-center'>
+  <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
+  <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
+  <a href="https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/arb-liquidator">GitHub - pt-v5-autotasks-arb-liquidator</a>
+</div>
