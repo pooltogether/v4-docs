@@ -19,9 +19,10 @@ Prize pools typically live on L2s as it is much cheaper for poolers to deposit a
 
 ### To earn from completing draw auctions you will need to:
 
-1. [Check to see if there are open auctions](#1-list-active-accounts)
-2. [Compute the rewards that can be earned, and the costs associated](#2-compute-winning-tiers)
-3. [If completing an auction is profitable, execute a transaction to complete it](#3-batch-prize-claims)
+1. [Check to see if there are open auctions](#1-check-for-open-auctions)
+2. [Compute the rewards that can be earned](#2-compute-rewards)
+3. [Compute associated costs](#3-compute-costs)
+4. [If completing an auction is profitable, execute a transaction to complete it](#4-completing-an-auction)
 
 
 ---
@@ -41,20 +42,51 @@ Finding out if the **RngRelayAuction** is open is a bit more complicated due to 
 `_rngCompletedAt` can be found by querying **RngAuction** for `getRngResults()`. This returns two values: the `randomNumber` and `rngCompletedAt`.
 
 
-### 2. Compute Rewards and Costs
+### 2. Compute Rewards
 
 #### RngAuction
 
-The **RngAuction** requires we find the values of **ETH** (for gas costs), **LINK** (for RNG costs), and **POOL** (for reward value). We'll focus on the PoolTogether-specific values for LINK and POOL here.
+We can get the expected reward that the PrizePool will pay out from it's reserve to determine profitability before running any transactions. First, we need the **reserve** from the PrizePool. This can be calculated by summing the **reserve** with the **reserveForOpenDraw**:
 
+`PrizePool.reserve().add(PrizePool.reserveForOpenDraw())`
+
+We can then multiply the **currentFractionalReward** with the summed reserve to get the expected reward in prize tokens:
+
+`RngAuction.currentFractionalReward().mul(reserveSummed)`
 
 
 #### RngRelayAuction
 
-The **RngRelayAuction** only requires us to know the values of **ETH** (for gas) and **POOL** (for rewards) to determine profitability.
+The expected reward from the **RngRelayAuction** is a bit more involved as it relies on the state of the previous **RngAuction**:
+
+```sol
+  uint32 lastSequenceId = rngAuction.lastSequenceId();
+
+  UD2x18 rewardFraction = rngAuction.currentFractionalReward();
+
+  AuctionResult memory auctionResult = AuctionResult({
+    rewardFraction: rewardFraction,
+    recipient: address(this) // reward recipient address
+  });
+
+  AuctionResult[] memory auctionResults = new AuctionResult[](1);
+  auctionResults[0] = auctionResult;
+
+  uint256[] memory rewards = rngRelayAuction.computeRewards(auctionResults);
+```
+
+### 3. Compute Costs
+
+#### RngAuction
+
+The **RngAuction** requires we find the cost of the RNG (in **LINK**):
+
+#### RngRelayAuction
+
+The **RngRelayAuction** does not have any other associated costs, other than typical chain gas costs.
 
 
-### 3. Completing an Auction
+### 4. Completing an Auction
 
 #### RngAuction
 
