@@ -28,6 +28,15 @@ Prize pools typically live on L2s as it is much cheaper for poolers to deposit a
 
 ### 1. Check For Open Auctions
 
+You can use `isAuctionOpen` on the **RngAuction** contract to test if the auction is open and can be completed.
+
+Finding out if the **RngRelayAuction** is open is a bit more complicated due to it being based on the previous **RngAuction**. It also has an `isAuctionOpen` function however this it requires two parameters: `isAuctionOpen(_sequenceId, _rngCompletedAt)`.
+
+`_sequenceId` can be found by querying **RngAuction** for `lastSequenceId()`.
+
+`_rngCompletedAt` can be found by querying **RngAuction** for `getRngResults()`. This returns two values: the `randomNumber` and `rngCompletedAt`.
+
+
 
 
 ### 2. Compute Rewards and Costs
