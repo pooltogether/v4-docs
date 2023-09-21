@@ -60,7 +60,7 @@ It may also benefit you to rely on FlashBots (for networks which support it) to 
 
 ## Reference Implementation
 
-To see code examples, a reference implementation of an arbitrage bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
+To see code examples, a reference implementation of a prize claiming bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
 
 <div className='flex-center'>
   <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />

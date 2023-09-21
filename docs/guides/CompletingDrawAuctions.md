@@ -28,7 +28,11 @@ Prize pools typically live on L2s as it is much cheaper for poolers to deposit a
 
 ### 1. Check For Open Auctions
 
+#### RngAuction
+
 You can use `isAuctionOpen` on the **RngAuction** contract to test if the auction is open and can be completed.
+
+#### RngRelayAuction
 
 Finding out if the **RngRelayAuction** is open is a bit more complicated due to it being based on the previous **RngAuction**. It also has an `isAuctionOpen` function however this it requires two parameters: `isAuctionOpen(_sequenceId, _rngCompletedAt)`.
 
@@ -37,18 +41,33 @@ Finding out if the **RngRelayAuction** is open is a bit more complicated due to 
 `_rngCompletedAt` can be found by querying **RngAuction** for `getRngResults()`. This returns two values: the `randomNumber` and `rngCompletedAt`.
 
 
-
-
 ### 2. Compute Rewards and Costs
+
+#### RngAuction
+
+The **RngAuction** requires we find the values of **ETH** (for gas costs), **LINK** (for RNG costs), and **POOL** (for reward value). We'll focus on the PoolTogether-specific values for LINK and POOL here.
+
+
+
+#### RngRelayAuction
+
+The **RngRelayAuction** only requires us to know the values of **ETH** (for gas) and **POOL** (for rewards) to determine profitability.
 
 
 ### 3. Completing an Auction
+
+#### RngAuction
+
+
+
+#### RngRelayAuction
+
 
 
 
 ## Reference Implementation
 
-To see code examples, a reference implementation of an arbitrage bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
+To see code examples, a reference implementation of an draw auction bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
 
 <div className='flex-center'>
   <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
