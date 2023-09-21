@@ -44,9 +44,11 @@ Finding out if the **RngRelayAuction** is open is a bit more complicated due to 
 
 ### 2. Compute Rewards
 
+---
+
 #### RngAuction
 
-We can get the expected reward that the PrizePool will pay out from it's reserve to determine profitability before running any transactions. First, we need the **reserve** from the PrizePool. This can be calculated by summing the **reserve** with the **reserveForOpenDraw**:
+We can get the expected reward that the **PrizePool** will pay out from it's reserve to determine profitability before running any transactions. First, we need the **reserve** from the **PrizePool**. This can be calculated by summing the **reserve** with the **reserveForOpenDraw**:
 
 `PrizePool.reserve().add(PrizePool.reserveForOpenDraw())`
 
@@ -54,6 +56,7 @@ We can then multiply the **currentFractionalReward** with the summed reserve to 
 
 `RngAuction.currentFractionalReward().mul(reserveSummed)`
 
+---
 
 #### RngRelayAuction
 
@@ -77,6 +80,8 @@ The expected reward from the **RngRelayAuction** is a bit more involved as it re
 
 ### 3. Compute Costs
 
+---
+
 #### RngAuction
 
 In some test environments the RNG uses the blockhash, which is not useful in production. When the RNG is derived from the blockhash we can use the **RngAuction** contract directly.
@@ -90,22 +95,53 @@ In production, currently the Chainlink VRF2 Direct Funding model is used to rece
     );
 ```
 
+---
+
 #### RngRelayAuction
 
 The **RngRelayAuction** does not have any other associated costs, other than typical chain gas costs.
 
 
-
 ### 4. Completing an Auction
+
+---
 
 #### RngAuction
 
-allowance
+To complete an RNG auction you can run the **RngAuction's** `startRngRequest(address _rewardRecipient)` if the RNG is set to blockhash. 
+
+If the **rngService** is set, use the **ChainlinkVRFV2DirectRngAuctionHelper** contract's `transferFeeAndStartRngRequest(address _rewardRecipient)`.
+
+Make sure to first approve a LINK allowance to the ChainlinkVRFV2DirectRngAuctionHelper contract.
+
+---
 
 #### RngRelayAuction
 
-allowance
+You can use the **RngAuctionRelayerDirect** contract's `relay(address _rngAuctionRelayListener, address _relayRewardRecipient)` to complete a relay auction if the **PrizePool** lives on the same chain as the **RngRelayAuction** contract.
 
+
+If the **PrizePool** contract lives on a different chain, an ERC5164-compatible **RngAuctionRelayerRemoteOwner** contract will need to be used. This will complete the relay auction while also transferring the random number from the source chain to the destination chain the **PrizePool** lives on:
+
+```sol
+  function relay(
+    IMessageDispatcher _messageDispatcher,
+    uint256 _remoteOwnerChainId,
+    RemoteOwner _remoteOwner,
+    IRngAuctionRelayListener _remoteRngAuctionRelayListener,
+    address _rewardRecipient
+  )
+```
+
+
+<div className='flex-center'>
+  <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
+  <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
+  <a href="https://github.com/GenerationSoftware/pt-v5-draw-auction/blob/f85d0d129c57137f393e683784126c6c74a26d09/src/RngAuctionRelayerRemoteOwner.sol#L60">RngAuctionRelayerRemoteOwner on Github</a>
+</div>
+
+
+---
 
 ## Reference Implementation
 
