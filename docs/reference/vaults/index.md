@@ -7,7 +7,11 @@ The PoolTogether V5 Vault Factory makes it easy to deploy new Vaults without wri
 
 <!-- TODO: Link to Caban Vault Factory when it is no longer password protected -->
 
-Read the code on [Github](https://github.com/GenerationSoftware/pt-v5-vault).
+<div className='flex-center'>
+  <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
+  <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
+  <a href="https://github.com/generationsoftware/pt-v5-vault">Read the code on Github</a>
+</div>
 
 ### Guides:
 
