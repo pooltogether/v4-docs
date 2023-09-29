@@ -4,8 +4,6 @@ title: Beta
 
 # Beta
 
-These contracts were deployed for the 30-day Beta Launch. See [announcement](https://pooltogether.mirror.xyz/IeSRsl6cRCF64LqBruoHINJb1EipiBcRm-JU2U9-WuI) and the [gov post](https://gov.pooltogether.com/t/v5-private-beta-launch-information/3021)
-
 ## Ethereum
 
 | Contract | Address |
@@ -26,7 +24,7 @@ These contracts were deployed for the 30-day Beta Launch. See [announcement](htt
 | PrizePool | [0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832](https://optimistic.etherscan.io/address/0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832) |
 | RemoteOwner | [0x38449a6b7bb76638452273925c9a2BA818bD130d](https://optimistic.etherscan.io/address/0x38449a6b7bb76638452273925c9a2BA818bD130d) |
 | RngRelayAuction | [0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF](https://optimistic.etherscan.io/address/0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF) |
-| Claimer | [0x47b55748243314Be6a341668ECDa2066c0625f70](https://optimistic.etherscan.io/address/0x47b55748243314Be6a341668ECDa2066c0625f70) |
+| Claimer | [0x2589ff8614f74704741EE3B51851b4Ae812F1A21](https://optimistic.etherscan.io/address/0x2589ff8614f74704741EE3B51851b4Ae812F1A21) |
 | LiquidationPairFactory | [0xa1697E8F6b11D0E2F00d9dC8a5AEae2b2665650a](https://optimistic.etherscan.io/address/0xa1697E8F6b11D0E2F00d9dC8a5AEae2b2665650a) |
 | LiquidationRouter | [0xf4cFa53dF258d78AAd153AC11C644703651983f5](https://optimistic.etherscan.io/address/0xf4cFa53dF258d78AAd153AC11C644703651983f5) |
 | VaultFactory | [0xA469deff6D52C9571d13513e3cd7d94496082d81](https://optimistic.etherscan.io/address/0xA469deff6D52C9571d13513e3cd7d94496082d81) |

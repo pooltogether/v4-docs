@@ -13,5 +13,3 @@ The PoolTogether standard Vault doesn't liquidate the yield itself, but rather e
 # Creating a Vault
 
 You can create a new Vault without writing a line of code by using the Cabana Vault Factory. The only requirement is that you have an ERC-4626 compliant yield source.
-
-
