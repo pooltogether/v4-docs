@@ -13,7 +13,7 @@ The PoolTogether Protocol promotes financial security by making it fun to save!
 
 Never lose your principal, and have a chance to win big.
 
-[Learn how you can earn fees and extend the protocol](guides/index.md)
+Learn how [you can earn fees and extend the protocol](guides/index.md).
 
 ## What's New in V5
 

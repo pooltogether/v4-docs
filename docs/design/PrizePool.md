@@ -198,7 +198,7 @@ The number of tiers is decreased if the highest tier claimed is less than $n-2$.
 
 Vaults can claim prizes on behalf of their users.
 
-TODO: Added details about the prize eligiblity
+<!-- TODO: Add details about the prize eligiblity -->
 
 # Appendix
 

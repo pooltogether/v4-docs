@@ -4,7 +4,11 @@ title: Liquidating Yield
 sidebar_position: 2
 ---
 
-# Liquidating Yield
+# Arbitraging Yield Liquidations
+
+#### **Tutorial:** [💸 Creating an Arbitrage Swapping bot](https://mirror.xyz/chuckbergeron-g9.eth/ES-IJduktYPb0X_sBikfqL-PVFRweNpoPrlr01zcVX8)
+
+---
 
 PoolTogether V5 continuously liquidates all yield for POOL tokens and deposits them into a Prize Pool. Liquidation sells yield at a slight discount for POOL, creating an arbitrage opportunity.
 
@@ -18,7 +22,7 @@ To arbitrage yield, you would follow these steps:
 
 1. Find the Liquidation Pair you wish to arb.
 2. Compute the current available liquidity and the POOL cost
-3. If the liquidity is available at a sufficient discount, execute a swap
+3. If liquidity is available at a sufficient discount and profitable to you, execute a swap
 
 ## Find the Liquidation Pair
 
@@ -28,7 +32,7 @@ Realistically, however, bots will want to index and track the Liquidation Pairs 
 
 **Getting the Total Count of Liquidation Pairs**
 
-To get the count of the number of Liquidation Pairs, you can call `totalPairs()` on the Liquidation Pair Factory
+To get the count of the number of Liquidation Pairs, you can call `totalPairs()` on the Liquidation Pair Factory.
 
 **Retrieving the address of the Nth Liquidation Pair**
 
@@ -44,12 +48,21 @@ The Liquidation Pair will have a limited amount of yield available.
 
 Compute how much yield is available using the `maxAmountOut()` function on the Liquidation Pair. This function returns the maximum number of tokens you can swap out.
 
-You could also check the profitability of a swap by calling the Liquidation Router `swapExactAmountIn()` or `swapExactAmountOut()` statically (no state change), and get the return value.
+You could also check the profitability of a swap by calling the Liquidation Router's `swapExactAmountOut()` statically (no state change), and get the return value.
 
-**Note:** `swapExactAmountIn()` and `swapExactAmountOut()` exist on both the LiquidationPair contracts and the LiquidationRouter, however for your swaps to be successful  you will need to run them on the LiquidationRouter.
+**Note:** `swapExactAmountOut()` exists on both the LiquidationPair contracts and the LiquidationRouter, however for your swaps to be successful you will need to run it on the LiquidationRouter.
 
 
 ## Execute a Swap
 
-If a swap is profitable, then you can execute the swap using the Liquidation Router.  The Router provides two functions to do so: `swapExactAmountIn()` lets the caller execute a swap with an exact amount of POOL tokens, or `swapExactAmountOut()` which allows the caller to define the expected number of output tokens.
+If a swap is profitable, then you can execute the swap using the Liquidation Router.  The Router provides only `swapExactAmountOut()` which allows the caller to define the expected number of output tokens.
 
+## Reference Implementation
+
+To see code examples, a reference implementation of an arbitrage bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
+
+<div className='flex-center'>
+  <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
+  <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
+  <a href="https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/arb-liquidator">GitHub - pt-v5-autotasks-arb-liquidator</a>
+</div>
