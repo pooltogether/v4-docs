@@ -33,6 +33,6 @@ Learn more about how subgraphs work by checking out [The Graph's official docume
 
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
-| Prize Pool | https://api.studio.thegraph.com/query/41211/pt-v5-op-goerli-prize-pool/v0.0.2 |
-| TWAB Controller | https://api.studio.thegraph.com/query/41211/pt-v5-op-goerli-twab-control/v0.0.2 |
+| Prize Pool | (https://api.studio.thegraph.com/query/50959/pt-v5-op-goerli-prize-pool/v0.0.1) |
+| TWAB Controller | (https://api.studio.thegraph.com/query/50959/pt-v5-op-goerli-twab-control/v0.0.1) |
 
