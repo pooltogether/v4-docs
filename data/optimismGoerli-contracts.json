@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2023-10-06T22:00:05.472Z",
+  "timestamp": "2023-10-17T22:18:34.910Z",
   "contracts": [
     {
       "chainId": 420,
-      "address": "0xd5418e1A02a696ae00c866b37a86205A1bC35adF",
+      "address": "0xf33E8ECD7518e5E464ecB0FB94aE4Fc2f39adB5B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -361,7 +361,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x4dFbf2A0D807c3282FD27b798e9c1C47E101AFD4",
+      "address": "0xfC29e757A2D1f66649De91e9225F36AB6c1BD44d",
       "version": {
         "major": 1,
         "minor": 0,
@@ -386,7 +386,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x2b311E07bCE542A73bB4887D0f503f0b6ea70711",
+      "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
       "version": {
         "major": 1,
         "minor": 0,
@@ -976,7 +976,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x880027cc134A07Ddc9E5c7e7659A11ecfD828705",
+      "address": "0xB7930c829cc1de1b37a3Bb9b477E33251DA15a50",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1566,7 +1566,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x206acF3BBEC50972880e665EE7D03342A2fF9F5d",
+      "address": "0x041a898Bc37129d2D2232163c3374f4077255F74",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2156,7 +2156,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x8778DA5Ed4B586960094d43c5a3a52da3a4aE613",
+      "address": "0x331cDB619147A20c32e7B9391A4797Ed9656B104",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2746,7 +2746,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xE62aC4184f04f0BA3C99DD2fe931cDc4D0489ac9",
+      "address": "0xB8e70B16b8d99753ce55F0E4C2A7eCeeecE30B64",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3336,7 +3336,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x722701e470b556571A7a3586ADaFa2E866CFD1A1",
+      "address": "0x0Ec780bE0191f8A364FAccdE91D13BE6F96632bE",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3926,7 +3926,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xE7dc3F91D2682a99e40c98aC5a8791461418234F",
+      "address": "0x0B09590E2dE22A629B45258812C0B25904689B5a",
       "version": {
         "major": 1,
         "minor": 0,
@@ -5063,7 +5063,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xb91194FB89561c2Bd7fC26bE68e5EAe5b00f5320",
+      "address": "0x8FaF98698e4fF29149a8A9D06Db20E3509F3754b",
       "version": {
         "major": 1,
         "minor": 0,
@@ -5086,9 +5086,9 @@
                   "type": "address"
                 },
                 {
-                  "internalType": "uint32",
+                  "internalType": "uint48",
                   "name": "drawPeriodSeconds",
-                  "type": "uint32"
+                  "type": "uint48"
                 },
                 {
                   "internalType": "uint48",
@@ -5306,17 +5306,6 @@
             }
           ],
           "name": "InsufficientRewardsError",
-          "type": "error"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint24",
-              "name": "endDrawId",
-              "type": "uint24"
-            }
-          ],
-          "name": "InvalidDisbursedEndDrawId",
           "type": "error"
         },
         {
@@ -5900,30 +5889,6 @@
           "type": "function"
         },
         {
-          "inputs": [
-            {
-              "internalType": "uint8",
-              "name": "_tier",
-              "type": "uint8"
-            }
-          ],
-          "name": "calculateTierTwabTimestamps",
-          "outputs": [
-            {
-              "internalType": "uint48",
-              "name": "startTimestamp",
-              "type": "uint48"
-            },
-            {
-              "internalType": "uint48",
-              "name": "endTimestamp",
-              "type": "uint48"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
           "inputs": [],
           "name": "claimCount",
           "outputs": [
@@ -6092,9 +6057,9 @@
           "name": "drawPeriodSeconds",
           "outputs": [
             {
-              "internalType": "uint32",
+              "internalType": "uint48",
               "name": "",
-              "type": "uint32"
+              "type": "uint48"
             }
           ],
           "stateMutability": "view",
@@ -6769,7 +6734,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xDE352b8556c1dbF3F1E3F49fdE5c5961fF17C2a3",
+      "address": "0x80E4233b178Bf4cB1950390C5EcB6Fa2766a9571",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7130,7 +7095,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x7C77fE5a4261fe27e9219410c65f9d42747e5F69",
+      "address": "0x5C9c04FC5D6431A2101b8395E13B565762980F97",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7618,7 +7583,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x9464506e291b6AD228F1B448cF16B33caDF1d0E2",
+      "address": "0x7BF10552c810881f9344d5536023dd66530d2E88",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7763,7 +7728,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x1a339190FCf8E7715d80FfDb32c97B9d065032b6",
+      "address": "0x0294997B1100d6e35fd3868c6544c881096a23E1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8211,7 +8176,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x4a798649F6AA23D6a3a1cab65fc0a8fa772E0a40",
+      "address": "0x21b8f4c7E92a37B893BE39b4Ec447459fa5031C6",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8411,7 +8376,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x31dCb9Ff8AfA40e1F8683eDBD31184aaAA97a835",
+      "address": "0x6de2B30BE94F9Da2516CD30093fB11e0c4bFf422",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8601,7 +8566,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x7A8f1413B44F7346EAb36c4793Bd54148Ca916A5",
+      "address": "0x53B7922eeCe8afE5bdaA170E20dc32c6deDA5277",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8761,7 +8726,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xEBE75fc9D9bA0fFb09ee991FbA512EE5B3883A34",
+      "address": "0x6cA8dC2979d76f37C408549A9d6cd53910De6867",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9735,7 +9700,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x6EBa7deCd74D8327FA83b7Edc6Cb1dEADDfD8EFA",
+      "address": "0xD71Ef91938614c6F54B4d87e6fEE42FEA2510448",
       "version": {
         "major": 1,
         "minor": 0,
@@ -10709,7 +10674,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x4f6c3f23dbF756bcD88D302b61ae2c3b74275E26",
+      "address": "0x79CB8685b157E3E02BB267660dFB291225680871",
       "version": {
         "major": 1,
         "minor": 0,
@@ -11683,7 +11648,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xbdaAB70E7d8767e94680AD2D27B503daE01447A4",
+      "address": "0x6F641aEBA53B13a73642c2987220351aCd702fDA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -12657,7 +12622,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x812829F45a05385C356d6df92debD35E152D6F24",
+      "address": "0xAEe1289cd75Ad4a711839EF9b33ceAfa4935BF38",
       "version": {
         "major": 1,
         "minor": 0,
@@ -13631,7 +13596,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x07056BA1bD5D71AA743F33Aa3A7BB76f08834873",
+      "address": "0x37fC3CEC5A8c1300D94Cf167F443bF9e2fD5a936",
       "version": {
         "major": 1,
         "minor": 0,
@@ -14605,7 +14570,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xD86D8193469C78D8231Cf92974e5f15e4e81eCC9",
+      "address": "0xaD91C29732fD148616882D2B50f2D886204E570B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15579,7 +15544,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x3908C0Ec4987b4C3Bd4f6d4243eBA64179E6B07F",
+      "address": "0x1Be3733d56ff08Ae8DF0f9Ae7f27f4E7aAb051d8",
       "version": {
         "major": 1,
         "minor": 0,
@@ -16632,7 +16597,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xbd4EaB3deC1D9e1FE6A9fbAD082fDBb2B5D45c65",
+      "address": "0xdB1D90BC65aa9b92868D814a670d1127635ba2E1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17685,7 +17650,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xD94919D0Ba5A7eCbEc515F723c81f2954F4296c0",
+      "address": "0x3C72F407DABE54B4231Bd6474445a1859Fb27Ed9",
       "version": {
         "major": 1,
         "minor": 0,
@@ -18738,7 +18703,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x490e9D4F0b311a8227d35df7cB3Bd1a7380C07B6",
+      "address": "0x43522DfD29B8a975059F93b03DaB1545935710Bb",
       "version": {
         "major": 1,
         "minor": 0,
@@ -19791,7 +19756,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x2f9A64BB8e283183a6CD65F9Ab6369D411e011c1",
+      "address": "0xf08Edf5097343D5E9dA28aD5D19c2a956954A8B0",
       "version": {
         "major": 1,
         "minor": 0,
@@ -20844,7 +20809,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xFfCcd3d429CAC52cb129AD544E038ba6CB5E5220",
+      "address": "0x5D973D827685fD320f5536f9b533b69Ff7bd26f0",
       "version": {
         "major": 1,
         "minor": 0,
@@ -21897,7 +21862,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xDda486FaA2e8d56B56d8C1F976d9742674f65383",
+      "address": "0x346Df08b6B0630714C80E65f7beEFcc50b3Fc4Ec",
       "version": {
         "major": 1,
         "minor": 0,
@@ -22950,7 +22915,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x21925199568C8bd5623622FF31d719749f920A8D",
+      "address": "0x9e025155f7BD3b17E26bCE811F7B6F075973570A",
       "version": {
         "major": 1,
         "minor": 0,
@@ -23925,7 +23890,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -24278,7 +24243,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -24992,13 +24957,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x21925199568C8bd5623622FF31d719749f920A8D",
+          "address": "0x9e025155f7BD3b17E26bCE811F7B6F075973570A",
           "name": "Prize DAI Low Yield",
           "decimals": 18,
-          "symbol": "PDAI-LY-T",
+          "symbol": "pDAI-LY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x2b311E07bCE542A73bB4887D0f503f0b6ea70711",
+              "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -25008,7 +24973,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xca07B265354ee6742984dbCF33bc18005982102F",
+      "address": "0xD7dC15955968e62B3B5bE1c7dbEAEF81D7BBE776",
       "version": {
         "major": 1,
         "minor": 0,
@@ -25732,7 +25697,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x2cf5A98a21f90Db59323e27156F9B3090273ac5D",
+      "address": "0x2B5f48ffFa09173D3aac4A95fa05FE1317589a1E",
       "version": {
         "major": 1,
         "minor": 0,
@@ -26371,7 +26336,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x32C45E4596931eC5900eA4D2703E7CF961Ce2ad6",
+      "address": "0xbC6d40984ddB1482BBBF1433c1C1f0380f74caCD",
       "version": {
         "major": 1,
         "minor": 0,
@@ -27346,7 +27311,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -27699,7 +27664,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -28413,13 +28378,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x32C45E4596931eC5900eA4D2703E7CF961Ce2ad6",
+          "address": "0xbC6d40984ddB1482BBBF1433c1C1f0380f74caCD",
           "name": "Prize DAI High Yield",
           "decimals": 18,
-          "symbol": "PDAI-HY-T",
+          "symbol": "pDAI-HY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x2b311E07bCE542A73bB4887D0f503f0b6ea70711",
+              "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -28429,7 +28394,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x27736339D75A0344912c39ce926694a70591e879",
+      "address": "0x74Ae90abbc88463fDd524097fc89b738b5b22ad8",
       "version": {
         "major": 1,
         "minor": 0,
@@ -29153,7 +29118,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x366147C73E070F7C70fE6021c27081646c0a2e7d",
+      "address": "0xAC296d4F1DA926FeEf4bBe3e05A2C892A1E7fBEc",
       "version": {
         "major": 1,
         "minor": 0,
@@ -29792,7 +29757,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x61682FBA8394970CE014bcDE8ae0eC149c29757c",
+      "address": "0x1eAdB947b1e66ff3575F9Fd0FD4fB4Cc8fcAD8Fd",
       "version": {
         "major": 1,
         "minor": 0,
@@ -30767,7 +30732,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -31120,7 +31085,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -31834,13 +31799,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x61682FBA8394970CE014bcDE8ae0eC149c29757c",
+          "address": "0x1eAdB947b1e66ff3575F9Fd0FD4fB4Cc8fcAD8Fd",
           "name": "Prize USDC Low Yield",
           "decimals": 6,
-          "symbol": "PUSDC-LY-T",
+          "symbol": "pUSDC-LY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x880027cc134A07Ddc9E5c7e7659A11ecfD828705",
+              "address": "0xB7930c829cc1de1b37a3Bb9b477E33251DA15a50",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -31850,7 +31815,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x708aaE53B8D0D368087CDFBf42b575E0CAD93975",
+      "address": "0x0Ee04778d018b6E93dBb00BCFcB92409C02eF6Dd",
       "version": {
         "major": 1,
         "minor": 0,
@@ -32574,7 +32539,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x27a07F49Cf8050b1A71e37aC8377CCc11DA41fc7",
+      "address": "0x14745e3ebc98bDAD74ffa11c1DC4928df5F40c83",
       "version": {
         "major": 1,
         "minor": 0,
@@ -33213,7 +33178,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x171df7a2D8547322de5BA27FD9856B04620A3562",
+      "address": "0xc3d6a8d76B304E0716b3227C00a83187340DC846",
       "version": {
         "major": 1,
         "minor": 0,
@@ -34188,7 +34153,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -34541,7 +34506,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -35255,13 +35220,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x171df7a2D8547322de5BA27FD9856B04620A3562",
+          "address": "0xc3d6a8d76B304E0716b3227C00a83187340DC846",
           "name": "Prize USDC High Yield",
           "decimals": 6,
-          "symbol": "PUSDC-HY-T",
+          "symbol": "pUSDC-HY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x880027cc134A07Ddc9E5c7e7659A11ecfD828705",
+              "address": "0xB7930c829cc1de1b37a3Bb9b477E33251DA15a50",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -35271,7 +35236,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xfFC3dc7C5547FC1385eAB2C36e5b6e3180Fa77aE",
+      "address": "0xeA4F2AA215A863383f813770EecE7c2508Cfb630",
       "version": {
         "major": 1,
         "minor": 0,
@@ -35995,7 +35960,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xd4300CB2eFA5DD752dd2D41021235764805Fa3A9",
+      "address": "0x6a14892d466FB12e6f16d8372E6f46f3C74962Fa",
       "version": {
         "major": 1,
         "minor": 0,
@@ -36634,7 +36599,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x0B87bF0822AFAecDEb367cfAaCcf40c0e895F3AD",
+      "address": "0xb1AF8E57033a0f5B5Db37C2B2E8C4a357514d2B5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -37609,7 +37574,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -37962,7 +37927,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -38676,13 +38641,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x0B87bF0822AFAecDEb367cfAaCcf40c0e895F3AD",
+          "address": "0xb1AF8E57033a0f5B5Db37C2B2E8C4a357514d2B5",
           "name": "Prize GUSD",
           "decimals": 2,
-          "symbol": "PGUSD-T",
+          "symbol": "pGUSD-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x206acF3BBEC50972880e665EE7D03342A2fF9F5d",
+              "address": "0x041a898Bc37129d2D2232163c3374f4077255F74",
               "symbol": "GUSD",
               "name": "Gemini Dollar"
             }
@@ -38692,7 +38657,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x241911a08F36bA3370DE45079DC6d77768695D43",
+      "address": "0x33C53241803Ff6DA199Dbf9e5291f3b5770e67E5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -39416,7 +39381,7 @@
     },
     {
       "chainId": 420,
-      "address": "0xBBB87e1161E2de3a9Fab83081dF387b7b817fec3",
+      "address": "0x45ed91Ee73FE8Fce0b87Ade038d7d26e27bb6A5A",
       "version": {
         "major": 1,
         "minor": 0,
@@ -40055,7 +40020,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x7Ea2e76587962c526B60492bd8342AAe859f1219",
+      "address": "0xa2574ee88D049Df4CdC8DEc746842C7615FBF5A5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -41030,7 +40995,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -41383,7 +41348,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -42097,13 +42062,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x7Ea2e76587962c526B60492bd8342AAe859f1219",
+          "address": "0xa2574ee88D049Df4CdC8DEc746842C7615FBF5A5",
           "name": "Prize WBTC",
           "decimals": 8,
-          "symbol": "PWBTC-T",
+          "symbol": "pWBTC-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x8778DA5Ed4B586960094d43c5a3a52da3a4aE613",
+              "address": "0x331cDB619147A20c32e7B9391A4797Ed9656B104",
               "symbol": "WBTC",
               "name": "Wrapped BTC"
             }
@@ -42113,7 +42078,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x731aA90d8281EbC205448338224aF3f3dea3AD70",
+      "address": "0xb5fb717E7b46Db4645081CDCce2908DA3E68da1D",
       "version": {
         "major": 1,
         "minor": 0,
@@ -42837,7 +42802,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x8175E19A022AF83354b258dF4a044D46dBA62a45",
+      "address": "0x6bD1d647F70866C79Ab78ceEfa3c0Bfd96ce28A6",
       "version": {
         "major": 1,
         "minor": 0,
@@ -43476,7 +43441,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x7da2c9C9F3147275837Be99029A2437f8d7b54D6",
+      "address": "0xEF9aFd8b3701198cCac6bf55458C38F61C4b55c4",
       "version": {
         "major": 1,
         "minor": 0,
@@ -44451,7 +44416,7 @@
           "inputs": [
             {
               "internalType": "uint256",
-              "name": "shares",
+              "name": "_shares",
               "type": "uint256"
             }
           ],
@@ -44804,7 +44769,7 @@
           "inputs": [
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             }
           ],
@@ -45518,13 +45483,13 @@
       "tokens": [
         {
           "chainId": 420,
-          "address": "0x7da2c9C9F3147275837Be99029A2437f8d7b54D6",
+          "address": "0xEF9aFd8b3701198cCac6bf55458C38F61C4b55c4",
           "name": "Prize WETH",
           "decimals": 18,
-          "symbol": "PWETH-T",
+          "symbol": "pWETH-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xE62aC4184f04f0BA3C99DD2fe931cDc4D0489ac9",
+              "address": "0xB8e70B16b8d99753ce55F0E4C2A7eCeeecE30B64",
               "symbol": "WETH",
               "name": "Wrapped Ether"
             }
@@ -45534,7 +45499,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x428b3d2a3CCd3E97DEE5E667c3BE914c19ee174e",
+      "address": "0x3ED94FFd272a44f04FF7cE065CbC11CAB90C87CE",
       "version": {
         "major": 1,
         "minor": 0,
@@ -46258,7 +46223,7 @@
     },
     {
       "chainId": 420,
-      "address": "0x57C17C63e4a7737AAEb244d706372f8398fc24B7",
+      "address": "0xEeC7E46D735fe32e9b6Fb0bB8dEd37ADd5e6B0Fe",
       "version": {
         "major": 1,
         "minor": 0,

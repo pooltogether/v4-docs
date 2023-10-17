@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2023-10-06T22:00:05.460Z",
+  "timestamp": "2023-10-17T22:18:34.904Z",
   "contracts": [
     {
       "chainId": 5,
-      "address": "0x6B17EE3a95BcCd605340454c5919e693Ef8EfF0E",
+      "address": "0xc57e4fC79ab33DB6A7Bf26CC1Ca43511744F83CD",
       "version": {
         "major": 1,
         "minor": 0,
@@ -416,7 +416,7 @@
     },
     {
       "chainId": 5,
-      "address": "0x076Ecca6FD357cB83b038D70DB61805b611ba6C7",
+      "address": "0xAFCeDe71e62684De45D423712FeEeBB83863DfDE",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1039,7 +1039,7 @@
     },
     {
       "chainId": 5,
-      "address": "0xa577C58435e0334B5039f5e71cCb4a45641c3495",
+      "address": "0x1B227Be74a34A604a2839cbc9A50e9dBcac4f371",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1156,7 +1156,7 @@
     },
     {
       "chainId": 5,
-      "address": "0x1977822061d8a394726803e2c2F6524a4E3e7Aff",
+      "address": "0xe34deF1114d7Bb0298636A2026D9Cf3D67F19FBd",
       "version": {
         "major": 1,
         "minor": 0,
