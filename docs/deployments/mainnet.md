@@ -26,7 +26,7 @@ sidebar_position: 0
 | RemoteOwner | [0x503de67553edce0af5f02ABDD980b0Fe7Cc3BF65](https://optimistic.etherscan.io/address/0x503de67553edce0af5f02ABDD980b0Fe7Cc3BF65) |
 | RngRelayAuction | [0x87d3D9afeD1702728B7F280ba5c4b4c55DEfa557](https://optimistic.etherscan.io/address/0x87d3D9afeD1702728B7F280ba5c4b4c55DEfa557) |
 | ClaimerFactory | [0x34a1464D4eB70383f87C301300a7096EdBe2aA8c](https://optimistic.etherscan.io/address/0x34a1464D4eB70383f87C301300a7096EdBe2aA8c) |
-| ClaimerFactory | [0xdc6aB38f9590cB8e4357e0a391689a7C5Ef7681E](https://optimistic.etherscan.io/address/0xdc6aB38f9590cB8e4357e0a391689a7C5Ef7681E) |
+| Claimer | [0xdc6aB38f9590cB8e4357e0a391689a7C5Ef7681E](https://optimistic.etherscan.io/address/0xdc6aB38f9590cB8e4357e0a391689a7C5Ef7681E) |
 | LiquidationPairFactory | [0x555BD8Fc65E57139C9F405980C7A9526A7De8093](https://optimistic.etherscan.io/address/0x555BD8Fc65E57139C9F405980C7A9526A7De8093) |
 | LiquidationRouter | [0xB9Fba7B2216167DCdd1A7AE0a564dD43E1b68b95](https://optimistic.etherscan.io/address/0xB9Fba7B2216167DCdd1A7AE0a564dD43E1b68b95) |
 | VaultFactory | [0xF65FA202907D6046D1eF33C521889B54BdE08081](https://optimistic.etherscan.io/address/0xF65FA202907D6046D1eF33C521889B54BdE08081) |
