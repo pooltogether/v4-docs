@@ -27,12 +27,13 @@ Learn more about how subgraphs work by checking out [The Graph's official docume
 | Prize Pool | https://api.studio.thegraph.com/query/41211/pt-v5-optimism-prize-pool/v0.0.1 |
 | TWAB Controller | https://api.studio.thegraph.com/query/41211/pt-v5-optimism-twab-controller/v0.0.1 |
 
-## Testnet Subgraphs
+## Testnet Subgraph
 
 ### [Optimism Goerli](../../deployments/testnet#optimism-goerli)
 
+> NOTE: The subgraphs were previously separated into `PrizePool` and `TwabController` subgraphs, but are now unified in one subgraph. Some entities may have changed from the previous versions.
+
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
-| Prize Pool | (https://api.studio.thegraph.com/query/50959/pt-v5-op-goerli-prize-pool/v0.0.1) |
-| TWAB Controller | (https://api.studio.thegraph.com/query/50959/pt-v5-op-goerli-twab-control/v0.0.1) |
+| PoolTogether V5 | https://api.studio.thegraph.com/query/50959/pt-v5-op-goerli/version/latest |
 

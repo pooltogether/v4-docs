@@ -1,15 +1,15 @@
 {
-  "name": "Hyperstructure Testnet",
+  "name": "Hyperstructure Mainnet",
   "version": {
-    "major": 1,
-    "minor": 0,
+    "major": 0,
+    "minor": 1,
     "patch": 0
   },
-  "timestamp": "2023-10-17T22:18:34.904Z",
+  "timestamp": "2023-08-31T19:39:42.417Z",
   "contracts": [
     {
-      "chainId": 5,
-      "address": "0xc57e4fC79ab33DB6A7Bf26CC1Ca43511744F83CD",
+      "chainId": 1,
+      "address": "0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9",
       "version": {
         "major": 1,
         "minor": 0,
@@ -415,8 +415,8 @@
       ]
     },
     {
-      "chainId": 5,
-      "address": "0xAFCeDe71e62684De45D423712FeEeBB83863DfDE",
+      "chainId": 1,
+      "address": "0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832",
       "version": {
         "major": 1,
         "minor": 0,
@@ -455,11 +455,6 @@
               "internalType": "uint64",
               "name": "auctionTargetTime_",
               "type": "uint64"
-            },
-            {
-              "internalType": "UD2x18",
-              "name": "firstAuctionTargetRewardFraction_",
-              "type": "uint64"
             }
           ],
           "stateMutability": "nonpayable",
@@ -478,7 +473,7 @@
               "type": "uint64"
             }
           ],
-          "name": "AuctionDurationGTSequencePeriod",
+          "name": "AuctionDurationGtSequencePeriod",
           "type": "error"
         },
         {
@@ -584,11 +579,6 @@
         {
           "inputs": [],
           "name": "SequencePeriodZero",
-          "type": "error"
-        },
-        {
-          "inputs": [],
-          "name": "TargetRewardFractionGTOne",
           "type": "error"
         },
         {
@@ -1038,8 +1028,8 @@
       ]
     },
     {
-      "chainId": 5,
-      "address": "0x1B227Be74a34A604a2839cbc9A50e9dBcac4f371",
+      "chainId": 1,
+      "address": "0x38449a6b7bb76638452273925c9a2BA818bD130d",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1155,8 +1145,8 @@
       ]
     },
     {
-      "chainId": 5,
-      "address": "0xe34deF1114d7Bb0298636A2026D9Cf3D67F19FBd",
+      "chainId": 1,
+      "address": "0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1174,11 +1164,6 @@
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
-        },
-        {
-          "inputs": [],
-          "name": "GasLimitIsZero",
-          "type": "error"
         },
         {
           "inputs": [],
@@ -1234,7 +1219,7 @@
           "inputs": [
             {
               "indexed": false,
-              "internalType": "contract IMessageDispatcherOptimism",
+              "internalType": "contract IMessageDispatcher",
               "name": "messageDispatcher",
               "type": "address"
             },
@@ -1275,7 +1260,7 @@
         {
           "inputs": [
             {
-              "internalType": "contract IMessageDispatcherOptimism",
+              "internalType": "contract IMessageDispatcher",
               "name": "_messageDispatcher",
               "type": "address"
             },
@@ -1298,11 +1283,6 @@
               "internalType": "address",
               "name": "_rewardRecipient",
               "type": "address"
-            },
-            {
-              "internalType": "uint32",
-              "name": "_gasLimit",
-              "type": "uint32"
             }
           ],
           "name": "relay",
