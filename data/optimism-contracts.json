@@ -5555,7 +5555,7 @@
         "minor": 0,
         "patch": 0
       },
-      "type": "ClaimerFactory",
+      "type": "Claimer",
       "abi": [
         {
           "anonymous": false,
