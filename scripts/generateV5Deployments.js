@@ -90,11 +90,12 @@ const append = (out, str) => {
   fs.writeSync(out, str + "\n");
 };
 
-async function generate(name, outputFilePath, inputFilePaths) {
+async function generate(name, sidebar_position, outputFilePath, inputFilePaths) {
   const outputFile = fs.openSync(outputFilePath, "w");
 
   append(outputFile, `---`);
   append(outputFile, `title: ${name}`);
+  append(outputFile, `sidebar_position: ${sidebar_position}`);
   append(outputFile, `---`);
   append(outputFile, ``);
   append(outputFile, `# ${name}`);
@@ -140,10 +141,11 @@ async function generate(name, outputFilePath, inputFilePaths) {
       }
 
       switch (process.argv[2]) {
-        case "beta":
+        case "mainnet":
           generate(
-            "Beta",
-            "./docs/deployments/beta.md",
+            "Mainnet",
+            0,
+            "./docs/deployments/mainnet.md",
             [
               "./data/ethereum-contracts.json",
               "./data/optimism-contracts.json",
@@ -151,9 +153,22 @@ async function generate(name, outputFilePath, inputFilePaths) {
           );
           break;
 
+        case "beta":
+          generate(
+            "Beta",
+            1,
+            "./docs/deployments/beta.md",
+            [
+              "./data/beta-ethereum-contracts.json",
+              "./data/beta-optimism-contracts.json",
+            ]
+          );
+          break;
+
         case "testnet":
           generate(
             "Testnet",
+            2,
             "./docs/deployments/testnet.md",
             [
               "./data/goerli-contracts.json",

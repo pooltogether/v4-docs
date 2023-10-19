@@ -1,5 +1,6 @@
 ---
 title: Testnet
+sidebar_position: 2
 ---
 
 # Testnet
