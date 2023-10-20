@@ -14,7 +14,7 @@ A prize savings protocol gives users a chance at a large upside without risking 
 
 This version of the protocol brings some major improvements:
 
-- Users can swap into prize tokens; there is no need to "activate" your tickets. This enables distribution through AMMs and other swap interfaces.
+- Users can swap into prize tokens; there is no need to "activate" your tokens. This enables distribution through AMMs and other swap interfaces.
 - Users automatically receive their prizes. No claim needed! The tokens will be transferred to their wallets.
 - Supports multiple tokens, and all tokens share one big pool of prizes so that prizes are as large as possible!
 
