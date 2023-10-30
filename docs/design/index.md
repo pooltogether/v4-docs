@@ -227,20 +227,87 @@ In this way, the system will rapidly settle to the previous auction prices.
 
 The auctions have an expiry period which, combined, is half of the draw period.  This means that the draw *must* be awarded within the first half of the next open draw, otherwise it won't be awarded at all. This puts a lower limit on the remaining time to claim prizes during a draw.
 
-### Winner Selection
+### Claiming Prizes
 
-**TODO**
-
-### Incentivized Prize Claims
-
-Once a draw is awarded, the last auction begins: the auction for prize claims. A [variable-rate gradual dutch auction](https://www.paradigm.xyz/2022/08/vrgda) is used to reward anyone who claims a prize on a winner's behalf. The reward is taken from the prize itself. The Prize Pool allows Vaults to claim prizes on behalf of their users, so the claim behaviour can be customized by the vault. PoolTogether V5 provides a default VRGDA Claimer that works very well.
+After a draw has been awarded prizes can be claimed. Prizes can be claimed until the next Draw closes. Vaults claim on behalf of their users, which gives Vaults flexibility in how they want to handle prizes. The default PoolTogether Vault has a separate "Claimer" contract through which users claim prizes for others. Users call the claimer, which calls the Vault, which calls the Prize Pool.
 
 **Interaction Diagram for Prize Claiming**
 
 ![Prize Claiming](/img/v5/design/Claimer.png)
+
+#### VRGDA Claimer
+
+Once a draw is awarded, the last auction begins: the auction for prize claims. A [variable-rate gradual dutch auction](https://www.paradigm.xyz/2022/08/vrgda) is used to reward anyone who claims a prize on a winner's behalf. The reward is taken from the prize itself. The Prize Pool allows Vaults to claim prizes on behalf of their users, so the claim behaviour can be customized by the vault. PoolTogether V5 provides a default VRGDA Claimer that works very well.
 
 A VRGDA is a generalization of the continuous dutch auction, in that it raises prices when sales are ahead of schedule and lowers prices when sales are behind schedule.
 
 For PoolTogether V5 we are using the VRGDA as a reverse dutch auction to claim prizes, so it *lowers fees* when claims are ahead of schedule and *raises fees* when claims are behind schedule. This allows us to ensure that all prizes are claimed before the next draw is awarded, at which point the prizes can no longer be claimed.
 
 The "schedule" of claims is based on a count and timeframe. Recall the estimated claim count from the adaptive number of tiers? We use that same number to compute the schedule. The schedule starts immediately after the draw is awarded, and is set to take one quarter of the draw period. This provides plenty of leeway in the event that there are more prizes, statistically, for a given draw.  It's highly unlikely that a draw will see a variance of double the expected prizes, so we believe a quarter of the draw period is sufficient.
+
+#### Winner Eligiblity
+
+The Prize Pool determines whether a user has won a prize by checking if a pseudo-random number is within a certain range.  The PRN is generated such that it is unique per draw, tier, vault and user. The number range is used to tune the odds based on the prize frequency and the user's eligiblity.
+
+There are three steps we take:
+
+1. Calculate the pseudo-random number
+2. Calculate the winning zone
+3. Check if the PRN is less than the winning zone
+
+**Pseudo-Random Number**
+
+First we calculate a pseudo-random number is a keccak256 hash of the abi-encoded params:
+
+```
+uint256 pseudoRandomNumber = uint256(keccak256(abi.encode(drawId, vault, user, tier, prizeIndex, drawRandomNumber)))
+```
+
+We include the following params to ensure the PRN is unique:
+
+- `drawId`: the id for the awarded Draw
+- `vault`: the address of the vault that is claiming the prize
+- `user`: the address that won the prize
+- `tier`: the prize tier that was won
+- `prizeIndex`: the prize index within the tier that was won. E.g. if a tier 2 has $4^2$ prizes, then prize indices between 0 and 15 (inclusive) can be submitted.
+- `drawRandomNumber`: the Draw's random number
+
+**Winning Zone**
+
+Next we calculate the winning zone. The winning zone is a multiple of three fractions: the user's time-weighted average balance, the tier odds, and the vault portion:
+
+```
+uint256 winningZone = tierOdds * userTwab * vaultPortion
+```
+
+- The tier odds is a function that determines the prize tier frequency
+- The user's time-weighted average balance is the average balance they held for the duration of the prize tier accrual.
+- The vault portion is the fraction of prize liquidity that was contributed by the vault for the duration of prize tier accrual.
+
+The tier odds function creates a spectrum of prize frequencies between the yearly grand prize and the daily prizes. For more details see the [Prize Pool](./prize-pool).
+
+The prize tier accrual duration is computed based on the tier odds. Essentially it's time periods based on the prize frequency function above; which means that accrual durations will range between one year and one day.
+
+The user's time-weighted average balance is measured between the timestamps `drawClosedAt - duration` and `drawClosedAt`. E.g. for the yearly grand prize it will be their average balance for the preceding year, and for the daily prize it will be their balance for the preceding day.
+
+The vault portion is the portion of prize liquidity that was contributed by the vault. It is also measured between two timestamps:
+
+```
+vaultPortion = vaultContributedPrizeLiquidityBetween(drawClosedAt - duration, drawClosedAt) / totalContributePrizeLiquidityBetween(drawClosedAt - duration, drawClosedAt)
+```
+
+**Check if PRN in Winning Zone**
+
+Now that we have our PRN and Winning Zone, we can determine whether the user won a prize from a certain tier.
+
+We first squeeze the PRN into a smaller PRN within the vault's total average supply for the prize tier accrual duration. Then, we check to see if that number is less than the winning zone.
+
+```
+bool userWon = PRN % vaultTotalAverageSupply(drawClosedAt - duration, drawClosedAt) < winningZone
+```
+
+Note that the above is simplified; we use a custom modulo function that handles modulo bias.
+
+#### Claim Your Prize!
+
+When a prize claim is submitted successfully, the Prize Pool transfers tokens to the winner and increases the claim rewards for the claimer (if any).
