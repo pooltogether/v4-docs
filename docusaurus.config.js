@@ -84,8 +84,8 @@ module.exports = {
           title: "Github",
           items: [
             {
-              label: "pooltogether-v4",
-              href: "https://github.com/PoolTogether/pooltogether-contract-tsunami",
+              label: "pooltogether-v5",
+              href: "https://github.com/GenerationSoftware/pt-v5-prize-pool",
             },
           ],
         },
@@ -160,7 +160,7 @@ module.exports = {
           path: "docs",
           routeBasePath: "protocol/",
           editUrl: "https://github.com/pooltogether/v4-docs/tree/main/",
-          // lastVersion: "current",
+          lastVersion: "current",
           includeCurrentVersion: true,
           versions: {
             current: {
