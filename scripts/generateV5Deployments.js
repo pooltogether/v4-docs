@@ -5,6 +5,7 @@ const chalk = require("chalk");
 // Chain Ids
 // Mainnet
 const ETHEREUM_CHAIN_ID = 1;
+const ARBITRUM_CHAIN_ID = 42161;
 const BSC_CHAIN_ID = 56;
 const CELO_CHAIN_ID = 42220;
 const GNOSIS_CHAIN_ID = 100;
@@ -13,11 +14,14 @@ const POA_SOKOL_CHAIN_ID = 77;
 const POLYGON_CHAIN_ID = 137;
 
 // Testnet
+const ARBITRUM_GOERLI_CHAIN_ID = 421613;
+const ARBITRUM_SEPOLIA_CHAIN_ID = 421614;
 const BSC_TESTNET_CHAIN_ID = 97;
 const CELO_ALFAJORES_CHAIN_ID = 44787;
 const GOERLI_CHAIN_ID = 5;
 const MUMBAI_CHAIN_ID = 80001;
 const OPTIMISM_GOERLI_CHAIN_ID = 420;
+const OPTIMISM_SEPOLIA_CHAIN_ID = 11155420;
 const SEPOLIA_CHAIN_ID = 11155111;
 
 function formatAddressUrl(chainId, address) {
@@ -28,6 +32,12 @@ function formatAddressUrl(chainId, address) {
     url = `https://goerli.etherscan.io/address/${address}`;
   } else if (chainId == SEPOLIA_CHAIN_ID) {
     url = `https://sepolia.etherscan.io/address/${address}`;
+  } else if (chainId == ARBITRUM_CHAIN_ID) {
+    url = `https://arbiscan.io/address/${address}`;
+  } else if (chainId == ARBITRUM_GOERLI_CHAIN_ID) {
+    url = `https://goerli.arbiscan.io/address/${address}`;
+  } else if (chainId == ARBITRUM_SEPOLIA_CHAIN_ID) {
+    url = `https://sepolia.arbiscan.io/address/${address}`;
   } else if (chainId == BSC_CHAIN_ID) {
     url = `https://bscscan.com/address/${address}`;
   } else if (chainId == POA_SOKOL_CHAIN_ID) {
@@ -42,6 +52,8 @@ function formatAddressUrl(chainId, address) {
     url = `https://optimistic.etherscan.io/address/${address}`;
   } else if (chainId == OPTIMISM_GOERLI_CHAIN_ID) {
     url = `https://goerli-optimism.etherscan.io/address/${address}`;
+  } else if (chainId == OPTIMISM_SEPOLIA_CHAIN_ID) {
+    url = `https://sepolia-optimism.etherscan.io/address/${address}`;
   } else if (chainId == MUMBAI_CHAIN_ID) {
     url = `https://mumbai.polygonscan.com/address/${address}`;
   } else if (chainId == CELO_CHAIN_ID) {
@@ -61,6 +73,12 @@ function formatNetworkName(chainId) {
     return "Ethereum Goerli";
   } else if (chainId == SEPOLIA_CHAIN_ID) {
     return "Ethereum Sepolia";
+  } else if (chainId == ARBITRUM_CHAIN_ID) {
+    return "Arbitrum";
+  } else if (chainId == ARBITRUM_GOERLI_CHAIN_ID) {
+    return "Arbitrum Goerli";
+  } else if (chainId == ARBITRUM_SEPOLIA_CHAIN_ID) {
+    return "Arbitrum Sepolia";
   } else if (chainId == BSC_CHAIN_ID) {
     return "Binance Smart Chain";
   } else if (chainId == POA_SOKOL_CHAIN_ID) {
@@ -75,6 +93,8 @@ function formatNetworkName(chainId) {
     return "Optimism";
   } else if (chainId == OPTIMISM_GOERLI_CHAIN_ID) {
     return "Optimism Goerli";
+  } else if (chainId == OPTIMISM_SEPOLIA_CHAIN_ID) {
+    return "Optimism Sepolia";
   } else if (chainId == MUMBAI_CHAIN_ID) {
     return "Polygon Mumbai";
   } else if (chainId == CELO_CHAIN_ID) {
@@ -126,57 +146,43 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
       append(
         outputFile,
         contracts
-        .map(
+          .map(
             ({ type, address }) =>
-            `| ${type} | [${address}](${formatAddressUrl(chainId, address)}) |`,
-            )
-            .join("\n"),
-            );
-            append(outputFile, "");
-          }
-        });
+              `| ${type} | [${address}](${formatAddressUrl(chainId, address)}) |`,
+          )
+          .join("\n"),
+      );
+      append(outputFile, "");
+    }
+  });
 
-        fs.closeSync(outputFile);
-        console.log(chalk.green(`Done!`));
-      }
+  fs.closeSync(outputFile);
+  console.log(chalk.green(`Done!`));
+}
 
-      switch (process.argv[2]) {
-        case "mainnet":
-          generate(
-            "Mainnet",
-            0,
-            "./docs/deployments/mainnet.md",
-            [
-              "./data/ethereum-contracts.json",
-              "./data/optimism-contracts.json",
-            ]
-          );
-          break;
+switch (process.argv[2]) {
+  case "mainnet":
+    generate("Mainnet", 0, "./docs/deployments/mainnet.md", [
+      "./data/ethereum-contracts.json",
+      "./data/optimism-contracts.json",
+    ]);
+    break;
 
-        case "beta":
-          generate(
-            "Beta",
-            1,
-            "./docs/deployments/beta.md",
-            [
-              "./data/beta-ethereum-contracts.json",
-              "./data/beta-optimism-contracts.json",
-            ]
-          );
-          break;
+  case "beta":
+    generate("Beta", 1, "./docs/deployments/beta.md", [
+      "./data/beta-ethereum-contracts.json",
+      "./data/beta-optimism-contracts.json",
+    ]);
+    break;
 
-        case "testnet":
-          generate(
-            "Testnet",
-            2,
-            "./docs/deployments/testnet.md",
-            [
-              "./data/goerli-contracts.json",
-              "./data/optimismGoerli-contracts.json",
-            ]
-          );
-          break;
+  case "testnet":
+    generate("Testnet", 2, "./docs/deployments/testnet.md", [
+      "./data/sepolia-contracts.json",
+      "./data/arbitrumSepolia-contracts.json",
+      "./data/optimismSepolia-contracts.json",
+    ]);
+    break;
 
-        default:
-          break;
-      }
+  default:
+    break;
+}
