@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2023-10-17T22:18:34.910Z",
+  "timestamp": "2023-11-07T20:21:29.746Z",
   "contracts": [
     {
-      "chainId": 420,
-      "address": "0xf33E8ECD7518e5E464ecB0FB94aE4Fc2f39adB5B",
+      "chainId": 421614,
+      "address": "0xfEEBcD95EFAE898D2fB89Dc39250B5EB5742B2B5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -360,8 +360,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xfC29e757A2D1f66649De91e9225F36AB6c1BD44d",
+      "chainId": 421614,
+      "address": "0xF0B484d8110b2bc5eB82e998E96626560801db42",
       "version": {
         "major": 1,
         "minor": 0,
@@ -385,8 +385,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
+      "chainId": 421614,
+      "address": "0x08C19FE57af150a1AF975CB9a38769848c7DF98e",
       "version": {
         "major": 1,
         "minor": 0,
@@ -975,8 +975,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xB7930c829cc1de1b37a3Bb9b477E33251DA15a50",
+      "chainId": 421614,
+      "address": "0x7A6DBc7fF4f1a2D864291DB3AeC105A8EeE4A3D2",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1565,8 +1565,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x041a898Bc37129d2D2232163c3374f4077255F74",
+      "chainId": 421614,
+      "address": "0xB84460D777133a4B86540D557dB35952e4ADFeE7",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2155,8 +2155,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x331cDB619147A20c32e7B9391A4797Ed9656B104",
+      "chainId": 421614,
+      "address": "0x1Bc266E1F397517ECe9e384c55C7A5414b683639",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2745,8 +2745,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xB8e70B16b8d99753ce55F0E4C2A7eCeeecE30B64",
+      "chainId": 421614,
+      "address": "0x779275Fc1b987dB24463801f3708f42f3c6f6Ceb",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3335,8 +3335,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x0Ec780bE0191f8A364FAccdE91D13BE6F96632bE",
+      "chainId": 421614,
+      "address": "0xF401D1482DFAa89A050F111992A222e9ad123E14",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3925,8 +3925,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x0B09590E2dE22A629B45258812C0B25904689B5a",
+      "chainId": 421614,
+      "address": "0xd57822B8846F36f0E1FC775C8214523db199a4C5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -5062,8 +5062,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x8FaF98698e4fF29149a8A9D06Db20E3509F3754b",
+      "chainId": 421614,
+      "address": "0x6Fd1dF849DFC4F76F0B15ba0c8D3e99FF84817f1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6733,8 +6733,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x80E4233b178Bf4cB1950390C5EcB6Fa2766a9571",
+      "chainId": 421614,
+      "address": "0x644c81f7315D808a598EF3D6F644092240aC5a10",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7094,8 +7094,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x5C9c04FC5D6431A2101b8395E13B565762980F97",
+      "chainId": 421614,
+      "address": "0xDF548822A89B37ED4B182716DECfE86895eFFA25",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7582,8 +7582,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x7BF10552c810881f9344d5536023dd66530d2E88",
+      "chainId": 421614,
+      "address": "0xA42dD7350210b9D9d9F340a7c64591a57EA24B20",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7727,8 +7727,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x0294997B1100d6e35fd3868c6544c881096a23E1",
+      "chainId": 421614,
+      "address": "0xcCf2b2da02C6F19b85265190F274BeE997808243",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8175,8 +8175,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x21b8f4c7E92a37B893BE39b4Ec447459fa5031C6",
+      "chainId": 421614,
+      "address": "0xb87E4dC3eDC62977bD8d93554a4cbF6c52c9282a",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8375,8 +8375,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x6de2B30BE94F9Da2516CD30093fB11e0c4bFf422",
+      "chainId": 421614,
+      "address": "0xeE79841CBCB6BF29989B8977952A58C4417D64A9",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8565,8 +8565,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x53B7922eeCe8afE5bdaA170E20dc32c6deDA5277",
+      "chainId": 421614,
+      "address": "0xa4b085E5F024036125ed4D0659fE32388A03C6f8",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8725,8 +8725,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x6cA8dC2979d76f37C408549A9d6cd53910De6867",
+      "chainId": 421614,
+      "address": "0x32Fd52dF5532496C4c48500E6820c5243E9d0040",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9699,8 +9699,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xD71Ef91938614c6F54B4d87e6fEE42FEA2510448",
+      "chainId": 421614,
+      "address": "0x1620a4208363cBD9b60D97Af906F437Bf994755a",
       "version": {
         "major": 1,
         "minor": 0,
@@ -10673,8 +10673,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x79CB8685b157E3E02BB267660dFB291225680871",
+      "chainId": 421614,
+      "address": "0x8b249032b710160f67ac175CC8341d9068b3819a",
       "version": {
         "major": 1,
         "minor": 0,
@@ -11647,8 +11647,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x6F641aEBA53B13a73642c2987220351aCd702fDA",
+      "chainId": 421614,
+      "address": "0x3D21C8A9Fb3aA83186942d3eE50B3E53AE07178C",
       "version": {
         "major": 1,
         "minor": 0,
@@ -12621,8 +12621,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xAEe1289cd75Ad4a711839EF9b33ceAfa4935BF38",
+      "chainId": 421614,
+      "address": "0xF83Ad0B8CABC28160b7c66b82acC2C3bEEdD476c",
       "version": {
         "major": 1,
         "minor": 0,
@@ -13595,8 +13595,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x37fC3CEC5A8c1300D94Cf167F443bF9e2fD5a936",
+      "chainId": 421614,
+      "address": "0x2E27B43e3394baA0CF0032a1a349ff22D7823503",
       "version": {
         "major": 1,
         "minor": 0,
@@ -14569,8 +14569,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xaD91C29732fD148616882D2B50f2D886204E570B",
+      "chainId": 421614,
+      "address": "0x150feB551b0274152041E70d166F61Aaf1fEB87B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15543,8 +15543,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x1Be3733d56ff08Ae8DF0f9Ae7f27f4E7aAb051d8",
+      "chainId": 421614,
+      "address": "0x9204dDd22d042b26FB41d69102acDBc2190e62e8",
       "version": {
         "major": 1,
         "minor": 0,
@@ -16596,8 +16596,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xdB1D90BC65aa9b92868D814a670d1127635ba2E1",
+      "chainId": 421614,
+      "address": "0x7491a18F8b1E847306fd851f3768Dc6Ed7cDCb4A",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17649,8 +17649,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x3C72F407DABE54B4231Bd6474445a1859Fb27Ed9",
+      "chainId": 421614,
+      "address": "0x50F688d6719d88901E3EACFDa915E31b510d5cf1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -18702,8 +18702,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x43522DfD29B8a975059F93b03DaB1545935710Bb",
+      "chainId": 421614,
+      "address": "0x9F5652Cb2f76e4C9963661f4c581739004494047",
       "version": {
         "major": 1,
         "minor": 0,
@@ -19755,8 +19755,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xf08Edf5097343D5E9dA28aD5D19c2a956954A8B0",
+      "chainId": 421614,
+      "address": "0x4b219978F641C029e1dbfD6F8DB644C85401B637",
       "version": {
         "major": 1,
         "minor": 0,
@@ -20808,8 +20808,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x5D973D827685fD320f5536f9b533b69Ff7bd26f0",
+      "chainId": 421614,
+      "address": "0xE5b8585364C6C07222B9dD915677a3D194f40020",
       "version": {
         "major": 1,
         "minor": 0,
@@ -21861,8 +21861,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x346Df08b6B0630714C80E65f7beEFcc50b3Fc4Ec",
+      "chainId": 421614,
+      "address": "0xF733CC6B0D1f13487FF45bC66335e348D8EA87d1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -22914,8 +22914,671 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x9e025155f7BD3b17E26bCE811F7B6F075973570A",
+      "chainId": 421614,
+      "address": "0x31AAF393E2F144FA82674db9D50e84678B97155A",
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "type": "TwabRewards",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract TwabController",
+              "name": "_twabController",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint48",
+              "name": "epochDuration",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint32",
+              "name": "twabPeriodLength",
+              "type": "uint32"
+            }
+          ],
+          "name": "EpochDurationNotMultipleOfTwabPeriod",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "epochEndTimestamp",
+              "type": "uint64"
+            }
+          ],
+          "name": "EpochNotOver",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "epochExtension",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "currentEpochs",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "maxEpochs",
+              "type": "uint8"
+            }
+          ],
+          "name": "ExceedsMaxEpochs",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "gracePeriodEndTimestamp",
+              "type": "uint256"
+            }
+          ],
+          "name": "GracePeriodActive",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "epochId",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "numberOfEpochs",
+              "type": "uint8"
+            }
+          ],
+          "name": "InvalidEpochId",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            }
+          ],
+          "name": "InvalidPromotion",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "creator",
+              "type": "address"
+            }
+          ],
+          "name": "OnlyPromotionCreator",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "PayeeZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            }
+          ],
+          "name": "PromotionInactive",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "epochId",
+              "type": "uint8"
+            }
+          ],
+          "name": "RewardsAlreadyClaimed",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "startTimePeriodOffset",
+              "type": "uint64"
+            }
+          ],
+          "name": "StartTimeNotAlignedWithTwabPeriod",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "received",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expected",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensReceivedLessThanExpected",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TwabControllerZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "ZeroEpochDuration",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "ZeroEpochs",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "ZeroTokensPerEpoch",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "contract IERC20",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "name": "PromotionCreated",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "PromotionDestroyed",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "epochNumber",
+              "type": "uint8"
+            }
+          ],
+          "name": "PromotionEnded",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "numberOfEpochs",
+              "type": "uint256"
+            }
+          ],
+          "name": "PromotionExtended",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "promotionId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8[]",
+              "name": "epochIds",
+              "type": "uint8[]"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "RewardsClaimed",
+          "type": "event"
+        },
+        {
+          "inputs": [],
+          "name": "GRACE_PERIOD",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "_epochIds",
+              "type": "uint8[]"
+            }
+          ],
+          "name": "claimRewards",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_vault",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IERC20",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint64",
+              "name": "_startTimestamp",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_tokensPerEpoch",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint48",
+              "name": "_epochDuration",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint8",
+              "name": "_numberOfEpochs",
+              "type": "uint8"
+            }
+          ],
+          "name": "createPromotion",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            }
+          ],
+          "name": "destroyPromotion",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            }
+          ],
+          "name": "endPromotion",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "_numberOfEpochs",
+              "type": "uint8"
+            }
+          ],
+          "name": "extendPromotion",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getCurrentEpochId",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getPromotion",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "creator",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "startTimestamp",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "numberOfEpochs",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "vault",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "epochDuration",
+                  "type": "uint48"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "createdAt",
+                  "type": "uint48"
+                },
+                {
+                  "internalType": "contract IERC20",
+                  "name": "token",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokensPerEpoch",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "rewardsUnclaimed",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Promotion",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getRemainingRewards",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_promotionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "_epochIds",
+              "type": "uint8[]"
+            }
+          ],
+          "name": "getRewardsAmount",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes[]",
+              "name": "data",
+              "type": "bytes[]"
+            }
+          ],
+          "name": "multicall",
+          "outputs": [
+            {
+              "internalType": "bytes[]",
+              "name": "results",
+              "type": "bytes[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "twabController",
+          "outputs": [
+            {
+              "internalType": "contract TwabController",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "chainId": 421614,
+      "address": "0x3adaa1D4F23C82130e1681c2cA9b38f5Fb9a0892",
       "version": {
         "major": 1,
         "minor": 0,
@@ -24956,14 +25619,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0x9e025155f7BD3b17E26bCE811F7B6F075973570A",
+          "chainId": 421614,
+          "address": "0x3adaa1D4F23C82130e1681c2cA9b38f5Fb9a0892",
           "name": "Prize DAI Low Yield",
           "decimals": 18,
           "symbol": "pDAI-LY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
+              "address": "0x08C19FE57af150a1AF975CB9a38769848c7DF98e",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -24972,8 +25635,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xD7dC15955968e62B3B5bE1c7dbEAEF81D7BBE776",
+      "chainId": 421614,
+      "address": "0x6d7dFc0d718dBb9A7cad95AC17D0E9fDf72faAde",
       "version": {
         "major": 1,
         "minor": 0,
@@ -25696,8 +26359,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x2B5f48ffFa09173D3aac4A95fa05FE1317589a1E",
+      "chainId": 421614,
+      "address": "0x2cB2d092D7a39BC055655F234BdeC79EB9742a00",
       "version": {
         "major": 1,
         "minor": 0,
@@ -26335,8 +26998,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xbC6d40984ddB1482BBBF1433c1C1f0380f74caCD",
+      "chainId": 421614,
+      "address": "0x4DBF73fe0D23A6d275aeFebC7C00600045aB8B9E",
       "version": {
         "major": 1,
         "minor": 0,
@@ -28377,14 +29040,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0xbC6d40984ddB1482BBBF1433c1C1f0380f74caCD",
+          "chainId": 421614,
+          "address": "0x4DBF73fe0D23A6d275aeFebC7C00600045aB8B9E",
           "name": "Prize DAI High Yield",
           "decimals": 18,
           "symbol": "pDAI-HY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x4D07Ba104ff254c19B443aDE6224f744Db84FB8A",
+              "address": "0x08C19FE57af150a1AF975CB9a38769848c7DF98e",
               "symbol": "DAI",
               "name": "Dai Stablecoin"
             }
@@ -28393,8 +29056,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x74Ae90abbc88463fDd524097fc89b738b5b22ad8",
+      "chainId": 421614,
+      "address": "0x41CE3D5a456BD7a029285eEc97f3DDCE904034bC",
       "version": {
         "major": 1,
         "minor": 0,
@@ -29117,8 +29780,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xAC296d4F1DA926FeEf4bBe3e05A2C892A1E7fBEc",
+      "chainId": 421614,
+      "address": "0x366711b81F8DD77cBE4333214CEacB72b85D8573",
       "version": {
         "major": 1,
         "minor": 0,
@@ -29756,8 +30419,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x1eAdB947b1e66ff3575F9Fd0FD4fB4Cc8fcAD8Fd",
+      "chainId": 421614,
+      "address": "0xA723Cf5D90c1A472c7de7285e5bD314AeA107EDe",
       "version": {
         "major": 1,
         "minor": 0,
@@ -31798,14 +32461,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0x1eAdB947b1e66ff3575F9Fd0FD4fB4Cc8fcAD8Fd",
+          "chainId": 421614,
+          "address": "0xA723Cf5D90c1A472c7de7285e5bD314AeA107EDe",
           "name": "Prize USDC Low Yield",
           "decimals": 6,
           "symbol": "pUSDC-LY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xB7930c829cc1de1b37a3Bb9b477E33251DA15a50",
+              "address": "0x7A6DBc7fF4f1a2D864291DB3AeC105A8EeE4A3D2",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -31814,8 +32477,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x0Ee04778d018b6E93dBb00BCFcB92409C02eF6Dd",
+      "chainId": 421614,
+      "address": "0xfD0612a9A42551E7E195cc64d90eC2f071E16372",
       "version": {
         "major": 1,
         "minor": 0,
@@ -32538,8 +33201,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x14745e3ebc98bDAD74ffa11c1DC4928df5F40c83",
+      "chainId": 421614,
+      "address": "0xd3B233765d44E2772B438c481F178b930be6dB40",
       "version": {
         "major": 1,
         "minor": 0,
@@ -33177,8 +33840,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xc3d6a8d76B304E0716b3227C00a83187340DC846",
+      "chainId": 421614,
+      "address": "0xb81b725b16e99c840Ac17B396590da9c93c5bc3B",
       "version": {
         "major": 1,
         "minor": 0,
@@ -35219,14 +35882,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0xc3d6a8d76B304E0716b3227C00a83187340DC846",
+          "chainId": 421614,
+          "address": "0xb81b725b16e99c840Ac17B396590da9c93c5bc3B",
           "name": "Prize USDC High Yield",
           "decimals": 6,
           "symbol": "pUSDC-HY-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xB7930c829cc1de1b37a3Bb9b477E33251DA15a50",
+              "address": "0x7A6DBc7fF4f1a2D864291DB3AeC105A8EeE4A3D2",
               "symbol": "USDC",
               "name": "USD Coin"
             }
@@ -35235,8 +35898,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xeA4F2AA215A863383f813770EecE7c2508Cfb630",
+      "chainId": 421614,
+      "address": "0xEdF295a3BF8AE9932694288Ea8f7BE662FC3Ec82",
       "version": {
         "major": 1,
         "minor": 0,
@@ -35959,8 +36622,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x6a14892d466FB12e6f16d8372E6f46f3C74962Fa",
+      "chainId": 421614,
+      "address": "0x4A9fFC4d25A9269C3468d2cc49bC6A27aF2D5C19",
       "version": {
         "major": 1,
         "minor": 0,
@@ -36598,8 +37261,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xb1AF8E57033a0f5B5Db37C2B2E8C4a357514d2B5",
+      "chainId": 421614,
+      "address": "0xf028016D98eBA8fB9d56e9dee04e4639C724E6ae",
       "version": {
         "major": 1,
         "minor": 0,
@@ -38640,14 +39303,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0xb1AF8E57033a0f5B5Db37C2B2E8C4a357514d2B5",
+          "chainId": 421614,
+          "address": "0xf028016D98eBA8fB9d56e9dee04e4639C724E6ae",
           "name": "Prize GUSD",
           "decimals": 2,
           "symbol": "pGUSD-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x041a898Bc37129d2D2232163c3374f4077255F74",
+              "address": "0xB84460D777133a4B86540D557dB35952e4ADFeE7",
               "symbol": "GUSD",
               "name": "Gemini Dollar"
             }
@@ -38656,8 +39319,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x33C53241803Ff6DA199Dbf9e5291f3b5770e67E5",
+      "chainId": 421614,
+      "address": "0xbCa7D2c2Ef20277241ac55D98cba9BE29A547cc9",
       "version": {
         "major": 1,
         "minor": 0,
@@ -39380,8 +40043,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x45ed91Ee73FE8Fce0b87Ade038d7d26e27bb6A5A",
+      "chainId": 421614,
+      "address": "0xF8820887897bb3E70F3f393DADEDdbC8D6D69B2D",
       "version": {
         "major": 1,
         "minor": 0,
@@ -40019,8 +40682,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xa2574ee88D049Df4CdC8DEc746842C7615FBF5A5",
+      "chainId": 421614,
+      "address": "0xF79C5f53399492308195b1417B8DfaE47e4efD75",
       "version": {
         "major": 1,
         "minor": 0,
@@ -42061,14 +42724,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0xa2574ee88D049Df4CdC8DEc746842C7615FBF5A5",
+          "chainId": 421614,
+          "address": "0xF79C5f53399492308195b1417B8DfaE47e4efD75",
           "name": "Prize WBTC",
           "decimals": 8,
           "symbol": "pWBTC-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0x331cDB619147A20c32e7B9391A4797Ed9656B104",
+              "address": "0x1Bc266E1F397517ECe9e384c55C7A5414b683639",
               "symbol": "WBTC",
               "name": "Wrapped BTC"
             }
@@ -42077,8 +42740,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xb5fb717E7b46Db4645081CDCce2908DA3E68da1D",
+      "chainId": 421614,
+      "address": "0xb86903715b85177eFF6Ba1B6499b8042749F5ab1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -42801,8 +43464,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x6bD1d647F70866C79Ab78ceEfa3c0Bfd96ce28A6",
+      "chainId": 421614,
+      "address": "0x7e54900dF4B20788753a2a81f377EbdBaAA65Fc8",
       "version": {
         "major": 1,
         "minor": 0,
@@ -43440,8 +44103,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xEF9aFd8b3701198cCac6bf55458C38F61C4b55c4",
+      "chainId": 421614,
+      "address": "0x5e733FC64179B18986ffa6D840023c99707984ad",
       "version": {
         "major": 1,
         "minor": 0,
@@ -45482,14 +46145,14 @@
       ],
       "tokens": [
         {
-          "chainId": 420,
-          "address": "0xEF9aFd8b3701198cCac6bf55458C38F61C4b55c4",
+          "chainId": 421614,
+          "address": "0x5e733FC64179B18986ffa6D840023c99707984ad",
           "name": "Prize WETH",
           "decimals": 18,
           "symbol": "pWETH-T",
           "extensions": {
             "underlyingAsset": {
-              "address": "0xB8e70B16b8d99753ce55F0E4C2A7eCeeecE30B64",
+              "address": "0x779275Fc1b987dB24463801f3708f42f3c6f6Ceb",
               "symbol": "WETH",
               "name": "Wrapped Ether"
             }
@@ -45498,8 +46161,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0x3ED94FFd272a44f04FF7cE065CbC11CAB90C87CE",
+      "chainId": 421614,
+      "address": "0xE083a5C60c5A6CE5D92B42d6BC9A0C4f81321B9b",
       "version": {
         "major": 1,
         "minor": 0,
@@ -46222,8 +46885,8 @@
       ]
     },
     {
-      "chainId": 420,
-      "address": "0xEeC7E46D735fe32e9b6Fb0bB8dEd37ADd5e6B0Fe",
+      "chainId": 421614,
+      "address": "0xFD435f244f21a9b8c56982a71b3e5732704b6e76",
       "version": {
         "major": 1,
         "minor": 0,
