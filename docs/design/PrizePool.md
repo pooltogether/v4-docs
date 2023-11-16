@@ -75,7 +75,7 @@ The Prize Pool distributes prizes using prize "tiers". Tiers are ordered from 0 
 
 ### Standard Prize Tiers
 
-The standard prize tiers run from 0 to $n-2$, where $n$ is the number of prize tiers. The number of tiers $n$ can range between 3 and 15.
+The standard prize tiers run from 0 to $n-2$, where $n$ is the number of prize tiers. The number of tiers $n$ can range between 3 and 10.
 
 Each tier has a unique:
 
