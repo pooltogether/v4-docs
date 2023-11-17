@@ -26,6 +26,10 @@ This hook receives some additional information such as the total prize value tra
 
 Custom prize hooks can be created by deploying a contract that extends the [`IVaultHooks`](/protocol/reference/vaults/Interfaces/IVaultHooks) interface. See the [prize hook examples](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/prize-hooks/examples) to get started!
 
+### Gas Limits
+
+On standard vaults, each hook (`beforeClaimPrize` and `afterClaimPrize`) is limited to 150k gas. This is to prevent hook executions from becoming too costly for claimers since they pay the extra gas required. If the hook exceeds this limit, the call will revert. Limits may be different on non-standard vaults.
+
 ## Using a Prize Hook
 
 To opt-in to a new prize hook on a standard vault, you can call the [`setHooks`](/protocol/reference/vaults/Vault#sethooks-1) function on the vault with the following data:
