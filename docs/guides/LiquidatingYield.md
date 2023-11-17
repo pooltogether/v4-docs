@@ -1,7 +1,7 @@
 ---
 id: liquidating-yield
 title: Liquidating Yield
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Arbitraging Yield Liquidations

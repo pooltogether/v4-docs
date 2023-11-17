@@ -1,7 +1,7 @@
 ---
 id: claiming-prizes
 title: Claiming Prizes
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 #### **Tutorial:** [🏆 Creating a Prize Claiming bot](https://mirror.xyz/chuckbergeron-g9.eth/xPSEh1pfjV2IT1yswcsjN2gBBrVf548V8q9W23xxA8U)
