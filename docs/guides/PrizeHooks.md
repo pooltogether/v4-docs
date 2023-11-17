@@ -52,7 +52,7 @@ This method is the quickest and safest, but it restricts the vault compatibility
 
 ### Verify the Caller is Any Valid Vault
 
-To verify that the caller of a hook is any valid vault, it can be cross-referenced with the prize pool contract. Both hooks receive parameter for the winner's address, the prize tier, and the prize index. This data can be passed to the [`PrizePool.isWinner(...)`](/protocol/reference/prize-pool/PrizePool#iswinner) function with the vault parameter set as `msg.sender`. If this function returns `true`, the hook can be certain that the specified prize has been won for the last awarded draw.
+To verify that the caller of a hook is any valid vault, it can be cross-referenced with the prize pool contract. Both hooks receive parameters for the winner's address, the prize tier, and the prize index. This data can be passed to the [`PrizePool.isWinner(...)`](/protocol/reference/prize-pool/PrizePool#iswinner) function with the vault parameter set as `msg.sender`. If this function returns `true`, the hook can be certain that the specified prize has been won for the last awarded draw.
 
 > It is important to note that if this verification method is used, the additional parameters passed to the hooks (`fee` & `feeRecipient` or `prize` & `recipient`) cannot be trusted without additional verification.
 >
