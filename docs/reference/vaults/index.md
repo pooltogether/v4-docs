@@ -1,11 +1,9 @@
 ---
 title: Vaults
-sidebar_position: 2
+sidebar_position: 4
 ---
 
-The PoolTogether V5 Vault Factory makes it easy to deploy new Vaults without writing any code!
-
-<!-- TODO: Link to Caban Vault Factory when it is no longer password protected -->
+The PoolTogether V5 Vault Factory makes it easy to deploy new Vaults using compatible ERC4626 yield vaults.
 
 <div className='flex-center'>
   <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
