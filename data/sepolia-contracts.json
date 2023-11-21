@@ -1,33 +1,79 @@
 {
   "name": "Hyperstructure Testnet",
-  "version": { "major": 1, "minor": 0, "patch": 0 },
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
   "timestamp": "2023-11-07T20:21:29.739Z",
   "contracts": [
     {
       "chainId": 11155111,
       "address": "0x833Df01C4C45AB5c1c9279e1Fb601D534B25C9dc",
-      "version": { "major": 1, "minor": 0, "patch": 0 },
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
       "type": "ChainlinkVRFV2Direct",
       "abi": [
         {
           "inputs": [
-            { "internalType": "address", "name": "_owner", "type": "address" },
-            { "internalType": "contract VRFV2Wrapper", "name": "_vrfV2Wrapper", "type": "address" },
-            { "internalType": "uint32", "name": "callbackGasLimit_", "type": "uint32" },
-            { "internalType": "uint16", "name": "requestConfirmations_", "type": "uint16" }
+            {
+              "internalType": "address",
+              "name": "_owner",
+              "type": "address"
+            },
+            {
+              "internalType": "contract VRFV2Wrapper",
+              "name": "_vrfV2Wrapper",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "callbackGasLimit_",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint16",
+              "name": "requestConfirmations_",
+              "type": "uint16"
+            }
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
         },
-        { "inputs": [], "name": "CallbackGasLimitZero", "type": "error" },
         {
-          "inputs": [{ "internalType": "uint256", "name": "vrfRequestId", "type": "uint256" }],
+          "inputs": [],
+          "name": "CallbackGasLimitZero",
+          "type": "error"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "vrfRequestId",
+              "type": "uint256"
+            }
+          ],
           "name": "InvalidVrfRequestId",
           "type": "error"
         },
-        { "inputs": [], "name": "LinkTokenZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RequestConfirmationsZero", "type": "error" },
-        { "inputs": [], "name": "VRFV2WrapperZeroAddress", "type": "error" },
+        {
+          "inputs": [],
+          "name": "LinkTokenZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RequestConfirmationsZero",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "VRFV2WrapperZeroAddress",
+          "type": "error"
+        },
         {
           "anonymous": false,
           "inputs": [
@@ -50,7 +96,12 @@
               "name": "previousOwner",
               "type": "address"
             },
-            { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
           ],
           "name": "OwnershipTransferred",
           "type": "event"
@@ -58,7 +109,12 @@
         {
           "anonymous": false,
           "inputs": [
-            { "indexed": true, "internalType": "uint32", "name": "requestId", "type": "uint32" },
+            {
+              "indexed": true,
+              "internalType": "uint32",
+              "name": "requestId",
+              "type": "uint32"
+            },
             {
               "indexed": false,
               "internalType": "uint256",
@@ -72,8 +128,18 @@
         {
           "anonymous": false,
           "inputs": [
-            { "indexed": true, "internalType": "uint32", "name": "requestId", "type": "uint32" },
-            { "indexed": true, "internalType": "address", "name": "sender", "type": "address" }
+            {
+              "indexed": true,
+              "internalType": "uint32",
+              "name": "requestId",
+              "type": "uint32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
           ],
           "name": "RandomNumberRequested",
           "type": "event"
@@ -112,10 +178,20 @@
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "uint32", "name": "requestId", "type": "uint32" }],
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "requestId",
+              "type": "uint32"
+            }
+          ],
           "name": "completedAt",
           "outputs": [
-            { "internalType": "uint64", "name": "completedAtTimestamp", "type": "uint64" }
+            {
+              "internalType": "uint64",
+              "name": "completedAtTimestamp",
+              "type": "uint64"
+            }
           ],
           "stateMutability": "view",
           "type": "function"
@@ -123,21 +199,39 @@
         {
           "inputs": [],
           "name": "getCallbackGasLimit",
-          "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "getLastRequestId",
-          "outputs": [{ "internalType": "uint32", "name": "requestId", "type": "uint32" }],
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "requestId",
+              "type": "uint32"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "getRequestConfirmations",
-          "outputs": [{ "internalType": "uint16", "name": "", "type": "uint16" }],
+          "outputs": [
+            {
+              "internalType": "uint16",
+              "name": "",
+              "type": "uint16"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
@@ -145,44 +239,96 @@
           "inputs": [],
           "name": "getRequestFee",
           "outputs": [
-            { "internalType": "address", "name": "feeToken", "type": "address" },
-            { "internalType": "uint256", "name": "requestFee", "type": "uint256" }
+            {
+              "internalType": "address",
+              "name": "feeToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "requestFee",
+              "type": "uint256"
+            }
           ],
           "stateMutability": "view",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "uint32", "name": "_internalRequestId", "type": "uint32" }],
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "_internalRequestId",
+              "type": "uint32"
+            }
+          ],
           "name": "isRequestComplete",
-          "outputs": [{ "internalType": "bool", "name": "isCompleted", "type": "bool" }],
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "isCompleted",
+              "type": "bool"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "owner",
-          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "pendingOwner",
-          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [{ "internalType": "uint32", "name": "_internalRequestId", "type": "uint32" }],
-          "name": "randomNumber",
-          "outputs": [{ "internalType": "uint256", "name": "randomNum", "type": "uint256" }],
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [
-            { "internalType": "uint256", "name": "_requestId", "type": "uint256" },
-            { "internalType": "uint256[]", "name": "_randomWords", "type": "uint256[]" }
+            {
+              "internalType": "uint32",
+              "name": "_internalRequestId",
+              "type": "uint32"
+            }
+          ],
+          "name": "randomNumber",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "randomNum",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_requestId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "_randomWords",
+              "type": "uint256[]"
+            }
           ],
           "name": "rawFulfillRandomWords",
           "outputs": [],
@@ -200,14 +346,28 @@
           "inputs": [],
           "name": "requestRandomNumber",
           "outputs": [
-            { "internalType": "uint32", "name": "requestId", "type": "uint32" },
-            { "internalType": "uint32", "name": "lockBlock", "type": "uint32" }
+            {
+              "internalType": "uint32",
+              "name": "requestId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "lockBlock",
+              "type": "uint32"
+            }
           ],
           "stateMutability": "nonpayable",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "uint32", "name": "callbackGasLimit_", "type": "uint32" }],
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "callbackGasLimit_",
+              "type": "uint32"
+            }
+          ],
           "name": "setCallbackGasLimit",
           "outputs": [],
           "stateMutability": "nonpayable",
@@ -215,7 +375,11 @@
         },
         {
           "inputs": [
-            { "internalType": "uint16", "name": "requestConfirmations_", "type": "uint16" }
+            {
+              "internalType": "uint16",
+              "name": "requestConfirmations_",
+              "type": "uint16"
+            }
           ],
           "name": "setRequestConfirmations",
           "outputs": [],
@@ -223,7 +387,13 @@
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_newOwner", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_newOwner",
+              "type": "address"
+            }
+          ],
           "name": "transferOwnership",
           "outputs": [],
           "stateMutability": "nonpayable",
@@ -232,7 +402,13 @@
         {
           "inputs": [],
           "name": "vrfV2Wrapper",
-          "outputs": [{ "internalType": "contract VRFV2Wrapper", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "contract VRFV2Wrapper",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         }
@@ -241,17 +417,45 @@
     {
       "chainId": 11155111,
       "address": "0x1A188719711d62423abF1A4de7D8aA9014A39D73",
-      "version": { "major": 1, "minor": 0, "patch": 0 },
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
       "type": "RngAuction",
       "abi": [
         {
           "inputs": [
-            { "internalType": "contract RNGInterface", "name": "rng_", "type": "address" },
-            { "internalType": "address", "name": "owner_", "type": "address" },
-            { "internalType": "uint64", "name": "sequencePeriod_", "type": "uint64" },
-            { "internalType": "uint64", "name": "sequenceOffset_", "type": "uint64" },
-            { "internalType": "uint64", "name": "auctionDurationSeconds_", "type": "uint64" },
-            { "internalType": "uint64", "name": "auctionTargetTime_", "type": "uint64" },
+            {
+              "internalType": "contract RNGInterface",
+              "name": "rng_",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "owner_",
+              "type": "address"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequencePeriod_",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequenceOffset_",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "auctionDurationSeconds_",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "auctionTargetTime_",
+              "type": "uint64"
+            },
             {
               "internalType": "UD2x18",
               "name": "firstAuctionTargetRewardFraction_",
@@ -263,54 +467,130 @@
         },
         {
           "inputs": [
-            { "internalType": "uint64", "name": "auctionDuration", "type": "uint64" },
-            { "internalType": "uint64", "name": "sequencePeriod", "type": "uint64" }
+            {
+              "internalType": "uint64",
+              "name": "auctionDuration",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequencePeriod",
+              "type": "uint64"
+            }
           ],
           "name": "AuctionDurationGTSequencePeriod",
           "type": "error"
         },
-        { "inputs": [], "name": "AuctionExpired", "type": "error" },
+        {
+          "inputs": [],
+          "name": "AuctionExpired",
+          "type": "error"
+        },
         {
           "inputs": [
-            { "internalType": "uint64", "name": "auctionTargetTime", "type": "uint64" },
-            { "internalType": "uint64", "name": "auctionDuration", "type": "uint64" }
+            {
+              "internalType": "uint64",
+              "name": "auctionTargetTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "auctionDuration",
+              "type": "uint64"
+            }
           ],
           "name": "AuctionTargetTimeExceedsDuration",
           "type": "error"
         },
-        { "inputs": [], "name": "CannotStartNextSequence", "type": "error" },
-        { "inputs": [], "name": "OwnerZeroAddress", "type": "error" },
+        {
+          "inputs": [],
+          "name": "CannotStartNextSequence",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "OwnerZeroAddress",
+          "type": "error"
+        },
         {
           "inputs": [
-            { "internalType": "uint256", "name": "x", "type": "uint256" },
-            { "internalType": "uint256", "name": "y", "type": "uint256" }
+            {
+              "internalType": "uint256",
+              "name": "x",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "y",
+              "type": "uint256"
+            }
           ],
           "name": "PRBMath_MulDiv18_Overflow",
           "type": "error"
         },
         {
           "inputs": [
-            { "internalType": "uint256", "name": "x", "type": "uint256" },
-            { "internalType": "uint256", "name": "y", "type": "uint256" },
-            { "internalType": "uint256", "name": "denominator", "type": "uint256" }
+            {
+              "internalType": "uint256",
+              "name": "x",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "y",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "denominator",
+              "type": "uint256"
+            }
           ],
           "name": "PRBMath_MulDiv_Overflow",
           "type": "error"
         },
         {
-          "inputs": [{ "internalType": "uint256", "name": "x", "type": "uint256" }],
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "x",
+              "type": "uint256"
+            }
+          ],
           "name": "PRBMath_UD60x18_Convert_Overflow",
           "type": "error"
         },
         {
-          "inputs": [{ "internalType": "UD60x18", "name": "x", "type": "uint256" }],
+          "inputs": [
+            {
+              "internalType": "UD60x18",
+              "name": "x",
+              "type": "uint256"
+            }
+          ],
           "name": "PRBMath_UD60x18_IntoUD2x18_Overflow",
           "type": "error"
         },
-        { "inputs": [], "name": "RewardRecipientIsZero", "type": "error" },
-        { "inputs": [], "name": "RngZeroAddress", "type": "error" },
-        { "inputs": [], "name": "SequencePeriodZero", "type": "error" },
-        { "inputs": [], "name": "TargetRewardFractionGTOne", "type": "error" },
+        {
+          "inputs": [],
+          "name": "RewardRecipientIsZero",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "SequencePeriodZero",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "TargetRewardFractionGTOne",
+          "type": "error"
+        },
         {
           "anonymous": false,
           "inputs": [
@@ -333,7 +613,12 @@
               "name": "previousOwner",
               "type": "address"
             },
-            { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
           ],
           "name": "OwnershipTransferred",
           "type": "event"
@@ -341,9 +626,24 @@
         {
           "anonymous": false,
           "inputs": [
-            { "indexed": true, "internalType": "address", "name": "sender", "type": "address" },
-            { "indexed": true, "internalType": "address", "name": "recipient", "type": "address" },
-            { "indexed": true, "internalType": "uint32", "name": "sequenceId", "type": "uint32" },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint32",
+              "name": "sequenceId",
+              "type": "uint32"
+            },
             {
               "indexed": false,
               "internalType": "contract RNGInterface",
@@ -356,7 +656,12 @@
               "name": "rngRequestId",
               "type": "uint32"
             },
-            { "indexed": false, "internalType": "uint64", "name": "elapsedTime", "type": "uint64" },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "elapsedTime",
+              "type": "uint64"
+            },
             {
               "indexed": false,
               "internalType": "UD2x18",
@@ -383,28 +688,52 @@
         {
           "inputs": [],
           "name": "auctionDuration",
-          "outputs": [{ "internalType": "uint64", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "auctionElapsedTime",
-          "outputs": [{ "internalType": "uint64", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "auctionTargetTime",
-          "outputs": [{ "internalType": "uint64", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "canStartNextSequence",
-          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
@@ -417,17 +746,33 @@
         },
         {
           "inputs": [
-            { "internalType": "uint64", "name": "__auctionElapsedTime", "type": "uint64" }
+            {
+              "internalType": "uint64",
+              "name": "__auctionElapsedTime",
+              "type": "uint64"
+            }
           ],
           "name": "computeRewardFraction",
-          "outputs": [{ "internalType": "UD2x18", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "UD2x18",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "currentFractionalReward",
-          "outputs": [{ "internalType": "UD2x18", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "UD2x18",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
@@ -437,11 +782,31 @@
           "outputs": [
             {
               "components": [
-                { "internalType": "address", "name": "recipient", "type": "address" },
-                { "internalType": "UD2x18", "name": "rewardFraction", "type": "uint64" },
-                { "internalType": "uint32", "name": "sequenceId", "type": "uint32" },
-                { "internalType": "contract RNGInterface", "name": "rng", "type": "address" },
-                { "internalType": "uint32", "name": "rngRequestId", "type": "uint32" }
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "UD2x18",
+                  "name": "rewardFraction",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "sequenceId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "contract RNGInterface",
+                  "name": "rng",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "rngRequestId",
+                  "type": "uint32"
+                }
               ],
               "internalType": "struct RngAuctionResult",
               "name": "",
@@ -457,8 +822,16 @@
           "outputs": [
             {
               "components": [
-                { "internalType": "address", "name": "recipient", "type": "address" },
-                { "internalType": "UD2x18", "name": "rewardFraction", "type": "uint64" }
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "UD2x18",
+                  "name": "rewardFraction",
+                  "type": "uint64"
+                }
               ],
               "internalType": "struct AuctionResult",
               "name": "",
@@ -471,14 +844,26 @@
         {
           "inputs": [],
           "name": "getLastRngService",
-          "outputs": [{ "internalType": "contract RNGInterface", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "contract RNGInterface",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "getNextRngService",
-          "outputs": [{ "internalType": "contract RNGInterface", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "contract RNGInterface",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
@@ -486,8 +871,16 @@
           "inputs": [],
           "name": "getRngResults",
           "outputs": [
-            { "internalType": "uint256", "name": "randomNumber", "type": "uint256" },
-            { "internalType": "uint64", "name": "rngCompletedAt", "type": "uint64" }
+            {
+              "internalType": "uint256",
+              "name": "randomNumber",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "rngCompletedAt",
+              "type": "uint64"
+            }
           ],
           "stateMutability": "nonpayable",
           "type": "function"
@@ -495,42 +888,78 @@
         {
           "inputs": [],
           "name": "isAuctionOpen",
-          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "isRngComplete",
-          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "lastSequenceId",
-          "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "openSequenceId",
-          "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "owner",
-          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "pendingOwner",
-          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
@@ -544,20 +973,36 @@
         {
           "inputs": [],
           "name": "sequenceOffset",
-          "outputs": [{ "internalType": "uint64", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "sequencePeriod",
-          "outputs": [{ "internalType": "uint64", "name": "", "type": "uint64" }],
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "",
+              "type": "uint64"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [
-            { "internalType": "contract RNGInterface", "name": "_rngService", "type": "address" }
+            {
+              "internalType": "contract RNGInterface",
+              "name": "_rngService",
+              "type": "address"
+            }
           ],
           "name": "setNextRngService",
           "outputs": [],
@@ -565,14 +1010,26 @@
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_rewardRecipient", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_rewardRecipient",
+              "type": "address"
+            }
+          ],
           "name": "startRngRequest",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_newOwner", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_newOwner",
+              "type": "address"
+            }
+          ],
           "name": "transferOwnership",
           "outputs": [],
           "stateMutability": "nonpayable",
@@ -583,7 +1040,11 @@
     {
       "chainId": 11155111,
       "address": "0x904f5BEb658cbcD93CF00Edb4d948DE9e6f7f163",
-      "version": { "major": 1, "minor": 0, "patch": 0 },
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
       "type": "ChainlinkVRFV2DirectRngAuctionHelper",
       "abi": [
         {
@@ -593,17 +1054,37 @@
               "name": "_chainlinkVrfV2Direct",
               "type": "address"
             },
-            { "internalType": "contract IRngAuction", "name": "_rngAuction", "type": "address" }
+            {
+              "internalType": "contract IRngAuction",
+              "name": "_rngAuction",
+              "type": "address"
+            }
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
         },
-        { "inputs": [], "name": "ChainlinkVRFV2DirectZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RngAuctionZeroAddress", "type": "error" },
+        {
+          "inputs": [],
+          "name": "ChainlinkVRFV2DirectZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngAuctionZeroAddress",
+          "type": "error"
+        },
         {
           "inputs": [
-            { "internalType": "address", "name": "chainlinkVrfV2Direct", "type": "address" },
-            { "internalType": "address", "name": "activeRngService", "type": "address" }
+            {
+              "internalType": "address",
+              "name": "chainlinkVrfV2Direct",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "activeRngService",
+              "type": "address"
+            }
           ],
           "name": "RngServiceNotActive",
           "type": "error"
@@ -612,17 +1093,35 @@
           "inputs": [],
           "name": "chainlinkVrfV2Direct",
           "outputs": [
-            { "internalType": "contract ChainlinkVRFV2Direct", "name": "", "type": "address" }
+            {
+              "internalType": "contract ChainlinkVRFV2Direct",
+              "name": "",
+              "type": "address"
+            }
           ],
           "stateMutability": "view",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "uint256", "name": "_gasPrice", "type": "uint256" }],
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_gasPrice",
+              "type": "uint256"
+            }
+          ],
           "name": "estimateRequestFee",
           "outputs": [
-            { "internalType": "address", "name": "_feeToken", "type": "address" },
-            { "internalType": "uint256", "name": "_requestFee", "type": "uint256" }
+            {
+              "internalType": "address",
+              "name": "_feeToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_requestFee",
+              "type": "uint256"
+            }
           ],
           "stateMutability": "view",
           "type": "function"
@@ -630,12 +1129,24 @@
         {
           "inputs": [],
           "name": "rngAuction",
-          "outputs": [{ "internalType": "contract IRngAuction", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "contract IRngAuction",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_rewardRecipient", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_rewardRecipient",
+              "type": "address"
+            }
+          ],
           "name": "transferFeeAndStartRngRequest",
           "outputs": [],
           "stateMutability": "nonpayable",
@@ -645,30 +1156,80 @@
     },
     {
       "chainId": 11155111,
-      "address": "0x149e3B3Bd69f1Cfc1B42b6A6a152a42E38cEeBf1",
-      "version": { "major": 1, "minor": 0, "patch": 0 },
+      "address": "0xAFD0a893845cb2c278D6629c78fFA7ad403077Bf",
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
       "type": "RngAuctionRelayerRemoteOwnerArbitrum",
       "abi": [
         {
           "inputs": [
-            { "internalType": "contract RngAuction", "name": "_rngAuction", "type": "address" }
+            {
+              "internalType": "contract RngAuction",
+              "name": "_rngAuction",
+              "type": "address"
+            }
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
         },
-        { "inputs": [], "name": "GasLimitIsLTEOne", "type": "error" },
-        { "inputs": [], "name": "GasPriceBidIsLTEOne", "type": "error" },
-        { "inputs": [], "name": "MessageDispatcherIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RemoteOwnerIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RemoteRngAuctionRelayListenerIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RewardRecipientIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RngAuctionIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RngNotCompleted", "type": "error" },
+        {
+          "inputs": [],
+          "name": "GasLimitIsLTEOne",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "GasPriceBidIsLTEOne",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MessageDispatcherIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RemoteOwnerIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RemoteRngAuctionRelayListenerIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RewardRecipientIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngAuctionIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngNotCompleted",
+          "type": "error"
+        },
         {
           "anonymous": false,
           "inputs": [
-            { "indexed": true, "internalType": "address", "name": "caller", "type": "address" },
-            { "indexed": true, "internalType": "address", "name": "destination", "type": "address" }
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            }
           ],
           "name": "AddressRemapped",
           "type": "event"
@@ -706,7 +1267,12 @@
               "name": "rewardRecipient",
               "type": "address"
             },
-            { "indexed": true, "internalType": "bytes32", "name": "messageId", "type": "bytes32" }
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "messageId",
+              "type": "bytes32"
+            }
           ],
           "name": "RelayedToDispatcher",
           "type": "event"
@@ -718,42 +1284,100 @@
               "name": "_messageDispatcher",
               "type": "address"
             },
-            { "internalType": "uint256", "name": "_remoteOwnerChainId", "type": "uint256" },
-            { "internalType": "contract RemoteOwner", "name": "_remoteOwner", "type": "address" },
+            {
+              "internalType": "uint256",
+              "name": "_remoteOwnerChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "contract RemoteOwner",
+              "name": "_remoteOwner",
+              "type": "address"
+            },
             {
               "internalType": "contract IRngAuctionRelayListener",
               "name": "_remoteRngAuctionRelayListener",
               "type": "address"
             },
-            { "internalType": "address", "name": "_rewardRecipient", "type": "address" },
-            { "internalType": "address", "name": "_refundAddress", "type": "address" },
-            { "internalType": "uint256", "name": "_gasLimit", "type": "uint256" },
-            { "internalType": "uint256", "name": "_maxSubmissionCost", "type": "uint256" },
-            { "internalType": "uint256", "name": "_gasPriceBid", "type": "uint256" }
+            {
+              "internalType": "address",
+              "name": "_rewardRecipient",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_refundAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_gasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_maxSubmissionCost",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_gasPriceBid",
+              "type": "uint256"
+            }
           ],
           "name": "relay",
-          "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
-          "stateMutability": "nonpayable",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "payable",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_destination", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_destination",
+              "type": "address"
+            }
+          ],
           "name": "remapTo",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_addr", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_addr",
+              "type": "address"
+            }
+          ],
           "name": "remappingOf",
-          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "rngAuction",
-          "outputs": [{ "internalType": "contract RngAuction", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "contract RngAuction",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         }
@@ -762,28 +1386,74 @@
     {
       "chainId": 11155111,
       "address": "0x48cdb9fe4F71D9b6f17D8e4d72E4036931601BdE",
-      "version": { "major": 1, "minor": 0, "patch": 0 },
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
       "type": "RngAuctionRelayerRemoteOwnerOptimism",
       "abi": [
         {
           "inputs": [
-            { "internalType": "contract RngAuction", "name": "_rngAuction", "type": "address" }
+            {
+              "internalType": "contract RngAuction",
+              "name": "_rngAuction",
+              "type": "address"
+            }
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
         },
-        { "inputs": [], "name": "GasLimitIsZero", "type": "error" },
-        { "inputs": [], "name": "MessageDispatcherIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RemoteOwnerIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RemoteRngAuctionRelayListenerIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RewardRecipientIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RngAuctionIsZeroAddress", "type": "error" },
-        { "inputs": [], "name": "RngNotCompleted", "type": "error" },
+        {
+          "inputs": [],
+          "name": "GasLimitIsZero",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MessageDispatcherIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RemoteOwnerIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RemoteRngAuctionRelayListenerIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RewardRecipientIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngAuctionIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngNotCompleted",
+          "type": "error"
+        },
         {
           "anonymous": false,
           "inputs": [
-            { "indexed": true, "internalType": "address", "name": "caller", "type": "address" },
-            { "indexed": true, "internalType": "address", "name": "destination", "type": "address" }
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            }
           ],
           "name": "AddressRemapped",
           "type": "event"
@@ -821,7 +1491,12 @@
               "name": "rewardRecipient",
               "type": "address"
             },
-            { "indexed": true, "internalType": "bytes32", "name": "messageId", "type": "bytes32" }
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "messageId",
+              "type": "bytes32"
+            }
           ],
           "name": "RelayedToDispatcher",
           "type": "event"
@@ -833,39 +1508,85 @@
               "name": "_messageDispatcher",
               "type": "address"
             },
-            { "internalType": "uint256", "name": "_remoteOwnerChainId", "type": "uint256" },
-            { "internalType": "contract RemoteOwner", "name": "_remoteOwner", "type": "address" },
+            {
+              "internalType": "uint256",
+              "name": "_remoteOwnerChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "contract RemoteOwner",
+              "name": "_remoteOwner",
+              "type": "address"
+            },
             {
               "internalType": "contract IRngAuctionRelayListener",
               "name": "_remoteRngAuctionRelayListener",
               "type": "address"
             },
-            { "internalType": "address", "name": "_rewardRecipient", "type": "address" },
-            { "internalType": "uint32", "name": "_gasLimit", "type": "uint32" }
+            {
+              "internalType": "address",
+              "name": "_rewardRecipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "_gasLimit",
+              "type": "uint32"
+            }
           ],
           "name": "relay",
-          "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
           "stateMutability": "nonpayable",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_destination", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_destination",
+              "type": "address"
+            }
+          ],
           "name": "remapTo",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
         },
         {
-          "inputs": [{ "internalType": "address", "name": "_addr", "type": "address" }],
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_addr",
+              "type": "address"
+            }
+          ],
           "name": "remappingOf",
-          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         },
         {
           "inputs": [],
           "name": "rngAuction",
-          "outputs": [{ "internalType": "contract RngAuction", "name": "", "type": "address" }],
+          "outputs": [
+            {
+              "internalType": "contract RngAuction",
+              "name": "",
+              "type": "address"
+            }
+          ],
           "stateMutability": "view",
           "type": "function"
         }

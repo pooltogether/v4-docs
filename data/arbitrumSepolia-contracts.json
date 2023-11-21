@@ -6734,7 +6734,7 @@
     },
     {
       "chainId": 421614,
-      "address": "0x644c81f7315D808a598EF3D6F644092240aC5a10",
+      "address": "0x7BEC1b9dEf7196F019B31Ea2e88d1aA13f2ab637",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7095,7 +7095,7 @@
     },
     {
       "chainId": 421614,
-      "address": "0xDF548822A89B37ED4B182716DECfE86895eFFA25",
+      "address": "0x4A101c4703e8fa447859EF380048052b0cDB9893",
       "version": {
         "major": 1,
         "minor": 0,
@@ -22915,7 +22915,7 @@
     },
     {
       "chainId": 421614,
-      "address": "0x31AAF393E2F144FA82674db9D50e84678B97155A",
+      "address": "0x8cfFF0B59491835a2aCee98d9F9D9D2Ebe71a943",
       "version": {
         "major": 1,
         "minor": 0,
@@ -23140,6 +23140,30 @@
               "internalType": "contract IERC20",
               "name": "token",
               "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "startTimestamp",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokensPerEpoch",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint48",
+              "name": "epochDuration",
+              "type": "uint48"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "initialNumberOfEpochs",
+              "type": "uint8"
             }
           ],
           "name": "PromotionCreated",
