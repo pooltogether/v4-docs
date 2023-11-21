@@ -12,7 +12,7 @@ sidebar_position: 2
 | ChainlinkVRFV2Direct | [0x833Df01C4C45AB5c1c9279e1Fb601D534B25C9dc](https://sepolia.etherscan.io/address/0x833Df01C4C45AB5c1c9279e1Fb601D534B25C9dc) |
 | RngAuction | [0x1A188719711d62423abF1A4de7D8aA9014A39D73](https://sepolia.etherscan.io/address/0x1A188719711d62423abF1A4de7D8aA9014A39D73) |
 | ChainlinkVRFV2DirectRngAuctionHelper | [0x904f5BEb658cbcD93CF00Edb4d948DE9e6f7f163](https://sepolia.etherscan.io/address/0x904f5BEb658cbcD93CF00Edb4d948DE9e6f7f163) |
-| RngAuctionRelayerRemoteOwnerArbitrum | [0x149e3B3Bd69f1Cfc1B42b6A6a152a42E38cEeBf1](https://sepolia.etherscan.io/address/0x149e3B3Bd69f1Cfc1B42b6A6a152a42E38cEeBf1) |
+| RngAuctionRelayerRemoteOwnerArbitrum | [0xAFD0a893845cb2c278D6629c78fFA7ad403077Bf](https://sepolia.etherscan.io/address/0xAFD0a893845cb2c278D6629c78fFA7ad403077Bf) |
 | RngAuctionRelayerRemoteOwnerOptimism | [0x48cdb9fe4F71D9b6f17D8e4d72E4036931601BdE](https://sepolia.etherscan.io/address/0x48cdb9fe4F71D9b6f17D8e4d72E4036931601BdE) |
 
 ## Arbitrum Sepolia
@@ -29,8 +29,8 @@ sidebar_position: 2
 | ERC20Mintable | [0xF401D1482DFAa89A050F111992A222e9ad123E14](https://sepolia.arbiscan.io/address/0xF401D1482DFAa89A050F111992A222e9ad123E14) |
 | TwabController | [0xd57822B8846F36f0E1FC775C8214523db199a4C5](https://sepolia.arbiscan.io/address/0xd57822B8846F36f0E1FC775C8214523db199a4C5) |
 | PrizePool | [0x6Fd1dF849DFC4F76F0B15ba0c8D3e99FF84817f1](https://sepolia.arbiscan.io/address/0x6Fd1dF849DFC4F76F0B15ba0c8D3e99FF84817f1) |
-| RemoteOwner | [0x644c81f7315D808a598EF3D6F644092240aC5a10](https://sepolia.arbiscan.io/address/0x644c81f7315D808a598EF3D6F644092240aC5a10) |
-| RngRelayAuction | [0xDF548822A89B37ED4B182716DECfE86895eFFA25](https://sepolia.arbiscan.io/address/0xDF548822A89B37ED4B182716DECfE86895eFFA25) |
+| RemoteOwner | [0x7BEC1b9dEf7196F019B31Ea2e88d1aA13f2ab637](https://sepolia.arbiscan.io/address/0x7BEC1b9dEf7196F019B31Ea2e88d1aA13f2ab637) |
+| RngRelayAuction | [0x4A101c4703e8fa447859EF380048052b0cDB9893](https://sepolia.arbiscan.io/address/0x4A101c4703e8fa447859EF380048052b0cDB9893) |
 | ClaimerFactory | [0xA42dD7350210b9D9d9F340a7c64591a57EA24B20](https://sepolia.arbiscan.io/address/0xA42dD7350210b9D9d9F340a7c64591a57EA24B20) |
 | Claimer | [0xcCf2b2da02C6F19b85265190F274BeE997808243](https://sepolia.arbiscan.io/address/0xcCf2b2da02C6F19b85265190F274BeE997808243) |
 | LiquidationPairFactory | [0xb87E4dC3eDC62977bD8d93554a4cbF6c52c9282a](https://sepolia.arbiscan.io/address/0xb87E4dC3eDC62977bD8d93554a4cbF6c52c9282a) |
@@ -50,7 +50,7 @@ sidebar_position: 2
 | TwabDelegator | [0x4b219978F641C029e1dbfD6F8DB644C85401B637](https://sepolia.arbiscan.io/address/0x4b219978F641C029e1dbfD6F8DB644C85401B637) |
 | TwabDelegator | [0xE5b8585364C6C07222B9dD915677a3D194f40020](https://sepolia.arbiscan.io/address/0xE5b8585364C6C07222B9dD915677a3D194f40020) |
 | TwabDelegator | [0xF733CC6B0D1f13487FF45bC66335e348D8EA87d1](https://sepolia.arbiscan.io/address/0xF733CC6B0D1f13487FF45bC66335e348D8EA87d1) |
-| TwabRewards | [0x31AAF393E2F144FA82674db9D50e84678B97155A](https://sepolia.arbiscan.io/address/0x31AAF393E2F144FA82674db9D50e84678B97155A) |
+| TwabRewards | [0x8cfFF0B59491835a2aCee98d9F9D9D2Ebe71a943](https://sepolia.arbiscan.io/address/0x8cfFF0B59491835a2aCee98d9F9D9D2Ebe71a943) |
 | Vault | [0x3adaa1D4F23C82130e1681c2cA9b38f5Fb9a0892](https://sepolia.arbiscan.io/address/0x3adaa1D4F23C82130e1681c2cA9b38f5Fb9a0892) |
 | LiquidationPair | [0x6d7dFc0d718dBb9A7cad95AC17D0E9fDf72faAde](https://sepolia.arbiscan.io/address/0x6d7dFc0d718dBb9A7cad95AC17D0E9fDf72faAde) |
 | VaultBooster | [0x2cB2d092D7a39BC055655F234BdeC79EB9742a00](https://sepolia.arbiscan.io/address/0x2cB2d092D7a39BC055655F234BdeC79EB9742a00) |
@@ -108,7 +108,7 @@ sidebar_position: 2
 | TwabDelegator | [0xe8865a75b6F78D27cd396F33A705B54E6643d51f](https://sepolia-optimism.etherscan.io/address/0xe8865a75b6F78D27cd396F33A705B54E6643d51f) |
 | TwabDelegator | [0x4c690D6794Ec402b6979322Ff76df92C6E455B0e](https://sepolia-optimism.etherscan.io/address/0x4c690D6794Ec402b6979322Ff76df92C6E455B0e) |
 | TwabDelegator | [0xC0f23BEB347DABc90b8cDd4A79C409673c444683](https://sepolia-optimism.etherscan.io/address/0xC0f23BEB347DABc90b8cDd4A79C409673c444683) |
-| TwabRewards | [0x1966c89865a5298cC6B98957F9a8c68da23C2a35](https://sepolia-optimism.etherscan.io/address/0x1966c89865a5298cC6B98957F9a8c68da23C2a35) |
+| TwabRewards | [0x18354F158CdcB87e81299c15110A5D59293B57F8](https://sepolia-optimism.etherscan.io/address/0x18354F158CdcB87e81299c15110A5D59293B57F8) |
 | Vault | [0x22c6258ea5b1E742d18C27D846E2AaBd4505EDC2](https://sepolia-optimism.etherscan.io/address/0x22c6258ea5b1E742d18C27D846E2AaBd4505EDC2) |
 | LiquidationPair | [0x5b369145520607141ae486D2727a28b6B7D9B0Ad](https://sepolia-optimism.etherscan.io/address/0x5b369145520607141ae486D2727a28b6B7D9B0Ad) |
 | VaultBooster | [0x99f26c10565957C03b12091948a1E1CF63C84c3B](https://sepolia-optimism.etherscan.io/address/0x99f26c10565957C03b12091948a1E1CF63C84c3B) |
