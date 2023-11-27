@@ -85,7 +85,7 @@ module.exports = {
           items: [
             {
               label: "pooltogether-v5",
-              href: "https://github.com/GenerationSoftware/pt-v5-prize-pool",
+              href: "https://github.com/orgs/GenerationSoftware/repositories?q=pooltogether&type=all&language=&sort=stargazers",
             },
           ],
         },

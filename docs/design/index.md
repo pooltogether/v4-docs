@@ -212,7 +212,7 @@ Since the RNG Auction lives on Ethereum and the Prize Pool lives on L2, there is
 
 Additionally, since the RNG auction does not know when the draw closes, we tune the auction sequence period and offset to match the prize pool on L2. This means that they don't need to exchange any information. It also means that we can re-use the RNG auction for other prize pools, if they are correctly synchronized.
 
-To encourage rapid and consistent price discovery, we use a [Parabolic Fractional Dutch Auction](https://dev.pooltogether.com/protocol/next/design/draw-auction#parabolic-fractional-dutch-auction-pfda). This auction has two phases, both of fixed length of time.
+To encourage rapid and consistent price discovery, we use a [Parabolic Fractional Dutch Auction](/protocol/design/draw-auction#parabolic-fractional-dutch-auction-pfda). This auction has two phases, both of fixed length of time.
 
 1. The first phase is an inverted parabola, and it's origin places it at the last auction price.
 2. The second phase is a parabola whose origin begins at the auction price, and finishes at 1 at the end of the auction.

@@ -15,6 +15,7 @@ You'll find the deployed networks in `versioned_docs/version-V4/deployments`.
 You'll find the deployed networks in `docs/deployments`:
 
 - **mainnet.md**: Generated using `./scripts/generateV5Deployments.js` and contracts list:
+
   - `data/ethereum-contracts.json`
   - `data/optimism-contracts.json`
 
@@ -24,12 +25,12 @@ You'll find the deployed networks in `docs/deployments`:
 
 To update the mainnet deployment:
 
-1. Copy the `contracts.json` files from `v5-mainnet` repository or  to `./data/`
+1. Copy the `contracts.json` files from `v5-mainnet` repository to `./data/`
 2. Run the NPM command: `npm run gen-v5-mainnet-deployment`
 
 To update the testnet deployment:
 
-1. Copy the `contracts.json` files from `v5-testnet` repository or  to `./data/`
+1. Copy the `contracts.json` files from `v5-testnet` repository to `./data/`
 2. Run the NPM command: `npm run gen-v5-testnet-deployment`
 
 # Contributing to PoolTogether Docs
@@ -67,7 +68,7 @@ yarn install
 yarn start
 ```
 
-> *Note: use "`yarn dev`" instead if you want to test the docs without providing an Algolia API key*
+> _Note: use "`yarn dev`" instead if you want to test the docs without providing an Algolia API key_
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 

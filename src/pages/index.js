@@ -45,7 +45,7 @@ export const actions = [
 export const github = [
   {
     title: "PoolTogether V5 Code",
-    href: "https://github.com/orgs/GenerationSoftware/repositories?q=pt-v5&type=all&language=&sort=",
+    href: "https://github.com/orgs/GenerationSoftware/repositories?q=pooltogether+solidity&type=all&language=&sort=stargazers",
     icon: CodeIcon,
   },
   {
@@ -521,7 +521,7 @@ export default function Home() {
 
           <Link
             style={{ textDecoration: "none" }}
-            href={"https://github.com/PoolTogether"}
+            href={"https://github.com/orgs/GenerationSoftware/repositories?q=pooltogether&type=all&language=&sort=stargazers"}
           >
             <CenterCard>
               <StyledGithubIcon>
@@ -571,7 +571,7 @@ export default function Home() {
               </StyledGithubIcon>
               <div>
                 <h3>Github</h3>
-                <p>View all PoolTogether repositories.</p>
+                <p>View PoolTogether V5 repositories.</p>
               </div>
             </CenterCard>
           </Link>

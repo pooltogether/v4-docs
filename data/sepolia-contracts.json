@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2023-10-17T22:18:34.904Z",
+  "timestamp": "2023-11-07T20:21:29.739Z",
   "contracts": [
     {
-      "chainId": 5,
-      "address": "0xc57e4fC79ab33DB6A7Bf26CC1Ca43511744F83CD",
+      "chainId": 11155111,
+      "address": "0x833Df01C4C45AB5c1c9279e1Fb601D534B25C9dc",
       "version": {
         "major": 1,
         "minor": 0,
@@ -415,8 +415,8 @@
       ]
     },
     {
-      "chainId": 5,
-      "address": "0xAFCeDe71e62684De45D423712FeEeBB83863DfDE",
+      "chainId": 11155111,
+      "address": "0x1A188719711d62423abF1A4de7D8aA9014A39D73",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1038,8 +1038,8 @@
       ]
     },
     {
-      "chainId": 5,
-      "address": "0x1B227Be74a34A604a2839cbc9A50e9dBcac4f371",
+      "chainId": 11155111,
+      "address": "0x904f5BEb658cbcD93CF00Edb4d948DE9e6f7f163",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1155,14 +1155,243 @@
       ]
     },
     {
-      "chainId": 5,
-      "address": "0xe34deF1114d7Bb0298636A2026D9Cf3D67F19FBd",
+      "chainId": 11155111,
+      "address": "0xAFD0a893845cb2c278D6629c78fFA7ad403077Bf",
       "version": {
         "major": 1,
         "minor": 0,
         "patch": 0
       },
-      "type": "RngAuctionRelayerRemoteOwner",
+      "type": "RngAuctionRelayerRemoteOwnerArbitrum",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract RngAuction",
+              "name": "_rngAuction",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "GasLimitIsLTEOne",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "GasPriceBidIsLTEOne",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MessageDispatcherIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RemoteOwnerIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RemoteRngAuctionRelayListenerIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RewardRecipientIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngAuctionIsZeroAddress",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "RngNotCompleted",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            }
+          ],
+          "name": "AddressRemapped",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "contract IMessageDispatcherArbitrum",
+              "name": "messageDispatcher",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "remoteOwnerChainId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "contract RemoteOwner",
+              "name": "remoteOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "contract IRngAuctionRelayListener",
+              "name": "remoteRngAuctionRelayListener",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "rewardRecipient",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "messageId",
+              "type": "bytes32"
+            }
+          ],
+          "name": "RelayedToDispatcher",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IMessageDispatcherArbitrum",
+              "name": "_messageDispatcher",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_remoteOwnerChainId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "contract RemoteOwner",
+              "name": "_remoteOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IRngAuctionRelayListener",
+              "name": "_remoteRngAuctionRelayListener",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_rewardRecipient",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_refundAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_gasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_maxSubmissionCost",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_gasPriceBid",
+              "type": "uint256"
+            }
+          ],
+          "name": "relay",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_destination",
+              "type": "address"
+            }
+          ],
+          "name": "remapTo",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_addr",
+              "type": "address"
+            }
+          ],
+          "name": "remappingOf",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "rngAuction",
+          "outputs": [
+            {
+              "internalType": "contract RngAuction",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "chainId": 11155111,
+      "address": "0x48cdb9fe4F71D9b6f17D8e4d72E4036931601BdE",
+      "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "type": "RngAuctionRelayerRemoteOwnerOptimism",
       "abi": [
         {
           "inputs": [
