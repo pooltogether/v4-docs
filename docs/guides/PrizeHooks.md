@@ -6,6 +6,10 @@ sidebar_position: 2
 
 Prize hooks are modular onchain actions, configurable by a depositor, that automatically execute when a prize is claimed for them on a standard vault.
 
+![Prize Hook Diagram](/img/v5/prize-hooks/prize-hook-diagram.jpg)
+
+> In the above diagram, we see how Alice can set a custom prize hook on a vault to automatically trigger the execution of additional code when she wins a prize.
+
 ## How do they Work?
 
 Prize hooks can be created permissionlessly by deploying a contract that extends the [`IVaultHooks` interface](/protocol/reference/vaults/Interfaces/IVaultHooks). Up to two hooks can be implemented (`beforeClaimPrize` and `afterClaimPrize`). Like the names suggest, the first is called immediately before the prize is claimed while the second is called immediately after. Both hooks are passed some basic data about the prize that is being claimed which can be used to verify the prize win, determine prize size and claim fee, and identify the recipient.
