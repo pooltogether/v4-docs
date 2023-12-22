@@ -1,6 +1,6 @@
 ---
 title: Chainlink VRF V2 RNG
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 These contracts provide a standardized interface to use Chainlink's VRF V2 RNG generation in the daily PoolTogether V5 RNG auction.

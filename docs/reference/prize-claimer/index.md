@@ -1,6 +1,6 @@
 ---
 title: Prize Claimer
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 The PoolTogether V5 Claimer is a contract that incentivizes prize claims.  Claimers can claim prizes on behalf of winners and earn a portion of the prize as a fee.

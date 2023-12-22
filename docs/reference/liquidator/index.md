@@ -1,6 +1,6 @@
 ---
 title: Liquidator
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 The PoolTogether V5 Liquidator is a single-side virtual AMM that allows the liquidation of one token for another.

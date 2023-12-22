@@ -1,6 +1,6 @@
 ---
 title: Vaults
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 The PoolTogether V5 Vault Factory makes it easy to deploy new Vaults using compatible ERC4626 yield vaults.
