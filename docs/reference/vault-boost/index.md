@@ -1,6 +1,6 @@
 ---
 title: Vault Booster
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 The PoolTogether V5 Vault Booster contract allows anyone to set up automatic liquidations of any token to boost the prize power of a vault.

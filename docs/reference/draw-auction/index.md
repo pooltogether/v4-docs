@@ -1,6 +1,6 @@
 ---
 title: Draw Auctions
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 The PoolTogether V5 draw auction contracts control the daily RNG and draw completion auctions for permissionless and cross-chain draw management.

@@ -7,6 +7,7 @@ sidebar_position: 3
 # Arbitraging Yield Liquidations
 
 #### **Tutorial:** [💸 Creating an Arbitrage Swapping bot](https://mirror.xyz/chuckbergeron-g9.eth/ES-IJduktYPb0X_sBikfqL-PVFRweNpoPrlr01zcVX8)
+#### **Liquidate Through a UI:** [⚡ Cabana Flash](https://flash.cabana.fi/)
 
 ---
 
@@ -65,4 +66,18 @@ To see code examples, a reference implementation of an arbitrage bot created by 
   <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
   <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
   <a href="https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/arb-liquidator">GitHub - pt-v5-autotasks-arb-liquidator</a>
+  <br />
+  <br />
+  <br />
+  <br />
 </div>
+
+# Using Flashswaps to Liquidate
+
+Flashswaps are unique swaps where the sender receives the output first, executes some external logic to obtain input tokens and sends the required input amount to the swap contract, keeping the profit from the arbitrage. In order for this to be possible, the contract verifies that the required token input has been received at the end of the transaction and fails if they haven't.
+
+In PoolTogether V5, flashswaps can be used with yield liquidations as a way to atomically liquidate yield for prize tokens with an onchain market without having to worry about volatility.
+
+To learn more about using flashswaps to liquidate yield, check out the [Flashswap Liquidations Guide](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/liquidations/examples/flash-swap-liquidations) or the [Uniswap V3 Flashswap Liquidation Contract](https://github.com/GenerationSoftware/pt-v5-flash-liquidator/blob/main/src/UniswapFlashLiquidation.sol).
+
+**Try out flashswap liquidations with [Cabana Flash](https://flash.cabana.fi/)!**
