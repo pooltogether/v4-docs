@@ -1,6 +1,4 @@
-[Git Source](https://github.com/GenerationSoftware/pt-v5-vault/blob/97f5fd14e9d25c704b9d7da87c4d9d996b7dec41/src/interfaces/IVaultHooks.sol)
-
-
+[Git Source](https://github.com/GenerationSoftware/pt-v5-vault/blob/20fa85c88da69db10b7e4f1a2b1d9cc5b6bca536/src/interfaces/IVaultHooks.sol)
 
 **Author:**
 PoolTogether Inc. & G9 Software Inc.
@@ -15,7 +13,7 @@ Triggered before the prize pool claim prize function is called.
 
 
 ```solidity
-function beforeClaimPrize(address winner, uint8 tier, uint32 prizeIndex, uint96 fee, address feeRecipient)
+function beforeClaimPrize(address winner, uint8 tier, uint32 prizeIndex, uint96 reward, address rewardRecipient)
     external
     returns (address);
 ```
@@ -26,8 +24,8 @@ function beforeClaimPrize(address winner, uint8 tier, uint32 prizeIndex, uint96 
 |`winner`|`address`|The user who won the prize and for whom this hook is attached|
 |`tier`|`uint8`|The tier of the prize|
 |`prizeIndex`|`uint32`|The index of the prize in the tier|
-|`fee`|`uint96`|The fee portion of the prize that will be allocated to the claimer|
-|`feeRecipient`|`address`|The recipient of the claim fee|
+|`reward`|`uint96`|The reward portion of the prize that will be allocated to the claimer|
+|`rewardRecipient`|`address`|The recipient of the claim reward|
 
 **Returns**
 
@@ -51,11 +49,15 @@ function afterClaimPrize(address winner, uint8 tier, uint32 prizeIndex, uint256 
 |`winner`|`address`|The user who won the prize and for whom this hook is attached|
 |`tier`|`uint8`|The tier of the prize|
 |`prizeIndex`|`uint32`|The index of the prize|
-|`prize`|`uint256`|The total size of the prize (payout + fee)|
+|`prize`|`uint256`|The total size of the prize (payout + reward)|
 |`recipient`|`address`|The recipient of the prize|
 
+
 ## Structs
+
 ### VaultHooks
+
+Defines a hook implementation and instructions on which hooks to call.
 
 ```solidity
 struct VaultHooks {

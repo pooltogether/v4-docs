@@ -4,12 +4,12 @@ title: Vaults
 sidebar_position: 1
 ---
 
-Users deposit tokens into Vaults in order to be eligible to win prizes. Vaults generate yield, liquidate the yield for POOL tokens, and contribute the POOL to the Prize Pool. The amount of contributed POOL determines the Vault's portion of the odds.
+Users deposit tokens into prize vaults in order to be eligible to win prizes. Prize vaults generate yield, liquidate the yield for the prize token, and contribute the prize token to the prize pool. The amount contributed determines the prize vault's portion of the odds.
 
-While Vaults can be fully customized, the protocol provides a standard Vault that can be instantiated using the VaultFactory. The PoolTogether standard Vault wraps any ERC-4626 compliant tokenized vault with the above  behaviour. The standard Vault is itself ERC-4626 compliant.
+While Vaults can be fully customized, the protocol provides a standard PrizeVault that can be instantiated using the PrizeVaultFactory. The PoolTogether standard prize vault wraps any ERC-4626 compliant tokenized vault with the above behaviour. The standard prize vault is also ERC-4626 compliant.
 
-The PoolTogether standard Vault doesn't liquidate the yield itself, but rather exposes the yield to an external Liquidation Pair. See the guide [Liquidating Yield](../guides/liquidating-yield) for more information.
+The PoolTogether standard prize vault doesn't liquidate the yield itself, but rather exposes the yield to an external liquidation pair. See the guide [Liquidating Yield](../guides/liquidating-yield) for more information.
 
 # Creating a Vault
 
-You can create a new Vault without writing a line of code by using the Cabana Vault Factory. The only requirement is that you have an ERC-4626 compliant yield source.
+You can create a new standard prize vault without writing a line of code by using the Cabana Vault Factory. The only requirement is that you have a compatible ERC-4626 compliant yield source.
