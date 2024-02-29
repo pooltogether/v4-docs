@@ -11,7 +11,7 @@ sidebar_position: 3
 
 ---
 
-PoolTogether V5 continuously liquidates all yield for POOL tokens and deposits them into a Prize Pool. Liquidation sells yield at a slight discount for POOL, creating an arbitrage opportunity.
+PoolTogether V5 continuously liquidates all yield for the prize token and deposits them into a Prize Pool. Liquidation sells yield at a slight discount for prize tokens, creating an arbitrage opportunity.
 
 Liquidation Pairs are the mechanism by which yield is liquidated. Each PoolTogether Vault will have one or more associated Liquidation Pairs. A Liquidation Pair is like a Uniswap pair, but it only supports swaps in a single direction.
 
@@ -22,7 +22,7 @@ Liquidation Pairs are immutable contracts that are created by the Liquidation Pa
 To arbitrage yield, you would follow these steps:
 
 1. Find the Liquidation Pair you wish to arb.
-2. Compute the current available liquidity and the POOL cost
+2. Compute the current available liquidity and the prize token cost
 3. If liquidity is available at a sufficient discount and profitable to you, execute a swap
 
 ## Find the Liquidation Pair

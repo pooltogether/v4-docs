@@ -44,8 +44,8 @@ Let's take a closer look at how funds would flow through a V5 deployment. Below 
 **Step-by-step**
 
 1. Users deposit tokens into Vaults.
-2. Vault yield is liquidated for POOL and sent to the Prize Pool contract.
-3. POOL Prizes are claimed and sent to the user
+2. Vault yield is liquidated for the prize token and sent to the Prize Pool contract.
+3. Prizes are claimed and sent to the user
 
 We can see that there are three main stages in the process: deposit, liquidation, and prize distribution.
 
@@ -57,7 +57,7 @@ The vault can be created by anyone; and PoolTogether V5 has a Vault Factory that
 
 In order for users to be eligible to win prizes, their balances must be tracked in the Twab Controller. The default PoolTogether vault doesn't actually store any balances internally; all balances are stored in the Twab Controller.
 
-Yield accrued by the underlying 4626 vault is exposed to an external liquidator, which liquidates the yield and contributes the resulting POOL to the Prize Pool.
+Yield accrued by the underlying 4626 vault is exposed to an external liquidator, which liquidates the yield and contributes the resulting prize token to the Prize Pool.
 
 **Interaction Diagram for a Deposit**
 
@@ -94,9 +94,9 @@ $$averageBalance = {(endCumulativeBalance - startCumulativeBalance) \over (endTi
 
 ## Liquidation
 
-Yield from all the vaults is liquidated for POOL and contributed to the Prize Pool. This allows chance to be distributed proportionally to all vaults, and for there to be a single deep pool of prize liquidity. No oracles needed.
+Yield from all the vaults is liquidated for the prize token and contributed to the Prize Pool. This allows chance to be distributed proportionally to all vaults, and for there to be a single deep pool of prize liquidity. No oracles needed.
 
-Each Vault has a corresponding Liquidation Pair that auctions yield for POOL tokens. Users interact with the Liquidation Pair in order to liquidate vault yield. The pair is responsible for pricing the yield and does so using a periodic continuous gradual dutch auction.
+Each Vault has a corresponding Liquidation Pair that auctions yield for the prize token. Users interact with the Liquidation Pair in order to liquidate vault yield. The pair is responsible for pricing the yield and does so using a periodic continuous gradual dutch auction.
 
 Externally-Owned Accounts should interact with the Liquidation Router, as it provides additional checks that ensure the swap occurs correctly.
 
@@ -114,7 +114,7 @@ For our application, as yield accrues we need to adjust the emission rate for th
  
 ### Contributing to Prize Pool
 
-When yield is liquidated, the POOL is transferred to the Prize Pool and the Vault tells the Prize Pool that it contributed. The Prize Pool recognizes the balance increase, and updates that vault's contribution.
+When yield is liquidated, the prize token is transferred to the Prize Pool and the Vault tells the Prize Pool that it contributed. The Prize Pool recognizes the balance increase, and updates that vault's contribution.
 
 The Prize Pool tracks contributions using an exponential weighted average. This means that contributions are "smoothed", in the sense that they are spread out over future draws. In the event that liquidations are sporadic, this ensures that a vault always has a chance to win.
 

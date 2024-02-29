@@ -4,21 +4,21 @@ title: Prize Pool
 sidebar_position: 1
 ---
 
-In PoolTogether V5 prizes are distributed through the Prize Pool contract. There is one Prize Pool deployed on each chain on which PT is deployed. The Prize Pool receives POOL tokens from Vaults, and releases the tokens as prizes in daily Draws. In this way, prize liquidity is isolated to a chain.
+In PoolTogether V5 prizes are distributed through the Prize Pool contract. There is one Prize Pool deployed on each chain on which PT is deployed. The Prize Pool receives contributions of the prize token from Vaults, and releases the tokens as prizes in daily Draws. In this way, prize liquidity is isolated to a chain.
 
 The Prize Pool is fully autonomous and immutable; there are no governance or admin controls. The contract adjusts the number of prizes automatically.
 
 The logic flows like so:
 
-1. Vaults contribute POOL to the Prize Pool.
+1. Vaults contribute the prize token to the Prize Pool.
 2. Once per day a random number is drawn and pushed to the Prize Pool, and the next set of prizes is released. We call this a "Draw". When the random number is pushed the draw is "completed".
 3. Vaults claim prizes on behalf of users from the last completed draw.
 
 Let's analyze each in turn.
 
-# Vaults Contribute POOL
+# Vaults Contribute the Prize Token
 
-Prize liquidity comes from Vaults; each Vault liquidates its yield for POOL then contributes the POOL to the Prize Pool. However, liquidations may occur sporadically. A Vault might only generate enough yield for a liquidation to occur once a day, or once per week. Because of this, the Prize Pool smooths contributions over time using an exponential weighted average. The weighted average spreads the contributions out over many draws, so that if a Vault is only contributing once a week then it still has a chance to win between contributions.
+Prize liquidity comes from Vaults; each Vault liquidates its yield for the prize token, then contributes the prize token to the Prize Pool. However, liquidations may occur sporadically. A Vault might only generate enough yield for a liquidation to occur once a day, or once per week. Because of this, the Prize Pool smooths contributions over time using an exponential weighted average. The weighted average spreads the contributions out over many draws, so that if a Vault is only contributing once a week then it still has a chance to win between contributions.
 
 The benefit of the exponential weighted average is that it's computationally cheap and that it "stacks" extremely cleanly. Tracking both the total contributed amounts per draw as well as contributed amount per Vault per draw is very easy.
 
