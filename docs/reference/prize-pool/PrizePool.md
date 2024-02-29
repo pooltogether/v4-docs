@@ -162,7 +162,7 @@ Emitted when the reserve is consumed due to insufficient prize liquidity.
 SD1x18 smoothing
 ```
 
-The degree of POOL contribution smoothing. 0 = no smoothing, ~1 = max smoothing.
+The degree of prize token contribution smoothing. 0 = no smoothing, ~1 = max smoothing.
 
 _Smoothing spreads out vault contribution over multiple draws; the higher the smoothing the more draws._
 

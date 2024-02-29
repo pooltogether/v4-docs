@@ -9,7 +9,7 @@ The PoolTogether V5 code base breaks out every component into a composable syste
 - [Prize Pool](./prize-pool) - the core of the prize system
 - [Twab Controller](./twab-controller/) - track weighted-average balances of depositors
 - [Twab Delegator](./twab-delegator/) - delegate a portion of deposits to other accounts
-- [Vaults](./vaults) - deposit and accrue yield
+- [Vaults](./vaults) - deposit and win prizes
 - [Vault Booster](./vault-boost) - boost the prize power of a vault
 - [Liquidator](./liquidator) - swap yield for prize tokens
 - [Prize Claimer](./prize-claimer) - claim prizes on behalf of depositors
