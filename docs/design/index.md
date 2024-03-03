@@ -171,7 +171,7 @@ The tier odds are also tuned, such that the highest tier has a 100% chance of oc
 
 The formula is:
 
-$$odds(t) = e^{\frac{\left(\left(x-n+1\right)\cdot\ln\left(\frac{1}{g}\right)\right)}{1-n}}$$
+$$odds(t) = e^{\frac{\left(\left(t-n+1\right)\cdot\ln\left(\frac{1}{g}\right)\right)}{1-n}}$$
 
 Where $n$ is the number of tiers. Play with it the [Tier Odds in Desmos](https://www.desmos.com/calculator/heqovbw2eb).
 
