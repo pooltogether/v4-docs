@@ -17,13 +17,13 @@ For example:
 
 ## How Does it Work?
 
-We record a special data structure called an “Observation” on each transfer which includes the information needed to look back in time and see how many tokens a user held at a specific point in time! This allows us to calculate a simple average over two points in history.
+We record a special data structure called an “Observation” on each transfer which includes the information needed to look back in time and see how many tokens a user held at a specific point in time. This allows us to calculate a simple average over two points in history.
 
 ### Observations
 
 When a token transfer occurs we record an Observation. An Observation is a chunk of data that consists of: the time the Observation happened, the users current balance (the balance **AFTER** the transfer) and a “cumulative balance”. This record of data is what is used to look back in time and see past balances held.
 
-> We plan on storing a maximum of 365 Observations, giving us the ability to look back in time at least 1 year. The amount stored is an implementation detail that is not yet finalized.
+> We store a enough observations to allow historical lookups for up to 1 year. After that point, old data may be overwritten for new data to save gas costs.
 
 ### New Observations
 
@@ -45,9 +45,7 @@ A period is simply a block of time in which we should overwrite Observations. Wh
 
 Periods work best for PoolTogether when lined up with draws. This is done by simply recording a timestamp on initialization by reading the last completed draw and by using a period length that is some fraction of a draw length.
 
-It is not necessary to do this, however it is important to note that due to Observation overwriting, average balances for a period are not finalized until a period ends. Therefore if a draw ends but a period has not, a user would be able to manipulate their average balance for that final period of time after the draw ends. This would result in an inaccurate record of their balance held during the draw.
-
-Rather than lining periods up with draws, PoolTogether could instead ignore the final period in a draw when calculating a users liquidity contribution. Since we know the final period may not finalized when the draw finishes we can ignore it to remove and worries of including manipulatable data. This would remove the need to make the period length a clean fraction of a draw length and remove the initialization timestamp reference to a finalized draw. However it would result in an imperfect tracking of balances over the draw since we’re ignoring some portion of data and doesn’t solve the fact that unfinished periods are not finalized, meaning external users still need to be aware of this when querying average balances over time.
+It is not necessary to do this, however it is important to note that due to Observation overwriting, average balances for a period are not finalized until a period ends. Therefore if a draw ends but a period has not, a user would be able to manipulate their average balance for that final period of time after the draw ends. This would result in an inaccurate record of their balance held during the draw. Twab periods are therefore aligned with prize pool draws to ensure accurate accounting for the duration of a draw.
 
 ### Calculating a TWAB
 
@@ -96,15 +94,11 @@ Any time **_t’_** that falls between (exclusive) the start of period N and the
 
 If we can verify that there has been no overwriting of Observations during the time that **_t’_** falls within then we can accurately recreate the temporary Observation for time **_t’._**
 
-> Inclusivity of the start/end of the period time ranges is an implementation detail that is not yet finalized.
-
 ### Historic Average Balances Accuracy
 
 The results noted above extend to querying average balances across time ranges as well. **Historic average balances from time *s* until time *t* are only guaranteed to be accurate if both *s* and *t* fall between (inclusive) the newest Observation recorded before the end of the period and the end of the period for the periods that *s* and *t* fall within where the periods that *s* and *t* fall within have ended.** Due to overwriting Observations for the sake of saving gas, there is a loss of historic information and no guarantees on information until the period has finished.
 
 Any other time *t’* may be missing data due to overwriting therefore we cannot guarantee the accuracy without additional validations of our data set.
-
-> Inclusivity of the start/end of the period time ranges is an implementation detail that is not yet finalized.
 
 ### Periods aren’t finalized until they’re finalized
 
@@ -121,8 +115,6 @@ As noted above, when overwriting Observations we are trading some information fo
 **The newest Observation before the end timestamp of a finalized period N is guaranteed to be an accurate snapshot of history since we know it will never be overwritten**. The data included in this Observation allows us to accurately reproduce a temporary Observation at any time between (inclusive) this Observation and the end time of period N.
 
 **When we are calculating average balances across time ranges if we are able to accurately recreate temporary Observations on both ends of the time range and have been capturing time-weighted balances throughout the time range then we are able to accurately reproduce the average time-weighted balance held across that time period.**
-
-> Inclusivity of the start/end of the period time ranges is an implementation detail that is not yet finalized.
 
 ### Sample Loss of Historic Information
 

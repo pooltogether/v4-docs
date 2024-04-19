@@ -14,7 +14,7 @@ A prize savings protocol gives users a chance at a large upside without risking 
 
 This version of the protocol brings some major improvements:
 
-- Users can swap into prize tokens; there is no need to "activate" your tokens. This enables distribution through AMMs and other swap interfaces.
+- Users can swap or zap into prize tokens; there is no need to "activate" your tokens. This enables distribution through AMMs and other swap interfaces.
 - Users automatically receive their prizes. No claim needed! The tokens will be transferred to their wallets.
 - Supports multiple tokens, and all tokens share one big pool of prizes so that prizes are as large as possible!
 
@@ -31,7 +31,7 @@ In this way, anyone can build on the protocol and **know that it will never chan
 
 ### Deployments
 
-PoolTogether V5 will be deployed on Ethereum and every L2 (eventually). Each deployment will include the core contracts and a set of factories that allow anyone to easily extend the protocol with new tokens or yield sources.
+PoolTogether V5 will be deployed on a variety of EVM-compatible networks. Each deployment will include the core contracts and a set of factories that allow anyone to easily extend the protocol with new tokens or yield sources.
 
 The core contract is the Prize Pool; this is the contract that holds prize liquidity and disburses prizes. Each chain will be an island of prize liquidity; prizes won't be shared across chains.
 
@@ -40,11 +40,12 @@ The core contract is the Prize Pool; this is the contract that holds prize liqui
 Let's take a closer look at how funds would flow through a V5 deployment. Below is a simplified diagram:
 
 ![Flow of Funds](/img/v5/design/FlowOfFunds.png)
+> *The diagram above shows the POOL token as the prize token, but this will vary across deployments. The latest deployment on Optimism uses WETH as the prize token.*
 
 **Step-by-step**
 
-1. Users deposit tokens into Vaults.
-2. Vault yield is liquidated for the prize token and sent to the Prize Pool contract.
+1. Users deposit tokens into Prize Vaults.
+2. Prize Vault yield is liquidated for the prize token and sent to the Prize Pool contract.
 3. Prizes are claimed and sent to the user
 
 We can see that there are three main stages in the process: deposit, liquidation, and prize distribution.
@@ -53,9 +54,9 @@ We can see that there are three main stages in the process: deposit, liquidation
 
 When users "deposit into PoolTogether" they are really depositing into an ERC4626 vault that contributes its yield to the Prize Pool and tracks deposits using the Twab Controller.
 
-The vault can be created by anyone; and PoolTogether V5 has a Vault Factory that makes deploying new vaults a snap. The default factory Vault is an ERC4626 Vault that uses another ERC4626 Vault to generate yield. When a user creates a new Vault they must pass the address of the ERC4626 yield vault. A Prize Pool can support any number of vaults.
+The vault can be created by anyone; and PoolTogether V5 has a Prize Vault Factory that makes deploying new vaults a snap. The default factory vault is an ERC4626 Vault that uses another ERC4626 vault to generate yield. When a user creates a new vault they must pass the address of the ERC4626 yield vault. A Prize Pool can support any number of vaults.
 
-In order for users to be eligible to win prizes, their balances must be tracked in the Twab Controller. The default PoolTogether vault doesn't actually store any balances internally; all balances are stored in the Twab Controller.
+In order for users to be eligible to win prizes, their balances must be tracked in the Twab Controller. The default PoolTogether prize vault doesn't actually store any balances internally; all balances are stored in the Twab Controller.
 
 Yield accrued by the underlying 4626 vault is exposed to an external liquidator, which liquidates the yield and contributes the resulting prize token to the Prize Pool.
 
@@ -96,7 +97,7 @@ $$averageBalance = {(endCumulativeBalance - startCumulativeBalance) \over (endTi
 
 Yield from all the vaults is liquidated for the prize token and contributed to the Prize Pool. This allows chance to be distributed proportionally to all vaults, and for there to be a single deep pool of prize liquidity. No oracles needed.
 
-Each Vault has a corresponding Liquidation Pair that auctions yield for the prize token. Users interact with the Liquidation Pair in order to liquidate vault yield. The pair is responsible for pricing the yield and does so using a periodic continuous gradual dutch auction.
+Each Vault has a corresponding Liquidation Pair that auctions yield for the prize token. Users interact with the Liquidation Pair in order to liquidate vault yield. The pair is responsible for pricing the yield and does so using a Target Period Dutch Auction (TPDA).
 
 Externally-Owned Accounts should interact with the Liquidation Router, as it provides additional checks that ensure the swap occurs correctly.
 
@@ -104,29 +105,15 @@ Externally-Owned Accounts should interact with the Liquidation Router, as it pro
 
 ![Liquidation](/img/v5/design/Liquidation.png)
 
-### Periodic Continuous Gradual Dutch Auction
+### Target Period Dutch Auction (TPDA)
 
-The [Continuous Gradual Dutch Auction](https://www.paradigm.xyz/2022/04/gda#continuous-gda) is an auction algorithm that prices tokens according to an emissions rate. The periodic variant periodically updates the emission rate to account for newly accrued yield.
+The TPDA is an auction algorithm that prices available tokens based on the last sale price and lowers the price from infinity to zero over time such that the price reaches the last sale price at the end of the specified target period.
 
-In a nutshell, a CGDA releases a certain number of tokens per second for sale. It is trying to sell all of these tokens. The price decays if the available tokens increase, because that means sales are falling behind. As tokens are purchased, sales catch up to the emission schedule and so the price increases, as on a bonding curve. This ensures that the auction is as efficient as possible. 
-
-For our application, as yield accrues we need to adjust the emission rate for the CGDA. The Periodic CGDA divides time into periods, and updates the emission rate when it enters a new period; the emission rate is the available balance over the period duration. We configure the period duration and offset to match the draw period of the Prize Pool in order to ensure that there are liquidations for a vault for every draw.
+The TPDA liquidators can be configured to target 'x' number of liquidations per day to fit the needs of the prize vault. In addition, a "smoothing" parameter can be applied such that the liquidator will only auction a set percent of the available yield each time. This simple mechanism allows the auctions to handle yield that fluctuates significantly by setting the smoothing percentage to a higher value.
  
 ### Contributing to Prize Pool
 
 When yield is liquidated, the prize token is transferred to the Prize Pool and the Vault tells the Prize Pool that it contributed. The Prize Pool recognizes the balance increase, and updates that vault's contribution.
-
-The Prize Pool tracks contributions using an exponential weighted average. This means that contributions are "smoothed", in the sense that they are spread out over future draws. In the event that liquidations are sporadic, this ensures that a vault always has a chance to win.
-
-Computes the contribution amount for draw $d$ with smoothing factor $\alpha$ with total contribution $t$:
-
-$$c(d) = -t*\alpha^d + t*\alpha^{d-1}$$
-
-For example, if a vault contributes 50 tokens before draw 1 and $\alpha = 0.84$:
-
-![Contribution](/img/v5/design/Contribution.png)
-
-Even if liquidations are sporadic, each draw will have liquidity and the vault will have a chance to win.
 
 ## Prize Distribution
 
@@ -136,8 +123,8 @@ The Prize Pool releases prizes in periodic Draws. Each Draw is allocated a porti
 
 Draws are like a numbered timeframe; the Prize Pool is initialized with a draw period in seconds, and the first draw start time. Draw 1 is the first period of time, Draw 2 is the second period of time, etc. Each Draw goes through a lifecycle of states:
 
-- **Open**: the open Draw is the one that is currently receiving contributions from vaults. It is the next draw to close.
-- **Closed**: once the Draw end has elapsed, the draw is considered closed. It will no longer receive new contributions.
+- **Open**: the open draw is the one that is currently receiving contributions from vaults. It is the next draw to close.
+- **Closed**: once the draw end has elapsed, the draw is considered closed. It will no longer receive new contributions.
 - **Awarded**: when the random number is submitted, the most recent closed draw becomes awarded and prizes can be claimed.
 - **Finalized**: draws become finalized after one draw period has elapsed after they close. After this time no prizes can be claimed.
 
@@ -145,7 +132,7 @@ Draws are like a numbered timeframe; the Prize Pool is initialized with a draw p
 
 ### Prize Structure
 
-Each draw is allocated a portion of the contributed liquidity (according to the exponential weighted average above). This liquidity is then distributed across a number of prize tiers and a reserve. Each prize tier has a different prize count and odds of occurring. The reserve is used to fund the RNG auction and backstop prize claims in the event a prize tier runs out of liquidity. When a draw is awarded it computes the number of prize tiers based on the number of claims for the previous awarded draw.
+Each draw is allocated the accrued liquidity from the contributions during the draw period, as well as any leftover liquidity from previous draws. This liquidity is then distributed across a number of prize tiers and a reserve. Each prize tier has a different prize count and odds of occurring. The reserve is used to fund the RNG auction and backstop prize claims in the event a prize tier runs out of liquidity. When a draw is awarded it computes the number of prize tiers based on the number of claims for the previous awarded draw.
 
 #### Prize Liquidity
 
@@ -153,9 +140,15 @@ Prize liquidity is distributed into prize tiers and the reserve.
 
 The amount of liquidity that is allocated to a tier per draw is determined by the Prize Pool's configured number of tier shares and reserve shares. If the number of tiers is $n$ then the portion of liquidity allocated to a tier is:
 
-$$liquidity = { tierShares \over tierShares*n+reserveShares}$$
+$$liquidity = { tierShares \over tierShares*(n-2) + canaryShares*2 + reserveShares}$$
 
-![Prize Liquidity](/img/v5/design/PrizeLiquidity.png)
+The last two tiers are always canary tiers, which have reduced liquidity and special properties.
+
+#### Canary Tiers
+
+The canary tiers are the last two prize tiers each draw. They are expected to have reduced liquidity compared to normal prize tiers and are not usually distributed to the winners because of their insignificant value (this behavior is configured by the claimer and each vault can use a different claimer).
+
+The first canary tier is expected to be claimed every draw, if it isn't then the next draw will have one less tier than before. Inversely, the second canary tier has slightly smaller prizes and is *not* expected to be claimed. If it is claimed, then the next draw will have one more tier. This behavior lets current gas prices and incoming yield determine the prize size and prize count.
 
 #### Prize Counts and Odds
 
@@ -173,7 +166,7 @@ The formula is:
 
 $$odds(t) = e^{\frac{\left(\left(x-n+1\right)\cdot\ln\left(\frac{1}{g}\right)\right)}{1-n}}$$
 
-Where $n$ is the number of tiers. Play with it the [Tier Odds in Desmos](https://www.desmos.com/calculator/heqovbw2eb).
+Where $n$ is the number of tiers.
 
 The combination of the count and odds results in a broad spectrum of large infrequent prizes and lots of small frequent prizes. Below is a visualization of the prize size over time for a simulation with 4 tiers:
 
@@ -185,39 +178,25 @@ You can see how the highest tier has many small, frequent prizes. While the gran
 
 When a draw is awarded, it adjusts the number of prize tiers based on how many prizes were claimed for the previous awarded draw.
 
-We do this quite simply: by using a lookup table of estimated prize counts. When the Prize Pool is constructed it is configured with the grand prize period. The number of tiers must be 3 or greater, and less than or equal to 10. This means we just need to compute the estimated counts for the 8 unique number of tiers.
+We do this quite simply: by using a lookup table of estimated prize counts. When the Prize Pool is constructed it is configured with the grand prize period. The number of tiers must be 4 or greater, and less than or equal to 11. This means we just need to compute the estimated counts for the 8 unique number of tiers.
 
-To compute the number of tiers, we lookup the number of tiers given the last prize claim count then add one. We add one to give room for the number of tiers to expand. It's expected that the highest tier is unclaimed; it's there as a "canary" to see if we need to expand the number of tiers. Unused liquidity is recycled back into prizes.
+To compute the number of tiers, we lookup the number of tiers given the last prize claim count and compare it to the estimated count for the number of tiers. Any Unused liquidity in the canary tiers are recycled back into prizes.
 
 ### RNG Auction
 
-The Prize Pool sources the random number for the awarded draw from an RNG on Ethereum via a sequence of auctions. These auctions are paid out from the reserve that has accrued in the Prize Pool.
+The Prize Pool sources the random number for the awarded draw from a permanently coupled RNG source via a sequence of auctions. These auctions are paid out from the reserve that has accrued in the Prize Pool.
 
 Each time a Draw is to be awarded, two auctions must be completed in sequence:
 
-1. **RNG Auction**: this is the auction to incentivize the RNG request. Some RNG sources, such as the Chainlink VRF, charge per use.
-2. **RNG Relay Auction**: this is the auction that incentivizes the bridging of the RNG results to the Prize Pool. It uses [ERC-5164](https://github.com/GenerationSoftware/erc5164-interfaces) so that bridge transport layers can be swapped easily.
-
-The RNG auction lives on L1 (Ethereum) and the RNG Relay Auction lives on L2.
-
-**Interaction Diagram for RNG Auction**
-
-![RNG Auction](/img/v5/design/RngAuction.png)
-
-**Interaction Diagram for the RNG Relay Auction**
-
-![RNG Relay Auction](/img/v5/design/RngRelayAuction.png)
-
-Since the RNG Auction lives on Ethereum and the Prize Pool lives on L2, there is no way that the auction can be priced according to the available reserve. Instead, we auction a fraction: the auction begins at zero, and increases until it reaches 1. This fraction is the portion of the reserve that the winner will capture. It is a percentage. The RNG Relay Auction also employs a fraction; in that it is a fraction of *the reserve less the RNG auction*, so that they don't allocate more than the reserve.
-
-Additionally, since the RNG auction does not know when the draw closes, we tune the auction sequence period and offset to match the prize pool on L2. This means that they don't need to exchange any information. It also means that we can re-use the RNG auction for other prize pools, if they are correctly synchronized.
+1. **Start RNG**: this is the auction to incentivize the RNG request. Some RNG sources, such as Witnet and Chainlink VRF, charge per use.
+2. **Finish RNG**: this is the auction that incentivizes the awarding of the draw after the random number has successfully been generated.
 
 To encourage rapid and consistent price discovery, we use a [Parabolic Fractional Dutch Auction](/protocol/design/draw-auction#parabolic-fractional-dutch-auction-pfda). This auction has two phases, both of fixed length of time.
 
 1. The first phase is an inverted parabola, and it's origin places it at the last auction price.
-2. The second phase is a parabola whose origin begins at the auction price, and finishes at 1 at the end of the auction.
+2. The second phase is a parabola whose origin begins at the last auction price, and finishes at 1 at the end of the auction.
 
-In this way, the system will rapidly settle to the previous auction prices.
+In this way, the system will rapidly settle to the previous auction prices and remain near that price for a prolonged amount of time to promote accurate price discovery.
 
 **Parabolic Fractional Dutch Auction**
 
@@ -229,7 +208,7 @@ The auctions have an expiry period which, combined, is half of the draw period. 
 
 ### Claiming Prizes
 
-After a draw has been awarded prizes can be claimed. Prizes can be claimed until the next Draw closes. Vaults claim on behalf of their users, which gives Vaults flexibility in how they want to handle prizes. The default PoolTogether Vault has a separate "Claimer" contract through which users claim prizes for others. Users call the claimer, which calls the Vault, which calls the Prize Pool.
+After a draw has been awarded prizes can be claimed. Prizes can be claimed until the next Draw closes. Vaults claim on behalf of their users, which gives Vaults flexibility in how they want to handle prizes. The default PoolTogether Vault has a separate "Claimer" contract through which users claim prizes for others. Users (or bots) call the claimer, which calls the Vault, which calls the Prize Pool.
 
 **Interaction Diagram for Prize Claiming**
 
@@ -237,17 +216,17 @@ After a draw has been awarded prizes can be claimed. Prizes can be claimed until
 
 #### VRGDA Claimer
 
-Once a draw is awarded, the last auction begins: the auction for prize claims. A [variable-rate gradual dutch auction](https://www.paradigm.xyz/2022/08/vrgda) is used to reward anyone who claims a prize on a winner's behalf. The reward is taken from the prize itself. The Prize Pool allows Vaults to claim prizes on behalf of their users, so the claim behaviour can be customized by the vault. PoolTogether V5 provides a default VRGDA Claimer that works very well.
+Once a draw is awarded, the last auction begins: the auction for prize claims. A [variable-rate gradual dutch auction](https://www.paradigm.xyz/2022/08/vrgda) is used to reward anyone who claims a prize on a winner's behalf. The reward is taken from the prize itself. The Prize Pool allows Vaults to claim prizes on behalf of their users, so the claim behaviour can be customized by the vault. PoolTogether V5 provides a default VRGDA Claimer that can be plugged into a prize vault with no extra setup or maintenance required.
 
 A VRGDA is a generalization of the continuous dutch auction, in that it raises prices when sales are ahead of schedule and lowers prices when sales are behind schedule.
 
 For PoolTogether V5 we are using the VRGDA as a reverse dutch auction to claim prizes, so it *lowers fees* when claims are ahead of schedule and *raises fees* when claims are behind schedule. This allows us to ensure that all prizes are claimed before the next draw is awarded, at which point the prizes can no longer be claimed.
 
-The "schedule" of claims is based on a count and timeframe. Recall the estimated claim count from the adaptive number of tiers? We use that same number to compute the schedule. The schedule starts immediately after the draw is awarded, and is set to take one quarter of the draw period. This provides plenty of leeway in the event that there are more prizes, statistically, for a given draw.  It's highly unlikely that a draw will see a variance of double the expected prizes, so we believe a quarter of the draw period is sufficient.
+The "schedule" of claims is based on a count and time frame. Recall the estimated claim count from the adaptive number of tiers? We use that same number to compute the schedule. The schedule starts immediately after the draw is awarded, and is set to take one quarter of the draw period. This provides plenty of leeway in the event that there are more prizes, statistically, for a given draw.  It's highly unlikely that a draw will see a variance of double the expected prizes, so we believe a quarter of the draw period is sufficient.
 
 #### Winner Eligiblity
 
-The Prize Pool determines whether a user has won a prize by checking if a pseudo-random number is within a certain range.  The PRN is generated such that it is unique per draw, tier, vault and user. The number range is used to tune the odds based on the prize frequency and the user's eligiblity.
+The Prize Pool determines whether a user has won a prize by checking if a pseudo-random number is within a certain range.  The PRN is generated such that it is unique per draw, tier, vault and user. The number range is used to tune the odds based on the prize frequency and the user's eligibility.
 
 There are three steps we take:
 
@@ -286,7 +265,7 @@ uint256 winningZone = tierOdds * userTwab * vaultPortion
 
 The tier odds function creates a spectrum of prize frequencies between the yearly grand prize and the daily prizes. For more details see the [Prize Pool](./prize-pool).
 
-The prize tier accrual duration is computed based on the tier odds. Essentially it's time periods based on the prize frequency function above; which means that accrual durations will range between one year and one day.
+The prize tier accrual duration is computed based on the tier odds. Essentially it's time periods based on the prize frequency function above; which means that accrual durations will range between one GP period and a single draw.
 
 The user's time-weighted average balance is measured between the timestamps `drawClosedAt - duration` and `drawClosedAt`. E.g. for the yearly grand prize it will be their average balance for the preceding year, and for the daily prize it will be their balance for the preceding day.
 
@@ -296,7 +275,7 @@ The vault portion is the portion of prize liquidity that was contributed by the 
 vaultPortion = vaultContributedPrizeLiquidityBetween(drawClosedAt - duration, drawClosedAt) / totalContributePrizeLiquidityBetween(drawClosedAt - duration, drawClosedAt)
 ```
 
-**Check if PRN in Winning Zone**
+**Check if PRN is in the Winning Zone**
 
 Now that we have our PRN and Winning Zone, we can determine whether the user won a prize from a certain tier.
 

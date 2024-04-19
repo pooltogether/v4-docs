@@ -161,25 +161,15 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
 }
 
 switch (process.argv[2]) {
-  case "mainnet":
-    generate("Mainnet", 0, "./docs/deployments/mainnet.md", [
-      "./data/ethereum-contracts.json",
-      "./data/optimism-contracts.json",
+  case "optimism":
+    generate("Optimism", 0, "./docs/deployments/optimism.md", [
+      "./data/optimism-core.json",
     ]);
     break;
 
-  case "beta":
-    generate("Beta", 1, "./docs/deployments/beta.md", [
-      "./data/beta-ethereum-contracts.json",
-      "./data/beta-optimism-contracts.json",
-    ]);
-    break;
-
-  case "testnet":
-    generate("Testnet", 2, "./docs/deployments/testnet.md", [
-      "./data/sepolia-contracts.json",
-      "./data/arbitrumSepolia-contracts.json",
-      "./data/optimismSepolia-contracts.json",
+  case "optimism-sepolia":
+    generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
+      "./data/optimism-sepolia-core.json",
     ]);
     break;
 

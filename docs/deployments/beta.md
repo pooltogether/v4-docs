@@ -1,11 +1,13 @@
 ---
-title: Beta
-sidebar_position: 1
+title: Optimism Beta (Deprecated)
+sidebar_position: 3
 ---
 
-# Beta
+# Optimism Beta (Deprecated)
 
-## Ethereum
+The optimism beta deployment has been deprecated in favor of the [latest optimism deployment](./optimism).
+
+## Ethereum Contracts
 
 | Contract | Address |
 | :--- | :--- |
@@ -14,7 +16,7 @@ sidebar_position: 1
 | ChainlinkVRFV2DirectRngAuctionHelper | [0x38449a6b7bb76638452273925c9a2BA818bD130d](https://etherscan.io/address/0x38449a6b7bb76638452273925c9a2BA818bD130d) |
 | RngAuctionRelayerRemoteOwner | [0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF](https://etherscan.io/address/0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF) |
 
-## Optimism
+## Optimism Contracts
 
 | Contract | Address |
 | :--- | :--- |

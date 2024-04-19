@@ -10,10 +10,7 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "clear": "docusaurus clear",
-    "gen-testnet-deployments": "rm -rf docs/reference/deployments/** && ./scripts/generateDeployments.js $TESTNET_DEPLOYMENT_JSON_URL",
-    "gen-v5-mainnet-deployment": "./scripts/generateV5Deployments.js mainnet",
-    "gen-v5-testnet-deployment": "./scripts/generateV5Deployments.js testnet"
+    "clear": "docusaurus clear"
   },
   "dependencies": {
     "@babel/core": "7.17.5",
