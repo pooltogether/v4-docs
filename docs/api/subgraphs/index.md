@@ -33,31 +33,18 @@ You can find the source code for the subgraphs at:
 
 ## Subgraph Endpoints
 
-> NOTE: The subgraphs were previously separated into `PrizePool` and `TwabController` subgraphs, but are now unified in one subgraph. Some entities may have changed from the previous versions.
+### Optimism Subgraph
 
-### Mainnet Subgraphs
-
-#### [Ethereum](../../deployments/mainnet#ethereum)
+#### [Optimism](../../deployments/optimism)
 
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
-| PoolTogether V5 Ethereum | https://api.studio.thegraph.com/proxy/50959/pt-v5-eth/version/latest |
-| PoolTogether V5 Optimism | https://api.studio.thegraph.com/proxy/50959/pt-v5-op/version/latest |
+| PoolTogether V5 Optimism | https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest |
 
 ### Testnet Subgraph
 
-#### [Optimism Goerli](../../deployments/testnet#optimism-goerli)
+#### [Optimism Sepolia](../../deployments/optimism-sepolia)
 
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
-| PoolTogether V5 OP Goerli | https://api.studio.thegraph.com/query/50959/pt-v5-op-goerli/version/latest |
-
-
-### Beta Subgraphs
-
-#### [Optimism](../../deployments/beta)
-
-| Subgraph | Decentralized Service Endpoint |
-| :-- | :-- |
-| Prize Pool | https://api.studio.thegraph.com/query/41211/pt-v5-optimism-prize-pool/v0.0.1 |
-| TWAB Controller | https://api.studio.thegraph.com/query/41211/pt-v5-optimism-twab-controller/v0.0.1 |
+| PoolTogether V5 OP Sepolia | https://api.studio.thegraph.com/query/63100/pt-v5-op-sepolia/version/latest |

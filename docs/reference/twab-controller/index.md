@@ -1,7 +1,5 @@
 ---
-id: twab-controller
 title: Twab Controller
-sidebar_position: 2
 ---
 
 The Twab Controller is what allows Vaults to accurately measure a user's contribution between two timestamps.

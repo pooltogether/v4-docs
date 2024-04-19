@@ -1,6 +1,5 @@
 ---
 title: Twab Rewards
-sidebar_position: 4
 ---
 
 The PoolTogether V5 TWAB Rewards contract allows anyone to set up a reward promotion distribution that distributes an ERC20 token to vault depositors based of their relative TWAB.
