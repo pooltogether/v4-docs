@@ -6,29 +6,26 @@ sidebar_position: 5
 
 # Draw Auction
 
-Unlike previous versions of PoolTogether, the V5 protocol is no longer reliant on permissioned controls to close the prize draws and instead incentivises 3rd parties to close the periodic draws using a sequence of timed auctions. The draw auctions outlined in these docs leverage an incentivisation mechanism to encourage competition among third parties to complete the draws in a timely manner while maximizing cost efficiency.
+Unlike previous versions of PoolTogether, the V5 protocol is no longer reliant on permissioned controls to close the prize draws and instead incentivises 3rd parties to close the periodic draws using a sequence of timed auctions. The draw auctions outlined in these docs leverage an incentivization mechanism to encourage competition among third parties to complete the draws in a timely manner while maximizing cost efficiency.
 
 # Motivation
 
 The PoolTogether V5 protocol is designed to be permissionless and self-sustainable, with daily prize pool draws that must run efficiently without any central control points. The completion of a prize pool draw requires at least two major steps:
 
-1. Requesting an onchain random number from a proveably random source
-2. Closing the prize pool draw with the resulting random number
-
-The design for the draw auctions for PoolTogether V5 makes an assumption that the RNG source for all prize pools, regardless of which chain they are deployed on, will exist on the L1 network. The protocol will initially be deployed with an integration for Chainlink VRF V2 as the RNG source, but provides an option to upgrade the RNG source if a more decentralised option becomes available.
+1. Requesting an onchain random number from a provably random source
+2. Awarding the prize pool draw with the resulting random number
 
 To ensure the timely closing of draws, the protocol must incentivise each step of the process to complete in sequential order while automatically adjusting the rewards to account for variables that will change over time:
 
 1. Gas costs
 2. RNG request fees
-3. Bridging costs
-4. 3rd-party software and hosting fees for bidders
+3. 3rd-party software and hosting fees for bidders
 
-The V5 protocol requires a system that accomplishes these tasks consitently and efficiently on a daily basis.
+The V5 protocol requires a system that accomplishes these tasks consistently and efficiently on a daily basis.
 
 # Design
 
-The design for the closing of PoolTogether V5 draws revolves around a sequence of timed auctions, each permissionlessly incentivising the completion of a specific task.
+The design for the closing of PoolTogether V5 draws revolves around a sequence of timed auctions, each permissionlessly incentivizing the completion of a specific task.
 
 ## Terminology
 
@@ -56,36 +53,18 @@ Random Number Generation (or) Random Number Generator
 
 There are two types of auctions that occur sequentially every draw period:
 
-- **RNG Auction**: rewarded when a bot starts an RNG request
-- **RNG Relay Auction**: rewarded when a bot relays a completed RNG result to the Prize Pool.
-
-There is only one RNG auction that produces the random number for all prize pools. This saves time and value for the protocol since RNG requests can be costly in both. On the other hand, there is one draw auction for each prize pool. This allows each draw auction to be specifically designed to send the RNG data to the target prize pool in an efficient manner that works for the receiving chain.
-
-In addition, if an L2 prize pool requires an extra step to be completed to bridge the data, an additional auction may be added after the draw auction completes for that pool to incentivise the completion of that step.
+1. **Start RNG**: this is the auction to incentivize the RNG request. Some RNG sources, such as the Witnet and Chainlink VRF, charge per use.
+2. **Finish RNG**: this is the auction that incentivizes the awarding of the draw after the random number has successfully been generated.
 
 ## Auction Timing
 
-The RNG auction for any given draw starts at the beginning of the following draw period and must complete within the auction duration. Following the RNG auction, there is an “unknown” waiting period while the RNG service fufills the request.
+The RNG auction for any given draw starts at the beginning of the following draw period and must complete within the auction duration. Following the start RNG auction, there is an “unknown” waiting period while the RNG service fulfills the request.
 
-Once the random number is available, the draw auctions begin at the timestamp at which the RNG request was completed and must also complete within their defined durations. The draw auction for an L2 will also be followed by a bridging period while the data is sent to the target prize pool. If the data does not reach the prize pool within the duration of the draw period, the draw for that prize pool will be delayed by 1 period and the data will still be used to close the pending draw.
-
-> Note: this can cause some prize pools to be closed for a given period while others are still open. Bots must be aware of this if they want accurate reward estimates!
-
-Once the draw is closed for a prize pool, it will distribute the fractional reserve portions based on the auction results that contributed to the closing of that draw.
-
-![Draw Auction Flow](/img/v5/draw-auction/DrawAuction.png)
+Once the random number is available, the finish RNG auction will rise in price until it is called to award the draw with the available random number. Once the draw is awarded for a prize pool, it will distribute the fractional reserve portions based on the auction results that contributed to the closing of that draw.
 
 ## Rewards
 
 Each Prize Pool has a prize “reserve” that grows whenever prize liquidations occur. The reserve on a prize pool is the source of the rewards for the auctions that are used to close the draws on that pool.
-
-Now, you might be thinking… “If the auctions are on L1, but the prize pool is on L2, how do the auctions know what the reserve is?”
-
-To address this communication issue, the auctions are designed to function “blindly” by auctioning off a fraction of the reserve instead of a fixed value from the reserve. This leaves it up to the bots to query the L2 to find out the available reserve in a prize pool before bidding on an auction.
-
-As mentioned above, there is one draw auction per prize pool, but only one RNG auction shared between them all. So which prize pool incentivises the bots to complete the RNG process? The answer is all of them!
-
-In this case, auctioning off a fractional number works to our advantage since that fraction can be taken from all prize pool reserves, and the bots can use their clairvoiant nature to calculate exactly what rewards they will receive from each reserve should the draws be completed across them all.
 
 ## Parabolic Fractional Dutch Auction (PFDA)
 
@@ -120,10 +99,8 @@ Examples:
 
 [Interactive Demo](https://www.desmos.com/calculator/kwxl5men0k)
 
-With PFDA pricing, each auction can adjust its target bid price to be the last sale price while setting the target sale time to be earlier in the auction duration to speed up the process and allow more time to be given to the other incentivised processes in the protocol (see info on the Claimer and Liquidator).
-
-<!-- TODO: ## Code Examples & Interfaces -->
+With PFDA pricing, each auction can adjust its target bid price to be the last sale price while setting the target sale time to be earlier in the auction duration to speed up the process and allow more time to be given to the other incentivized processes in the protocol (see info on the Claimer and Liquidator).
 
 ## Conclusion
 
-Through the use of adaptive pricing and a single source of randomness, the PoolTogether V5 protocol can efficiently leverage individual prize pool reserves to incentivise the consistent closing of draws across all deployed prize pools.
+Through the use of adaptive pricing and a single source of randomness, the PoolTogether V5 protocol can efficiently leverage individual prize pool reserves to incentivize the consistent closing of draws across all deployed prize pools.

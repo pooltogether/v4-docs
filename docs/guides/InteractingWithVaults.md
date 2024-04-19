@@ -10,13 +10,13 @@ In PoolTogether V5, vaults are not constricted to one specific kind of contract,
 
 ### Standard Prize Vaults
 
-With the launch of V5 came the creation of the first *standard* [prize vaults](/protocol/reference/vaults/PrizeVault). These vaults are ERC4626 compliant and can be created through a [factory contract](/protocol/reference/vaults/PrizeVaultFactory) by providing a compatible ERC-4626 yield source.
+With the launch of V5 came the creation of the first *standard* [prize vaults](/protocol/reference/prize-vaults/PrizeVault). These vaults are ERC4626 compliant and can be created through a [factory contract](/protocol/reference/prize-vaults/PrizeVaultFactory) by providing a compatible ERC-4626 yield source.
 
 Since standard vaults are ERC-4626 compliant, you can refer to the [EIP-4626 documentation](https://eips.ethereum.org/EIPS/eip-4626) for more on how to deposit and withdraw.
 
 #### Discovering New Vaults
 
-Standard vaults are created using the PrizeVaultFactory, which provides a means to enumerate all created prize vaults. You can query a list of all created vaults from the factory contract by reading [the `allVaults` array](/protocol/reference/vaults/PrizeVaultFactory#allvaults).
+Standard vaults are created using the PrizeVaultFactory, which provides a means to enumerate all created prize vaults. You can query a list of all created vaults from the factory contract by reading [the `allVaults` array](/protocol/reference/prize-vaults/PrizeVaultFactory#allvaults).
 
 #### Prize Hooks
 

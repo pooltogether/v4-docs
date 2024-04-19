@@ -3,7 +3,7 @@
 
 
 **Inherits:**
-[ITwabRewards](./ITwabRewards), Multicall
+[ITwabRewards](./ITwabRewards.md), Multicall
 
 **Author:**
 PoolTogether Inc. & G9 Software Inc.

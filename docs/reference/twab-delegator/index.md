@@ -1,6 +1,5 @@
 ---
 title: Twab Delegator
-sidebar_position: 3
 ---
 
 The PoolTogether V5 TWAB Delegator contract allows accounts to easily delegate a portion of their Vault shares to multiple delegatees.

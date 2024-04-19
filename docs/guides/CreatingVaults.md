@@ -50,7 +50,7 @@ The standard vault can have Liquidation Pairs added to it. The Liquidation Pair 
 
 Depositors in V5 expect their prizes to be automatically claimed and sent to their wallet. This is done through a daily auction run by a claimer contract where bots can compete to claim prizes for the lowest fee.
 
-Standard vaults are initialized with a claimer address that is the only address permitted to claim prizes on behalf of users. You can deploy a claimer contract through the [`ClaimerFactory`](/protocol/reference/prize-claimer/ClaimerFactory) (you can find the live deployed factories [here](/protocol/deployments/mainnet)).
+Standard vaults are initialized with a claimer address that is the only address permitted to claim prizes on behalf of users. You can deploy a claimer contract through the [`ClaimerFactory`](/protocol/reference/prize-claimer/ClaimerFactory) (you can find the live deployed factories [here](/protocol/deployments/optimism)).
 
 ## Non-Standard Vaults
 
