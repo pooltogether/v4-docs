@@ -37,7 +37,7 @@ export const actions = [
     title: "Deployments",
     href: "#",
     icon: BookOpenIcon,
-    to: "./protocol/deployments/mainnet",
+    to: "./protocol/deployments",
     text: `Comprehensive list of deployed contracts for both production and testnet.`,
   },
 ];
