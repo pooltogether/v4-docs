@@ -5,11 +5,11 @@
     "minor": 0,
     "patch": 0
   },
-  "timestamp": "2024-04-12T20:05:15.770Z",
+  "timestamp": "2024-04-17T21:49:05.305Z",
   "contracts": [
     {
       "chainId": 11155420,
-      "address": "0xfbD4F73cb7fd2503CA4D64e5369539841E56Ad6D",
+      "address": "0xC74638B72DF8C886F7076ac1c8AA6D65E3c83034",
       "version": {
         "major": 1,
         "minor": 0,
@@ -307,6 +307,12 @@
               "internalType": "address"
             },
             {
+              "name": "paid",
+              "type": "uint256",
+              "indexed": false,
+              "internalType": "uint256"
+            },
+            {
               "name": "cost",
               "type": "uint256",
               "indexed": false,
@@ -330,7 +336,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x01fe814EA0da9D501a3443fec06D6daBdE194Ed9",
+      "address": "0x4592cA09441D2C798a2fbaa61e4c3F1C29eEa9F1",
       "version": {
         "major": 1,
         "minor": 0,
@@ -355,7 +361,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xC355F97a3Aa2808Acb536E555764b8FB26fB4b37",
+      "address": "0x4a61B6f54157840E80e0C47f1A628C0B3744a739",
       "version": {
         "major": 1,
         "minor": 0,
@@ -945,7 +951,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x588bEdb06E351Ce014b893Fe41d633a147444efb",
+      "address": "0x24Ffb8Ca3DeA588B267A15F1d94766dCbA034aE6",
       "version": {
         "major": 1,
         "minor": 0,
@@ -1535,7 +1541,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x539486f74DbEb345ef5DB41151a8fd17a2d7e4Dd",
+      "address": "0xdED96a50515f1a4620a3C5244fAe15eD7D216d4a",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2125,7 +2131,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x002183F0d3f1b59e181Db1f250Ce69b97539ae96",
+      "address": "0xeF38f21EC5477f6E3D4b7e9f0DEa44A788C669b0",
       "version": {
         "major": 1,
         "minor": 0,
@@ -2715,7 +2721,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x71A9828e4adD469c89A610291147b0B5AC1Ad80b",
+      "address": "0x68F92539f64E486f2853BB2892933a21b54829E5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3305,7 +3311,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x9cb3E04A48DB197Cd26492FAfD2a6bE6E815262A",
+      "address": "0x6c6a62B0861d8F2B946456Ba9dCD0F3BAeC54147",
       "version": {
         "major": 1,
         "minor": 0,
@@ -3895,7 +3901,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xf4860DB7f476a0b3424Bd4003e56C90eaB160e1c",
+      "address": "0xd44b6c5D15f0f331e041C346b8A60ACcE5cec088",
       "version": {
         "major": 1,
         "minor": 0,
@@ -4485,7 +4491,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xC8E6DE8475833C7dF423fFFed33b6d83273B2Da6",
+      "address": "0xE6e86a136aa9A45D11d8a5169F9fDF57704DB5cA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -5654,7 +5660,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x154D3E0b3b8283207E2970B52E531AC0eF299715",
+      "address": "0x505E334544689C7A4BF4c6A0CF8d52A5fB6F0A4A",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6341,7 +6347,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x702f41210B66893169e302DCF52F13eb7646CC79",
+      "address": "0x99e05e2346885D1c1Ce714c9e794A7ca6E3634b4",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6389,8 +6395,8 @@
             },
             {
               "name": "_targetAuctionPeriod",
-              "type": "uint256",
-              "internalType": "uint256"
+              "type": "uint64",
+              "internalType": "uint64"
             },
             {
               "name": "_targetAuctionPrice",
@@ -6417,14 +6423,14 @@
           "name": "deployedPairs",
           "inputs": [
             {
-              "name": "",
+              "name": "pair",
               "type": "address",
-              "internalType": "contract TpdaLiquidationPair"
+              "internalType": "address"
             }
           ],
           "outputs": [
             {
-              "name": "",
+              "name": "wasDeployed",
               "type": "bool",
               "internalType": "bool"
             }
@@ -6474,9 +6480,9 @@
             },
             {
               "name": "targetAuctionPeriod",
-              "type": "uint256",
+              "type": "uint64",
               "indexed": false,
-              "internalType": "uint256"
+              "internalType": "uint64"
             },
             {
               "name": "targetAuctionPrice",
@@ -6497,7 +6503,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x69e14999a45363279791ed4E1699C4aB7B1620FC",
+      "address": "0x4694F3CD7fedD269aaF2a168e12C544f829a6b50",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6679,7 +6685,7 @@
             {
               "name": "liquidationPair",
               "type": "address",
-              "internalType": "contract TpdaLiquidationPair"
+              "internalType": "address"
             }
           ]
         }
@@ -6687,7 +6693,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x0393FA04637989c32b23F002A963bf934329571a",
+      "address": "0x28548033b3f49b03472630ED06E8a6E92b269ce4",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6873,7 +6879,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x9f594BA8A838D41E7781BFA2aeA42702E216AF5a",
+      "address": "0x122FecA66c2b1Ba8Fa9C39E88152592A5496Bc99",
       "version": {
         "major": 1,
         "minor": 0,
@@ -7132,6 +7138,42 @@
         },
         {
           "type": "function",
+          "name": "computeShutdownPortion",
+          "inputs": [
+            {
+              "name": "_vault",
+              "type": "address",
+              "internalType": "address"
+            },
+            {
+              "name": "_account",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "tuple",
+              "internalType": "struct ShutdownPortion",
+              "components": [
+                {
+                  "name": "numerator",
+                  "type": "uint256",
+                  "internalType": "uint256"
+                },
+                {
+                  "name": "denominator",
+                  "type": "uint256",
+                  "internalType": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
           "name": "computeTotalShares",
           "inputs": [
             {
@@ -7214,19 +7256,6 @@
               "name": "",
               "type": "uint48",
               "internalType": "uint48"
-            }
-          ],
-          "stateMutability": "view"
-        },
-        {
-          "type": "function",
-          "name": "drawIdPriorToShutdown",
-          "inputs": [],
-          "outputs": [
-            {
-              "name": "",
-              "type": "uint24",
-              "internalType": "uint24"
             }
           ],
           "stateMutability": "view"
@@ -7447,6 +7476,25 @@
         },
         {
           "type": "function",
+          "name": "getDrawId",
+          "inputs": [
+            {
+              "name": "_timestamp",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint24",
+              "internalType": "uint24"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
           "name": "getDrawIdToAward",
           "inputs": [],
           "outputs": [
@@ -7483,6 +7531,49 @@
             }
           ],
           "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "getShutdownDrawId",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint24",
+              "internalType": "uint24"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "getShutdownInfo",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "balance",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "observation",
+              "type": "tuple",
+              "internalType": "struct Observation",
+              "components": [
+                {
+                  "name": "available",
+                  "type": "uint96",
+                  "internalType": "uint96"
+                },
+                {
+                  "name": "disbursed",
+                  "type": "uint160",
+                  "internalType": "uint160"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable"
         },
         {
           "type": "function",
@@ -7586,6 +7677,31 @@
         },
         {
           "type": "function",
+          "name": "getTotalAccumulatorNewestObservation",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "tuple",
+              "internalType": "struct Observation",
+              "components": [
+                {
+                  "name": "available",
+                  "type": "uint96",
+                  "internalType": "uint96"
+                },
+                {
+                  "name": "disbursed",
+                  "type": "uint160",
+                  "internalType": "uint160"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
           "name": "getTotalContributedBetween",
           "inputs": [
             {
@@ -7617,6 +7733,37 @@
               "name": "",
               "type": "uint256",
               "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "getVaultAccumulatorNewestObservation",
+          "inputs": [
+            {
+              "name": "_vault",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "tuple",
+              "internalType": "struct Observation",
+              "components": [
+                {
+                  "name": "available",
+                  "type": "uint96",
+                  "internalType": "uint96"
+                },
+                {
+                  "name": "disbursed",
+                  "type": "uint160",
+                  "internalType": "uint160"
+                }
+              ]
             }
           ],
           "stateMutability": "view"
@@ -7958,7 +8105,7 @@
               "internalType": "uint256"
             }
           ],
-          "stateMutability": "view"
+          "stateMutability": "nonpayable"
         },
         {
           "type": "function",
@@ -8025,6 +8172,45 @@
               "name": "_winner",
               "type": "address",
               "internalType": "address"
+            },
+            {
+              "name": "_tier",
+              "type": "uint8",
+              "internalType": "uint8"
+            },
+            {
+              "name": "_prizeIndex",
+              "type": "uint32",
+              "internalType": "uint32"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "bool",
+              "internalType": "bool"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "wasClaimed",
+          "inputs": [
+            {
+              "name": "_vault",
+              "type": "address",
+              "internalType": "address"
+            },
+            {
+              "name": "_winner",
+              "type": "address",
+              "internalType": "address"
+            },
+            {
+              "name": "_drawId",
+              "type": "uint24",
+              "internalType": "uint24"
             },
             {
               "name": "_tier",
@@ -8485,6 +8671,22 @@
         },
         {
           "type": "error",
+          "name": "GrandPrizePeriodDrawsTooLarge",
+          "inputs": [
+            {
+              "name": "grandPrizePeriodDraws",
+              "type": "uint24",
+              "internalType": "uint24"
+            },
+            {
+              "name": "maxGrandPrizePeriodDraws",
+              "type": "uint24",
+              "internalType": "uint24"
+            }
+          ]
+        },
+        {
+          "type": "error",
           "name": "IncompatibleTwabPeriodLength",
           "inputs": []
         },
@@ -8853,7 +9055,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x76bd3E26811165946C6D924445b783A6e7f35374",
+      "address": "0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391",
       "version": {
         "major": 1,
         "minor": 0,
@@ -8976,7 +9178,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x33D4050423F238706AaC5351eE67DE1803776244",
+      "address": "0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9363,7 +9565,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xbE11106DC8164564D873dc89F296CB1bBB82c4cA",
+      "address": "0xc3aef666C6242D78198156137D1a405D2f507ba5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -10216,7 +10418,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x75B2F4b3eC5aDF7077F928992524Cc547E74f768",
+      "address": "0x95849a4C2E58F4f8Bf868ADEf10B05747A24eE71",
       "version": {
         "major": 1,
         "minor": 0,
@@ -12254,7 +12456,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xB08E9CB1003994f52766f302a66aaDe0C6DF7407",
+      "address": "0xcCF00490434D845Ec27cB8B4C05E6356318AafAb",
       "version": {
         "major": 1,
         "minor": 0,
@@ -12647,6 +12849,12 @@
               "type": "uint256",
               "indexed": false,
               "internalType": "uint256"
+            },
+            {
+              "name": "contribution",
+              "type": "uint256",
+              "indexed": false,
+              "internalType": "uint256"
             }
           ],
           "anonymous": false
@@ -12840,7 +13048,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x837125c98821babC7E397C9b28a799Ec780511a6",
+      "address": "0x6cDfb8288F5445255F9dfF6782471DE7556fD481",
       "version": {
         "major": 1,
         "minor": 0,
@@ -13801,7 +14009,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xC0832B2d1380eC5550F86cd6C6bC2E9402C1f55C",
+      "address": "0xE039683D5f9717d6f74D252722546cFedAB32250",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15839,7 +16047,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xcC2049eb7F08bD2CEdD3e8CD6baA67C8847b135b",
+      "address": "0x97adD74FA6387660374401817daE67dbc22402e2",
       "version": {
         "major": 1,
         "minor": 0,
@@ -15867,8 +16075,8 @@
             },
             {
               "name": "_targetAuctionPeriod",
-              "type": "uint256",
-              "internalType": "uint256"
+              "type": "uint64",
+              "internalType": "uint64"
             },
             {
               "name": "_targetAuctionPrice",
@@ -15996,7 +16204,7 @@
               "internalType": "address"
             },
             {
-              "name": "",
+              "name": "_amountOut",
               "type": "uint256",
               "internalType": "uint256"
             },
@@ -16117,6 +16325,22 @@
         },
         {
           "type": "error",
+          "name": "InsufficientBalance",
+          "inputs": [
+            {
+              "name": "requested",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "available",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
           "name": "ReceiverIsZero",
           "inputs": []
         },
@@ -16140,17 +16364,12 @@
               "internalType": "uint256"
             }
           ]
-        },
-        {
-          "type": "error",
-          "name": "ZeroAvailableBalance",
-          "inputs": []
         }
       ]
     },
     {
       "chainId": 11155420,
-      "address": "0x5DFACd4810abc24B955F2b6D1a47A985d326d17c",
+      "address": "0x1F22bD7FE841dE8f650156CaBA53f8523808B48E",
       "version": {
         "major": 1,
         "minor": 0,
@@ -17203,7 +17422,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x4766D615e49DD28d858F7c78f112e825124c795F",
+      "address": "0x19f8F337C72C430cFDe9EC07D5C51639ad143bd5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -18164,7 +18383,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x7FAD91A4A29109303188D8758F1a9D60cE988349",
+      "address": "0xCC255d71c57A5D5f92183a66b7fC5589151aDcD0",
       "version": {
         "major": 1,
         "minor": 0,
@@ -20202,7 +20421,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x8385C4321334068b0dF0C0c525DCfa52496AB0E0",
+      "address": "0x726bf70cBA8f3003A7F9F9E395bEfEfbF953a1aa",
       "version": {
         "major": 1,
         "minor": 0,
@@ -20230,8 +20449,8 @@
             },
             {
               "name": "_targetAuctionPeriod",
-              "type": "uint256",
-              "internalType": "uint256"
+              "type": "uint64",
+              "internalType": "uint64"
             },
             {
               "name": "_targetAuctionPrice",
@@ -20359,7 +20578,7 @@
               "internalType": "address"
             },
             {
-              "name": "",
+              "name": "_amountOut",
               "type": "uint256",
               "internalType": "uint256"
             },
@@ -20480,6 +20699,22 @@
         },
         {
           "type": "error",
+          "name": "InsufficientBalance",
+          "inputs": [
+            {
+              "name": "requested",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "available",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
           "name": "ReceiverIsZero",
           "inputs": []
         },
@@ -20503,17 +20738,12 @@
               "internalType": "uint256"
             }
           ]
-        },
-        {
-          "type": "error",
-          "name": "ZeroAvailableBalance",
-          "inputs": []
         }
       ]
     },
     {
       "chainId": 11155420,
-      "address": "0x2f241900b16D34b31DE7097B7E677C986d67bfA4",
+      "address": "0x732C6Ca43d2048EF7b9620A83A501A84Ba6820bF",
       "version": {
         "major": 1,
         "minor": 0,
@@ -21566,7 +21796,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x8f6F9C51f756C5f73850371A019c5f9524003c34",
+      "address": "0xaF9Ad81aB225Fe2d24dD2067a38A4CE69Ec07784",
       "version": {
         "major": 1,
         "minor": 0,
@@ -22527,7 +22757,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x33335296c9b020ca3252E4953C11decFDce816B8",
+      "address": "0xEd2f166aD10b247f67C3FcE7a4C8e0C5E54247ea",
       "version": {
         "major": 1,
         "minor": 0,
@@ -24565,7 +24795,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xe8510B3597E23F0FA250faE4c73C3C6E0a6688b3",
+      "address": "0xA441DD502AEd96B801FfE6Df6eb1573501cacCB0",
       "version": {
         "major": 1,
         "minor": 0,
@@ -24593,8 +24823,8 @@
             },
             {
               "name": "_targetAuctionPeriod",
-              "type": "uint256",
-              "internalType": "uint256"
+              "type": "uint64",
+              "internalType": "uint64"
             },
             {
               "name": "_targetAuctionPrice",
@@ -24722,7 +24952,7 @@
               "internalType": "address"
             },
             {
-              "name": "",
+              "name": "_amountOut",
               "type": "uint256",
               "internalType": "uint256"
             },
@@ -24843,6 +25073,22 @@
         },
         {
           "type": "error",
+          "name": "InsufficientBalance",
+          "inputs": [
+            {
+              "name": "requested",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "available",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
           "name": "ReceiverIsZero",
           "inputs": []
         },
@@ -24866,17 +25112,12 @@
               "internalType": "uint256"
             }
           ]
-        },
-        {
-          "type": "error",
-          "name": "ZeroAvailableBalance",
-          "inputs": []
         }
       ]
     },
     {
       "chainId": 11155420,
-      "address": "0x048DB5F3B4C3f06a02D072Ce14Fc2549afD61191",
+      "address": "0xE8909d8cb77E49D944F4309B4b26B7f0e98Ee198",
       "version": {
         "major": 1,
         "minor": 0,
@@ -25929,7 +26170,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x7f0EE5ea120165eA78D5cB8dba64f4f261b33731",
+      "address": "0x14A1EDBB4723AA163A11742Df934C53C43feEC23",
       "version": {
         "major": 1,
         "minor": 0,
@@ -26890,7 +27131,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xe590741416acBdBA094F7D70BEAef6060cc6D21E",
+      "address": "0xE1498d24A398b588b5e3F2c5d230991304203AD9",
       "version": {
         "major": 1,
         "minor": 0,
@@ -28928,7 +29169,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xb1b771Db262C7358852Db85867f15e946f2A4941",
+      "address": "0x5D4220aA163Ef49DFBa13B086f38E61ca7215beA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -28956,8 +29197,8 @@
             },
             {
               "name": "_targetAuctionPeriod",
-              "type": "uint256",
-              "internalType": "uint256"
+              "type": "uint64",
+              "internalType": "uint64"
             },
             {
               "name": "_targetAuctionPrice",
@@ -29085,7 +29326,7 @@
               "internalType": "address"
             },
             {
-              "name": "",
+              "name": "_amountOut",
               "type": "uint256",
               "internalType": "uint256"
             },
@@ -29206,6 +29447,22 @@
         },
         {
           "type": "error",
+          "name": "InsufficientBalance",
+          "inputs": [
+            {
+              "name": "requested",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "available",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
           "name": "ReceiverIsZero",
           "inputs": []
         },
@@ -29229,17 +29486,12 @@
               "internalType": "uint256"
             }
           ]
-        },
-        {
-          "type": "error",
-          "name": "ZeroAvailableBalance",
-          "inputs": []
         }
       ]
     },
     {
       "chainId": 11155420,
-      "address": "0x0edFa9ec8713094Eb26c888c75444f10c18AA2B3",
+      "address": "0xd9e198b40A76CBf0170Ad935feBca14aec816114",
       "version": {
         "major": 1,
         "minor": 0,
@@ -30292,7 +30544,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x1791769092e9fC458fFF27F8589099eD1BaDf785",
+      "address": "0xDD41e571f0f7614Ae37935538f92589363843266",
       "version": {
         "major": 1,
         "minor": 0,
@@ -31253,7 +31505,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0xdEA4278d8b01B71523bfD6a8Fc36fea67F349e47",
+      "address": "0x02dda5914b78f0751FdF5BBe2050eFABD95DfF46",
       "version": {
         "major": 1,
         "minor": 0,
@@ -33291,7 +33543,7 @@
     },
     {
       "chainId": 11155420,
-      "address": "0x58c6628D696a06CFDbD51419b0b57Da2bB1776fe",
+      "address": "0x5841eE3AB5dB2FF2aa6E8EbfA5B958A3C9a4d9A5",
       "version": {
         "major": 1,
         "minor": 0,
@@ -33319,8 +33571,8 @@
             },
             {
               "name": "_targetAuctionPeriod",
-              "type": "uint256",
-              "internalType": "uint256"
+              "type": "uint64",
+              "internalType": "uint64"
             },
             {
               "name": "_targetAuctionPrice",
@@ -33448,7 +33700,7 @@
               "internalType": "address"
             },
             {
-              "name": "",
+              "name": "_amountOut",
               "type": "uint256",
               "internalType": "uint256"
             },
@@ -33569,6 +33821,22 @@
         },
         {
           "type": "error",
+          "name": "InsufficientBalance",
+          "inputs": [
+            {
+              "name": "requested",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "available",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
           "name": "ReceiverIsZero",
           "inputs": []
         },
@@ -33592,17 +33860,12 @@
               "internalType": "uint256"
             }
           ]
-        },
-        {
-          "type": "error",
-          "name": "ZeroAvailableBalance",
-          "inputs": []
         }
       ]
     },
     {
       "chainId": 11155420,
-      "address": "0x629cF50A4639b2ff6c5DD797f98414FDd26F18d7",
+      "address": "0xa5CAB0E9db2eA50604be6829bB81E4C8770ba176",
       "version": {
         "major": 1,
         "minor": 0,
