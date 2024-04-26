@@ -33,7 +33,7 @@ You can find the source code for the subgraphs at:
 
 ## Subgraph Endpoints
 
-### Optimism Subgraph
+### Mainnet Subgraphs
 
 #### [Optimism](../../deployments/optimism)
 
@@ -41,10 +41,16 @@ You can find the source code for the subgraphs at:
 | :-- | :-- |
 | PoolTogether V5 Optimism | https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest |
 
-### Testnet Subgraph
+### Testnet Subgraphs
 
 #### [Optimism Sepolia](../../deployments/optimism-sepolia)
 
 | Subgraph | Decentralized Service Endpoint |
 | :-- | :-- |
 | PoolTogether V5 OP Sepolia | https://api.studio.thegraph.com/query/63100/pt-v5-op-sepolia/version/latest |
+
+#### [Base Sepolia](../../deployments/base-sepolia)
+
+| Subgraph | Decentralized Service Endpoint |
+| :-- | :-- |
+| PoolTogether V5 Base Sepolia | https://api.studio.thegraph.com/query/63100/pt-v5-base-sepolia/version/latest |

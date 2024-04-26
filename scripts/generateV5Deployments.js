@@ -12,6 +12,7 @@ const GNOSIS_CHAIN_ID = 100;
 const OPTIMISM_CHAIN_ID = 10;
 const POA_SOKOL_CHAIN_ID = 77;
 const POLYGON_CHAIN_ID = 137;
+const BASE_CHAIN_ID = 8453;
 
 // Testnet
 const ARBITRUM_GOERLI_CHAIN_ID = 421613;
@@ -23,6 +24,7 @@ const MUMBAI_CHAIN_ID = 80001;
 const OPTIMISM_GOERLI_CHAIN_ID = 420;
 const OPTIMISM_SEPOLIA_CHAIN_ID = 11155420;
 const SEPOLIA_CHAIN_ID = 11155111;
+const BASE_SEPOLIA_CHAIN_ID = 84532;
 
 function formatAddressUrl(chainId, address) {
   let url;
@@ -60,6 +62,10 @@ function formatAddressUrl(chainId, address) {
     url = `https://explorer.celo.org/address/${address}`;
   } else if (chainId == CELO_ALFAJORES_CHAIN_ID) {
     url = `https://alfajores-blockscout.celo-testnet.org/address/${address}`;
+  } else if (chainId == BASE_SEPOLIA_CHAIN_ID) {
+    url = `https://sepolia.basescan.org/address/${address}`;
+  } else if (chainId == BASE_CHAIN_ID) {
+    url = `https://basescan.org/address/${address}`;
   } else {
     throw new Error(`Unknown chain id ${chainId}`);
   }
@@ -101,6 +107,10 @@ function formatNetworkName(chainId) {
     return "Celo";
   } else if (chainId == CELO_ALFAJORES_CHAIN_ID) {
     return "Celo Alfajores";
+  } else if (chainId == BASE_SEPOLIA_CHAIN_ID) {
+    return "Base Sepolia";
+  } else if (chainId == BASE_CHAIN_ID) {
+    return "Base";
   } else {
     throw new Error("unknown chain");
   }
@@ -170,6 +180,12 @@ switch (process.argv[2]) {
   case "optimism-sepolia":
     generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
       "./data/optimism-sepolia-core.json",
+    ]);
+    break;
+
+  case "base-sepolia":
+    generate("Base Sepolia", 1, "./docs/deployments/base-sepolia.md", [
+      "./data/base-sepolia-core.json",
     ]);
     break;
 
