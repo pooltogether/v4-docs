@@ -1,4 +1,4 @@
-# PoolTogether V4 Docs
+# PoolTogether Developer Docs
 
 The documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
@@ -6,36 +6,16 @@ The documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
 ## Update Deployed Contracts
 
-### V4
+You'll find the deployed networks in `docs/deployments` which are generated using `./scripts/generateV5Deployments.js` and contract lists in the `data` folder.
 
-You'll find the deployed networks in `versioned_docs/version-V4/deployments`.
+To update a deployment list:
 
-### V5
+1. Update the corresponding contract json file in the `data` folder
+2. Run the script with the deployment you want to generate, ex: `node script/generateV5Deployments.js optimism`
 
-You'll find the deployed networks in `docs/deployments`:
+# Contributing to PoolTogether Developer Docs
 
-- **mainnet.md**: Generated using `./scripts/generateV5Deployments.js` and contracts list:
-
-  - `data/ethereum-contracts.json`
-  - `data/optimism-contracts.json`
-
-- **testnet.md**: Generated using `./scripts/generateV5Deployments.js` and contracts list:
-  - `data/goerli-contracts.json`
-  - `data/optimismGoerli-contracts.json`
-
-To update the mainnet deployment:
-
-1. Copy the `contracts.json` files from `v5-mainnet` repository to `./data/`
-2. Run the NPM command: `npm run gen-v5-mainnet-deployment`
-
-To update the testnet deployment:
-
-1. Copy the `contracts.json` files from `v5-testnet` repository to `./data/`
-2. Run the NPM command: `npm run gen-v5-testnet-deployment`
-
-# Contributing to PoolTogether Docs
-
-Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](https://github.com/PoolTogether/v4-docs/blob/main/CONTRIBUTING.md).
+Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](./CONTRIBUTING.md).
 
 # How to Update search indices with algolia
 
@@ -44,7 +24,7 @@ Edit config.json file with
 
 - start url from updated website
 - sitemap url from updated website: ex) for docs: https://dev.pooltogether.com/sitemap.xml
-- "v4_docs" index name
+- "dev_docs" index name
 - install jq : `brew install jq`
   run `docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper`
 
