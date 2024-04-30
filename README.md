@@ -19,7 +19,7 @@ Contributing to the docs site is a great way to get involved in the dev communit
 
 # How to Update search indices with algolia
 
-create .env file with `APPLICATION_ID` and the `API_KEY` (write access)
+create .env file with `APPLICATION_ID` and the `SEARCH_API_KEY` (write access)
 Edit config.json file with
 
 - start url from updated website
