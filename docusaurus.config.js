@@ -21,7 +21,7 @@ module.exports = {
       theme: require("prism-react-renderer/themes/dracula"),
     },
     navbar: {
-      title: "PoolTogether Dev Docs",
+      title: "PoolTogether",
       logo: {
         alt: "PoolTogether",
         src: "img/favicon.png",
