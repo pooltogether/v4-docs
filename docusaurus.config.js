@@ -11,19 +11,15 @@ module.exports = {
   favicon: "img/favicon.png",
   organizationName: "PoolTogether", // Usually your GitHub org/user name.
   projectName: "dev-docs", // Usually your repo name.
+  plugins: [[require.resolve("docusaurus-lunr-search"), {
+    enableHighlight: true
+  }]],
   themeConfig: {
     image: "img/twitter_card_bg.jpg",
     prism: {
       additionalLanguages: ["solidity"],
       theme: require("prism-react-renderer/themes/dracula"),
     },
-    ...(process.env.NO_ALGOLIA ? {} : {
-      algolia: {
-        apiKey: process.env.SEARCH_API_KEY,
-        indexName: "v4_docs",
-        appId: process.env.APPLICATION_ID,
-      }
-    }),
     navbar: {
       title: "PoolTogether Dev Docs",
       logo: {
