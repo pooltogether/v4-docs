@@ -17,17 +17,6 @@ To update a deployment list:
 
 Contributing to the docs site is a great way to get involved in the dev community and help other devs along the way! Check out our guidelines [here](./CONTRIBUTING.md).
 
-# How to Update search indices with algolia
-
-create .env file with `APPLICATION_ID` and the `API_KEY` (write access)
-Edit config.json file with
-
-- start url from updated website
-- sitemap url from updated website: ex) for docs: https://dev.pooltogether.com/sitemap.xml
-- "dev_docs" index name
-- install jq : `brew install jq`
-  run `docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper`
-
 # How to add a new page
 
 Create a markdown file in its respective versioned docs, or versioned SDK, directory.
@@ -47,8 +36,6 @@ yarn install
 ```console
 yarn start
 ```
-
-> _Note: use "`yarn dev`" instead if you want to test the docs without providing an Algolia API key_
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 

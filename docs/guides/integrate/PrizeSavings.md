@@ -1,10 +1,8 @@
 ---
-id: creating-vaults
-title: Creating a Vault
+id: prize-savings
+title: Prize Savings
 sidebar_position: 2
 ---
-
-# Creating a Vault
 
 Creating a new Vault is the primary way in which to extend PoolTogether. Vaults represents asset and yield source combinations, so to add a new asset or yield source to the protocol you would simply create a new Vault and grow its deposits.
 
