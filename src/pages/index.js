@@ -10,34 +10,34 @@ import Discord from "@site/static/img/discord.svg";
 import ThemedImage from "@theme/ThemedImage";
 
 import {
-  InformationCircleIcon,
   LightBulbIcon,
-  BookOpenIcon,
+  LightningBoltIcon,
   ChatIcon,
   CodeIcon,
+  SparklesIcon
 } from "@heroicons/react/outline";
 
 export const actions = [
   {
-    title: "What is PoolTogether",
+    title: "Add Prizes to Your Protocol",
     href: "#",
-    icon: InformationCircleIcon,
-    to: "./protocol/introduction/",
-    text: `A brief explanation about what PoolTogether is. Governance, protocol, interface, inc.`,
+    icon: SparklesIcon,
+    to: "./protocol/guides/integrate/",
+    text: `Learn how to plug any protocol into a prize pool.`,
   },
   {
-    title: "Architecture",
+    title: "Build a Prize Experience",
     href: "#",
     icon: LightBulbIcon,
-    to: "./protocol/design/",
-    text: `Learn about the core concepts of the PoolTogether protocol. A prize savings network.`,
+    to: "./protocol/guides/customize/",
+    text: `PoolTogether is 100% Permissionless. Learn how to create a unique prize experience.`,
   },
   {
-    title: "Deployments",
+    title: "Run a Bot",
     href: "#",
-    icon: BookOpenIcon,
-    to: "./protocol/deployments",
-    text: `Comprehensive list of deployed contracts for both production and testnet.`,
+    icon: LightningBoltIcon,
+    to: "./protocol/guides/bots",
+    text: `Earn rewards by claiming prizes, liquidating yield, and awarding draws with RNG.`,
   },
 ];
 
@@ -56,6 +56,16 @@ export const github = [
 
 export const Guides = [
   {
+    title: "Protocol Design",
+    text: "Dive into the deep end and learn how the protocol works.",
+    to: "./protocol/design/"
+  },
+  {
+    title: "Deployments",
+    text: "Live chains and contract addresses",
+    to: "./protocol/deployments/"
+  },
+  {
     title: "Guides",
     text: "Learn about what you can do with PoolTogether",
     to: "./protocol/guides/",
@@ -69,14 +79,6 @@ export const Guides = [
     title: "Subgraphs Overview",
     text: "See what Graph Protocol Subgraphs are available",
     to: "./protocol/api/subgraphs/",
-  },
-];
-
-export const quick = [
-  {
-    title: "Smart Contracts",
-    text: "Start swapping from a smart contract",
-    to: "./protocol/tutorials/smart-contracts/",
   },
 ];
 
@@ -123,7 +125,7 @@ const Card = styled.div`
   max-height: 250px;
   padding: 1rem;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -165,7 +167,7 @@ const ShadowCard = styled(Card)`
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #00000010;
   backdrop-filter: blur(10px);
-  min-height: 200px;
+  min-height: 220px;
   /* background-color: var(--ifm-color-emphasis-0); */
 `;
 
@@ -266,7 +268,7 @@ export default function Home() {
           >
             <h1 style={{ fontWeight: "600" }}>
               {" "}
-              Welcome to the PoolTogether Docs
+              Build on PoolTogether
             </h1>
           </div>
           <Row>
@@ -301,11 +303,7 @@ export default function Home() {
         </DocsHeader>
         <TwoRow>
           <div>
-            <h2>Getting Started</h2>
-            <p>
-              Get started integrating the PoolTogether
-              protocol in your dapp, smart contract or project.
-            </p>
+            <h2>Documentation</h2>
             <div>
               {Guides.map((action) => (
                 <Link
@@ -334,10 +332,10 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h2>Developer Links</h2>
+            <h2>Github</h2>
             <p>
-              The PoolTogether codebase is comprised of an ecosystem of open
-              source components.
+              PoolTogether is comprised of an ecosystem of open
+              source smart contracts and user interfaces.
             </p>
             {github.map((action) => (
               <Link style={{ textDecoration: "none" }} href={action.href}>

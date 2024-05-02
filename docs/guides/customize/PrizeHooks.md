@@ -1,7 +1,7 @@
 ---
 id: prize-hooks
-title: Using Prize Hooks
-sidebar_position: 2
+title: Prize Hooks
+sidebar_position: 1
 ---
 
 Prize hooks are modular onchain actions, configurable by a depositor, that automatically execute when a prize is claimed for them on a standard vault.
