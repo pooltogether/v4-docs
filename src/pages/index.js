@@ -168,7 +168,10 @@ const ShadowCard = styled(Card)`
   background-color: #00000010;
   backdrop-filter: blur(10px);
   min-height: 220px;
-  /* background-color: var(--ifm-color-emphasis-0); */
+
+  h3 {
+    color: var(--ifm-font-color-base);
+  }
 `;
 
 const WideCard = styled(ShadowCard)`
@@ -208,6 +211,10 @@ const LinkRow = styled.div`
   a h3 {
     color: black !important;
   }
+
+  h3 {
+    color: var(--ifm-font-color-base);
+  }
 `;
 
 const DocsHeader = styled.div`
@@ -239,7 +246,7 @@ const StyledTitleImage = styled(StyledImage)`
 
 const StyledGithubIcon = styled.div`
   svg {
-    fill: var(--ifm-font-color-base);
+    fill: var(--ifm-color-primary);
   }
 `;
 
