@@ -149,8 +149,6 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
       const networkName = formatNetworkName(chainId);
       const contracts = networks[chainId];
 
-      append(outputFile, `## ${networkName}`);
-      append(outputFile, "");
       append(outputFile, `| Contract | Address |`);
       append(outputFile, `| :--- | :--- |`);
       append(

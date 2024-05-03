@@ -6693,7 +6693,7 @@
     },
     {
       "chainId": 84532,
-      "address": "0x8e59E973A3388eB35d0f3a74f1Df32dc94bde546",
+      "address": "0x039846baE81b6Ad824188b090D6F0F808a9686bA",
       "version": {
         "major": 1,
         "minor": 0,
@@ -6701,19 +6701,6 @@
       },
       "type": "PrizeVaultFactory",
       "abi": [
-        {
-          "type": "function",
-          "name": "YIELD_BUFFER",
-          "inputs": [],
-          "outputs": [
-            {
-              "name": "",
-              "type": "uint256",
-              "internalType": "uint256"
-            }
-          ],
-          "stateMutability": "view"
-        },
         {
           "type": "function",
           "name": "allVaults",
@@ -6771,6 +6758,11 @@
               "name": "_yieldFeePercentage",
               "type": "uint32",
               "internalType": "uint32"
+            },
+            {
+              "name": "_yieldBuffer",
+              "type": "uint256",
+              "internalType": "uint256"
             },
             {
               "name": "_owner",
