@@ -1,7 +1,7 @@
 [Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/a10aaa1d1a04e19253a8a7c64aa384e2cb67fb2e/src/PrizeVault.sol)
 
 **Inherits:**
-[TwabERC20](./TwabERC20.md), [Claimable](./Claimable.md), IERC4626, ILiquidationSource, Ownable
+[TwabERC20](./TwabERC20), [Claimable](./Claimable), IERC4626, ILiquidationSource, Ownable
 
 **Author:**
 G9 Software Inc.

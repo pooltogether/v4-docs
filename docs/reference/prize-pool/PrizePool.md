@@ -1,7 +1,7 @@
 [Git Source](https://github.com/generationsoftware/pt-v5-prize-pool/blob/768fa642eb31cfff0fe929da0929a9bb4dea0b2d/src/PrizePool.sol)
 
 **Inherits:**
-[TieredLiquidityDistributor](./TieredLiquidityDistributor.md)
+[TieredLiquidityDistributor](./TieredLiquidityDistributor)
 
 **Author:**
 G9 Software Inc. & PoolTogether Inc. Team
