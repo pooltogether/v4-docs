@@ -1,7 +1,7 @@
 [Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/a10aaa1d1a04e19253a8a7c64aa384e2cb67fb2e/src/abstract/Claimable.sol)
 
 **Inherits:**
-[HookManager](./HookManager.md), IClaimable
+[HookManager](./HookManager), IClaimable
 
 **Author:**
 G9 Software Inc.
