@@ -20,7 +20,7 @@ sidebar_position: 1
 | TwabRewards | [0x61F3c11BDef3f460626789f6252617aA5b011AF1](https://sepolia.basescan.org/address/0x61F3c11BDef3f460626789f6252617aA5b011AF1) |
 | TpdaLiquidationPairFactory | [0xEBBF939223aDB7145e823daD6Cee87DB79424b1C](https://sepolia.basescan.org/address/0xEBBF939223aDB7145e823daD6Cee87DB79424b1C) |
 | TpdaLiquidationRouter | [0x926F4777c583f0C0BB11F25B3EBB0A32ed3107aA](https://sepolia.basescan.org/address/0x926F4777c583f0C0BB11F25B3EBB0A32ed3107aA) |
-| PrizeVaultFactory | [0x8e59E973A3388eB35d0f3a74f1Df32dc94bde546](https://sepolia.basescan.org/address/0x8e59E973A3388eB35d0f3a74f1Df32dc94bde546) |
+| PrizeVaultFactory | [0x039846baE81b6Ad824188b090D6F0F808a9686bA](https://sepolia.basescan.org/address/0x039846baE81b6Ad824188b090D6F0F808a9686bA) |
 | PrizePool | [0xC90625047f206f525a811a54BbEc05C23E08B58b](https://sepolia.basescan.org/address/0xC90625047f206f525a811a54BbEc05C23E08B58b) |
 | ClaimerFactory | [0x4A3350708c3d497AA7CD6fB6f5eBeE70678f8C01](https://sepolia.basescan.org/address/0x4A3350708c3d497AA7CD6fB6f5eBeE70678f8C01) |
 | Claimer | [0x86E975c177F8C2d1351e5A469e01ee86993B45D3](https://sepolia.basescan.org/address/0x86E975c177F8C2d1351e5A469e01ee86993B45D3) |
