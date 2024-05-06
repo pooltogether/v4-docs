@@ -57,7 +57,7 @@ module.exports = {
           items: [
             {
               label: "Bug Bounty",
-              href: "https://github.com/pooltogether/pooltogether-pool-contracts/issues/1",
+              href: "https://immunefi.com/bug-bounty/pooltogether/",
             },
           ],
         },
