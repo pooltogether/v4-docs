@@ -446,6 +446,11 @@ html[data-theme="dark"] .DocSearch-Hit a {
   }
 }
 
+.pagination-nav__link.in-page {
+  width: 500px;
+  max-width: 100%;
+}
+
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
