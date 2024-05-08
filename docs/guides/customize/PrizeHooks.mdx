@@ -39,7 +39,7 @@ On standard vaults, each hook (`beforeClaimPrize` and `afterClaimPrize`) is limi
 
 ## Using a Prize Hook
 
-To opt-in to a new prize hook on a standard vault, you can call the [`setHooks`](/protocol/reference/prize-vault/PrizeVault#sethooks-1) function on the vault with the following data:
+To opt-in to a new prize hook on a standard vault, you can call the [`setHooks`](/protocol/reference/prize-vault/HookManager#sethooks) function on the vault with the following data:
 
 ```solidity
 struct VaultHooks {
@@ -53,7 +53,7 @@ If you would like to set the hooks on multiple vaults, you will need to repeat t
 
 ## Removing a Prize Hook
 
-To unset a prize hook on a vault, call the [`setHooks`](/protocol/reference/prize-vault/PrizeVault#sethooks-1) function with all params set to their default values:
+To unset a prize hook on a vault, call the [`setHooks`](/protocol/reference/prize-vault/HookManager#sethooks) function with all params set to their default values:
 
 ```solidity
 VaultHooks({
