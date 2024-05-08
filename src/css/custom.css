@@ -446,6 +446,43 @@ html[data-theme="dark"] .DocSearch-Hit a {
   }
 }
 
+.pagination-nav__link.in-page {
+  width: 500px;
+  max-width: 100%;
+}
+
+.diagram-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.diagram-container > img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 1rem;
+}
+
+#prize-hook-setter {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
+}
+
+#prize-hook-setter > * {
+  font-size: medium;
+  padding: 0.5rem;
+}
+
+#prize-hook-setter > span {
+  background-color: #0002;
+}
+
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *

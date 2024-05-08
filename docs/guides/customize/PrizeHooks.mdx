@@ -1,0 +1,103 @@
+---
+id: prize-hooks
+title: Prize Hooks
+sidebar_position: 1
+---
+
+## What are Prize Hooks?
+
+Prize hooks are modular onchain actions, configurable by a depositor, that automatically execute when a prize is claimed for them on a standard vault.
+
+## What can they do?
+
+Prize hooks can be used to create enriched prize experiences such as:
+
+- [Automatic Prize Compounding](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/prize-hooks/examples/prize-compounding#prize-compounding-hook)
+- [Awarding Prizes to a Random NFT Holder](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/prize-hooks/examples/prize-to-nft-holder#hook-to-award-prizes-to-a-random-nft-holder)
+- [Boosting Wins with Extra Rewards](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/prize-hooks/examples/prize-boost#prize-boost-hook)
+- and lots more!
+
+## How do they work?
+
+<div class="diagram-container">
+  <img src="/img/v5/prize-hooks/prize-hook-diagram.jpg" alt="Prize Hook Diagram"></img>
+</div>
+
+> In the above diagram, we see how Alice can set a custom prize hook on a vault to automatically trigger the execution of additional code when she wins a prize.
+
+Prize hooks can be created permissionlessly by deploying a contract that extends the [`IPrizeHooks` interface](/protocol/reference/prize-vault/IPrizeHooks). Up to two hooks can be implemented (`beforeClaimPrize` and `afterClaimPrize`). Like the names suggest, the first is called immediately before the prize is claimed while the second is called immediately after. Both hooks are passed some basic data about the prize that is being claimed which can be used to verify the prize win, determine prize size and claim fee, and identify the recipient.
+
+Each user can set different hooks on each vault they are deposited in. When that user wins a prize, their specified hooks are called. The user can change or remove their hooks at any time.
+
+## Create a Prize Hook
+
+Custom prize hooks can be created by deploying a contract that extends the [`IPrizeHooks`](/protocol/reference/prize-vault/IPrizeHooks) interface. See the [prize hook examples](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/prize-hooks/examples) to get started!
+
+### Gas Limits
+
+On standard vaults, each hook (`beforeClaimPrize` and `afterClaimPrize`) is limited to 150k gas. This is to prevent hook executions from becoming too costly for claimers since they pay the extra gas required. If the hook exceeds this limit, the call will revert. Limits may be different on non-standard vaults.
+
+## Using a Prize Hook
+
+To opt-in to a new prize hook on a standard vault, you can call the [`setHooks`](/protocol/reference/prize-vault/HookManager#sethooks) function on the vault with the following data:
+
+```solidity
+struct VaultHooks {
+  bool useBeforeClaimPrize; // if true, the `beforeClaimPrize` hook will be called
+  bool useAfterClaimPrize; // if true, the `afterClaimPrize` hook will be called
+  contract IPrizeHooks implementation; // the address of the hook contract
+}
+```
+
+If you would like to set the hooks on multiple vaults, you will need to repeat the process on each one.
+
+## Removing a Prize Hook
+
+To unset a prize hook on a vault, call the [`setHooks`](/protocol/reference/prize-vault/HookManager#sethooks) function with all params set to their default values:
+
+```solidity
+VaultHooks({
+  useBeforeClaimPrize: false,
+  useAfterClaimPrize: false,
+  implementation: address(0)
+})
+```
+
+## Try it out!
+
+If you have a hook you would like to try, use the following form to generate the transaction data needed to set it on a prize vault:
+
+export const PrizeHookSetter = () => (
+  <div id="prize-hook-setter">
+    <select name="chain">
+      <option value="10">Optimism</option>
+      <option value="8453">Base</option>
+      <option value="42161">Arbitrum</option>
+    </select>
+    <input type="text" name="vault" placeholder="Prize Vault Address (0x...)" />
+    <input type="text" name="hook" placeholder="Prize Hook Address (0x...)" />
+    <span><input type="checkbox" name="useBefore" defaultChecked /> Use Before Claim Hook</span>
+    <span><input type="checkbox" name="useAfter" defaultChecked /> Use After Claim Hook</span>
+    <button id="prize-hook-tx-btn" onClick={() => {
+      const container = document.getElementById("prize-hook-setter");
+      const txButton = document.getElementById("prize-hook-tx-btn");
+      const isAddress = (address) => typeof address === "string" && address.startsWith("0x") && address.length === 42;
+      const chainId = container.querySelector("select[name=chain]").value;
+      const vaultAddress = container.querySelector("input[name=vault]").value;
+      const hookAddress = container.querySelector("input[name=hook]").value;
+      const useBefore = !!container.querySelector("input[name=useBefore]").checked;
+      const useAfter = !!container.querySelector("input[name=useAfter]").checked;
+      if (!isAddress(vaultAddress)) {
+        setTimeout(() => alert("invalid vault address"), 0);
+      } else if (!isAddress(hookAddress)) {
+        setTimeout(() => alert("invalid hook address"), 0);
+      } else {
+        window.open(`https://transact.swiss-knife.xyz/send-tx?calldata=0xc78c72c1000000000000000000000000000000000000000000000000000000000000000${useBefore ? '1' : '0'}000000000000000000000000000000000000000000000000000000000000000${useAfter ? '1' : '0'}000000000000000000000000${hookAddress.split('0x')[1]}&to=${vaultAddress}&eth=&chainId=${chainId}`);
+      }
+    }}>
+      Send transaction with <strong>swiss-knife.xyz</strong>
+    </button>
+  </div>
+);
+
+<PrizeHookSetter></PrizeHookSetter>
