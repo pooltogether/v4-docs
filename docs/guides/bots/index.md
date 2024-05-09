@@ -6,15 +6,22 @@ sidebar_position: 3
 
 ## What are bots?
 
-...
+Bots are automated scripts that anyone can create and run to keep the core PoolTogether systems operational while earning a profit. There are three core operations that bots can run:
 
-## Bot Guides
+1. [Liquidating Yield](./liquidating-yield)
+2. [Claiming Prizes](./claiming-prizes)
+3. [Generating RNG for the Draws](./completing-draw-auctions)
 
-(links to guides)
-...
+## Open Source Bots
 
-Dive in to these tutorials to learn all about running bots for profiting from arbitraging yield, claiming prizes or running draw auctions:
+Anyone can create a new bot and compete against others to perform these operations efficiently. If you'd like to run your own bot, check out some of the open source bot code to get started!
 
-* [Part 1: 💸 Creating an Arbitrage Swapping Bot](https://mirror.xyz/chuckbergeron-g9.eth/ES-IJduktYPb0X_sBikfqL-PVFRweNpoPrlr01zcVX8)
-* [Part 2. 🏆 Creating a Prize Claiming bot](https://mirror.xyz/chuckbergeron-g9.eth/xPSEh1pfjV2IT1yswcsjN2gBBrVf548V8q9W23xxA8U)
-* [Part 3. 👨‍⚖️ Creating a Draw Auction bot](https://mirror.xyz/chuckbergeron-g9.eth/1o-d_ScnJ8F0cer5SRmILMSPxTCn4vlWgN7fkU4FD4o)
+### Bots by PoolTime
+
+- [PoolTogether Node (scripts for all 3 types of bots)](https://github.com/underethsea/pooltogether-node)
+
+### Bots by Generation Software
+
+- [Liquidator Bot](https://github.com/GenerationSoftware/pt-v5-liquidator-gh-action-bot#pooltogether-v5-liquidator-bot---github-actions)
+- [Claimer Bot](https://github.com/GenerationSoftware/pt-v5-prize-claimer-gh-action-bot#pooltogether-v5-prize-claimer-bot---github-actions)
+- [Draw Auction Bot](https://github.com/GenerationSoftware/pt-v5-draw-auction-gh-action-bot#pooltogether-v5-draw-auction-bot---github-actions)
