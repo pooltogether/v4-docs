@@ -9,5 +9,6 @@ sidebar_position: 1
 
 ## Testnet
 
-- [Optimism Sepolia](./optimism-sepolia.md)
+- [Arbitrum Sepolia](./arbitrum-sepolia.md)
 - [Base Sepolia](./base-sepolia.md)
+- [Optimism Sepolia](./optimism-sepolia.md)

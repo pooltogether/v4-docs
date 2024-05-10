@@ -187,6 +187,12 @@ switch (process.argv[2]) {
     ]);
     break;
 
+  case "arbitrum-sepolia":
+    generate("Arbitrum Sepolia", 1, "./docs/deployments/arbitrum-sepolia.md", [
+      "./data/arbitrum-sepolia-core.json",
+    ]);
+    break;
+
   default:
     break;
 }
