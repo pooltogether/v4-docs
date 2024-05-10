@@ -6,26 +6,25 @@ sidebar_position: 3
 
 # Arbitraging Yield Liquidations
 
-#### **Tutorial:** [💸 Creating an Arbitrage Swapping bot](https://mirror.xyz/chuckbergeron-g9.eth/ES-IJduktYPb0X_sBikfqL-PVFRweNpoPrlr01zcVX8)
-#### **Liquidate Through a UI:** [⚡ Cabana Flash](https://flash.cabana.fi/)
-
 ---
 
-PoolTogether V5 continuously liquidates all yield for the prize token and deposits them into a Prize Pool. Liquidation sells yield at a slight discount for prize tokens, creating an arbitrage opportunity.
+PoolTogether continuously liquidates all yield for the prize token and deposits them into a Prize Pool. Liquidation sells yield at a slight discount for prize tokens, creating an arbitrage opportunity.
 
 Liquidation Pairs are the mechanism by which yield is liquidated. Each PoolTogether Vault will have one or more associated Liquidation Pairs. A Liquidation Pair is like a Uniswap pair, but it only supports swaps in a single direction.
 
 Liquidation Pairs are immutable contracts that are created by the Liquidation Pair Factory.
 
-# Arbitrage Steps
+## Arbitrage Steps
 
 To arbitrage yield, you would follow these steps:
 
-1. Find the Liquidation Pair you wish to arb.
-2. Compute the current available liquidity and the prize token cost
-3. If liquidity is available at a sufficient discount and profitable to you, execute a swap
+1. [Find the Liquidation Pair you wish to arb](#1-find-the-liquidation-pair)
+2. [Compute the current available liquidity and the prize token cost](#2-compute-the-available-liquidity)
+3. [If liquidity is available at a sufficient discount and profitable to you, execute a swap](#3-execute-a-swap)
 
-## Find the Liquidation Pair
+---
+
+### 1. Find the Liquidation Pair
 
 You can list the Liquidation Pairs on-chain by using the Liquidation Pair Factory contract. The contract tracks all created pairs, making it easy to determine whether a pair is legitimate, and to enumerate all pairs.
 
@@ -33,51 +32,39 @@ Realistically, however, bots will want to index and track the Liquidation Pairs 
 
 **Getting the Total Count of Liquidation Pairs**
 
-To get the count of the number of Liquidation Pairs, you can call `totalPairs()` on the Liquidation Pair Factory.
+To get the count of the number of Liquidation Pairs, you can call [`totalPairs`](/protocol/reference/liquidator/TpdaLiquidationPairFactory#totalpairs) on the Liquidation Pair Factory.
 
 **Retrieving the address of the Nth Liquidation Pair**
 
-Liquidation Pair addresses can be accessed using the `allPairs(uint index)` function on the Liquidation Pair Factory.
+Liquidation Pair addresses can be accessed using the [`allPairs`](/protocol/reference/liquidator/TpdaLiquidationPairFactory#allpairs) function on the Liquidation Pair Factory.
 
 **Checking Whether an Address was created by the Factory**
 
-You can check whether an address is a Liquidation Pair created by the factory using the `deployedPairs(address pair)` function on the Liquidation Pair Factory. It returns true if the given address is a Liquidation Pair created by the factory.
+You can check whether an address is a Liquidation Pair created by the factory using the [`deployedPairs`](/protocol/reference/liquidator/TpdaLiquidationPairFactory#deployedpairs) function on the Liquidation Pair Factory. It returns true if the given address is a Liquidation Pair created by the factory.
 
-## Compute the Available Liquidity
+---
+
+### 2. Compute the Available Liquidity
 
 The Liquidation Pair will have a limited amount of yield available.
 
-Compute how much yield is available using the `maxAmountOut()` function on the Liquidation Pair. This function returns the maximum number of tokens you can swap out.
+Compute how much yield is available using the [`maxAmountOut`](/protocol/reference/liquidator/TpdaLiquidationPair#maxamountout) function on the Liquidation Pair. This function returns the maximum number of tokens you can swap out.
 
-You could also check the profitability of a swap by calling the Liquidation Router's `swapExactAmountOut()` statically (no state change), and get the return value.
+You could also check the profitability of a swap by calling the Liquidation Router's [`swapExactAmountOut`](/protocol/reference/liquidator/TpdaLiquidationRouter#swapexactamountout) statically (no state change), and get the return value.
 
-**Note:** `swapExactAmountOut()` exists on both the LiquidationPair contracts and the LiquidationRouter, however for your swaps to be successful you will need to run it on the LiquidationRouter.
+**Note:** [`swapExactAmountOut`](/protocol/reference/liquidator/TpdaLiquidationRouter#swapexactamountout) exists on both the LiquidationPair contracts and the LiquidationRouter, however for your swaps to be successful you will need to run it on the LiquidationRouter.
 
 
-## Execute a Swap
+### 3. Execute a Swap
 
-If a swap is profitable, then you can execute the swap using the Liquidation Router.  The Router provides only `swapExactAmountOut()` which allows the caller to define the expected number of output tokens.
+If a swap is profitable, then you can execute the swap using the Liquidation Router.  The Router provides only [`swapExactAmountOut`](/protocol/reference/liquidator/TpdaLiquidationRouter#swapexactamountout) which allows the caller to define the expected number of output tokens.
 
-## Reference Implementation
+---
 
-To see code examples, a reference implementation of an arbitrage bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
-
-<div className='flex-center'>
-  <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
-  <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
-  <a href="https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/arb-liquidator">GitHub - pt-v5-autotasks-arb-liquidator</a>
-  <br />
-  <br />
-  <br />
-  <br />
-</div>
-
-# Using Flashswaps to Liquidate
+## Using Flashswaps to Liquidate
 
 Flashswaps are unique swaps where the sender receives the output first, executes some external logic to obtain input tokens and sends the required input amount to the swap contract, keeping the profit from the arbitrage. In order for this to be possible, the contract verifies that the required token input has been received at the end of the transaction and fails if they haven't.
 
 In PoolTogether V5, flashswaps can be used with yield liquidations as a way to atomically liquidate yield for prize tokens with an onchain market without having to worry about volatility.
 
-To learn more about using flashswaps to liquidate yield, check out the [Flashswap Liquidations Guide](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/liquidations/examples/flash-swap-liquidations) or the [Uniswap V3 Flashswap Liquidation Contract](https://github.com/GenerationSoftware/pt-v5-flash-liquidator/blob/main/src/UniswapFlashLiquidation.sol).
-
-**Try out flashswap liquidations with [Cabana Flash](https://flash.cabana.fi/)!**
+To learn more about using flashswaps to liquidate yield, check out the [Flashswap Liquidations Guide](https://github.com/GenerationSoftware/pt-v5-builder-code-examples/tree/main/src/liquidations/examples/flash-swap-liquidations) or the [Uniswap V3 Flashswap Liquidation Contract](/protocol/reference/liquidator/UniswapFlashLiquidation).

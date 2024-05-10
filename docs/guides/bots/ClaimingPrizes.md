@@ -4,11 +4,7 @@ title: Claiming Prizes
 sidebar_position: 4
 ---
 
-#### **Tutorial:** [🏆 Creating a Prize Claiming bot](https://mirror.xyz/chuckbergeron-g9.eth/xPSEh1pfjV2IT1yswcsjN2gBBrVf548V8q9W23xxA8U)
-
----
-
-PoolTogether V5 incentivizes Claimers to claim prizes on behalf of winners. This means that anyone holding prize-wrapped assets will simply receive tokens; they don't need to run a transaction. You can compute and claim prizes for profit!
+PoolTogether incentivizes claimers to claim prizes on behalf of winners. This means that anyone holding prize-wrapped assets will simply receive tokens; they don't need to run a transaction. You can compute and claim prizes for profit!
 
 Prizes expire every Draw. For daily prizes, that means they expire every 24 hours. Incentivizing claimers is critical to ensure that users get their prizes.
 
@@ -23,47 +19,46 @@ In order to earn fees on claiming prizes, you will need to:
 3. [If the claim fees are sufficiently profitable, then execute a prize claim](#3-batch-prize-claims)
 4. [Periodically withdraw the fees you have earned from the Prize Pool](#4-withdrawing-earned-fees)
 
+---
+
 ### 1. List Active Accounts
 
 To get a list of accounts that have a non-zero balance for the previous Draw you can use the Twab Controller subgraph:
 
-[APIs - Subgraphs](../api/subgraphs/index.md)
+[APIs - Subgraphs](/protocol/api/subgraphs)
 
 There is also an npm library written with helper functions for getting vaults, computing prizes, and more located here: 
 
 [GitHub - pt-v5-utils-js](https://github.com/GenerationSoftware/pt-v5-utils-js#user-content--get-subgraph-vaults)
 
+---
+
 ### 2. Compute Winning Tiers
 
-To compute whether an account won you can call `isWinner(address vault, address account, uint8 tier, uint32 prizeIndex)` on the Prize Pool contract. The function returns `true` if the user won that prize for that tier.
+To compute whether an account won you can call [`isWinner`](/protocol/reference/prize-pool/PrizePool#iswinner) on the Prize Pool contract. The function returns `true` if the user won that prize for that tier.
 
-To get the list of `prizeIndex` values for each tier, call `getTierPrizeCount(uint8 tier)` on the Prize Pool.
+To get the list of `prizeIndex` values for each tier, call [`getTierPrizeCount`](/protocol/reference/prize-pool/TieredLiquidityDistributor#gettierprizecount) on the Prize Pool.
+
+---
 
 ### 3. Batch Prize Claims
 
-To claim prizes and capture fees you can use the `claimPrizes(address vault, address[] winners, uint8[] tiers, uint256 minFees, address feeRecipient)` function on the Claimer contract.
+To claim prizes and capture fees you can use the [`claimPrizes`](/protocol/reference/prize-claimer/Claimer#claimprizes) function on the Claimer contract.
 
-To pre-calculate earned fees, call `computeTotalFees(uint8 tier, uint claimCount)` on the Claimer. 
+To pre-calculate earned fees, call [`computeTotalFees`](/protocol/reference/prize-claimer/Claimer#computetotalfees) on the Claimer. 
 
 You will want to check if a prize has already been claimed as attempting to claim prizes which have been claimed will lead to reverting transactions.
 
+---
+
 ### 4. Withdrawing Earned Fees
 
-Fees earned for the `feeRecipient` specified will be stored as a value on the Prize Pool contract. You can check the balance of fees owed to a Fee Recipient by calling `balanceOfClaimRewards(claimer address)`, and you can withdraw using `withdrawClaimRewards(to address, amount uint256)`.
+Fees earned for the `feeRecipient` will be stored as a balance on the Prize Pool contract. You can check the balance of a recipient by calling [`rewardBalance`](/protocol/reference/prize-pool/PrizePool#rewardbalance), and you can withdraw using [`withdrawRewards`](/protocol/reference/prize-pool/PrizePool#withdrawrewards).
+
+---
 
 ##  Caveats
 
-When running multiple claim transactions to different vaults in a row you will likely want to wait until each transaction has completed before getting the newly updated value from `computeTotalFees` and sending a new transaction.
+When running multiple claim transactions to different vaults in a row you will likely want to wait until each transaction has completed before getting the newly updated value from [`computeTotalFees`](/protocol/reference/prize-claimer/Claimer#computetotalfees) and sending a new transaction.
 
-It may also benefit you to rely on FlashBots (for networks which support it) to ensure your transaction will succeed as other bots may be attempting to make the same claims as you at the same time.
-
-
-## Reference Implementation
-
-To see code examples, a reference implementation of a prize claiming bot created by [Generation Software](https://www.g9software.xyz/) is available on GitHub:
-
-<div className='flex-center'>
-  <img src="/img/github.svg" width="20" height="20" className='github-img-dark' />
-  <img src="/img/github-light.png" width="20" height="20" className='github-img-light' />
-  <a href="https://github.com/GenerationSoftware/pt-v5-autotasks-monorepo/tree/main/packages/prize-claimer">GitHub - pt-v5-autotasks-prize-claimer</a>
-</div>
+It may also benefit you to rely on FlashBots (for networks that support it) to ensure your transaction will succeed as other bots may be attempting to make the same claims as you at the same time.

@@ -11,7 +11,7 @@ sidebar_position: 2
 <br></br>
 <a class="pagination-nav__link in-page" href="./customize/">
   <div class="pagination-nav__label">Build a Prize Experience</div>
-  <div class="pagination-nav__sublabel">Prizes, your way ✨</div>
+  <div class="pagination-nav__sublabel">Prize Hooks, Custom Vaults, and Prize-Powered Apps ✨</div>
 </a>
 <br></br>
 <a class="pagination-nav__link in-page" href="./bots/">
