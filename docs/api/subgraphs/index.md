@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Introduction
 
-### PoolTogether V5 Subgraphs
+### PoolTogether Subgraphs
 
 PoolTogether has a GraphQL API Endpoint hosted by [The Graph](https://thegraph.com/docs/en/about/#what-the-graph-is) called a subgraph for indexing and organizing data from the PoolTogether smart contracts.
 
@@ -35,22 +35,24 @@ You can find the source code for the subgraphs at:
 
 ### Mainnet Subgraphs
 
-#### [Optimism](../../deployments/optimism)
+#### Optimism ([contracts](../../deployments/optimism))
 
-| Subgraph | Decentralized Service Endpoint |
-| :-- | :-- |
-| PoolTogether V5 Optimism | https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest |
+https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest
+
+#### Base ([contracts](../../deployments/base))
+
+https://api.studio.thegraph.com/query/41211/pt-v5-base/version/latest
 
 ### Testnet Subgraphs
 
-#### [Optimism Sepolia](../../deployments/optimism-sepolia)
+#### Optimism Sepolia ([contracts](../../deployments/optimism-sepolia))
 
-| Subgraph | Decentralized Service Endpoint |
-| :-- | :-- |
-| PoolTogether V5 OP Sepolia | https://api.studio.thegraph.com/query/63100/pt-v5-op-sepolia/version/latest |
+https://api.studio.thegraph.com/query/63100/pt-v5-op-sepolia/version/latest
 
-#### [Base Sepolia](../../deployments/base-sepolia)
+#### Base Sepolia ([contracts](../../deployments/base-sepolia))
 
-| Subgraph | Decentralized Service Endpoint |
-| :-- | :-- |
-| PoolTogether V5 Base Sepolia | https://api.studio.thegraph.com/query/63100/pt-v5-base-sepolia/version/latest |
+https://api.studio.thegraph.com/query/63100/pt-v5-base-sepolia/version/latest
+
+#### Arbitrum Sepolia ([contracts](../../deployments/arbitrum-sepolia))
+
+https://api.studio.thegraph.com/query/41211/pt-v5-arbitrum-sepolia/version/latest

@@ -47,18 +47,18 @@
 }
 
 html[data-theme="dark"] {
-  --ifm-color-primary: #9f82d7;
+  --ifm-color-primary: #c5a8ff;
   --ifm-color-primary-dark: #5a91ea;
   --ifm-markdown-a-color: #1ef7d6;
   --ifm-font-color-base: #e6daf1;
 
-  --ifm-navbar-background-color: #1e1c1e;
+  --ifm-navbar-background-color: #1b1a1b;
   --ifm-global-shadow-md: 0 5px 40px rgba(0, 0, 0);
-  --ifm-footer-background-color: #1e1c1e;
+  --ifm-footer-background-color: #1b1a1b;
   --ifm-table-stripe-background: rgba(90, 145, 234, 0.1);
   --ifm-table-border-color: #ffffff1a;
 
-  background-color: #1e1c1e;
+  background-color: #1b1a1b;
 }
 
 html[data-theme="light"] {
@@ -444,6 +444,43 @@ html[data-theme="dark"] .DocSearch-Hit a {
   .footer {
     display: none;
   }
+}
+
+.pagination-nav__link.in-page {
+  width: 500px;
+  max-width: 100%;
+}
+
+.diagram-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.diagram-container > img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 1rem;
+}
+
+#prize-hook-setter {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
+}
+
+#prize-hook-setter > * {
+  font-size: medium;
+  padding: 0.5rem;
+}
+
+#prize-hook-setter > span {
+  background-color: #0002;
 }
 
 /**

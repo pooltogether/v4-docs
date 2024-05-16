@@ -20,7 +20,7 @@ sidebar_position: 1
 | TwabRewards | [0x505E334544689C7A4BF4c6A0CF8d52A5fB6F0A4A](https://sepolia-optimism.etherscan.io/address/0x505E334544689C7A4BF4c6A0CF8d52A5fB6F0A4A) |
 | TpdaLiquidationPairFactory | [0x99e05e2346885D1c1Ce714c9e794A7ca6E3634b4](https://sepolia-optimism.etherscan.io/address/0x99e05e2346885D1c1Ce714c9e794A7ca6E3634b4) |
 | TpdaLiquidationRouter | [0x4694F3CD7fedD269aaF2a168e12C544f829a6b50](https://sepolia-optimism.etherscan.io/address/0x4694F3CD7fedD269aaF2a168e12C544f829a6b50) |
-| PrizeVaultFactory | [0x28548033b3f49b03472630ED06E8a6E92b269ce4](https://sepolia-optimism.etherscan.io/address/0x28548033b3f49b03472630ED06E8a6E92b269ce4) |
+| PrizeVaultFactory | [0x5eCC83B1A0bA255713b69154451826a937702435](https://sepolia-optimism.etherscan.io/address/0x5eCC83B1A0bA255713b69154451826a937702435) |
 | PrizePool | [0x122FecA66c2b1Ba8Fa9C39E88152592A5496Bc99](https://sepolia-optimism.etherscan.io/address/0x122FecA66c2b1Ba8Fa9C39E88152592A5496Bc99) |
 | ClaimerFactory | [0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391](https://sepolia-optimism.etherscan.io/address/0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391) |
 | Claimer | [0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954](https://sepolia-optimism.etherscan.io/address/0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954) |

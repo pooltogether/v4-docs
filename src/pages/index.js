@@ -10,41 +10,40 @@ import Discord from "@site/static/img/discord.svg";
 import ThemedImage from "@theme/ThemedImage";
 
 import {
-  InformationCircleIcon,
   LightBulbIcon,
-  CurrencyDollarIcon,
-  BookOpenIcon,
+  LightningBoltIcon,
   ChatIcon,
   CodeIcon,
+  SparklesIcon
 } from "@heroicons/react/outline";
 
 export const actions = [
   {
-    title: "What is PoolTogether",
+    title: "Add Prizes to Your Protocol",
     href: "#",
-    icon: InformationCircleIcon,
-    to: "./protocol/introduction/",
-    text: `A brief explanation about what PoolTogether is. Governance, protocol, interface, inc.`,
+    icon: SparklesIcon,
+    to: "./protocol/guides/integrate/",
+    text: `Learn how to plug any protocol into a prize pool.`,
   },
   {
-    title: "Architecture",
+    title: "Build a Prize Experience",
     href: "#",
     icon: LightBulbIcon,
-    to: "./protocol/design/",
-    text: `Learn about the core concepts of the PoolTogether protocol. A prize savings network.`,
+    to: "./protocol/guides/customize/",
+    text: `PoolTogether is 100% Permissionless. Learn how to create a unique prize experience.`,
   },
   {
-    title: "Deployments",
+    title: "Run a Bot",
     href: "#",
-    icon: BookOpenIcon,
-    to: "./protocol/deployments",
-    text: `Comprehensive list of deployed contracts for both production and testnet.`,
+    icon: LightningBoltIcon,
+    to: "./protocol/guides/bots",
+    text: `Earn rewards by claiming prizes, liquidating yield, and awarding draws with RNG.`,
   },
 ];
 
 export const github = [
   {
-    title: "PoolTogether V5 Code",
+    title: "PoolTogether Code",
     href: "https://github.com/orgs/GenerationSoftware/repositories?q=pooltogether+solidity&type=all&language=&sort=stargazers",
     icon: CodeIcon,
   },
@@ -56,6 +55,16 @@ export const github = [
 ];
 
 export const Guides = [
+  {
+    title: "Protocol Design",
+    text: "Dive into the deep end and learn how the protocol works.",
+    to: "./protocol/design/"
+  },
+  {
+    title: "Deployments",
+    text: "Live chains and contract addresses",
+    to: "./protocol/deployments/"
+  },
   {
     title: "Guides",
     text: "Learn about what you can do with PoolTogether",
@@ -70,14 +79,6 @@ export const Guides = [
     title: "Subgraphs Overview",
     text: "See what Graph Protocol Subgraphs are available",
     to: "./protocol/api/subgraphs/",
-  },
-];
-
-export const quick = [
-  {
-    title: "Smart Contracts",
-    text: "Start swapping from a smart contract",
-    to: "./protocol/tutorials/smart-contracts/",
   },
 ];
 
@@ -124,7 +125,7 @@ const Card = styled.div`
   max-height: 250px;
   padding: 1rem;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -166,8 +167,11 @@ const ShadowCard = styled(Card)`
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   background-color: #00000010;
   backdrop-filter: blur(10px);
-  min-height: 200px;
-  /* background-color: var(--ifm-color-emphasis-0); */
+  min-height: 220px;
+
+  h3 {
+    color: var(--ifm-font-color-base);
+  }
 `;
 
 const WideCard = styled(ShadowCard)`
@@ -207,6 +211,10 @@ const LinkRow = styled.div`
   a h3 {
     color: black !important;
   }
+
+  h3 {
+    color: var(--ifm-font-color-base);
+  }
 `;
 
 const DocsHeader = styled.div`
@@ -238,7 +246,7 @@ const StyledTitleImage = styled(StyledImage)`
 
 const StyledGithubIcon = styled.div`
   svg {
-    fill: var(--ifm-font-color-base);
+    fill: var(--ifm-color-primary);
   }
 `;
 
@@ -267,7 +275,7 @@ export default function Home() {
           >
             <h1 style={{ fontWeight: "600" }}>
               {" "}
-              Welcome to the PoolTogether Docs
+              Build on PoolTogether
             </h1>
           </div>
           <Row>
@@ -302,11 +310,7 @@ export default function Home() {
         </DocsHeader>
         <TwoRow>
           <div>
-            <h2>Getting Started</h2>
-            <p>
-              Get started integrating the PoolTogether
-              protocol in your dapp, smart contract or project.
-            </p>
+            <h2>Documentation</h2>
             <div>
               {Guides.map((action) => (
                 <Link
@@ -335,10 +339,10 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h2>Developer Links</h2>
+            <h2>Github</h2>
             <p>
-              The PoolTogether codebase is comprised of an ecosystem of open
-              source components.
+              PoolTogether is comprised of an ecosystem of open
+              source smart contracts and user interfaces.
             </p>
             {github.map((action) => (
               <Link style={{ textDecoration: "none" }} href={action.href}>
@@ -410,87 +414,6 @@ export default function Home() {
           </div>
         </TwoRow>
 
-        <TwoRow>
-        <div>
-            <h2>Looking for V4 docs?</h2>
-              <Link
-                style={{ textDecoration: "none" }}
-                href={"./protocol/V4/introduction"}
-              >
-                <Card key={"V3 Documentation"} style={{ marginBottom: "1rem" }}>
-                  <LinkRow>
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.45739 8.72727H5.22727L7.62784 16H10.3267L12.7273 8.72727H10.4972L9.00568 13.8551H8.94886L7.45739 8.72727ZM16.2828 16.0994C18.062 16.0994 19.3155 15.1939 19.3084 13.9119C19.3155 13.0206 18.7189 12.392 17.5471 12.2642V12.2074C18.4135 12.1151 19.0456 11.5575 19.0385 10.7443C19.0456 9.51918 17.9093 8.62784 16.2971 8.62784C14.6493 8.62784 13.4775 9.56889 13.4703 10.9006H15.3596C15.3667 10.4602 15.7537 10.1477 16.2971 10.1477C16.7942 10.1477 17.1422 10.4496 17.1351 10.8722C17.1422 11.3125 16.7303 11.625 16.1408 11.625H15.4022V12.9886H16.1408C16.78 12.9886 17.2275 13.3011 17.2203 13.7415C17.2275 14.1925 16.8439 14.5085 16.2971 14.5085C15.7289 14.5085 15.324 14.2067 15.3169 13.7841H13.3283C13.3354 15.1406 14.5605 16.0994 16.2828 16.0994Z"
-                          fill="#E4DAEF"
-                        />
-                        <circle cx="12" cy="12" r="11.5" stroke="#E4DAEF" />
-                      </svg>
-                      <h3 style={{ marginBottom: "0rem", marginLeft: "16px" }}>
-                        V4 Docs
-                      </h3>
-                    </div>
-
-                    <svg
-                      style={{ width: "24px", height: "24px", opacity: 0.5 }}
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
-                    </svg>
-                  </LinkRow>
-                </Card>
-              </Link>
-            </div>
-          <div>
-            <h2>Looking for V3 docs?</h2>
-              <Link
-                style={{ textDecoration: "none" }}
-                href={"https://v3.docs.pooltogether.com"}
-                target="_blank"
-              >
-                <Card key={"V3 Documentation"} style={{ marginBottom: "1rem" }}>
-                  <LinkRow>
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.45739 8.72727H5.22727L7.62784 16H10.3267L12.7273 8.72727H10.4972L9.00568 13.8551H8.94886L7.45739 8.72727ZM16.2828 16.0994C18.062 16.0994 19.3155 15.1939 19.3084 13.9119C19.3155 13.0206 18.7189 12.392 17.5471 12.2642V12.2074C18.4135 12.1151 19.0456 11.5575 19.0385 10.7443C19.0456 9.51918 17.9093 8.62784 16.2971 8.62784C14.6493 8.62784 13.4775 9.56889 13.4703 10.9006H15.3596C15.3667 10.4602 15.7537 10.1477 16.2971 10.1477C16.7942 10.1477 17.1422 10.4496 17.1351 10.8722C17.1422 11.3125 16.7303 11.625 16.1408 11.625H15.4022V12.9886H16.1408C16.78 12.9886 17.2275 13.3011 17.2203 13.7415C17.2275 14.1925 16.8439 14.5085 16.2971 14.5085C15.7289 14.5085 15.324 14.2067 15.3169 13.7841H13.3283C13.3354 15.1406 14.5605 16.0994 16.2828 16.0994Z"
-                          fill="#E4DAEF"
-                        />
-                        <circle cx="12" cy="12" r="11.5" stroke="#E4DAEF" />
-                      </svg>
-                      <h3 style={{ marginBottom: "0rem", marginLeft: "16px" }}>
-                        V3 Docs
-                      </h3>
-                    </div>
-
-                    <svg
-                      style={{ width: "24px", height: "24px", opacity: 0.5 }}
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
-                    </svg>
-                  </LinkRow>
-                </Card>
-              </Link>
-          </div>
-          </TwoRow>
         <hr />
 
         <Row>
@@ -571,67 +494,12 @@ export default function Home() {
               </StyledGithubIcon>
               <div>
                 <h3>Github</h3>
-                <p>View PoolTogether V5 repositories.</p>
+                <p>View PoolTogether repositories.</p>
               </div>
             </CenterCard>
           </Link>
         </Row>
-        <Link
-          style={{
-            textDecoration: "none",
-            maxWidth: "960px",
-            margin: "0 auto 4rem auto",
-            width: "100%",
-          }}
-          href={"https://poolgrants.org"}
-        >
-          <ShadowCard>
-            <TopSection>
-              <IconWrapper>
-                <CurrencyDollarIcon style={{ width: "24px" }} />
-              </IconWrapper>
-
-              <svg
-                style={{ width: "24px", opacity: 0.5 }}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
-              </svg>
-            </TopSection>
-            <div>
-              <h2 style={{ marginBottom: "0.5rem" }}>
-                PoolTogether Grants Program
-              </h2>
-              <p style={{ margin: "0rem" }}>
-                PoolTogether Governance offers grant funding for people who are
-                building apps, tools, and activities for PoolTogether protocol
-                users, builders, and community members.{" "}
-              </p>
-            </div>
-          </ShadowCard>
-        </Link>
       </Container>
     </Layout>
   );
 }
-
-const V3IconComponent = function (props) {
-  return (
-    <svg
-      {...props}
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M5.949 8.273H3.273L6.153 17h3.239l2.88-8.727H9.598l-1.79 6.153h-.068l-1.79-6.153zm10.59 8.846c2.135 0 3.64-1.086 3.631-2.625.009-1.07-.707-1.823-2.114-1.977v-.068c1.04-.11 1.799-.78 1.79-1.756.009-1.47-1.355-2.54-3.29-2.54-1.977 0-3.383 1.13-3.392 2.728h2.268c.008-.529.473-.904 1.124-.904.597 0 1.015.362 1.006.87.009.528-.486.903-1.193.903h-.886v1.636h.886c.767 0 1.304.375 1.295.904.009.541-.451.92-1.108.92-.681 0-1.167-.362-1.176-.87h-2.386c.008 1.629 1.479 2.78 3.545 2.78z"
-        fill="#fff"
-      />
-      <circle cx={12} cy={12} r={10.5} stroke="#fff" />
-    </svg>
-  );
-};

@@ -149,8 +149,6 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
       const networkName = formatNetworkName(chainId);
       const contracts = networks[chainId];
 
-      append(outputFile, `## ${networkName}`);
-      append(outputFile, "");
       append(outputFile, `| Contract | Address |`);
       append(outputFile, `| :--- | :--- |`);
       append(
@@ -176,6 +174,12 @@ switch (process.argv[2]) {
       "./data/optimism-core.json",
     ]);
     break;
+  
+  case "base":
+    generate("Base", 0, "./docs/deployments/base.md", [
+      "./data/base-core.json",
+    ]);
+    break;
 
   case "optimism-sepolia":
     generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
@@ -186,6 +190,12 @@ switch (process.argv[2]) {
   case "base-sepolia":
     generate("Base Sepolia", 1, "./docs/deployments/base-sepolia.md", [
       "./data/base-sepolia-core.json",
+    ]);
+    break;
+
+  case "arbitrum-sepolia":
+    generate("Arbitrum Sepolia", 1, "./docs/deployments/arbitrum-sepolia.md", [
+      "./data/arbitrum-sepolia-core.json",
     ]);
     break;
 
