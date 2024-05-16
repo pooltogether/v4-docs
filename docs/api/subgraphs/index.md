@@ -39,6 +39,10 @@ You can find the source code for the subgraphs at:
 
 https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest
 
+#### Base ([contracts](../../deployments/base))
+
+https://api.studio.thegraph.com/query/41211/pt-v5-base/version/latest
+
 ### Testnet Subgraphs
 
 #### Optimism Sepolia ([contracts](../../deployments/optimism-sepolia))
