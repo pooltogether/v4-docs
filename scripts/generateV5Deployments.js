@@ -174,6 +174,12 @@ switch (process.argv[2]) {
       "./data/optimism-core.json",
     ]);
     break;
+  
+  case "base":
+    generate("Base", 0, "./docs/deployments/base.md", [
+      "./data/base-core.json",
+    ]);
+    break;
 
   case "optimism-sepolia":
     generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
