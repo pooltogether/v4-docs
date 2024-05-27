@@ -78,7 +78,7 @@ export const Guides = [
   {
     title: "Subgraphs Overview",
     text: "See what Graph Protocol Subgraphs are available",
-    to: "./protocol/api/subgraphs/",
+    to: "./protocol/subgraphs/",
   },
 ];
 
