@@ -33,4 +33,4 @@ To find out more, the best place to start is the [Protocol Design](design/index.
 
 The core PoolTogether protocol is permissionless; anyone can add new tokens to the system. We've made integration simple by providing a template for ERC-4626 compatible vaults, but the developer can choose to customize every aspect of the integration: from yield liquidation to prize claiming.
 
-Learn how [you can earn fees and extend the protocol](guides/index.md).
+Learn how [you can earn rewards and extend the protocol](guides/index.md).
