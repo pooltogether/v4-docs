@@ -35,24 +35,24 @@ You can find the source code for the subgraphs at:
 
 ### Mainnet Subgraphs
 
-#### Optimism ([contracts](../../deployments/optimism))
+#### Optimism ([contracts](/protocol/deployments/optimism))
 
 https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest
 
-#### Base ([contracts](../../deployments/base))
+#### Base ([contracts](/protocol/deployments/base))
 
 https://api.studio.thegraph.com/query/41211/pt-v5-base/version/latest
 
 ### Testnet Subgraphs
 
-#### Optimism Sepolia ([contracts](../../deployments/optimism-sepolia))
+#### Optimism Sepolia ([contracts](/protocol/deployments/optimism-sepolia))
 
 https://api.studio.thegraph.com/query/63100/pt-v5-op-sepolia/version/latest
 
-#### Base Sepolia ([contracts](../../deployments/base-sepolia))
+#### Base Sepolia ([contracts](/protocol/deployments/base-sepolia))
 
 https://api.studio.thegraph.com/query/63100/pt-v5-base-sepolia/version/latest
 
-#### Arbitrum Sepolia ([contracts](../../deployments/arbitrum-sepolia))
+#### Arbitrum Sepolia ([contracts](/protocol/deployments/arbitrum-sepolia))
 
 https://api.studio.thegraph.com/query/41211/pt-v5-arbitrum-sepolia/version/latest

@@ -25,7 +25,7 @@ In order to earn fees on claiming prizes, you will need to:
 
 To get a list of accounts that have a non-zero balance for the previous Draw you can use the Twab Controller subgraph:
 
-[APIs - Subgraphs](/protocol/api/subgraphs)
+[APIs - Subgraphs](/protocol/subgraphs)
 
 There is also an npm library written with helper functions for getting vaults, computing prizes, and more located here: 
 
