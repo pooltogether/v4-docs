@@ -156,7 +156,7 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
         contracts
           .map(
             ({ type, address }) =>
-              `| ${type} | [${address}](${formatAddressUrl(chainId, address)}) |`,
+              `| ${type} | [\`${address}\`](${formatAddressUrl(chainId, address)}) |`,
           )
           .join("\n"),
       );
