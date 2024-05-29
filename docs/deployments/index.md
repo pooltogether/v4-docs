@@ -5,8 +5,9 @@ sidebar_position: 1
 
 ## Mainnet
 
-- [Optimism](./optimism.md)
+- [Arbitrum One](./arbitrum.md)
 - [Base](./base.md)
+- [Optimism](./optimism.md)
 
 ## Testnet
 
