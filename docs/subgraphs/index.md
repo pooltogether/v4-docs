@@ -33,6 +33,8 @@ You can find the source code for the subgraphs at:
 
 ## Subgraph Endpoints
 
+---
+
 ### Mainnet Subgraphs
 
 #### Optimism ([contracts](/protocol/deployments/optimism))
@@ -42,6 +44,12 @@ https://api.studio.thegraph.com/query/63100/pt-v5-optimism/version/latest
 #### Base ([contracts](/protocol/deployments/base))
 
 https://api.studio.thegraph.com/query/41211/pt-v5-base/version/latest
+
+#### Arbitrum One ([contracts](/protocol/deployments/arbitrum))
+
+https://api.studio.thegraph.com/query/63100/pt-v5-arbitrum/version/latest
+
+---
 
 ### Testnet Subgraphs
 

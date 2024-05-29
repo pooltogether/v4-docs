@@ -72,50 +72,6 @@ function formatAddressUrl(chainId, address) {
   return url;
 }
 
-function formatNetworkName(chainId) {
-  if (chainId == ETHEREUM_CHAIN_ID) {
-    return "Ethereum";
-  } else if (chainId == GOERLI_CHAIN_ID) {
-    return "Ethereum Goerli";
-  } else if (chainId == SEPOLIA_CHAIN_ID) {
-    return "Ethereum Sepolia";
-  } else if (chainId == ARBITRUM_CHAIN_ID) {
-    return "Arbitrum";
-  } else if (chainId == ARBITRUM_GOERLI_CHAIN_ID) {
-    return "Arbitrum Goerli";
-  } else if (chainId == ARBITRUM_SEPOLIA_CHAIN_ID) {
-    return "Arbitrum Sepolia";
-  } else if (chainId == BSC_CHAIN_ID) {
-    return "Binance Smart Chain";
-  } else if (chainId == POA_SOKOL_CHAIN_ID) {
-    return "POA Sokol";
-  } else if (chainId == BSC_TESTNET_CHAIN_ID) {
-    return "Binance Smart Chain Testnet";
-  } else if (chainId == GNOSIS_CHAIN_ID) {
-    return "Gnosis Chain";
-  } else if (chainId == POLYGON_CHAIN_ID) {
-    return "Polygon";
-  } else if (chainId == OPTIMISM_CHAIN_ID) {
-    return "Optimism";
-  } else if (chainId == OPTIMISM_GOERLI_CHAIN_ID) {
-    return "Optimism Goerli";
-  } else if (chainId == OPTIMISM_SEPOLIA_CHAIN_ID) {
-    return "Optimism Sepolia";
-  } else if (chainId == MUMBAI_CHAIN_ID) {
-    return "Polygon Mumbai";
-  } else if (chainId == CELO_CHAIN_ID) {
-    return "Celo";
-  } else if (chainId == CELO_ALFAJORES_CHAIN_ID) {
-    return "Celo Alfajores";
-  } else if (chainId == BASE_SEPOLIA_CHAIN_ID) {
-    return "Base Sepolia";
-  } else if (chainId == BASE_CHAIN_ID) {
-    return "Base";
-  } else {
-    throw new Error("unknown chain");
-  }
-}
-
 const append = (out, str) => {
   fs.writeSync(out, str + "\n");
 };
@@ -146,7 +102,6 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
 
     for (let i = 0; i < chainIds.length; i++) {
       const chainId = chainIds[i];
-      const networkName = formatNetworkName(chainId);
       const contracts = networks[chainId];
 
       append(outputFile, `| Contract | Address |`);
@@ -156,7 +111,7 @@ async function generate(name, sidebar_position, outputFilePath, inputFilePaths) 
         contracts
           .map(
             ({ type, address }) =>
-              `| ${type} | [${address}](${formatAddressUrl(chainId, address)}) |`,
+              `| ${type} | [\`${address}\`](${formatAddressUrl(chainId, address)}) |`,
           )
           .join("\n"),
       );
@@ -178,6 +133,12 @@ switch (process.argv[2]) {
   case "base":
     generate("Base", 0, "./docs/deployments/base.md", [
       "./data/base-core.json",
+    ]);
+    break;
+  
+  case "arbitrum":
+    generate("Arbitrum One", 0, "./docs/deployments/arbitrum.md", [
+      "./data/arbitrum-core.json",
     ]);
     break;
 
