@@ -19,6 +19,7 @@ sidebar_position: 0
 | StakingVault | [`0x2C30004EC09e731DfFCD5783569fb2E09C473732`](https://optimistic.etherscan.io/address/0x2C30004EC09e731DfFCD5783569fb2E09C473732) |
 | PrizeVault | [`0xa52e38a9147f5eA9E0c5547376c21c9E3F3e5e1f`](https://optimistic.etherscan.io/address/0xa52e38a9147f5eA9E0c5547376c21c9E3F3e5e1f) |
 | DrawManager | [`0x7eED7444dE862c4F79c5820ff867FA3A82641857`](https://optimistic.etherscan.io/address/0x7eED7444dE862c4F79c5820ff867FA3A82641857) |
+| VaultBoosterFactory | [`0x7746A79332dF154e29C5b105C4d6BaE61e71DaDA`](https://optimistic.etherscan.io/address/0x7746a79332df154e29c5b105c4d6bae61e71dada) |
 | [`*`](#deprecated-contracts) PrizeVaultFactory (*deprecated*) | [`0xF0F151494658baE060034c8f4f199F74910ea806`](https://optimistic.etherscan.io/address/0xF0F151494658baE060034c8f4f199F74910ea806) |
 
 ## Deprecated Contracts
