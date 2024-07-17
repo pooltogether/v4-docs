@@ -20,10 +20,10 @@ sidebar_position: 1
 | TwabRewards | [`0x6f38ebc8587e2e6b2f79d9f8d045abf44a3bfd13`](https://sepolia.arbiscan.io/address/0x6f38ebc8587e2e6b2f79d9f8d045abf44a3bfd13) |
 | TpdaLiquidationPairFactory | [`0xe098c4340329f0b0b72eb25e193a70eadb2499f7`](https://sepolia.arbiscan.io/address/0xe098c4340329f0b0b72eb25e193a70eadb2499f7) |
 | TpdaLiquidationRouter | [`0xb420f83c5936762e6fe0ceef16440df83479d3b7`](https://sepolia.arbiscan.io/address/0xb420f83c5936762e6fe0ceef16440df83479d3b7) |
-| PrizeVaultFactory | [`0x8895efb4299bce2c7e4a5c434c49534bb357bdbc`](https://sepolia.arbiscan.io/address/0x8895efb4299bce2c7e4a5c434c49534bb357bdbc) |
+| PrizeVaultFactory | [`0x6b3f34e6e2ccb8ccb08333b93f56f3e54aaedd11`](https://sepolia.arbiscan.io/address/0x6b3f34e6e2ccb8ccb08333b93f56f3e54aaedd11) |
 | PrizePool | [`0x51211a6b7aa15b3f1063f151ec3343898cd7bd75`](https://sepolia.arbiscan.io/address/0x51211a6b7aa15b3f1063f151ec3343898cd7bd75) |
-| ClaimerFactory | [`0x51f4458af85b7b7805cb0716512872422f90a768`](https://sepolia.arbiscan.io/address/0x51f4458af85b7b7805cb0716512872422f90a768) |
-| Claimer | [`0x24ad9015e48951f74f33dc071af34a6db14e95d9`](https://sepolia.arbiscan.io/address/0x24ad9015e48951f74f33dc071af34a6db14e95d9) |
+| ClaimerFactory | [`0x76436c7bf8d09f0acd64618fc857c5ccc147f434`](https://sepolia.arbiscan.io/address/0x76436c7bf8d09f0acd64618fc857c5ccc147f434) |
+| Claimer | [`0x067ad15984317bb1e915648a0d513FD70ae49e5B`](https://sepolia.arbiscan.io/address/0x067ad15984317bb1e915648a0d513FD70ae49e5B) |
 | StakingVault | [`0x9a46c3306d9ba6d1f4035aa98ffac384d4559d7c`](https://sepolia.arbiscan.io/address/0x9a46c3306d9ba6d1f4035aa98ffac384d4559d7c) |
 | DrawManager | [`0x8ddfae33064e525f38ab928cf070d5dd04a9b894`](https://sepolia.arbiscan.io/address/0x8ddfae33064e525f38ab928cf070d5dd04a9b894) |
 | VaultBoosterFactory | [`0x7addfd6a9431d31eb79967e58aeaa4e2b2bcfe48`](https://sepolia.arbiscan.io/address/0x7addfd6a9431d31eb79967e58aeaa4e2b2bcfe48) |
@@ -40,3 +40,12 @@ sidebar_position: 1
 | TpdaLiquidationPair | [`0xcdf26207d5bc30e4d8f7b60c964d17b938dde438`](https://sepolia.arbiscan.io/address/0xcdf26207d5bc30e4d8f7b60c964d17b938dde438) |
 | TwabDelegator | [`0x83423f06be4161e4ebb1cae7fca6c8322f35dc97`](https://sepolia.arbiscan.io/address/0x83423f06be4161e4ebb1cae7fca6c8322f35dc97) |
 
+## Deprecated Contracts
+
+The following contracts have been deprecated in favor of newer deployments.
+
+| Contract | Address |
+| :--- | :--- |
+| PrizeVaultFactory (*deprecated*) | [`0x8895efb4299bce2c7e4a5c434c49534bb357bdbc`](https://sepolia.arbiscan.io/address/0x8895efb4299bce2c7e4a5c434c49534bb357bdbc) |
+| ClaimerFactory (*deprecated*) | [`0x51f4458af85b7b7805cb0716512872422f90a768`](https://sepolia.arbiscan.io/address/0x51f4458af85b7b7805cb0716512872422f90a768) |
+| Claimer (*deprecated*) | [`0x24ad9015e48951f74f33dc071af34a6db14e95d9`](https://sepolia.arbiscan.io/address/0x24ad9015e48951f74f33dc071af34a6db14e95d9) |

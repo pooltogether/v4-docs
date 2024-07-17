@@ -20,10 +20,10 @@ sidebar_position: 1
 | TwabRewards | [`0x3af156d5eae4bb67afbe9e96e646371f7ba37d18`](https://sepolia.basescan.org/address/0x3af156d5eae4bb67afbe9e96e646371f7ba37d18) |
 | TpdaLiquidationPairFactory | [`0x6e4b2dd17a0b0db73f34a5edabda9ec22c70bce8`](https://sepolia.basescan.org/address/0x6e4b2dd17a0b0db73f34a5edabda9ec22c70bce8) |
 | TpdaLiquidationRouter | [`0x86692766da4cca2f9581729d74da36d180643f8f`](https://sepolia.basescan.org/address/0x86692766da4cca2f9581729d74da36d180643f8f) |
-| PrizeVaultFactory | [`0xf0346c7889061b29977e66034f284bfb5c761d29`](https://sepolia.basescan.org/address/0xf0346c7889061b29977e66034f284bfb5c761d29) |
+| PrizeVaultFactory | [`0x00ef7A24b1f93760FA69AebEcc312C9a29e82830`](https://sepolia.basescan.org/address/0x00ef7A24b1f93760FA69AebEcc312C9a29e82830) |
 | PrizePool | [`0xcb514c0847a9eb30aaa05fc290ddb40afdd44bdb`](https://sepolia.basescan.org/address/0xcb514c0847a9eb30aaa05fc290ddb40afdd44bdb) |
-| ClaimerFactory | [`0xb0701f92f6ec1aaff1be17012d27f13a3bd49f4a`](https://sepolia.basescan.org/address/0xb0701f92f6ec1aaff1be17012d27f13a3bd49f4a) |
-| Claimer | [`0xdc5e799a3e57f7642210feb9ebb0d1a38cf4fe84`](https://sepolia.basescan.org/address/0xdc5e799a3e57f7642210feb9ebb0d1a38cf4fe84) |
+| ClaimerFactory | [`0xB9261F1c4354e38151bFbFd8A6B284B3116808f9`](https://sepolia.basescan.org/address/0xB9261F1c4354e38151bFbFd8A6B284B3116808f9) |
+| Claimer | [`0x260c6D1018bf97F3955Dc357F5b4790F1d2a3A46`](https://sepolia.basescan.org/address/0x260c6D1018bf97F3955Dc357F5b4790F1d2a3A46) |
 | StakingVault | [`0xfcd513498e28ec59ab93aa8ec4ea4579887634d7`](https://sepolia.basescan.org/address/0xfcd513498e28ec59ab93aa8ec4ea4579887634d7) |
 | DrawManager | [`0x6f9bb3558c39c45a679d514da68ceb899209a5d4`](https://sepolia.basescan.org/address/0x6f9bb3558c39c45a679d514da68ceb899209a5d4) |
 | VaultBoosterFactory | [`0xd4f716dc5b53e5e80ea62a2df692db69af9bd337`](https://sepolia.basescan.org/address/0xd4f716dc5b53e5e80ea62a2df692db69af9bd337) |
@@ -40,3 +40,12 @@ sidebar_position: 1
 | TpdaLiquidationPair | [`0x9b74d83ec89ead5b6c43dfb57d69333d5268aeff`](https://sepolia.basescan.org/address/0x9b74d83ec89ead5b6c43dfb57d69333d5268aeff) |
 | TwabDelegator | [`0xf53fe93cabcd08b80e2a0568a707c1c49f4e3608`](https://sepolia.basescan.org/address/0xf53fe93cabcd08b80e2a0568a707c1c49f4e3608) |
 
+## Deprecated Contracts
+
+The following contracts have been deprecated in favor of newer deployments.
+
+| Contract | Address |
+| :--- | :--- |
+| PrizeVaultFactory (*deprecated*) | [`0xf0346c7889061b29977e66034f284bfb5c761d29`](https://sepolia.basescan.org/address/0xf0346c7889061b29977e66034f284bfb5c761d29) |
+| ClaimerFactory (*deprecated*) | [`0xb0701f92f6ec1aaff1be17012d27f13a3bd49f4a`](https://sepolia.basescan.org/address/0xb0701f92f6ec1aaff1be17012d27f13a3bd49f4a) |
+| Claimer (*deprecated*) | [`0xdc5e799a3e57f7642210feb9ebb0d1a38cf4fe84`](https://sepolia.basescan.org/address/0xdc5e799a3e57f7642210feb9ebb0d1a38cf4fe84) |
