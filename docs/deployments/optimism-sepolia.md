@@ -20,10 +20,10 @@ sidebar_position: 1
 | TwabRewards | [`0x505E334544689C7A4BF4c6A0CF8d52A5fB6F0A4A`](https://sepolia-optimism.etherscan.io/address/0x505E334544689C7A4BF4c6A0CF8d52A5fB6F0A4A) |
 | TpdaLiquidationPairFactory | [`0x99e05e2346885D1c1Ce714c9e794A7ca6E3634b4`](https://sepolia-optimism.etherscan.io/address/0x99e05e2346885D1c1Ce714c9e794A7ca6E3634b4) |
 | TpdaLiquidationRouter | [`0x4694F3CD7fedD269aaF2a168e12C544f829a6b50`](https://sepolia-optimism.etherscan.io/address/0x4694F3CD7fedD269aaF2a168e12C544f829a6b50) |
-| PrizeVaultFactory | [`0x5eCC83B1A0bA255713b69154451826a937702435`](https://sepolia-optimism.etherscan.io/address/0x5eCC83B1A0bA255713b69154451826a937702435) |
+| PrizeVaultFactory | [`0x5AE761C29E050918d12cAa07f8Bfa1230a47f3a6`](https://sepolia-optimism.etherscan.io/address/0x5AE761C29E050918d12cAa07f8Bfa1230a47f3a6) |
 | PrizePool | [`0x122FecA66c2b1Ba8Fa9C39E88152592A5496Bc99`](https://sepolia-optimism.etherscan.io/address/0x122FecA66c2b1Ba8Fa9C39E88152592A5496Bc99) |
-| ClaimerFactory | [`0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391`](https://sepolia-optimism.etherscan.io/address/0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391) |
-| Claimer | [`0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954`](https://sepolia-optimism.etherscan.io/address/0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954) |
+| ClaimerFactory | [`0x9E9f96b750fa39126D155C8E31F02EFd1a7C5B6f`](https://sepolia-optimism.etherscan.io/address/0x9E9f96b750fa39126D155C8E31F02EFd1a7C5B6f) |
+| Claimer | [`0x1c1FD7FB2a62dCEe89c96feb84926aC39277480E`](https://sepolia-optimism.etherscan.io/address/0x1c1FD7FB2a62dCEe89c96feb84926aC39277480E) |
 | StakingVault | [`0xc3aef666C6242D78198156137D1a405D2f507ba5`](https://sepolia-optimism.etherscan.io/address/0xc3aef666C6242D78198156137D1a405D2f507ba5) |
 | PrizeVault | [`0x95849a4C2E58F4f8Bf868ADEf10B05747A24eE71`](https://sepolia-optimism.etherscan.io/address/0x95849a4C2E58F4f8Bf868ADEf10B05747A24eE71) |
 | DrawManager | [`0xcCF00490434D845Ec27cB8B4C05E6356318AafAb`](https://sepolia-optimism.etherscan.io/address/0xcCF00490434D845Ec27cB8B4C05E6356318AafAb) |
@@ -48,3 +48,12 @@ sidebar_position: 1
 | TpdaLiquidationPair | [`0x5841eE3AB5dB2FF2aa6E8EbfA5B958A3C9a4d9A5`](https://sepolia-optimism.etherscan.io/address/0x5841eE3AB5dB2FF2aa6E8EbfA5B958A3C9a4d9A5) |
 | TwabDelegator | [`0xa5CAB0E9db2eA50604be6829bB81E4C8770ba176`](https://sepolia-optimism.etherscan.io/address/0xa5CAB0E9db2eA50604be6829bB81E4C8770ba176) |
 
+## Deprecated Contracts
+
+The following contracts have been deprecated in favor of newer deployments.
+
+| Contract | Address |
+| :--- | :--- |
+| PrizeVaultFactory (*deprecated*) | [`0x5eCC83B1A0bA255713b69154451826a937702435`](https://sepolia-optimism.etherscan.io/address/0x5eCC83B1A0bA255713b69154451826a937702435) |
+| ClaimerFactory (*deprecated*) | [`0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391`](https://sepolia-optimism.etherscan.io/address/0xC56c2EDC094078Fc2e1D14931e7c4F40513cD391) |
+| Claimer (*deprecated*) | [`0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954`](https://sepolia-optimism.etherscan.io/address/0xac2be4D9C0d8841c1f0Af43A564BDF2EF3Df3954) |
