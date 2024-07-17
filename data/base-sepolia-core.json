@@ -6693,7 +6693,7 @@
     },
     {
       "chainId": 84532,
-      "address": "0xf0346c7889061b29977e66034f284bfb5c761d29",
+      "address": "0x00ef7A24b1f93760FA69AebEcc312C9a29e82830",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9047,7 +9047,7 @@
     },
     {
       "chainId": 84532,
-      "address": "0xb0701f92f6ec1aaff1be17012d27f13a3bd49f4a",
+      "address": "0xB9261F1c4354e38151bFbFd8A6B284B3116808f9",
       "version": {
         "major": 1,
         "minor": 0,
@@ -9170,7 +9170,7 @@
     },
     {
       "chainId": 84532,
-      "address": "0xdc5e799a3e57f7642210feb9ebb0d1a38cf4fe84",
+      "address": "0x260c6D1018bf97F3955Dc357F5b4790F1d2a3A46",
       "version": {
         "major": 1,
         "minor": 0,

@@ -1,4 +1,4 @@
-[Git Source](https://github.com/GenerationSoftware/pt-v5-vault/blob/4b41f19cc447b4c3d94a3e438eff2adebc8f865b/src/PrizeVaultFactory.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/da73ccf21a4c2ac885c0f85fd01f79ae44824787/src/PrizeVaultFactory.sol)
 
 **Author:**
 PoolTogether Inc. & G9 Software Inc.
@@ -7,7 +7,6 @@ Factory contract for deploying new prize vaults using a standard underlying ERC4
 
 
 ## State Variables
-
 ### allVaults
 List of all vaults deployed by this factory.
 
@@ -45,32 +44,28 @@ Deploy a new vault
 *The caller MUST approve this factory to spend underlying assets equal to `YIELD_BUFFER` so the yield
 buffer can be filled on deployment. This value is unrecoverable and is expected to be insignificant.*
 
-> The yield buffer is expected to be of insignificant value and is used to cover rounding
-> errors on deposits and withdrawals. Yield is expected to accrue faster than the yield buffer
-> can be reasonably depleted.
-> 
-> The yield buffer should be set as high as possible while still being considered
-> insignificant for the lowest precision per dollar asset that is expected to be supported.
-> 
-> Precision per dollar (PPD) can be calculated by: (10 ^ DECIMALS) / (&#36; value of 1 asset).
-> For example, USDC has a PPD of (10 ^ 6) / (&#36;1) = 10e6 p/&#36;.
-> 
-> As a rule of thumb, assets with lower PPD than USDC should not be assumed to be compatible since
-> the potential loss of a single unit rounding error is likely too high to be made up by yield at 
-> a reasonable rate. Actual results may vary based on expected gas costs, asset fluctuation, and
-> yield accrual rates.
-> 
-> This factory will transfer an amount of assets equal to the yield buffer from the deployer to the
-> prize vault on deployment to cover the initial buffer. For example, if you are deploying a USDC
-> vault and the yield buffer is set to 1e5, you will have to approve this factory to spend 1e5
-> USDC ($0.10) to be sent to the prize vault during deployment. Assuming there is no additional 
-> precision loss in the yield vault, a 1e5 yield buffer will cover the first 100k rounding errors on
-> deposits and withdraws and is not recoverable by the deployer.
-> 
-> If the yield buffer is depleted on a vault, the vault will prevent any further 
-> deposits if it would result in a rounding error and any rounding errors incurred by withdrawals
-> will not be covered by yield. The yield buffer will be replenished automatically as yield accrues
-> on deposits.
+*The yield buffer is expected to be of insignificant value and is used to cover rounding
+errors on deposits and withdrawals. Yield is expected to accrue faster than the yield buffer
+can be reasonably depleted.
+The yield buffer should be set as high as possible while still being considered
+insignificant for the lowest precision per dollar asset that is expected to be supported.
+Precision per dollar (PPD) can be calculated by: (10 ^ DECIMALS) / ($ value of 1 asset).
+For example, USDC has a PPD of (10 ^ 6) / ($1) = 10e6 p/$.
+As a rule of thumb, assets with lower PPD than USDC should not be assumed to be compatible since
+the potential loss of a single unit rounding error is likely too high to be made up by yield at
+a reasonable rate. Actual results may vary based on expected gas costs, asset fluctuation, and
+yield accrual rates.
+This factory will transfer an amount of assets equal to the yield buffer from the deployer to the
+prize vault on deployment to cover the initial buffer. For example, if you are deploying a USDC
+vault and the yield buffer is set to 1e5, you will have to approve this factory to spend 1e5
+USDC ($0.10) to be sent to the prize vault during deployment. Assuming there is no additional
+precision loss in the yield vault, a 1e5 yield buffer will cover the first 100k rounding errors on
+deposits and withdraws and is not recoverable by the deployer.
+If the yield buffer is depleted on a vault, the vault will prevent any further
+deposits if it would result in a rounding error and any rounding errors incurred by withdrawals
+will not be covered by yield. The yield buffer will be replenished automatically as yield accrues
+on deposits.*
+
 
 ```solidity
 function deployVault(

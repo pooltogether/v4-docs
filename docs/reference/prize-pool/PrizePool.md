@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-prize-pool/blob/768fa642eb31cfff0fe929da0929a9bb4dea0b2d/src/PrizePool.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-prize-pool/blob/568ca55a911a9310bc767a173a0c8a734f7f158c/src/PrizePool.sol)
 
 **Inherits:**
 [TieredLiquidityDistributor](./TieredLiquidityDistributor)
@@ -7,6 +7,13 @@
 G9 Software Inc. & PoolTogether Inc. Team
 
 The Prize Pool holds the prize liquidity and allows vaults to claim prizes.
+
+## Constants
+### MINIMUM_DRAW_TIMEOUT
+
+```solidity
+uint24 constant MINIMUM_DRAW_TIMEOUT = 2;
+```
 
 
 ## State Variables
@@ -91,7 +98,7 @@ uint48 public immutable firstDrawOpensAt;
 
 
 ### drawTimeout
-The maximum number of draws that can be missed before the prize pool is considered inactive.
+The maximum number of draws that can pass since the last awarded draw before the prize pool is considered inactive.
 
 
 ```solidity
@@ -204,7 +211,7 @@ The shutdown portion of liquidity for a vault and account
 
 
 ```solidity
-mapping(address vault => mapping(address account => ShutdownPortion shutdownPortion)) internal _shutdownPortions;
+mapping(address vault => mapping(address account => UD60x18 shutdownPortion)) internal _shutdownPortions;
 ```
 
 
@@ -857,7 +864,7 @@ Returns the given account and vault's portion of the shutdown balance.
 
 
 ```solidity
-function computeShutdownPortion(address _vault, address _account) public view returns (ShutdownPortion memory);
+function computeShutdownPortion(address _vault, address _account) public view returns (UD60x18);
 ```
 **Parameters**
 
@@ -870,7 +877,7 @@ function computeShutdownPortion(address _vault, address _account) public view re
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`ShutdownPortion`|The portion of the shutdown balance that the account is entitled to.|
+|`<none>`|`UD60x18`|The portion of the shutdown balance that the account is entitled to.|
 
 
 ### shutdownBalanceOf
@@ -1292,60 +1299,3 @@ event IncreaseClaimRewards(address indexed to, uint256 amount);
 |`to`|`address`|The address the rewards are given to|
 |`amount`|`uint256`|The amount increased|
 
-## Structs
-
-### ShutdownPortion
-A struct to represent a shutdown portion of liquidity for a vault and account
-
-
-```solidity
-struct ShutdownPortion {
-    uint256 numerator;
-    uint256 denominator;
-}
-```
-
-**Properties**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`numerator`|`uint256`|The numerator of the portion|
-|`denominator`|`uint256`|The denominator of the portion|
-
-### ConstructorParams
-Constructor Parameters
-
-
-```solidity
-struct ConstructorParams {
-    IERC20 prizeToken;
-    TwabController twabController;
-    address creator;
-    uint256 tierLiquidityUtilizationRate;
-    uint48 drawPeriodSeconds;
-    uint48 firstDrawOpensAt;
-    uint24 grandPrizePeriodDraws;
-    uint8 numberOfTiers;
-    uint8 tierShares;
-    uint8 canaryShares;
-    uint8 reserveShares;
-    uint24 drawTimeout;
-}
-```
-
-**Properties**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`prizeToken`|`IERC20`|The token to use for prizes|
-|`twabController`|`TwabController`|The Twab Controller to retrieve time-weighted average balances from|
-|`creator`|`address`|The address that will be permitted to finish prize pool initialization after deployment|
-|`tierLiquidityUtilizationRate`|`uint256`|The rate at which liquidity is utilized for prize tiers. This allows for deviations in prize claims; if 0.75e18 then it is 75% utilization so it can accommodate 25% deviation in more prize claims.|
-|`drawPeriodSeconds`|`uint48`|The number of seconds between draws. E.g. a Prize Pool with a daily draw should have a draw period of 86400 seconds.|
-|`firstDrawOpensAt`|`uint48`|The timestamp at which the first draw will open|
-|`grandPrizePeriodDraws`|`uint24`|The target number of draws to pass between each grand prize|
-|`numberOfTiers`|`uint8`|The number of tiers to start with. Must be greater than or equal to the minimum number of tiers|
-|`tierShares`|`uint8`|The number of shares to allocate to each tier|
-|`canaryShares`|`uint8`|The number of shares to allocate to each canary tier|
-|`reserveShares`|`uint8`|The number of shares to allocate to the reserve|
-|`drawTimeout`|`uint24`|The number of draws that need to be missed before the prize pool shuts down. The timeout resets when a draw is awarded.|

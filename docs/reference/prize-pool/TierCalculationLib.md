@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-prize-pool/blob/768fa642eb31cfff0fe929da0929a9bb4dea0b2d/src/libraries/TierCalculationLib.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-prize-pool/blob/568ca55a911a9310bc767a173a0c8a734f7f158c/src/libraries/TierCalculationLib.sol)
 
 **Author:**
 PoolTogether Inc. Team
@@ -34,21 +34,24 @@ function getTierOdds(uint8 _tier, uint8 _numberOfTiers, uint24 _grandPrizePeriod
 
 Estimates the number of draws between a tier occurring.
 
+*Limits the frequency to the grand prize period in draws.*
+
 
 ```solidity
-function estimatePrizeFrequencyInDraws(SD59x18 _tierOdds) internal pure returns (uint256);
+function estimatePrizeFrequencyInDraws(SD59x18 _tierOdds, uint24 _grandPrizePeriod) internal pure returns (uint24);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_tierOdds`|`SD59x18`|The odds for the tier to calculate the frequency of|
+|`_grandPrizePeriod`|`uint24`|The number of draws between grand prizes|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The estimated number of draws between the tier occurring|
+|`<none>`|`uint24`|The estimated number of draws between the tier occurring|
 
 
 ### prizeCount

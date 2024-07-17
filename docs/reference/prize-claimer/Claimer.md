@@ -1,5 +1,8 @@
 [Git Source](https://github.com/generationsoftware/pt-v5-claimer/blob/a3619aa13c19beb25210ddb6474cd51aac794706/src/Claimer.sol)
 
+**Inherits:**
+ReentrancyGuard
+
 **Author:**
 G9 Software Inc.
 
@@ -68,7 +71,7 @@ function claimPrizes(
     uint32[][] calldata _prizeIndices,
     address _feeRecipient,
     uint256 _minFeePerClaim
-) external returns (uint256 totalFees);
+) external nonReentrant returns (uint256 totalFees);
 ```
 **Parameters**
 
@@ -255,51 +258,6 @@ function computeMaxFee(uint8 _tier) public view returns (uint256);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|The maximum fee that can be charged|
-
-
-### _computeFeeTarget
-
-Compute the target fee for prize claims
-
-
-```solidity
-function _computeFeeTarget(uint8 _numberOfTiers) internal view returns (uint256);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_numberOfTiers`|`uint8`|The current number of tiers for the prize pool|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|The target fee for prize claims|
-
-
-### _computeDecayConstant
-
-Computes the decay constant for the VRGDA.
-
-*This is a decay constant that ensures the fee will grow from the target to the max fee within the time frame*
-
-
-```solidity
-function _computeDecayConstant(uint256 _targetFee, uint8 _numberOfTiers) internal view returns (SD59x18);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_targetFee`|`uint256`|The target fee|
-|`_numberOfTiers`|`uint8`|The current number of tiers for the prize pool|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`SD59x18`|The decay constant|
 
 
 ### _computeMaxFee
