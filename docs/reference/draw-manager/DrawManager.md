@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-draw-manager/blob/f04edd938f0ce3d6bbaf5db2748319d6ebf6b078/src/DrawManager.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-draw-manager/blob/1fe208b28f371d393c8889323b4f11e8cc58fcb4/src/DrawManager.sol)
 
 **Author:**
 G9 Software Inc.
@@ -154,7 +154,7 @@ constructor(
 
 Completes the start draw auction.
 
-*Will revert if recipient is zero, the draw id to award has not closed, if start draw was already called for this draw, or if the rng is invalid.*
+*Will revert if recipient is zero, the draw id to award has not closed, the prize pool is shutdown, the start draw was already called for this draw, or if the rng is invalid.*
 
 
 ```solidity
@@ -312,12 +312,16 @@ function getStartDrawAuction(uint256 _index) external view returns (StartDrawAuc
 
 Computes what the reward and reward fraction would be for the finish draw
 
+*Caps the reward such that the total rewards cannot exceed the available rewards*
+
 
 ```solidity
-function _computeFinishDrawReward(uint256 _auctionOpenedAt, uint256 _auctionClosedAt, uint256 _availableRewards)
-    internal
-    view
-    returns (uint256 reward, UD2x18 fraction);
+function _computeFinishDrawReward(
+    uint256 _auctionOpenedAt,
+    uint256 _auctionClosedAt,
+    uint256 _availableRewards,
+    UD2x18 _fractionalRewardsLeft
+) internal view returns (uint256 reward, UD2x18 fraction);
 ```
 **Parameters**
 
@@ -326,6 +330,7 @@ function _computeFinishDrawReward(uint256 _auctionOpenedAt, uint256 _auctionClos
 |`_auctionOpenedAt`|`uint256`|The time at which the auction started|
 |`_auctionClosedAt`|`uint256`|The time at which the auction closed|
 |`_availableRewards`|`uint256`|The amount of rewards available|
+|`_fractionalRewardsLeft`|`UD2x18`|The fraction of rewards that is available|
 
 **Returns**
 
@@ -339,12 +344,14 @@ function _computeFinishDrawReward(uint256 _auctionOpenedAt, uint256 _auctionClos
 
 Computes the rewards and reward fractions for the start draw auctions
 
+*Caps the reward such that the total rewards cannot exceed the available rewards*
+
 
 ```solidity
 function _computeStartDrawRewards(uint256 _firstAuctionOpenedAt, uint256 _availableRewards)
     internal
     view
-    returns (uint256[] memory rewards, UD2x18[] memory fractions);
+    returns (uint256[] memory rewards, UD2x18[] memory fractions, UD2x18 totalRewardFractionLeft);
 ```
 **Parameters**
 
@@ -359,18 +366,23 @@ function _computeStartDrawRewards(uint256 _firstAuctionOpenedAt, uint256 _availa
 |----|----|-----------|
 |`rewards`|`uint256[]`|The rewards for the start draw auctions|
 |`fractions`|`UD2x18[]`|The reward fractions for the start draw auctions|
+|`totalRewardFractionLeft`|`UD2x18`|The total fractional rewards left [0.0, 1.0] range|
 
 
 ### _computeStartDrawReward
 
 Computes the reward and reward fraction for the start draw auction
 
+*Caps the reward such that it cannot exceed the remaining amount*
+
 
 ```solidity
-function _computeStartDrawReward(uint256 _auctionOpenedAt, uint256 _auctionClosedAt, uint256 _availableRewards)
-    internal
-    view
-    returns (uint256 reward, UD2x18 fraction);
+function _computeStartDrawReward(
+    uint256 _auctionOpenedAt,
+    uint256 _auctionClosedAt,
+    uint256 _availableRewards,
+    UD2x18 _fractionalRewardsLeft
+) internal view returns (uint256 reward, UD2x18 fraction);
 ```
 **Parameters**
 
@@ -379,6 +391,7 @@ function _computeStartDrawReward(uint256 _auctionOpenedAt, uint256 _auctionClose
 |`_auctionOpenedAt`|`uint256`|The time at which the auction started|
 |`_auctionClosedAt`|`uint256`|The time at which the auction closed|
 |`_availableRewards`|`uint256`|The amount of rewards available|
+|`_fractionalRewardsLeft`|`UD2x18`|The fraction of rewards that is available|
 
 **Returns**
 
@@ -513,6 +526,7 @@ event DrawFinished(
 |`elapsedTime`|`uint48`|The amount of time that had elapsed between start draw and finish draw|
 |`reward`|`uint256`|The reward for the finish draw auction|
 |`contribution`|`uint256`|The amount of tokens contributed to the prize pool on behalf of the vault beneficiary|
+
 
 ## Structs
 ### StartDrawAuction

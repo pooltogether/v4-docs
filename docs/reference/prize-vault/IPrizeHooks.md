@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/a10aaa1d1a04e19253a8a7c64aa384e2cb67fb2e/src/interfaces/IPrizeHooks.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/da73ccf21a4c2ac885c0f85fd01f79ae44824787/src/interfaces/IPrizeHooks.sol)
 
 **Author:**
 PoolTogether Inc. & G9 Software Inc.
