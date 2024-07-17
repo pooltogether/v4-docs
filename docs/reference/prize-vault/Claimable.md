@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/a10aaa1d1a04e19253a8a7c64aa384e2cb67fb2e/src/abstract/Claimable.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/da73ccf21a4c2ac885c0f85fd01f79ae44824787/src/abstract/Claimable.sol)
 
 **Inherits:**
 [HookManager](./HookManager), IClaimable
@@ -19,6 +19,22 @@ The gas to give to each of the before and after prize claim hooks.
 
 ```solidity
 uint24 public constant HOOK_GAS = 150_000;
+```
+
+
+### HOOK_RETURN_DATA_LIMIT
+The number of bytes to limit hook return / revert data.
+
+*If this limit is exceeded for `beforeClaimPrize` return data, the claim will revert.*
+
+*Revert data for both hooks will also be limited to this size.*
+
+*128 bytes is enough for `beforeClaimPrize` to return the `_prizeRecipient` address as well
+as 32 bytes of additional `_hookData` byte string data (32 for offset, 32 for length, 32 for data).*
+
+
+```solidity
+uint16 public constant HOOK_RETURN_DATA_LIMIT = 128;
 ```
 
 
@@ -72,6 +88,8 @@ Claim a prize for a winner
 
 *Also calls the before and after claim hooks if set by the winner.*
 
+*Reverts if the return data size of the `beforeClaimPrize` hook exceeds `HOOK_RETURN_DATA_LIMIT`.*
+
 
 ```solidity
 function claimPrize(address _winner, uint8 _tier, uint32 _prizeIndex, uint96 _reward, address _rewardRecipient)
@@ -113,6 +131,30 @@ function _setClaimer(address _claimer) internal;
 |`_claimer`|`address`|Address of the claimer|
 
 
+### _safeHookCall
+
+Uses ExcessivelySafeCall to limit the return data size to a safe limit.
+
+*This is used for both hook calls to prevent gas bombs that can be triggered using a large
+amount of return data or a large revert string.*
+
+*In the case of an unsuccessful call, the revert reason will be bubbled up if it is within
+the safe data limit. Otherwise, a `ReturnDataOverLimit` reason will be thrown.*
+
+
+```solidity
+function _safeHookCall(IPrizeHooks _implementation, bytes memory _calldata)
+    internal
+    returns (bytes memory _returnData, uint256 _actualReturnDataSize);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`_returnData`|`bytes`|The safe, size limited return data|
+|`_actualReturnDataSize`|`uint256`|The actual return data size of the original result|
+
+
 ## Errors
 ### PrizePoolZeroAddress
 Thrown when the Prize Pool is set to the zero address.
@@ -152,4 +194,19 @@ error CallerNotClaimer(address caller, address claimer);
 |----|----|-----------|
 |`caller`|`address`|The caller address|
 |`claimer`|`address`|The claimer address|
+
+### ReturnDataOverLimit
+Thrown if relevant hook return data is greater than the `HOOK_RETURN_DATA_LIMIT`.
+
+
+```solidity
+error ReturnDataOverLimit(uint256 returnDataSize, uint256 hookDataLimit);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`returnDataSize`|`uint256`|The actual size of the return data|
+|`hookDataLimit`|`uint256`|The return data size limit for hooks|
 

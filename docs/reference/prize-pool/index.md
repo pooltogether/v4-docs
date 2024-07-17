@@ -15,5 +15,6 @@ The PoolTogether Prize Pool awards prizes based on contributions and time weight
 
 - [DrawAccumulatorLib](./DrawAccumulatorLib)
 - [PrizePool](./PrizePool)
+- [BlastPrizePool (extension)](./BlastPrizePool)
 - [TierCalculationLib](./TierCalculationLib)
 - [TieredLiquidityDistributor](./TieredLiquidityDistributor)

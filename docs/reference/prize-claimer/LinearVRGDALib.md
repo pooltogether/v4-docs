@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-claimer/blob/a3619aa13c19beb25210ddb6474cd51aac794706/src/libraries/LinearVRGDALib.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-claimer/blob/0ea6b676aec4e3ea5d6f7344e5a682b850e520a2/src/libraries/LinearVRGDALib.sol)
 
 **Authors:**
 Brendan Asselstine <brendan@g9software.com>, Original authors FrankieIsLost <frankie@paradigm.xyz> and transmissions11 <t11s@paradigm.xyz>

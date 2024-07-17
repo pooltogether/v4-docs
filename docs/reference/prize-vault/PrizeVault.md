@@ -1,4 +1,4 @@
-[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/a10aaa1d1a04e19253a8a7c64aa384e2cb67fb2e/src/PrizeVault.sol)
+[Git Source](https://github.com/generationsoftware/pt-v5-vault/blob/da73ccf21a4c2ac885c0f85fd01f79ae44824787/src/PrizeVault.sol)
 
 **Inherits:**
 [TwabERC20](./TwabERC20), [Claimable](./Claimable), IERC4626, ILiquidationSource, Ownable
@@ -50,7 +50,6 @@ withdraw.*
 
 *The prize vault does not support underlying yield vaults that take a fee on deposit or withdraw.*
 
-## Constants
 ### TWAB_SUPPLY_LIMIT
 *The TWAB supply limit is the max number of shares that can be minted in the TWAB controller.*
 
@@ -97,11 +96,11 @@ BUFFER AND COVER ROUNDING ERRORS UNTIL THE DEPOSITS CAN GENERATE ENOUGH YIELD TO
 FULL WITHOUT ASSISTANCE.
 The yield buffer should be set as high as possible while still being considered insignificant
 for the underlying asset. For example, a reasonable yield buffer for USDC with 6 decimals might be
-1e5 (&#36;0.10), which will cover up to 100k rounding errors while still being an insignificant value.
+1e5 ($0.10), which will cover up to 100k rounding errors while still being an insignificant value.
 Some assets may be considered incompatible with the prize vault if the yield vault incurs rounding
 errors and the underlying asset has a low precision per dollar ratio.
-Precision per dollar (PPD) can be calculated by: (10 ^ DECIMALS) / (&#36; value of 1 asset).
-For example, USDC has a PPD of (10 ^ 6) / (&#36;1) = 10e6 p/&#36;.
+Precision per dollar (PPD) can be calculated by: (10 ^ DECIMALS) / ($ value of 1 asset).
+For example, USDC has a PPD of (10 ^ 6) / ($1) = 10e6 p/$.
 As a rule of thumb, assets with lower PPD than USDC should not be assumed to be compatible since
 the potential loss of a single unit rounding error is likely too high to be made up by yield at
 a reasonable rate. Actual results may vary based on expected gas costs, asset fluctuation, and yield
@@ -289,6 +288,10 @@ function convertToAssets(uint256 _shares) external view returns (uint256);
 
 *Returns zero if total assets cannot be determined*
 
+*Returns zero if the yield buffer is less than half full. This is a safety precaution to ensure
+a deposit of the asset amount returned by this function cannot reasonably trigger a `LossyDeposit`
+revert in the `deposit` or `mint` functions if the yield buffer has been configured properly.*
+
 *Any latent balance of assets in the prize vault will be swept in with the deposit as a part of
 the "dust collection strategy". This means that the max deposit must account for the latent balance
 by subtracting it from the max deposit available otherwise.*
@@ -420,29 +423,6 @@ function depositWithPermit(uint256 _assets, address _owner, uint256 _deadline, u
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|Amount of Vault shares minted to `_owner`.|
-
-
-### sponsor
-
-Deposit assets into the Vault and delegate to the sponsorship address.
-
-*Emits a `Sponsor` event*
-
-
-```solidity
-function sponsor(uint256 _assets) external returns (uint256);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_assets`|`uint256`|Amount of assets to deposit|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint256`|Amount of shares minted to caller.|
 
 
 ### withdraw
@@ -822,6 +802,8 @@ function _tryGetTotalPreciseAssets() internal view returns (bool _success, uint2
 
 Converts assets to shares with the given vault state and rounding direction.
 
+*Returns zero if the vault is in a lossy state AND there are no more assets.*
+
 
 ```solidity
 function _convertToShares(uint256 _assets, uint256 _totalAssets, uint256 _totalDebt, Math.Rounding _rounding)
@@ -1114,22 +1096,6 @@ event YieldFeePercentageSet(uint256 yieldFeePercentage);
 |Name|Type|Description|
 |----|----|-----------|
 |`yieldFeePercentage`|`uint256`|New yield fee percentage|
-
-### Sponsor
-Emitted when a user sponsors the Vault.
-
-
-```solidity
-event Sponsor(address indexed caller, uint256 assets, uint256 shares);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`caller`|`address`|Address that called the function|
-|`assets`|`uint256`|Amount of assets deposited into the Vault|
-|`shares`|`uint256`|Amount of shares minted to the caller address|
 
 ### TransferYieldOut
 Emitted when yield is transferred out by the liquidation pair address.
