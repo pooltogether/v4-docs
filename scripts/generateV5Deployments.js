@@ -142,6 +142,12 @@ switch (process.argv[2]) {
     ]);
     break;
 
+  case "ethereum":
+    generate("Ethereum", 0, "./docs/deployments/ethereum.md", [
+      "./data/ethereum-core.json",
+    ]);
+    break;
+
   case "optimism-sepolia":
     generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
       "./data/optimism-sepolia-core.json",
