@@ -14,10 +14,10 @@ sidebar_position: 0
 | TwabRewards | [`0x2589ff8614f74704741ee3b51851b4ae812f1a21`](https://etherscan.io/address/0x2589ff8614f74704741ee3b51851b4ae812f1a21) |
 | TpdaLiquidationPairFactory | [`0xa99b3a8503260ab32753c382eac297acd4a43908`](https://etherscan.io/address/0xa99b3a8503260ab32753c382eac297acd4a43908) |
 | TpdaLiquidationRouter | [`0x7c210be12bcef8090610914189a0de43e2192ea0`](https://etherscan.io/address/0x7c210be12bcef8090610914189a0de43e2192ea0) |
-| PrizeVaultFactory | [`0x29c102109d6cb2d866cfec380e0e10e9a287a75f`](https://etherscan.io/address/0x29c102109d6cb2d866cfec380e0e10e9a287a75f) |
+| PrizeVaultFactory | [`0xd499CcF3e93F4cfb335Ac388E3C896D59cdDe7c3`](https://etherscan.io/address/0xd499CcF3e93F4cfb335Ac388E3C896D59cdDe7c3) |
 | PrizePool | [`0x7865d01da4c9ba2f69b7879e6d2483ab6b354d95`](https://etherscan.io/address/0x7865d01da4c9ba2f69b7879e6d2483ab6b354d95) |
-| ClaimerFactory | [`0x4457025dff44e3d9085d9195828e7d53fe6a7088`](https://etherscan.io/address/0x4457025dff44e3d9085d9195828e7d53fe6a7088) |
-| Claimer | [`0x98cc81798954c35c39b960dfca3d8b170154aa7e`](https://etherscan.io/address/0x98cc81798954c35c39b960dfca3d8b170154aa7e) |
+| ClaimerFactory | [`0xd84C4c7675e6Eb79eA28D04C001e702cCC679E80`](https://etherscan.io/address/0xd84C4c7675e6Eb79eA28D04C001e702cCC679E80) |
+| Claimer | [`0x54aa02cbc223Fc834949FB1fd8C855e4dA126c7D`](https://etherscan.io/address/0x54aa02cbc223Fc834949FB1fd8C855e4dA126c7D) |
 | StakingVault | [`0x68a100a3729fc04ab26fb4c0862df22ceec2f18b`](https://etherscan.io/address/0x68a100a3729fc04ab26fb4c0862df22ceec2f18b) |
 | DrawManager | [`0x98305eb9a29d45ec93ce44ba02b315b631c675a7`](https://etherscan.io/address/0x98305eb9a29d45ec93ce44ba02b315b631c675a7) |
 | VaultBoosterFactory | [`0x36be31e7acd4b0d755bcc7858ef04848a3ec66c6`](https://etherscan.io/address/0x36be31e7acd4b0d755bcc7858ef04848a3ec66c6) |
