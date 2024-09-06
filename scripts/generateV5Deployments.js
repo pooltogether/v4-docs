@@ -13,6 +13,7 @@ const OPTIMISM_CHAIN_ID = 10;
 const POA_SOKOL_CHAIN_ID = 77;
 const POLYGON_CHAIN_ID = 137;
 const BASE_CHAIN_ID = 8453;
+const SCROLL_CHAIN_ID = 534352;
 
 // Testnet
 const ARBITRUM_GOERLI_CHAIN_ID = 421613;
@@ -25,6 +26,8 @@ const OPTIMISM_GOERLI_CHAIN_ID = 420;
 const OPTIMISM_SEPOLIA_CHAIN_ID = 11155420;
 const SEPOLIA_CHAIN_ID = 11155111;
 const BASE_SEPOLIA_CHAIN_ID = 84532;
+const GNOSIS_CHIADO_CHAIN_ID = 10200;
+const SCROLL_SEPOLIA_CHAIN_ID = 534351;
 
 function formatAddressUrl(chainId, address) {
   let url;
@@ -47,7 +50,9 @@ function formatAddressUrl(chainId, address) {
   } else if (chainId == BSC_TESTNET_CHAIN_ID) {
     url = `https://testnet.bscscan.com/address/${address}`;
   } else if (chainId == GNOSIS_CHAIN_ID) {
-    url = `https://blockscout.com/xdai/mainnet/address/${address}`;
+    url = `https://gnosisscan.io/address/${address}`;
+  } else if (chainId == GNOSIS_CHIADO_CHAIN_ID) {
+    url = `https://gnosis-chiado.blockscout.com/address/${address}`;
   } else if (chainId == POLYGON_CHAIN_ID) {
     url = `https://polygonscan.com/address/${address}`;
   } else if (chainId == OPTIMISM_CHAIN_ID) {
@@ -66,6 +71,10 @@ function formatAddressUrl(chainId, address) {
     url = `https://sepolia.basescan.org/address/${address}`;
   } else if (chainId == BASE_CHAIN_ID) {
     url = `https://basescan.org/address/${address}`;
+  } else if (chainId == SCROLL_CHAIN_ID) {
+    url = `https://scrollscan.com/address/${address}`;
+  } else if (chainId == SCROLL_SEPOLIA_CHAIN_ID) {
+    url = `https://sepolia.scrollscan.com/address/${address}`;
   } else {
     throw new Error(`Unknown chain id ${chainId}`);
   }
@@ -142,6 +151,12 @@ switch (process.argv[2]) {
     ]);
     break;
 
+  case "ethereum":
+    generate("Ethereum", 0, "./docs/deployments/ethereum.md", [
+      "./data/ethereum-core.json",
+    ]);
+    break;
+
   case "optimism-sepolia":
     generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
       "./data/optimism-sepolia-core.json",
@@ -157,6 +172,18 @@ switch (process.argv[2]) {
   case "arbitrum-sepolia":
     generate("Arbitrum Sepolia", 1, "./docs/deployments/arbitrum-sepolia.md", [
       "./data/arbitrum-sepolia-core.json",
+    ]);
+    break;
+
+  case "scroll-sepolia":
+    generate("Scroll Sepolia", 1, "./docs/deployments/scroll-sepolia.md", [
+      "./data/scroll-sepolia-core.json",
+    ]);
+    break;
+
+  case "gnosis-chiado":
+    generate("Gnosis Chiado", 1, "./docs/deployments/gnosis-chiado.md", [
+      "./data/gnosis-chiado-core.json",
     ]);
     break;
 

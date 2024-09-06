@@ -7,6 +7,8 @@ sidebar_position: 0
 
 | Contract | Address |
 | :--- | :--- |
+| POOL | [`0xd652C5425aea2Afd5fb142e120FeCf79e18fafc3`](https://basescan.org/address/0xd652C5425aea2Afd5fb142e120FeCf79e18fafc3) |
+| POOL Prize Vault | [`0x6B5a5c55E9dD4bb502Ce25bBfbaA49b69cf7E4dd`](https://basescan.org/token/0x6B5a5c55E9dD4bb502Ce25bBfbaA49b69cf7E4dd) |
 | RngWitnet | [`0x74ebf391831c0757b5a4335f2f3abbb1499d18f0`](https://basescan.org/address/0x74ebf391831c0757b5a4335f2f3abbb1499d18f0) |
 | TwabController | [`0x7e63601f7e28c758feccf8cdf02f6598694f44c6`](https://basescan.org/address/0x7e63601f7e28c758feccf8cdf02f6598694f44c6) |
 | TwabRewards | [`0x86f0923d20810441efc593eb0f2825c6bff2dc09`](https://basescan.org/address/0x86f0923d20810441efc593eb0f2825c6bff2dc09) |
