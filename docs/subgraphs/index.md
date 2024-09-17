@@ -49,6 +49,14 @@ https://api.studio.thegraph.com/query/41211/pt-v5-base/version/latest
 
 https://api.studio.thegraph.com/query/63100/pt-v5-arbitrum/version/latest
 
+#### Scroll ([contracts](/protocol/deployments/scroll))
+
+https://api.studio.thegraph.com/query/63100/pt-v5-scroll/version/latest
+
+#### Gnosis ([contracts](/protocol/deployments/gnosis))
+
+https://api.studio.thegraph.com/query/63100/pt-v5-gnosis/version/latest
+
 ---
 
 ### Testnet Subgraphs
@@ -64,3 +72,11 @@ https://api.studio.thegraph.com/query/63100/pt-v5-base-sepolia/version/latest
 #### Arbitrum Sepolia ([contracts](/protocol/deployments/arbitrum-sepolia))
 
 https://api.studio.thegraph.com/query/41211/pt-v5-arbitrum-sepolia/version/latest
+
+#### Scroll Sepolia ([contracts](/protocol/deployments/scroll-sepolia))
+
+https://api.studio.thegraph.com/query/63100/pt-v5-scroll-sepolia/version/latest
+
+#### Gnosis Chiado ([contracts](/protocol/deployments/gnosis-chiado))
+
+https://api.studio.thegraph.com/query/63100/pt-v5-gnosis-chiado/version/latest
