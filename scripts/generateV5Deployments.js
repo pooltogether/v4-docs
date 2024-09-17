@@ -157,6 +157,18 @@ switch (process.argv[2]) {
     ]);
     break;
 
+  case "scroll":
+    generate("Scroll", 0, "./docs/deployments/scroll.md", [
+      "./data/scroll-core.json",
+    ]);
+    break;
+
+  case "gnosis":
+    generate("Gnosis", 0, "./docs/deployments/gnosis.md", [
+      "./data/gnosis-core.json",
+    ]);
+    break;
+
   case "optimism-sepolia":
     generate("Optimism Sepolia", 1, "./docs/deployments/optimism-sepolia.md", [
       "./data/optimism-sepolia-core.json",

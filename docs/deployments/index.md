@@ -5,15 +5,17 @@ sidebar_position: 1
 
 ## Mainnet
 
-- [Arbitrum One](./arbitrum.md)
-- [Base](./base.md)
-- [Ethereum](./ethereum.md)
-- [Optimism](./optimism.md)
+- [Arbitrum One](./arbitrum)
+- [Base](./base)
+- [Ethereum](./ethereum)
+- [Gnosis](./gnosis)
+- [Optimism](./optimism)
+- [Scroll](./scroll)
 
 ## Testnet
 
-- [Arbitrum Sepolia](./arbitrum-sepolia.md)
-- [Base Sepolia](./base-sepolia.md)
-- [Gnosis Chiado](./gnosis-chiado.md)
-- [Optimism Sepolia](./optimism-sepolia.md)
-- [Scroll Sepolia](./scroll-sepolia.md)
+- [Arbitrum Sepolia](./arbitrum-sepolia)
+- [Base Sepolia](./base-sepolia)
+- [Gnosis Chiado](./gnosis-chiado)
+- [Optimism Sepolia](./optimism-sepolia)
+- [Scroll Sepolia](./scroll-sepolia)
