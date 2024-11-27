@@ -8,7 +8,7 @@ Users deposit tokens into prize vaults in order to be eligible to win prizes. Pr
 
 While Vaults can be fully customized, the protocol provides a standard PrizeVault that can be instantiated using the PrizeVaultFactory. The PoolTogether standard prize vault wraps any ERC-4626 compliant tokenized vault with the above behavior. The standard prize vault is also ERC-4626 compliant.
 
-The PoolTogether standard prize vault doesn't liquidate the yield itself, but rather exposes the yield to an external liquidation pair. See the guide [Liquidating Yield](../guides/liquidating-yield) for more information.
+The PoolTogether standard prize vault doesn't liquidate the yield itself, but rather exposes the yield to an external liquidation pair. See the guide [Liquidating Yield](../guides/bots/LiquidatingYield.md) for more information.
 
 # Creating a Vault
 
