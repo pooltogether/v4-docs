@@ -22,4 +22,4 @@ The external `claimPrizes` function is used to claim prizes for one specific vau
 
 ## Guides
 
-Read the [guide](../guides/claiming-prizes) on using the Prize Claimer.
+Read the [guide](../guides/bots/ClaimingPrizes.md) on using the Prize Claimer.
