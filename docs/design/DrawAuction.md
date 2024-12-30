@@ -83,7 +83,7 @@ To solve this issue, a pricing function is needed that can:
 
 Given a target fractional bid price P where 0 ≤ P ≤ 1, and a target bid time T, where 0 < T ≤ 1 the strictly-increasing pricing function needs to start at price 0.0, reach P at time T, and end at price 1.0.
 
-The following solution uses two mirrored pabarabolic curves that meet at point (T,P) and significantly slow down the auction price change near the target sale.
+The following solution uses two mirrored parabolic curves that meet at point (T,P) and significantly slow down the auction price change near the target sale.
 
 **When x <= T:**
 
