@@ -29,7 +29,7 @@ This version of the protocol brings some major improvements:
 
 This version is also our first "hyperstructure", in that:
 
-- The core protocol is fully autonomous. There is no administrator or parameters than can be adjusted.
+- The core protocol is fully autonomous. There is no administrator or parameters that can be adjusted.
 - The core protocol is immutable; no code can be changed.
 - Anyone can add new tokens or yield sources to the protocol; it can be extended permissionlessly
 - All "maintenance" functions can be triggered by anyone and are incentivized
@@ -108,7 +108,7 @@ Each Vault has a corresponding Liquidation Pair that auctions yield for the priz
 
 Externally-Owned Accounts should interact with the Liquidation Router, as it provides additional checks that ensure the swap occurs correctly.
 
-**Iteraction Diagram for a Liquidation**
+**Interaction Diagram for a Liquidation**
 
 ![Liquidation](/img/v5/design/Liquidation.png)
 
@@ -231,7 +231,7 @@ For PoolTogether V5 we are using the VRGDA as a reverse dutch auction to claim p
 
 The "schedule" of claims is based on a count and time frame. Recall the estimated claim count from the adaptive number of tiers? We use that same number to compute the schedule. The schedule starts immediately after the draw is awarded, and is set to take one quarter of the draw period. This provides plenty of leeway in the event that there are more prizes, statistically, for a given draw.  It's highly unlikely that a draw will see a variance of double the expected prizes, so we believe a quarter of the draw period is sufficient.
 
-#### Winner Eligiblity
+#### Winner Eligibility
 
 The Prize Pool determines whether a user has won a prize by checking if a pseudo-random number is within a certain range.  The PRN is generated such that it is unique per draw, tier, vault and user. The number range is used to tune the odds based on the prize frequency and the user's eligibility.
 
