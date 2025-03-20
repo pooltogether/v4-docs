@@ -10,6 +10,7 @@ sidebar_position: 0
 | POOL | [`0x0cEC1A9154Ff802e7934Fc916Ed7Ca50bDE6844e`](https://etherscan.io/address/0x0cEC1A9154Ff802e7934Fc916Ed7Ca50bDE6844e) |
 | POOL Prize Vault | [`0x9eE31E845fF1358Bf6B1F914d3918c6223c75573`](https://etherscan.io/token/0x9eE31E845fF1358Bf6B1F914d3918c6223c75573) |
 | PrizePoolTwabRewards | [`0x3341DAC0912B630F1A8c237b64F6861e9fa11d79`](https://etherscan.io/address/0x3341DAC0912B630F1A8c237b64F6861e9fa11d79) |
+| EzDepositor | [`0x84882EB46dA981d1aD2f154359061942Ca1c062f`](https://etherscan.io/address/0x84882EB46dA981d1aD2f154359061942Ca1c062f) |
 | RngWitnet | [`0xf93329e78feff1145fce03a79d5b356588dea215`](https://etherscan.io/address/0xf93329e78feff1145fce03a79d5b356588dea215) |
 | TwabController | [`0x4d5f2cd31701f3e5de77b3f89ee7b80eb87b4acc`](https://etherscan.io/address/0x4d5f2cd31701f3e5de77b3f89ee7b80eb87b4acc) |
 | TwabRewards | [`0x2589ff8614f74704741ee3b51851b4ae812f1a21`](https://etherscan.io/address/0x2589ff8614f74704741ee3b51851b4ae812f1a21) |

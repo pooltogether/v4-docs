@@ -9,6 +9,7 @@ sidebar_position: 1
 | :--- | :--- |
 | POOL | [`0x7077C71B4AF70737a08287E279B717Dcf64fdC57`](https://worldscan.org/address/0x7077C71B4AF70737a08287E279B717Dcf64fdC57) |
 | POOL Prize Vault | [`0x0045cC66eCf34da9D8D89aD5b36cB82061c0907C`](https://worldscan.org/address/0x0045cC66eCf34da9D8D89aD5b36cB82061c0907C) |
+| EzDepositor | [`0x8fa49ebd94a68272579aaa71b41fe3a3bf110fe0`](https://worldscan.org/address/0x8fa49ebd94a68272579aaa71b41fe3a3bf110fe0) |
 | RngWitnet | [`0x4a411d67cd47bfc41395946be069deb97a171437`](https://worldscan.org/address/0x4a411d67cd47bfc41395946be069deb97a171437) |
 | TwabController | [`0xa13d89cf3e7f59ba1a2b5b5c260bdfc64dd1044c`](https://worldscan.org/address/0xa13d89cf3e7f59ba1a2b5b5c260bdfc64dd1044c) |
 | TwabRewards | [`0x18e9e34cfccadcac465a8b6eaf337546b0980897`](https://worldscan.org/address/0x18e9e34cfccadcac465a8b6eaf337546b0980897) |

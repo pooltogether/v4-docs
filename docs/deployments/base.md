@@ -10,6 +10,7 @@ sidebar_position: 0
 | POOL | [`0xd652C5425aea2Afd5fb142e120FeCf79e18fafc3`](https://basescan.org/address/0xd652C5425aea2Afd5fb142e120FeCf79e18fafc3) |
 | POOL Prize Vault | [`0x6B5a5c55E9dD4bb502Ce25bBfbaA49b69cf7E4dd`](https://basescan.org/token/0x6B5a5c55E9dD4bb502Ce25bBfbaA49b69cf7E4dd) |
 | PrizePoolTwabRewards | [`0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF`](https://basescan.org/address/0xF4c47dacFda99bE38793181af9Fd1A2Ec7576bBF) |
+| EzDepositor | [`0x4E30C0a8cCE76940D87ae62EB12f3Ac536A996F4`](https://basescan.org/address/0x4E30C0a8cCE76940D87ae62EB12f3Ac536A996F4) |
 | RngWitnet | [`0x74ebf391831c0757b5a4335f2f3abbb1499d18f0`](https://basescan.org/address/0x74ebf391831c0757b5a4335f2f3abbb1499d18f0) |
 | TwabController | [`0x7e63601f7e28c758feccf8cdf02f6598694f44c6`](https://basescan.org/address/0x7e63601f7e28c758feccf8cdf02f6598694f44c6) |
 | TwabRewards | [`0x86f0923d20810441efc593eb0f2825c6bff2dc09`](https://basescan.org/address/0x86f0923d20810441efc593eb0f2825c6bff2dc09) |
