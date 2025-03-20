@@ -22,3 +22,8 @@ sidebar_position: 1
 | DrawManager | [`0x62800f9bd164ea909224e19b7fdfa33a0f3f6373`](https://worldscan.org/address/0x62800f9bd164ea909224e19b7fdfa33a0f3f6373) |
 | VaultBoosterFactory | [`0xd9fe347acab895beb7119027626de42e0d44fa7d`](https://worldscan.org/address/0xd9fe347acab895beb7119027626de42e0d44fa7d) |
 
+# Special Vaults
+
+| Name | Address |
+| ---- | ------- |
+| WLD Prize Vault (capped deposits) | [`0x8ad5959c9245b64173d4c0c3cd3ff66dac3cab0e`](https://worldscan.org/address/0x8ad5959c9245b64173d4c0c3cd3ff66dac3cab0e) |
