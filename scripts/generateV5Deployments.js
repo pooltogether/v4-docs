@@ -14,6 +14,7 @@ const POA_SOKOL_CHAIN_ID = 77;
 const POLYGON_CHAIN_ID = 137;
 const BASE_CHAIN_ID = 8453;
 const SCROLL_CHAIN_ID = 534352;
+const WORLD_CHAIN_ID = 480;
 
 // Testnet
 const ARBITRUM_GOERLI_CHAIN_ID = 421613;
@@ -75,6 +76,8 @@ function formatAddressUrl(chainId, address) {
     url = `https://scrollscan.com/address/${address}`;
   } else if (chainId == SCROLL_SEPOLIA_CHAIN_ID) {
     url = `https://sepolia.scrollscan.com/address/${address}`;
+  } else if (chainId == WORLD_CHAIN_ID) {
+    url = `https://worldscan.org/address/${address}`;
   } else {
     throw new Error(`Unknown chain id ${chainId}`);
   }
@@ -196,6 +199,12 @@ switch (process.argv[2]) {
   case "gnosis-chiado":
     generate("Gnosis Chiado", 1, "./docs/deployments/gnosis-chiado.md", [
       "./data/gnosis-chiado-core.json",
+    ]);
+    break;
+
+  case "world":
+    generate("World", 1, "./docs/deployments/world.md", [
+      "./data/world-core.json",
     ]);
     break;
 

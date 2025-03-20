@@ -9,6 +9,7 @@ sidebar_position: 0
 | :--- | :--- |
 | POOL | [`0x395Ae52bB17aef68C2888d941736A71dC6d4e125`](https://optimistic.etherscan.io/address/0x395Ae52bB17aef68C2888d941736A71dC6d4e125) |
 | POOL Prize Vault | [`0xa52e38a9147f5eA9E0c5547376c21c9E3F3e5e1f`](https://optimistic.etherscan.io/address/0xa52e38a9147f5eA9E0c5547376c21c9E3F3e5e1f) |
+| PrizePoolTwabRewards | [`0x36bE31E7acD4B0D755BCc7858ef04848A3eC66c6`](https://optimistic.etherscan.io/address/0x36bE31E7acD4B0D755BCc7858ef04848A3eC66c6) |
 | RngWitnet | [`0x3d2Ef6C091f7CB69f06Ec3117F36A28BC596aa7B`](https://optimistic.etherscan.io/address/0x3d2Ef6C091f7CB69f06Ec3117F36A28BC596aa7B) |
 | TwabController | [`0xCB0672dE558Ad8F122C0E081f0D35480aB3be167`](https://optimistic.etherscan.io/address/0xCB0672dE558Ad8F122C0E081f0D35480aB3be167) |
 | TwabRewards | [`0x90D383dEA4dcE52D3e5D3C93dE75eF36da3Ea9Ea`](https://optimistic.etherscan.io/address/0x90D383dEA4dcE52D3e5D3C93dE75eF36da3Ea9Ea) |

@@ -9,6 +9,7 @@ sidebar_position: 0
 | :--- | :--- |
 | POOL | [`0x216a7d520992eD198593A16e0b17c784c9cdc660`](https://gnosisscan.io/address/0x216a7d520992eD198593A16e0b17c784c9cdc660) |
 | POOL Prize Vault | [`0xB75AF20eCadabed9049cc2f50E38bAd2768b35cf`](https://gnosisscan.io/token/0xB75AF20eCadabed9049cc2f50E38bAd2768b35cf) |
+| PrizePoolTwabRewards | [`0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9`](https://gnosisscan.io/address/0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9) |
 | RngWitnet | [`0x47c9212cc5c0836521346ce9b3d03ca91edf1123`](https://gnosisscan.io/address/0x47c9212cc5c0836521346ce9b3d03ca91edf1123) |
 | TwabController | [`0x84090aea5370565b88108c4ffed378672a8afde6`](https://gnosisscan.io/address/0x84090aea5370565b88108c4ffed378672a8afde6) |
 | TwabRewards | [`0x1742157e6ef6e0cf7e49904f2c0d0fe38a276942`](https://gnosisscan.io/address/0x1742157e6ef6e0cf7e49904f2c0d0fe38a276942) |
