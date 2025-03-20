@@ -11,6 +11,7 @@ sidebar_position: 1
 - [Gnosis](./gnosis)
 - [Optimism](./optimism)
 - [Scroll](./scroll)
+- [World](./world)
 
 ## Testnet
 
