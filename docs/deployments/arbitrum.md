@@ -9,6 +9,7 @@ sidebar_position: 0
 | :--- | :--- |
 | POOL | [`0xCF934E2402A5e072928a39a956964eb8F2B5B79C`](https://arbiscan.io/address/0xCF934E2402A5e072928a39a956964eb8F2B5B79C) |
 | POOL Prize Vault | [`0x97A9C02CFBBf0332D8172331461aB476dF1E8c95`](https://arbiscan.io/token/0x97A9C02CFBBf0332D8172331461aB476dF1E8c95) |
+| PrizePoolTwabRewards | [`0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9`](https://arbiscan.io/address/0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9) |
 | RngWitnet | [`0xad1b8ec0151f13ba563226092b5f7308d8dc107b`](https://arbiscan.io/address/0xad1b8ec0151f13ba563226092b5f7308d8dc107b) |
 | TwabController | [`0x971ecc4e75c5fcfd8fc3eadc8f0c900b5914dc75`](https://arbiscan.io/address/0x971ecc4e75c5fcfd8fc3eadc8f0c900b5914dc75) |
 | TwabRewards | [`0xe21ac38a7e80104c4f6512ce4908a22bc09c59be`](https://arbiscan.io/address/0xe21ac38a7e80104c4f6512ce4908a22bc09c59be) |
