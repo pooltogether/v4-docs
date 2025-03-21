@@ -22,5 +22,13 @@ sidebar_position: 0
 | Claimer | [`0x54aa02cbc223Fc834949FB1fd8C855e4dA126c7D`](https://etherscan.io/address/0x54aa02cbc223Fc834949FB1fd8C855e4dA126c7D) |
 | StakingVault | [`0x68a100a3729fc04ab26fb4c0862df22ceec2f18b`](https://etherscan.io/address/0x68a100a3729fc04ab26fb4c0862df22ceec2f18b) |
 | DrawManager | [`0x98305eb9a29d45ec93ce44ba02b315b631c675a7`](https://etherscan.io/address/0x98305eb9a29d45ec93ce44ba02b315b631c675a7) |
-| VaultBoosterFactory | [`0x36be31e7acd4b0d755bcc7858ef04848a3ec66c6`](https://etherscan.io/address/0x36be31e7acd4b0d755bcc7858ef04848a3ec66c6) |
+| VaultBoosterFactory | [`0x31Ec883727af3B9eb87b815550B0E33498F483E8`](https://etherscan.io/address/0x31Ec883727af3B9eb87b815550B0E33498F483E8) |
 
+
+# Deprecated
+
+These contracts are faulty or out-of-date
+
+| Contract | Address |
+| ------- | ------- |
+| VaultBoosterFactory | [`0x36be31e7acd4b0d755bcc7858ef04848a3ec66c6`](https://etherscan.io/address/0x36be31e7acd4b0d755bcc7858ef04848a3ec66c6) |

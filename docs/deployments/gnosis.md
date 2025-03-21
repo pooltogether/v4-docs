@@ -22,5 +22,13 @@ sidebar_position: 0
 | Claimer | [`0x0cffb70cdd335cc5380cb58166699edaa2b0bbfa`](https://gnosisscan.io/address/0x0cffb70cdd335cc5380cb58166699edaa2b0bbfa) |
 | StakingVault | [`0x9ef19fc007b7fb0b0d378b9899b4b33c200ef172`](https://gnosisscan.io/address/0x9ef19fc007b7fb0b0d378b9899b4b33c200ef172) |
 | DrawManager | [`0x146efc8d651dc015225cc2e74707d87aa4d09067`](https://gnosisscan.io/address/0x146efc8d651dc015225cc2e74707d87aa4d09067) |
-| VaultBoosterFactory | [`0xc9f124901c1acfd254db4177dfc76c72c01c4a78`](https://gnosisscan.io/address/0xc9f124901c1acfd254db4177dfc76c72c01c4a78) |
+| VaultBoosterFactory | [`0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832`](https://gnosisscan.io/address/0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832) |
 
+
+# Deprecated
+
+These contracts are faulty or out-of-date
+
+| Contract | Address |
+| ------- | ------- |
+| VaultBoosterFactory | [`0xc9f124901c1acfd254db4177dfc76c72c01c4a78`](https://gnosisscan.io/address/0xc9f124901c1acfd254db4177dfc76c72c01c4a78) |

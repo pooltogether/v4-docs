@@ -21,10 +21,18 @@ sidebar_position: 1
 | Claimer | [`0x9035072fe640d5ef80edc41aef47b1a793809070`](https://worldscan.org/address/0x9035072fe640d5ef80edc41aef47b1a793809070) |
 | StakingVault | [`0xe6ca8bc8dbd85cebf2622575ad0dd7c6a86fae44`](https://worldscan.org/address/0xe6ca8bc8dbd85cebf2622575ad0dd7c6a86fae44) |
 | DrawManager | [`0x62800f9bd164ea909224e19b7fdfa33a0f3f6373`](https://worldscan.org/address/0x62800f9bd164ea909224e19b7fdfa33a0f3f6373) |
-| VaultBoosterFactory | [`0xd9fe347acab895beb7119027626de42e0d44fa7d`](https://worldscan.org/address/0xd9fe347acab895beb7119027626de42e0d44fa7d) |
+| VaultBoosterFactory | [`0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9`](https://worldscan.org/address/0x0D51a33975024E8aFc55fde9F6b070c10AA71Dd9) |
 
 # Special Vaults
 
 | Name | Address |
 | ---- | ------- |
 | WLD Prize Vault (capped deposits) | [`0x8ad5959c9245b64173d4c0c3cd3ff66dac3cab0e`](https://worldscan.org/address/0x8ad5959c9245b64173d4c0c3cd3ff66dac3cab0e) |
+
+# Deprecated
+
+These contracts are faulty or out-of-date
+
+| Contract | Address |
+| ------- | ------- |
+| VaultBoosterFactory | [`0xd9fe347acab895beb7119027626de42e0d44fa7d`](https://worldscan.org/address/0xd9fe347acab895beb7119027626de42e0d44fa7d) |

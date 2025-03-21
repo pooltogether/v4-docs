@@ -22,7 +22,7 @@ sidebar_position: 0
 | Claimer | [`0xcdCE635b774DE77cdF791647601dba64a75547ba`](https://basescan.org/address/0xcdCE635b774DE77cdF791647601dba64a75547ba) |
 | StakingVault | [`0x854f3d91e53d0fc9dba9822bc74f574c7380436d`](https://basescan.org/address/0x854f3d91e53d0fc9dba9822bc74f574c7380436d) |
 | DrawManager | [`0x8a2782bedc79982ebfa3b68b315a2ee40daf6ab0`](https://basescan.org/address/0x8a2782bedc79982ebfa3b68b315a2ee40daf6ab0) |
-| VaultBoosterFactory | [`0x02d37f2654b4161801c8d7369b43a8762a31530e`](https://basescan.org/address/0x02d37f2654b4161801c8d7369b43a8762a31530e) |
+| VaultBoosterFactory | [`0xa2Ba3d22e2469BC0b46d57145D4bd212d3550ec2`](https://basescan.org/address/0xa2Ba3d22e2469BC0b46d57145D4bd212d3550ec2) |
 
 ## Deprecated Contracts
 
@@ -33,3 +33,4 @@ The following contracts have been deprecated in favor of newer deployments.
 | PrizeVaultFactory (*deprecated*) | [`0xe32f6344875494ca3643198d87524519dc396ddf`](https://basescan.org/address/0xe32f6344875494ca3643198d87524519dc396ddf) |
 | ClaimerFactory (*deprecated*) | [`0xd58a04fc8d34ce6b3633bf81ee7d5d25c71401e3`](https://basescan.org/address/0xd58a04fc8d34ce6b3633bf81ee7d5d25c71401e3) |
 | Claimer (*deprecated*) | [`0x5ffeee76d1e2d2d1d18ba0bc77d8d047b85e1e87`](https://basescan.org/address/0x5ffeee76d1e2d2d1d18ba0bc77d8d047b85e1e87) |
+| VaultBoosterFactory | [`0x02d37f2654b4161801c8d7369b43a8762a31530e`](https://basescan.org/address/0x02d37f2654b4161801c8d7369b43a8762a31530e) |

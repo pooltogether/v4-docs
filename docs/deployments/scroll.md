@@ -22,5 +22,13 @@ sidebar_position: 0
 | Claimer | [`0xb04d5c80a3f6da11532d3a67184bb7be11f00285`](https://scrollscan.com/address/0xb04d5c80a3f6da11532d3a67184bb7be11f00285) |
 | StakingVault | [`0xeb436bc5760927c6d32fc2820acfb437860392a3`](https://scrollscan.com/address/0xeb436bc5760927c6d32fc2820acfb437860392a3) |
 | DrawManager | [`0xa75474749055f71560eb5dcff33605766c69ddf2`](https://scrollscan.com/address/0xa75474749055f71560eb5dcff33605766c69ddf2) |
-| VaultBoosterFactory | [`0x748300bbdcdc5b258b055e1ae9ff25a32c024b76`](https://scrollscan.com/address/0x748300bbdcdc5b258b055e1ae9ff25a32c024b76) |
+| VaultBoosterFactory | [`0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832`](https://scrollscan.com/address/0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832) |
 
+
+# Deprecated
+
+These contracts are faulty or out-of-date
+
+| Contract | Address |
+| ------- | ------- |
+| VaultBoosterFactory | [`0x748300bbdcdc5b258b055e1ae9ff25a32c024b76`](https://scrollscan.com/address/0x748300bbdcdc5b258b055e1ae9ff25a32c024b76) |

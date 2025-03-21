@@ -22,7 +22,7 @@ sidebar_position: 0
 | Claimer | [`0xBEA38368f2A657f00f173764f18F00e841317c73`](https://arbiscan.io/address/0xBEA38368f2A657f00f173764f18F00e841317c73) |
 | StakingVault | [`0xf59e484934b64121a698b17bef386d443554da1f`](https://arbiscan.io/address/0xf59e484934b64121a698b17bef386d443554da1f) |
 | DrawManager | [`0xc00146957ff55fad7d27deb69ff95d79fdcd37e6`](https://arbiscan.io/address/0xc00146957ff55fad7d27deb69ff95d79fdcd37e6) |
-| VaultBoosterFactory | [`0x574257f5601115b9bec90a64a056107b030b449e`](https://arbiscan.io/address/0x574257f5601115b9bec90a64a056107b030b449e) |
+| VaultBoosterFactory | [`0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832`](https://arbiscan.io/address/0x8CFFFfFa42407DB9DCB974C2C744425c3e58d832) |
 
 ## Deprecated Contracts
 
@@ -33,3 +33,4 @@ The following contracts have been deprecated in favor of newer deployments.
 | PrizeVaultFactory (*deprecated*) | [`0x44be003e55e7ce8a2e0ecc3266f8a9a9de2c07bc`](https://arbiscan.io/address/0x44be003e55e7ce8a2e0ecc3266f8a9a9de2c07bc) |
 | ClaimerFactory (*deprecated*) | [`0xc4824b6b0bb0559d919a606f258ee68a890757da`](https://arbiscan.io/address/0xc4824b6b0bb0559d919a606f258ee68a890757da) |
 | Claimer (*deprecated*) | [`0x1e68e5e92d22aefdc791a61c874c06831023e571`](https://arbiscan.io/address/0x1e68e5e92d22aefdc791a61c874c06831023e571) |
+| VaultBoosterFactory | [`0x574257f5601115b9bec90a64a056107b030b449e`](https://arbiscan.io/address/0x574257f5601115b9bec90a64a056107b030b449e) |
